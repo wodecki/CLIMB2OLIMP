@@ -3,7 +3,6 @@ import os
 import tomllib
 from state import DocumentState
 from typing import Dict, List, Any
-from progress_tracker import progress_tracker
 
 
 def identify_gaps(state: DocumentState) -> DocumentState:
@@ -17,7 +16,21 @@ def identify_gaps(state: DocumentState) -> DocumentState:
     Returns:
         Updated state with gaps analysis
     """
-    progress_tracker.update_step("identify_gaps", "running", "Analyzing gaps between current and target levels")
+    print("DEBUG: Starting gap identification...")
+    print(f"DEBUG: State keys: {list(state.keys())}")
+    print(f"DEBUG: Answers type: {type(state.get('answers'))}")
+    
+    if 'answers' in state and state['answers']:
+        answers_keys = list(state['answers'].keys()) if isinstance(state['answers'], dict) else []
+        print(f"DEBUG: Answer data keys: {answers_keys}")
+        
+        if 'OLIMP' in answers_keys:
+            olimp_data = state['answers']['OLIMP']
+            print(f"DEBUG: OLIMP data found, sections: {len(olimp_data.get('sections', []))}")
+        else:
+            print(f"DEBUG: ❌ No OLIMP data in answers!")
+    else:
+        print(f"DEBUG: ❌ No answers in state!")
     # Load target sections from configuration
     try:
         with open("./config/areas_for_improvement.toml", "rb") as f:
@@ -103,7 +116,6 @@ def identify_gaps(state: DocumentState) -> DocumentState:
     # Print essential summary
     total_questions = sum(len(section_gaps) for section_gaps in gaps.values())
     print(f"Gaps analysis completed: {total_questions} questions across {len(gaps)} sections")
-    progress_tracker.update_step("identify_gaps", "completed", f"Analyzed {total_questions} questions across {len(gaps)} sections")
     
     # Save gaps to JSON file
     # Determine the output filename based on integrated file name

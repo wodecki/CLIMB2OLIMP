@@ -4,14 +4,13 @@ import traceback
 
 # Import the application
 from graph import app
-from progress_tracker import progress_tracker
 
 def main():
     """
     Main function to run the document processing process
     """
     print("Starting OLIMP document processing process...")
-    progress_tracker.update_step("initialize", "running", "Setting up initial state")
+    print("DEBUG: Python working directory:", os.getcwd())
     
     # Initialize empty state with new structure
     initial_state = {
@@ -26,14 +25,23 @@ def main():
         "recommendation_approved": False
     }
     
+    print("DEBUG: Initial state keys:", list(initial_state.keys()))
+    print("DEBUG: About to invoke graph...")
+    
     # Invoke the app with the initial state
     try:
-        progress_tracker.update_step("processing", "running", "Starting OLIMP graph execution")
-        response = app.invoke(initial_state)
+        print("DEBUG: Starting graph execution with recursion limit...")
+        
+        # Configure execution with higher recursion limit
+        from langchain_core.runnables import RunnableConfig
+        config = RunnableConfig(
+            recursion_limit=100,  # Increase from default 25 to 100
+            max_concurrency=None
+        )
+        
+        response = app.invoke(initial_state, config=config)
         
         # Print the results
-        progress_tracker.update_step("finalization", "completed", "Analysis completed successfully")
-        progress_tracker.mark_completed()
         
         print("=" * 50)
         print("DOCUMENT PROCESSING COMPLETE")
@@ -45,7 +53,6 @@ def main():
         
     except Exception as e:
         error_msg = f"Error running the processing: {e}"
-        progress_tracker.mark_error(error_msg, "processing")
         print(error_msg)
         print(f"Traceback: {traceback.format_exc()}")
 

@@ -8,7 +8,6 @@ from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import HumanMessage
 from state import DocumentState
-from progress_tracker import progress_tracker
 
 # Load environment variables
 load_dotenv()
@@ -68,14 +67,32 @@ def generate_recommendation_for_branch(state: DocumentState, branch_suffix: str,
         provider: 'openai', 'anthropic', or 'gemini'
     """
     branch_name = f"branch_{branch_suffix}"
-    progress_tracker.update_branch(branch_name, "running", 1, f"Generating recommendations using {provider}")
     print(f"Generating recommendations for Branch {branch_suffix} using {provider}...")
     
     # Check if gaps exist
     if not state.get("gaps"):
-        progress_tracker.update_branch(branch_name, "skipped", 0, "No gaps found in state")
         print(f"No gaps found in state - skipping Branch {branch_suffix} recommendations")
-        return state
+        
+        # Initialize branch data to prevent recursion in conditional edges
+        if "branch_data" not in state:
+            state["branch_data"] = {}
+        
+        branch_key = f"branch_{branch_suffix}"
+        
+        # Set branch as completed/approved to terminate the evaluation loop
+        branch_data = {
+            "recommendations": "No recommendations needed - no gaps identified",
+            "evaluation_iterations": 3,  # Max iterations to force consensus
+            "recommendation_approved": True,  # Approved to exit loop
+            "evaluation_feedback": "No gaps found, skipping branch analysis"
+        }
+        
+        # Return state update using reducer pattern
+        return {
+            "branch_data": {
+                branch_key: branch_data
+            }
+        }
     
     # Initialize branch data if not present
     if "branch_data" not in state:
@@ -181,7 +198,6 @@ def generate_recommendation_for_branch(state: DocumentState, branch_suffix: str,
             }
         }
         
-        progress_tracker.update_branch(branch_name, "completed", 1, f"Recommendations generated successfully using {provider}")
         print(f"Branch {branch_suffix} recommendations generated successfully")
         
         # Return state update for the reducer
@@ -190,7 +206,6 @@ def generate_recommendation_for_branch(state: DocumentState, branch_suffix: str,
         }
         
     except Exception as e:
-        progress_tracker.update_branch(branch_name, "error", 1, f"Error: {str(e)}")
         print(f"Error generating recommendations for Branch {branch_suffix}: {e}")
         return state
 

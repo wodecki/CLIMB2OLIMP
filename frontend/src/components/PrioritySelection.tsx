@@ -29,7 +29,7 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
     // Initialize priority areas
     const initialAreas = availableAreas.map(area => ({
       name: area,
-      selected: true // Default to all selected
+      selected: false // Default to all unchecked
     }));
     
     setPriorityAreas(initialAreas);

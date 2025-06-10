@@ -156,19 +156,33 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
     return sampleAnswerData;
   };
 
-  // Load sample data
-  const handleLoadSampleData = () => {
-    setIsLoadingSampleData(true);
-    
-    // Simulate loading delay
-    setTimeout(() => {
+  // Analyze sample data (load data and complete questionnaire)
+  const handleAnalyzeSampleData = async () => {
+    try {
+      setIsLoadingSampleData(true);
+      console.log('Loading sample data and completing OLIMP questionnaire...');
+      
+      // Step 1: Generate sample data
       const sampleData = generateSampleData();
       if (sampleData) {
         setAnswerData(sampleData);
         setSampleDataLoaded(true);
+        
+        // Step 2: Complete the questionnaire automatically
+        console.log('Auto-completing OLIMP questionnaire with sample data...');
+        
+        // Simulate processing time
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Complete the questionnaire
+        onComplete(sampleData);
       }
+    } catch (err) {
+      console.error('Error analyzing sample data:', err);
+      setError('Failed to analyze sample data. Please try again.');
+    } finally {
       setIsLoadingSampleData(false);
-    }, 500);
+    }
   };
 
   // Handle completion
@@ -225,7 +239,7 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
             </div>
             <div className="flex flex-col gap-2">
               <button
-                onClick={handleLoadSampleData}
+                onClick={handleAnalyzeSampleData}
                 disabled={isLoadingSampleData || sampleDataLoaded}
                 className={`px-4 py-2 rounded-md text-sm font-medium ${
                   isLoadingSampleData || sampleDataLoaded
@@ -234,10 +248,10 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
                 }`}
               >
                 {isLoadingSampleData 
-                  ? 'Loading...' 
+                  ? 'Analyzing...' 
                   : sampleDataLoaded 
-                    ? 'Sample Data Loaded' 
-                    : 'Use Sample Data'}
+                    ? 'Sample Analysis Complete' 
+                    : 'Analyze Sample Data'}
               </button>
               <button
                 onClick={onBack}

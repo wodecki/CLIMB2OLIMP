@@ -9,7 +9,6 @@ from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage
 from state import DocumentState
-from progress_tracker import progress_tracker
 
 # Load environment variables
 load_dotenv()
@@ -101,13 +100,11 @@ def evaluate_branch_recommendation(state: DocumentState, branch_suffix: str, pro
         provider: 'openai', 'anthropic', or 'gemini'
     """
     branch_name = f"branch_{branch_suffix}"
-    progress_tracker.update_branch(branch_name, "evaluating", 2, f"Evaluating recommendations using {provider}")
     print(f"Evaluating Branch {branch_suffix} recommendation using {provider}...")
     
     # Get branch data
     branch_key = f"branch_{branch_suffix}"
     if "branch_data" not in state or branch_key not in state["branch_data"]:
-        progress_tracker.update_branch(branch_name, "skipped", 0, "No branch data found")
         print(f"No branch data found for Branch {branch_suffix} - skipping evaluation")
         return state
     
@@ -115,7 +112,6 @@ def evaluate_branch_recommendation(state: DocumentState, branch_suffix: str, pro
     
     # Check if recommendations exist for this branch
     if not branch_data.get("recommendations"):
-        progress_tracker.update_branch(branch_name, "skipped", 0, "No recommendations found")
         print(f"No recommendations found for Branch {branch_suffix} - skipping evaluation")
         return state
     
@@ -163,7 +159,6 @@ def evaluate_branch_recommendation(state: DocumentState, branch_suffix: str, pro
         
         current_iterations = branch_data.get("evaluation_iterations", 0)
         iteration_num = current_iterations + 1
-        progress_tracker.update_branch(branch_name, "evaluating", iteration_num, f"Conducting evaluation iteration {iteration_num}/{MAX_EVALUATION_ITERATIONS}")
         print(f"Conducting Branch {branch_suffix} evaluation (iteration {iteration_num})...")
         
         # Create message for evaluation
@@ -234,16 +229,13 @@ def evaluate_branch_recommendation(state: DocumentState, branch_suffix: str, pro
         
         if approved:
             if branch_data["evaluation_iterations"] >= MAX_EVALUATION_ITERATIONS:
-                progress_tracker.update_branch(branch_name, "completed", MAX_EVALUATION_ITERATIONS, "Final recommendation ready for consensus")
                 print(f"✅ Branch {branch_suffix} final recommendation ready for consensus")
             else:
-                progress_tracker.update_branch(branch_name, "approved", branch_data["evaluation_iterations"], "Recommendations approved by evaluator")
                 print(f"✅ Branch {branch_suffix} recommendations APPROVED by evaluator")
             
             # Save FINAL version of branch recommendation when approved/completed
             save_final_branch_recommendation(state, branch_suffix, provider)
         else:
-            progress_tracker.update_branch(branch_name, "needs_revision", branch_data["evaluation_iterations"], f"Needs revision (iteration {branch_data['evaluation_iterations']}/{MAX_EVALUATION_ITERATIONS})")
             print(f"❌ Branch {branch_suffix} recommendations need revision (iteration {branch_data['evaluation_iterations']}/{MAX_EVALUATION_ITERATIONS})")
         
         # Save detailed evaluation to file
@@ -288,13 +280,11 @@ def evaluate_branch_recommendation(state: DocumentState, branch_suffix: str, pro
         }
         
     except Exception as e:
-        progress_tracker.update_branch(branch_name, "error", branch_data.get("evaluation_iterations", 0), f"Evaluation error: {str(e)}")
         print(f"Error during Branch {branch_suffix} evaluation: {e}")
         # On error, approve after max iterations to deliver final report
         if branch_data.get("evaluation_iterations", 0) >= MAX_EVALUATION_ITERATIONS:
             branch_data["recommendation_approved"] = True
             branch_data["evaluation_feedback"] = f"Evaluation error after {MAX_EVALUATION_ITERATIONS} iterations. Branch ready for consensus."
-            progress_tracker.update_branch(branch_name, "completed", MAX_EVALUATION_ITERATIONS, "Ready for consensus after evaluation error")
             print(f"📋 Delivering Branch {branch_suffix} for consensus due to evaluation error")
             
             return {

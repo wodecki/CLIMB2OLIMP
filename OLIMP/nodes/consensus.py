@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage
 from state import DocumentState
-from progress_tracker import progress_tracker
 
 # Load environment variables
 load_dotenv()
@@ -40,7 +39,6 @@ def consensus(state: DocumentState) -> DocumentState:
     Returns:
         Updated state with consensus recommendation
     """
-    progress_tracker.update_step("consensus", "running", "Generating consensus from all branch recommendations")
     print("Generating consensus recommendation from all branches...")
     
     # Check which branches have completed recommendations
@@ -322,7 +320,6 @@ Raport powinien być na tyle szczegółowy i praktyczny, że organizacja może g
         print(f"📊 Synthesized from {len(available_branches)} branch recommendations")
         print(f"📁 Final report: {consensus_path}")
         
-        progress_tracker.update_step("consensus", "completed", f"Generated consensus from {len(available_branches)} branches")
         
         return state
         

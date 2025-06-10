@@ -157,11 +157,13 @@ export default function MultiStageWorkflow() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Load sample answers
-  const handleLoadSampleAnswers = async () => {
+  // Load sample answers and start analysis
+  const handleAnalyzeSampleData = async () => {
     try {
       setIsLoadingSampleAnswers(true);
+      console.log('Loading sample data and starting analysis...');
       
+      // Step 1: Load sample answers
       const response = await fetch('/api/sample-answers');
       
       if (!response.ok) {
@@ -172,9 +174,37 @@ export default function MultiStageWorkflow() {
       setAnswerData(sampleAnswers);
       setSampleAnswersLoaded(true);
       
+      // Step 2: Submit CLIMB2 questionnaire
+      console.log('Submitting sample CLIMB2 answers...');
+      
+      const submitResponse = await fetch('/api/questionnaire', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(sampleAnswers),
+      });
+      
+      if (!submitResponse.ok) {
+        const errorData = await submitResponse.json();
+        throw new Error(`Failed to submit questionnaire: ${errorData.error || submitResponse.statusText}`);
+      }
+
+      // Step 3: Get maturity levels
+      const maturityResponse = await fetch('/api/get-maturity-levels');
+      if (maturityResponse.ok) {
+        const maturityData = await maturityResponse.json();
+        setMaturityLevels(maturityData.maturityLevels || {});
+      }
+      
+      // Step 4: Move to strategic goals stage
+      console.log('Moving to strategic goals stage...');
+      setStageProgress(prev => ({ ...prev, 'climb2-questionnaire': true }));
+      setCurrentStage('climb2-goals');
+      
     } catch (err) {
-      console.error('Error loading sample answers:', err);
-      setError('Failed to load sample answers. Please try again later.');
+      console.error('Error analyzing sample data:', err);
+      setError(err instanceof Error ? err.message : 'Failed to analyze sample data. Please try again.');
     } finally {
       setIsLoadingSampleAnswers(false);
     }
@@ -1283,7 +1313,7 @@ export default function MultiStageWorkflow() {
             
             <div className="flex flex-col gap-2">
               <button
-                onClick={handleLoadSampleAnswers}
+                onClick={handleAnalyzeSampleData}
                 disabled={isLoadingSampleAnswers || sampleAnswersLoaded}
                 className={`px-4 py-2 rounded-md text-sm font-medium ${
                   isLoadingSampleAnswers || sampleAnswersLoaded
@@ -1292,10 +1322,10 @@ export default function MultiStageWorkflow() {
                 }`}
               >
                 {isLoadingSampleAnswers 
-                  ? 'Loading...' 
+                  ? 'Analyzing...' 
                   : sampleAnswersLoaded 
-                    ? 'Sample Answers Loaded' 
-                    : 'Use Sample Answers'}
+                    ? 'Sample Analysis Complete' 
+                    : 'Analyze Sample Data'}
               </button>
             </div>
           </div>
