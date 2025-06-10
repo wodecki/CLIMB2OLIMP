@@ -8,6 +8,7 @@ from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import HumanMessage
 from state import DocumentState
+from progress_tracker import progress_tracker
 
 # Load environment variables
 load_dotenv()
@@ -63,10 +64,12 @@ def recommend(state: DocumentState) -> DocumentState:
     Returns:
         Updated state with recommendation report
     """
+    progress_tracker.update_step("recommend", "running", "Generating recommendations based on gaps analysis")
     print("Generating recommendations based on gaps analysis...")
     
     # Check if gaps exist
     if not state.get("gaps"):
+        progress_tracker.update_step("recommend", "skipped", "No gaps found in state")
         print("No gaps found in state - skipping recommendations")
         return state
     
@@ -192,10 +195,12 @@ def recommend(state: DocumentState) -> DocumentState:
             print(f"Error saving recommendations: {e}")
             return state
         
+        progress_tracker.update_step("recommend", "completed", "Recommendations generated successfully")
         print("Recommendations generated successfully")
         
         return state
         
     except Exception as e:
+        progress_tracker.update_step("recommend", "error", f"Error generating recommendations: {str(e)}")
         print(f"Error generating recommendations: {e}")
         return state

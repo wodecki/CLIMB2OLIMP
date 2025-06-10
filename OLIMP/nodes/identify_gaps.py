@@ -3,12 +3,13 @@ import os
 import tomllib
 from state import DocumentState
 from typing import Dict, List, Any
+from progress_tracker import progress_tracker
 
 
 def identify_gaps(state: DocumentState) -> DocumentState:
     """
     Node to identify gaps between current OLIMP answers and maximum level E
-    for specific sections: TECHNOLOGIA I INFRASTRUKTURA, LUDZIE I KOMPETENCJE, ORGANIZACJA I PROCESY
+    for all OLIMP sections based on configuration
     
     Args:
         state: The current state containing answers
@@ -16,6 +17,7 @@ def identify_gaps(state: DocumentState) -> DocumentState:
     Returns:
         Updated state with gaps analysis
     """
+    progress_tracker.update_step("identify_gaps", "running", "Analyzing gaps between current and target levels")
     # Load target sections from configuration
     try:
         with open("./config/areas_for_improvement.toml", "rb") as f:
@@ -23,11 +25,16 @@ def identify_gaps(state: DocumentState) -> DocumentState:
         target_sections = config["gap_analysis"]["target_sections"]
     except Exception as e:
         print(f"Error loading configuration: {e}")
-        # Fallback to hardcoded sections
+        # Fallback to all sections
         target_sections = [
             "TECHNOLOGIA I INFRASTRUKTURA",
+            "DANE",
             "LUDZIE I KOMPETENCJE", 
-            "ORGANIZACJA I PROCESY"
+            "ORGANIZACJA I PROCESY",
+            "STRATEGIA I ZARZĄDZANIE",
+            "BUDŻET",
+            "PRODUKTY I USŁUGI",
+            "ETYKA I REGULACJE"
         ]
     
     # Answer level progression mapping
@@ -96,6 +103,7 @@ def identify_gaps(state: DocumentState) -> DocumentState:
     # Print essential summary
     total_questions = sum(len(section_gaps) for section_gaps in gaps.values())
     print(f"Gaps analysis completed: {total_questions} questions across {len(gaps)} sections")
+    progress_tracker.update_step("identify_gaps", "completed", f"Analyzed {total_questions} questions across {len(gaps)} sections")
     
     # Save gaps to JSON file
     # Determine the output filename based on integrated file name

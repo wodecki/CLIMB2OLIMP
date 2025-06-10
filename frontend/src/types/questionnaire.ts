@@ -28,3 +28,55 @@ export interface CategoryProgress {
     answered: number;
   };
 }
+
+// OLIMP-specific types
+export interface OlimpQuestion {
+  question_text: string;
+  answer_options: {
+    [key: string]: string; // "A", "B", "C", "D", "E"
+  };
+  selected_answer?: string;
+}
+
+export interface OlimpSection {
+  section_name: string;
+  question_count: number;
+  questions: OlimpQuestion[];
+}
+
+export interface OlimpQuestionnaireData {
+  questionnaire: string;
+  questionnaire_title: string;
+  sections: OlimpSection[];
+}
+
+export interface OlimpAnswerData {
+  questionnaire: string;
+  questionnaire_title: string;
+  sections: OlimpSection[];
+}
+
+// Priority selection types
+export interface PriorityArea {
+  name: string;
+  selected: boolean;
+}
+
+export interface GapStep {
+  level: string;
+  description: string;
+}
+
+export interface Gap {
+  present: {
+    level: string;
+    description: string;
+  };
+  steps: GapStep[];
+}
+
+export interface GapData {
+  [sectionName: string]: {
+    [questionText: string]: Gap;
+  };
+}

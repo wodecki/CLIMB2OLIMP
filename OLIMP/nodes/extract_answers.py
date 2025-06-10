@@ -6,6 +6,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import google.generativeai as genai
 from state import DocumentState
+from progress_tracker import progress_tracker
 
 # Load environment variables
 load_dotenv()
@@ -20,6 +21,7 @@ def extract_answers(state: DocumentState) -> DocumentState:
     Returns:
         Updated state with document content and extracted answers
     """
+    progress_tracker.update_step("extract_answers", "running", "Reading PDF files and extracting data")
     print("Reading PDF files...")
     
     # Find all PDF files starting with A_
@@ -28,6 +30,7 @@ def extract_answers(state: DocumentState) -> DocumentState:
     pdf_files.sort()  # Ensure consistent order
     
     if not pdf_files:
+        progress_tracker.update_step("extract_answers", "completed", "No PDF files found, using existing data")
         return {
             **state,
             "document_content": "No PDF files found matching pattern A_*.pdf",
@@ -52,6 +55,7 @@ def extract_answers(state: DocumentState) -> DocumentState:
             
             if integrated_results and "OLIMP" in integrated_results:
                 print(f"Successfully loaded A.json with keys: {list(integrated_results.keys())}")
+                progress_tracker.update_step("extract_answers", "completed", "Loaded existing answers from A.json")
                 return {
                     **state,
                     "document_content": f"Loaded existing answers from A.json (skipped PDF processing)",
@@ -230,6 +234,7 @@ def extract_answers(state: DocumentState) -> DocumentState:
         document_content = f"Processed {len(pdf_files)} PDF files with Gemini {os.getenv('GEMINI_MODEL')}"
         
         print("All extractions completed successfully")
+        progress_tracker.update_step("extract_answers", "completed", f"Processed {len(pdf_files)} PDF files successfully")
         
         # Update state
         return {

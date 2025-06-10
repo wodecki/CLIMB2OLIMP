@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 from state import DocumentState
+from progress_tracker import progress_tracker
 
 # Load environment variables
 load_dotenv()
@@ -25,10 +26,12 @@ def evaluation(state: DocumentState) -> DocumentState:
     Returns:
         Updated state with evaluation feedback and approval status
     """
+    progress_tracker.update_step("evaluation", "running", "Evaluating recommendation report")
     print("Evaluating recommendation report...")
     
     # Check if recommendations exist
     if not state.get("recommendations"):
+        progress_tracker.update_step("evaluation", "skipped", "No recommendations found in state")
         print("No recommendations found in state - skipping evaluation")
         return state
     
@@ -101,7 +104,9 @@ def evaluation(state: DocumentState) -> DocumentState:
             original_supplementary_context=supplementary_context
         )
         
-        print(f"Conducting evaluation (iteration {state['evaluation_iterations'] + 1})...")
+        iteration_num = state['evaluation_iterations'] + 1
+        progress_tracker.update_step("evaluation", "running", f"Conducting evaluation iteration {iteration_num}/{MAX_EVALUATION_ITERATIONS}")
+        print(f"Conducting evaluation (iteration {iteration_num})...")
         
         # Create message for evaluation
         message = HumanMessage(content=formatted_prompt)
@@ -174,10 +179,13 @@ def evaluation(state: DocumentState) -> DocumentState:
         
         if approved:
             if state["evaluation_iterations"] >= MAX_EVALUATION_ITERATIONS:
+                progress_tracker.update_step("evaluation", "completed", "Final recommendations delivered to user")
                 print("✅ Final recommendations delivered to user")
             else:
+                progress_tracker.update_step("evaluation", "approved", f"Recommendations approved (iteration {state['evaluation_iterations']}/{MAX_EVALUATION_ITERATIONS})")
                 print("✅ Recommendations APPROVED by evaluator")
         else:
+            progress_tracker.update_step("evaluation", "needs_revision", f"Needs revision (iteration {state['evaluation_iterations']}/{MAX_EVALUATION_ITERATIONS})")
             print(f"❌ Recommendations need revision (iteration {state['evaluation_iterations']}/{MAX_EVALUATION_ITERATIONS})")
         
         # Save detailed evaluation to file
@@ -214,10 +222,12 @@ def evaluation(state: DocumentState) -> DocumentState:
         return state
         
     except Exception as e:
+        progress_tracker.update_step("evaluation", "error", f"Evaluation error: {str(e)}")
         print(f"Error during evaluation: {e}")
         # On error, approve after max iterations to deliver final report
         if state.get("evaluation_iterations", 0) >= MAX_EVALUATION_ITERATIONS:
             state["recommendation_approved"] = True
             state["evaluation_feedback"] = f"Evaluation error after {MAX_EVALUATION_ITERATIONS} iterations. Final report delivered."
+            progress_tracker.update_step("evaluation", "completed", "Final report delivered after evaluation error")
             print("📋 Delivering final report due to evaluation error")
         return state

@@ -1,410 +1,448 @@
 {
-  "LUDZIE I KOMPETENCJE": {
-    "Czy Twoja organizacja rozwija świadomość i zrozumienie rozwiązań generatywnej AI?": {
+  "TECHNOLOGIA I INFRASTRUKTURA": {
+    "Czy Twoja organizacja posiada skalowalną infrastrukturę IT wspierającą AI?": {
       "present": {
-        "level": "B",
-        "description": "Podstawowa świadomość wśród wybranych zespołów"
+        "level": "D",
+        "description": "Skalowalna infrastruktura, ograniczona integracja Al"
       },
       "steps": [
         {
-          "level": "C",
-          "description": "Częściowe zrozumienie i świadomość w wybranych obszarach"
-        },
-        {
-          "level": "D",
-          "description": "Świadomość i zrozumienie w większości działów"
-        },
-        {
           "level": "E",
-          "description": "Pełne zrozumienie i świadomość generatywnej Al w całej organizacji"
+          "description": "W pełni skalowalna infrastruktura zoptymalizowana pod Al"
         }
       ]
     },
-    "Czy organizacja szkoli zespoły w zakresie programowania (także promptingu) i analizy danych?": {
+    "Czy technologia generatywnej Al jest zintegrowana z innymi systemami (np. ERP, CRM)?": {
       "present": {
-        "level": "B",
-        "description": "Podstawowe szkolenia w wybranych zespołach"
+        "level": "D",
+        "description": "Integracja z większością systemów, z pewnymi lukami"
       },
       "steps": [
         {
-          "level": "C",
-          "description": "Częściowe szkolenia, ale ograniczone do kilku zespołów"
-        },
-        {
-          "level": "D",
-          "description": "Regularne szkolenia obejmujące większość zespołów"
-        },
-        {
           "level": "E",
-          "description": "W pełni rozwinięty program szkoleń dla wszystkich zespołów w zakresie Al i analizy danych"
+          "description": "W pełni zintegrowana generatywna Al we wszystkich głównych systemach"
         }
       ]
     },
-    "Czy Twoja organizacja tworzy interdyscyplinarne zespoły ds. AI?": {
+    "Na ile zautomatyzowane jest wdrażanie modeli generatywnej AI?": {
+      "present": {
+        "level": "E",
+        "description": "W pełni zautomatyzowane wdrażanie modeli generatywnej Al"
+      },
+      "steps": []
+    },
+    "Czy organizacja korzysta z chmury do przechowywania i przetwarzania danych AI?": {
       "present": {
         "level": "A",
-        "description": "Brak interdyscyplinarnych zespołów ds. Al"
+        "description": "Brak wykorzystania chmury dla Al, dane przechowywane lokalnie"
       },
       "steps": [
         {
           "level": "B",
-          "description": "Tworzenie zespołów w niektórych projektach"
+          "description": "Minimalne korzystanie z chmury do przechowywania danych"
         },
         {
           "level": "C",
-          "description": "Częściowe tworzenie zespołów, ale nie w każdej inicjatywie"
+          "description": "Częściowa adopcja chmury do przechowywania i przetwarzania danych"
         },
         {
           "level": "D",
-          "description": "Większość projektów posiada interdyscyplinarne zespoły"
+          "description": "Większość danych Al przechowywana i przetwarzana w chmurze"
         },
         {
           "level": "E",
-          "description": "W pełni zintegrowane interdyscyplinarne zespoły ds. Al we wszystkich projektach"
+          "description": "Pełna adopcja chmury dla wszystkich działań związanych z Al"
         }
       ]
     },
-    "Czy organizacja angażuje zewnętrznych konsultantów ds. generatywnej Al do zespołów?": {
+    "Czy organizacja korzysta z narzędzi do zarządzania cyklem życia modeli AI?": {
       "present": {
-        "level": "A",
-        "description": "Brak angażowania zewnętrznych konsultantów"
+        "level": "E",
+        "description": "W pełni wdrożone i zoptymalizowane narzędzia do zarządzania cyklem życia modeli Al"
+      },
+      "steps": []
+    },
+    "Czy infrastruktura organizacji jest przygotowana do obsługi dużych zbiorów danych dla AI?": {
+      "present": {
+        "level": "D",
+        "description": "Infrastruktura obsługuje większość dużych zbiorów danych"
       },
       "steps": [
         {
-          "level": "B",
-          "description": "Sporadyczne zaangażowanie konsultantów do pojedynczych projektów"
-        },
-        {
-          "level": "C",
-          "description": "Konsultanci zewnętrzni angażowani przy wybranych projektach"
-        },
-        {
-          "level": "D",
-          "description": "Regularne angażowanie konsultantów do kluczowych inicjatyw"
-        },
-        {
           "level": "E",
-          "description": "W pełni zintegrowane wsparcie konsultantów Al we wszystkich istotnych projektach"
+          "description": "Zoptymalizowana infrastruktura do obsługi ogromnych zbiorów danych"
         }
       ]
     },
-    "Czy Twoja organizacja szkoli w zakresie zarządzania projektami opartymi o generatywną Al?": {
+    "Czy organizacja jest zdolna do przetwarzania danych w czasie rzeczywistym dla AI?": {
       "present": {
-        "level": "A",
-        "description": "Brak szkoleń z zarządzania projektami opartymi o generatywną Al"
+        "level": "E",
+        "description": "W pełni zoptymalizowane przetwarzanie danych w czasie rzeczywistym dla wszystkich zadań Al"
+      },
+      "steps": []
+    },
+    "Czy Twoja organizacja posiada moc obliczeniową niezbędną do wdrażania i utrzymania modeli Al?": {
+      "present": {
+        "level": "E",
+        "description": "Zaawansowana moc obliczeniowa zoptymalizowana pod potrzeby Al"
+      },
+      "steps": []
+    },
+    "Czy w codziennej pracy wykorzystywane są wewnętrzne lub zewnętrzne narzędzia Al (np. ChatGPT, MS Copilot)?": {
+      "present": {
+        "level": "D",
+        "description": "Narzędzia Al wykorzystywane w większości działów do różnych zadań"
       },
       "steps": [
         {
-          "level": "B",
-          "description": "Podstawowe szkolenia dla wybranych osób"
-        },
-        {
-          "level": "C",
-          "description": "Częściowe szkolenia z zarządzania projektami dla wybranych zespołów"
-        },
-        {
-          "level": "D",
-          "description": "Regularne szkolenia w zakresie projektów opartych o generatywną Al"
-        },
-        {
           "level": "E",
-          "description": "Pełny program szkoleń z zarządzania projektami generatywnymi Al dla wszystkich odpowiednich zespołów"
+          "description": "W pełni zintegrowane narzędzia Al w codziennej pracy w całej organizacji"
         }
       ]
     },
-    "Czy istnieje zarządzanie wiedzą w dziedzinie generatywnej Al, aby ułatwić transfer wiedzy między wszystkimi pracownikami?": {
+    "Jak skalowalne są rozwiązania generatywnej Al w Twojej organizacji?": {
       "present": {
-        "level": "A",
-        "description": "Pracownicy utrzymują własne bazy wiedzy i nie dzielą się nimi z innymi."
+        "level": "D",
+        "description": "Większość rozwiązań Al jest skalowalna"
       },
       "steps": [
         {
-          "level": "B",
-          "description": "Istnieją różne platformy, ale nie są one dobrze zorganizowane, co utrudnia pracownikom dostęp do istniejącej wiedzy."
-        },
-        {
-          "level": "C",
-          "description": "Centralna platforma jest w trakcie budowy i jest używana przez poszczególnych pracowników do zarządzania wiedzą."
-        },
-        {
-          "level": "D",
-          "description": "Scentralizowana platforma jest dostępna dla wszystkich pracowników, ale nie wszyscy z niej korzystają."
-        },
-        {
           "level": "E",
-          "description": "Scentralizowana platforma do gromadzenia wiedzy jest używana przez wszystkich pracowników i jest stale rozbudowywana."
+          "description": "W pełni skalowalne rozwiązania Al wdrożone w całej organizacji"
         }
       ]
     }
   },
-  "ORGANIZACJA I PROCESY": {
-    "Czy Twoja organizacja integruje Al z istniejącymi procesami rozwoju nowego produktu?": {
+  "DANE": {
+    "Czy Twoja organizacja buduje wysokiej jakości zbiory danych?": {
       "present": {
-        "level": "A",
-        "description": "Brak integracji Al w procesach rozwoju nowego produktu"
+        "level": "C",
+        "description": "Budowanie zbiorów danych z umiarkowaną jakością"
       },
       "steps": [
         {
-          "level": "B",
-          "description": "Podstawowa integracja w procesach rozwoju wybranych produktów"
-        },
-        {
-          "level": "C",
-          "description": "Częściowa integracja w procesach rozwoju kilku produktów"
-        },
-        {
           "level": "D",
-          "description": "Integracja Al w procesów rozwoju większości produktów"
+          "description": "Zbiory danych wysokiej jakości dla większości procesów"
         },
         {
           "level": "E",
-          "description": "Pełna integracja Al w procesach rozwoju wszystkich produktów"
+          "description": "W pełni zoptymalizowane zbiory danych o najwyższej jakości"
         }
       ]
     },
-    "Na ile Twoja organizacja automatyzuje procesy rozwoju produktu z wykorzystaniem generatywnej AI?": {
+    "Na ile Twoja organizacja automatyzuje analizę i przetwarzanie danych?": {
       "present": {
-        "level": "A",
-        "description": "Brak automatyzacji procesów rozwoju produktu z Al"
+        "level": "E",
+        "description": "W pełni zautomatyzowane procesy analizy i przetwarzania danych"
+      },
+      "steps": []
+    },
+    "Czy Twoja organizacja centralizuje zbiory danych (np. jeden słownik danych)?": {
+      "present": {
+        "level": "C",
+        "description": "Częściowa centralizacja z danymi w różnych systemach"
       },
       "steps": [
         {
-          "level": "B",
-          "description": "Podstawowa automatyzacja wybranych etapów rozwoju produktu"
-        },
-        {
-          "level": "C",
-          "description": "Częściowa automatyzacja procesów rozwoju produktu"
-        },
-        {
           "level": "D",
-          "description": "Automatyzacja większości procesów rozwoju produktu"
+          "description": "Większość danych zcentralizowana, kilka wyjątków"
         },
         {
           "level": "E",
-          "description": "W pełni zautomatyzowane procesy rozwoju produktu z wykorzystaniem Al"
+          "description": "Pełna centralizacja danych, jeden słownik danych w całej organizacji"
         }
       ]
     },
-    "Czy organizacja wykorzystuje Al do wsparcia podejmowania decyzji?": {
+    "Czy organizacja korzysta z zaawansowanych narzędzi do oceny jakości danych?": {
       "present": {
-        "level": "A",
-        "description": "Brak wykorzystania Al do wsparcia podejmowania decyzji"
+        "level": "E",
+        "description": "W pełni zoptymalizowane narzędzia do oceny jakości danych"
       },
-      "steps": [
-        {
-          "level": "B",
-          "description": "Sporadyczne wykorzystanie Al w wybranych decyzjach"
-        },
-        {
-          "level": "C",
-          "description": "Al wspiera podejmowanie decyzji w ograniczonym zakresie"
-        },
-        {
-          "level": "D",
-          "description": "Al wspiera większość decyzji w kluczowych obszarach"
-        },
-        {
-          "level": "E",
-          "description": "Al zintegrowana we wszystkich procesach decyzyjnych organizacji"
-        }
-      ]
+      "steps": []
     },
-    "Czy organizacja wdraża narzędzia wspierające pracę zespołów AI?": {
-      "present": {
-        "level": "A",
-        "description": "Brak narzędzi wspierających pracę zespołów Al"
-      },
-      "steps": [
-        {
-          "level": "B",
-          "description": "Podstawowe narzędzia, ale nie są powszechnie używane"
-        },
-        {
-          "level": "C",
-          "description": "Częściowe wdrożenie narzędzi wspierających pracę zespołów Al"
-        },
-        {
-          "level": "D",
-          "description": "Narzędzia Al wspierają pracę większości zespołów"
-        },
-        {
-          "level": "E",
-          "description": "W pełni wdrożone narzędzia Al wspierające codzienną pracę zespołów"
-        }
-      ]
-    },
-    "Czy organizacja wprowadza cykle ciągłego doskonalenia we wdrażaniu rozwiązań generatywnej Al?": {
+    "Czy Twoja organizacja ma strategię zarządzania danymi?": {
       "present": {
         "level": "B",
-        "description": "Sporadyczne działania w kierunku doskonalenia procesów"
+        "description": "Podstawowa strategia, ale niekompletnie wdrożona"
       },
       "steps": [
         {
           "level": "C",
-          "description": "Cykle doskonalenia w wybranych procesach Al"
+          "description": "Strategia zarządzania danymi stosowana w wybranych obszarach"
         },
         {
           "level": "D",
-          "description": "Doskonalenie wdrożeń Al w większości projektów"
+          "description": "Strategia zarządzania danymi wdrożona w większości procesów"
         },
         {
           "level": "E",
-          "description": "W pełni wdrożone cykle ciągłego doskonalenia dla wszystkich wdrożeń Al"
+          "description": "W pełni wdrożona i zoptymalizowana strategia zarządzania danymi"
         }
       ]
     },
-    "Czy organizacja zdefiniowała proces zarządzania cyklem życia dla oprogramowania AI?": {
-      "present": {
-        "level": "B",
-        "description": "Proces częściowo zdefiniowany, ale niespójnie realizowany"
-      },
-      "steps": [
-        {
-          "level": "C",
-          "description": "Zdefiniowany proces zarządzania cyklem życia w kilku projektach"
-        },
-        {
-          "level": "D",
-          "description": "Zdefiniowany proces zarządzania cyklem życia w większości projektów"
-        },
-        {
-          "level": "E",
-          "description": "Pełny proces zarządzania cyklem życia dla oprogramowania Al wdrożony we wszystkich projektach"
-        }
-      ]
-    },
-    "Czy organizacja posiada przewodnik po procesie rozwoju produktu opartym o generatywną AI?": {
+    "Na ile Twoja organizacja automatyzuje proces zbierania i czyszczenia danych?": {
       "present": {
         "level": "A",
-        "description": "Brak przewodnika Al po procesie rozwoju produktu"
+        "description": "Brak automatyzacji, dane zbierane i czyszczone ręcznie"
       },
       "steps": [
         {
           "level": "B",
-          "description": "Podstawowy przewodnik opracowany, ale rzadko używany"
+          "description": "Podstawowa automatyzacja niektórych etapów procesu"
         },
         {
           "level": "C",
-          "description": "Przewodnik częściowo wdrożony w kilku projektach"
+          "description": "Częściowa automatyzacja zbierania i czyszczenia danych"
         },
         {
           "level": "D",
-          "description": "Przewodnik po procesie rozwoju produktu stosowany w większości projektów"
+          "description": "Automatyzacja dla większości procesów zbierania i czyszczenia danych"
         },
         {
           "level": "E",
-          "description": "W pełni wdrożony przewodnik Al po procesie rozwoju produktu w całej organizacji"
+          "description": "Pełna automatyzacja procesów zbierania i czyszczenia danych"
+        }
+      ]
+    },
+    "Czy organizacja identyfikuje i integruje dane z wewnętrznych i zewnętrznych źródeł?": {
+      "present": {
+        "level": "C",
+        "description": "Częściowa integracja danych z wybranych źródeł"
+      },
+      "steps": [
+        {
+          "level": "D",
+          "description": "Większość danych zidentyfikowana i zintegrowana"
+        },
+        {
+          "level": "E",
+          "description": "W pełni zintegrowane dane z wewnętrznych i zewnętrznych źródeł"
+        }
+      ]
+    },
+    "Czy organizacja posiada jeden standardowy model danych i zestaw metadanych?": {
+      "present": {
+        "level": "A",
+        "description": "Brak standardowego modelu danych"
+      },
+      "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowy model danych wdrożony w niektórych obszarach"
+        },
+        {
+          "level": "C",
+          "description": "Częściowe wdrożenie modelu danych i metadanych"
+        },
+        {
+          "level": "D",
+          "description": "Większość procesów oparta na jednym modelu danych"
+        },
+        {
+          "level": "E",
+          "description": "W pełni wdrożony jeden standardowy model danych i zbiór metadanych"
+        }
+      ]
+    },
+    "Czy Twoja organizacja korzysta z generatywnej Al do wspomagania wizualizacji danych?": {
+      "present": {
+        "level": "C",
+        "description": "Częściowe wykorzystanie generatywnej Al w wybranych obszarach"
+      },
+      "steps": [
+        {
+          "level": "D",
+          "description": "generatywna Al wykorzystywana do większości wizualizacji danych"
+        },
+        {
+          "level": "E",
+          "description": "W pełni zintegrowane narzędzia Al do wspomagania wizualizacji danych"
         }
       ]
     }
   },
-  "BUDŻET": {
-    "Czy Twoja organizacja prowadzi długoterminowe planowanie budżetu na rozwój rozwiązań i infrastruktury wspierającej generatywną AI?": {
+  "ETYKA I REGULACJE": {
+    "Czy Twoja organizacja przestrzega zasad etyki w projektowaniu generatywnej AI?": {
       "present": {
         "level": "B",
-        "description": "Krótkoterminowe planowanie budżetowe w wybranych projektach"
+        "description": "Sporadyczne uwzględnienie etyki w wybranych projektach"
       },
       "steps": [
         {
           "level": "C",
-          "description": "Częściowe planowanie długoterminowe, ograniczone do niektórych projektów"
+          "description": "Częściowe uwzględnienie zasad etyki w niektórych projektach"
         },
         {
           "level": "D",
-          "description": "Długoterminowe planowanie budżetowe w większości projektów"
+          "description": "Większość projektów uwzględnia zasady etyki"
         },
         {
           "level": "E",
-          "description": "Pełne długoterminowe planowanie budżetu na wszystkie projekty i infrastrukturę Al"
+          "description": "W pełni uwzględnione zasady etyki we wszystkich projektach Al"
         }
       ]
     },
-    "Czy Twoja organizacja przeznacza środki na rozwój kompetencji pracowników w zakresie generatywnej AI?": {
+    "Czy Twoja organizacja zapewnia bezpieczeństwo i prywatność danych związanych z rozwojem produktów?": {
       "present": {
-        "level": "B",
-        "description": "Sporadyczne finansowanie szkoleń dla wybranych pracowników"
+        "level": "D",
+        "description": "Większość projektów przestrzega polityk bezpieczeństwa i prywatności danych"
       },
       "steps": [
         {
-          "level": "C",
-          "description": "Częściowe przeznaczanie środków na rozwój kompetencji"
-        },
-        {
-          "level": "D",
-          "description": "Stałe finansowanie rozwoju kompetencji większości pracowników"
-        },
-        {
           "level": "E",
-          "description": "Pełne finansowanie rozwoju kompetencji w zakresie Al dla wszystkich pracowników"
+          "description": "W pełni wdrożone systemy bezpieczeństwa i prywatności danych dla wszystkich projektów"
         }
       ]
     },
-    "Czy Twoja organizacja finansuje projekty pilotażowe i innowacyjne związane z generatywną AI?": {
+    "Czy Twoja organizacja dba o zaufanie do danych i możliwość ich wyjaśnienia?": {
       "present": {
-        "level": "B",
-        "description": "Ograniczone finansowanie pojedynczych projektów"
+        "level": "C",
+        "description": "Częściowe wdrożenie mechanizmów budujących zaufanie i możliwości wyjaśnienia"
       },
       "steps": [
         {
-          "level": "C",
-          "description": "Częściowe finansowanie projektów pilotażowych i innowacyjnych"
-        },
-        {
           "level": "D",
-          "description": "Regularne finansowanie większości projektów pilotażowych"
+          "description": "Większość danych posiada mechanizmy możliwości wyjaśnienia"
         },
         {
           "level": "E",
-          "description": "Pełne wsparcie finansowe dla wszystkich projektów pilotażowych i innowacyjnych związanych z Al"
+          "description": "Pełne zaufanie do danych i mechanizmy możliwości wyjaśnienia wdrożone we wszystkich procesach"
         }
       ]
     },
-    "Czy organizacja alokuje środki na zewnętrzne konsultacje dotyczące generatywnej AI?": {
+    "Czy organizacja wdraża standardy ochrony i mechanizmy dotyczące kopii zapasowych danych?": {
+      "present": {
+        "level": "C",
+        "description": "Częściowe wdrożenie mechanizmów ochrony i kopii zapasowych"
+      },
+      "steps": [
+        {
+          "level": "D",
+          "description": "Większość obszarów objęta standardami ochrony i kopiami zapasowymi danych"
+        },
+        {
+          "level": "E",
+          "description": "W pełni wdrożone standardy ochrony i mechanizmy kopii zapasowych we wszystkich obszarach"
+        }
+      ]
+    },
+    "Czy Twoja organizacja przeciwdziała uprzedzeniom i niesprawiedliwości w algorytmach generatywnej Al?": {
       "present": {
         "level": "A",
-        "description": "Brak alokacji środków na zewnętrzne konsultacje dotyczące Al"
+        "description": "Brak działań w zakresie przeciwdziałania uprzedzeniom"
       },
       "steps": [
         {
           "level": "B",
-          "description": "Sporadyczne alokowanie środków na konsultacje w wybranych projektach"
+          "description": "Podstawowe działania w zakresie eliminacji uprzedzeń"
         },
         {
           "level": "C",
-          "description": "Częściowa alokacja środków na zewnętrzne konsultacje"
+          "description": "Częściowe wdrożenie działań przeciwdziałających uprzedzeniom w algorytmach"
         },
         {
           "level": "D",
-          "description": "Regularna alokacja środków na konsultacje w większości projektów"
+          "description": "Większość algorytmów jest weryfikowana pod kątem uprzedzeń"
         },
         {
           "level": "E",
-          "description": "Pełna alokacja środków na zewnętrzne konsultacje we wszystkich strategicznych projektach"
+          "description": "Pełna eliminacja uprzedzeń i niesprawiedliwości w algorytmach Al"
         }
       ]
     },
-    "Czy organizacja priorytetyzuje projekty generujące wysoką wartość dodaną dzięki generatywnej AI?": {
+    "Czy organizacja regularnie ocenia zgodność algorytmów generatywnej Al z regulacjami prawnymi?": {
+      "present": {
+        "level": "C",
+        "description": "Częściowe wdrożenie procedur oceny zgodności algorytmów"
+      },
+      "steps": [
+        {
+          "level": "D",
+          "description": "Większość algorytmów jest regularnie weryfikowana pod kątem zgodności z regulacjami"
+        },
+        {
+          "level": "E",
+          "description": "W pełni wdrożone procedury regularnej oceny zgodności algorytmów Al z przepisami"
+        }
+      ]
+    },
+    "Czy Twoja organizacja tworzy systemy audytu decyzji podejmowanych przez generatywną AI?": {
+      "present": {
+        "level": "B",
+        "description": "Podstawowe systemy audytu wprowadzane w wybranych projektach"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowe wdrożenie systemów audytu decyzji Al"
+        },
+        {
+          "level": "D",
+          "description": "Systemy audytu funkcjonują dla większości decyzji Al"
+        },
+        {
+          "level": "E",
+          "description": "W pełni wdrożone systemy audytu i odpowiedzialności za decyzje podejmowane przez Al"
+        }
+      ]
+    },
+    "Czy Twoja organizacja poszerza świadomość dotyczącą ochrony danych wśród pracowników?": {
       "present": {
         "level": "A",
-        "description": "Brak priorytetyzacji projektów związanych z Al"
+        "description": "Brak programów edukacyjnych dotyczących ochrony danych"
       },
       "steps": [
         {
           "level": "B",
-          "description": "Priorytetyzacja jedynie wybranych projektów"
+          "description": "Podstawowe programy szkoleniowe, ale ograniczone do wybranych zespołów"
         },
         {
           "level": "C",
-          "description": "Częściowa priorytetyzacja projektów generujących wartość dodaną"
+          "description": "Częściowe programy szkoleniowe dla wybranych zespołów"
         },
         {
           "level": "D",
-          "description": "Regularna priorytetyzacja większości projektów związanych z Al"
+          "description": "Regularne szkolenia w zakresie ochrony danych w większości zespołów"
         },
         {
           "level": "E",
-          "description": "Pełna priorytetyzacja projektów Al o najwyższej wartości dodanej"
+          "description": "Pełne programy edukacyjne dotyczące ochrony danych dla wszystkich pracowników"
+        }
+      ]
+    },
+    "Czy organizacja wykorzystuje technologie dotyczące cyberbezpieczeństwa?": {
+      "present": {
+        "level": "B",
+        "description": "Podstawowe technologie wdrożone w wybranych obszarach"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowe wdrożenie technologii cyberbezpieczeństwa"
+        },
+        {
+          "level": "D",
+          "description": "Większość obszarów objęta technologiami cyberbezpieczeństwa"
+        },
+        {
+          "level": "E",
+          "description": "W pełni wdrożone technologie cyberbezpieczeństwa we wszystkich obszarach organizacji"
+        }
+      ]
+    },
+    "Czy Twoja organizacja utrzymuje dokumentację dotyczącą użycia generatywnej Al (np. przypadki użycia, logi systemowe, kontrola wersji)?": {
+      "present": {
+        "level": "C",
+        "description": "Częściowa dokumentacja dla wybranych obszarów"
+      },
+      "steps": [
+        {
+          "level": "D",
+          "description": "Dokumentacja prowadzona regularnie w większości przypadków"
+        },
+        {
+          "level": "E",
+          "description": "Pełna i bieżąca dokumentacja dotycząca wszystkich przypadków użycia Al"
         }
       ]
     }

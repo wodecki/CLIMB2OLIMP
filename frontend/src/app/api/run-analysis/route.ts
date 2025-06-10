@@ -5,8 +5,12 @@ import fs from 'fs';
 
 import { execSync } from 'child_process';
 
-export async function POST() {
+export async function POST(request: Request) {
   try {
+    // Parse request body to get pre-submitted strategic goals
+    const { strategicGoals: preSubmittedGoals = {} } = await request.json().catch(() => ({}));
+    console.log('Received strategic goals in run-analysis:', preSubmittedGoals);
+    
     // Path to the backend directory
     const backendPath = path.join(process.cwd(), '..', 'backend');
     
@@ -64,7 +68,7 @@ export async function POST() {
     // Clean up any files from previous analyses
     const filesToDelete = [
       // Removed maturity_levels.json to preserve calculated maturity levels
-      path.join(backendPath, 'user_input_all.json'),
+      // Removed user_input_all.json to preserve strategic goals submitted in previous stage
       path.join(backendPath, 'user_input.txt'),
       path.join(backendPath, 'stop_analysis.txt'),
       path.join(backendPath, 'analysis_pid.txt')
@@ -82,12 +86,27 @@ export async function POST() {
       }
     }
     
+    // Check if strategic goals file exists from previous stage submission
+    const userInputAllPath = path.join(backendPath, 'user_input_all.json');
+    let finalStrategicGoals = preSubmittedGoals;
+    
+    if (fs.existsSync(userInputAllPath)) {
+      try {
+        const fileGoals = JSON.parse(fs.readFileSync(userInputAllPath, 'utf-8'));
+        // Merge file goals with request goals, prioritizing request goals
+        finalStrategicGoals = { ...fileGoals, ...preSubmittedGoals };
+        console.log('Merged strategic goals from file and request:', finalStrategicGoals);
+      } catch (err) {
+        console.error('Error reading strategic goals file:', err);
+      }
+    }
+    
     // Set initial status to calculate_maturity since that's the first step in the graph
     const initialStatus = {
       currentNode: "calculate_maturity",
       requiresInput: false,
       questions: null,
-      strategicGoals: {}
+      strategicGoals: finalStrategicGoals
     };
     
     // Write the initial status

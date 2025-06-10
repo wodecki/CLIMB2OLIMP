@@ -26,6 +26,30 @@ export async function GET() {
     const statusData = fs.readFileSync(statusFilePath, 'utf-8');
     const status = JSON.parse(statusData);
     
+    // If analysis is completed, add the most recent report path
+    if (status.currentNode === 'completed') {
+      const reportsPath = path.join(backendPath, 'reports');
+      
+      if (fs.existsSync(reportsPath)) {
+        try {
+          const reportFiles = fs.readdirSync(reportsPath)
+            .filter(file => file.startsWith('report_') && file.endsWith('.md'))
+            .map(file => ({
+              name: file,
+              path: path.join(reportsPath, file),
+              mtime: fs.statSync(path.join(reportsPath, file)).mtime
+            }))
+            .sort((a, b) => b.mtime.getTime() - a.mtime.getTime());
+          
+          if (reportFiles.length > 0) {
+            status.reportPath = reportFiles[0].path;
+          }
+        } catch (err) {
+          console.error('Error finding report files:', err);
+        }
+      }
+    }
+    
     return NextResponse.json(status);
   } catch (error) {
     console.error('Error checking analysis status:', error);

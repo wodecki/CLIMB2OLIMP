@@ -1,0 +1,265 @@
+[extract_answers]
+extraction_prompt = """Analyze this Polish questionnaire PDF document and extract the structure in JSON format.
+
+The document contains sections (OBSZAR), questions (PYTANIA), and answers (ODPOWIEDZI) with options A, B, C, D, E.
+The selected answers are marked with "X" or "V" marks in the document. Look carefully at the visual layout:
+- Each row represents a question
+- Columns A, B, C, D, E contain the answer options
+- The "X" or "V" mark appears in the column corresponding to the selected answer
+
+CRITICAL: You must VERY CAREFULLY identify the exact column position of each "X" or "V" mark for every question. Take your time to:
+1. Examine each row systematically from left to right
+2. Identify which specific column (A, B, C, D, or E) contains the marking
+3. Double-check the visual alignment between the mark and the column header
+4. Be especially careful with marks that might appear between columns or slightly misaligned
+
+IMPORTANT: The accuracy of answer extraction is crucial. Pay extremely close attention to which column contains the "X" or "V" mark for each question. This indicates the selected answer option.
+
+Please extract:
+1. Section names and their question counts
+2. All questions within each section
+3. All answer options (A, B, C, D, E) for each question
+4. Which answer option is selected (marked with X or V) for each question - CAREFULLY examine the exact visual positioning and alignment of each mark with its corresponding column
+
+Return the data in this JSON structure:
+{{
+  "questionnaire": "{questionnaire_type}",
+  "questionnaire_title": "title of the questionnaire",
+  "sections": [
+    {{
+      "section_name": "name of the section",
+      "question_count": number_of_questions,
+      "questions": [
+        {{
+          "question_text": "the question text",
+          "answer_options": {{
+            "A": "option A text",
+            "B": "option B text", 
+            "C": "option C text",
+            "D": "option D text",
+            "E": "option E text"
+          }},
+          "selected_answer": "A/B/C/D/E"
+        }}
+      ]
+    }}
+  ]
+}}
+
+Extract the data as JSON, making sure to correctly identify which column (A, B, C, D, or E) contains the "X" or "V" mark for each question.
+
+FINAL CHECK: Before completing the extraction, systematically verify each selected_answer by re-examining the visual position of marks in the PDF to ensure 100% accuracy."""
+
+[recommend]
+recommendation_prompt = """Jesteś ekspertem ds. transformacji cyfrowej i implementacji AI w organizacjach. 
+
+UWAGA: Wykorzystaj najnowsze, aktualne informacje o technologiach AI i najlepszych praktykach. 
+
+Na podstawie analizy luk w obszarach OLIMP, przygotuj szczegółowy raport z rekomendacjami dla firmy, która chce płynnie przejść z obecnego stanu do poziomu E (maksymalnego) poprzez stany przejściowe.
+
+Dane wejściowe to analiza luk w formacie JSON, która zawiera:
+- Dla każdej sekcji (TECHNOLOGIA I INFRASTRUKTURA, LUDZIE I KOMPETENCJE, ORGANIZACJA I PROCESY)
+- Dla każdego pytania: obecny poziom (present) i kroki do poziomu E (steps)
+- Każdy poziom zawiera literę (A-E) i szczegółowy opis
+
+STRUKTURA RAPORTU:
+1. **Streszczenie wykonawcze**
+   - Ogólna ocena obecnego stanu organizacji
+   - Kluczowe obszary wymagające uwagi
+   - Priorytety transformacji
+
+2. **Analiza według obszarów**
+   - Dla każdego obszaru (TECHNOLOGIA I INFRASTRUKTURA, LUDZIE I KOMPETENCJE, ORGANIZACJA I PROCESY):
+     - Obecny stan i główne wyzwania
+     - Rekomendowane ścieżki rozwoju
+     - Konkretne działania do podjęcia
+
+3. **Plan implementacji**
+   - Faza 1 (0-6 miesięcy): Działania pilotażowe i podstawy
+   - Faza 2 (6-18 miesięcy): Rozwój i skalowanie
+   - Faza 3 (18-36 miesięcy): Optymalizacja i doskonałość
+
+4. **Zasoby i budżet**
+   - Szacowany budżet dla każdej fazy
+   - Potrzebne zasoby ludzkie
+   - Technologie i narzędzia do wdrożenia
+
+5. **Wskaźniki sukcesu i monitoring**
+   - KPI dla każdego obszaru
+   - Sposoby mierzenia postępu
+   - Punkty kontrolne
+
+6. **Potencjalne korzyści i zyski**
+   - Korzyści biznesowe z implementacji AI w każdym z obszarów procesu rozwoju nowego produktu
+   - Szacowane oszczędności kosztów i wzrost efektywności
+   - Przewaga konkurencyjna i nowe możliwości biznesowe
+   - Długoterminowe korzyści strategiczne
+   - Przykłady konkretnych ulepszeń procesu rozwoju nowego produktu
+   - Zwrot z inwestycji (ROI) i inne mierzalne korzyści
+
+WYMAGANIA:
+- Raport w języku polskim
+- Konkretne, wykonalne rekomendacje
+- Uwzględnienie specyfiki biznesowej
+- Realistyczne timeline'y
+- Fokus na płynne przejście między poziomami
+
+Dane do analizy:
+{gaps_data}
+
+DODATKOWY KONTEKST:
+Poniżej znajdują się odpowiedzi z jednego z kwestionariuszy (CLIMB_2), które mogą (ale nie muszą) być wykorzystane jako informacje uzupełniające do wygenerowania rekomendacji. Te dane mogą pomóc w lepszym zrozumieniu specyfiki organizacji i kontekstu biznesowego:
+
+{supplementary_context}
+
+Przygotuj profesjonalny raport w formacie Markdown."""
+
+[evaluate]
+evaluation_prompt = """
+Jesteś ekspertem ds. oceny strategicznych rekomendacji biznesowych i transformacji cyfrowej. Twoim zadaniem jest przeprowadzenie szczegółowej ewaluacji raportu z rekomendacjami pod kątem zgodności z wymaganiami oraz jakości strategicznej.
+
+## DANE WEJŚCIOWE
+- **Oryginalny raport z rekomendacjami**: {recommendations_report}
+- **Dane źródłowe (analiza luk)**: {original_gaps_data}
+- **Kontekst uzupełniający**: {original_supplementary_context}
+
+## KRYTERIA OCENY
+
+### A. ZGODNOŚĆ Z WYMAGANIAMI STRUKTURALNYMI (40 punktów)
+
+**1. Kompletność struktury (20 punktów)**
+- Czy raport zawiera wszystkie 6 wymaganych sekcji?
+- Czy każda sekcja ma odpowiednią głębokość i szczegółowość?
+- Ocena: 0-20 punktów
+
+**2. Jakość zawartości sekcji (20 punktów)**
+- **Streszczenie wykonawcze**: Czy zawiera ogólną ocenę, kluczowe obszary, priorytety?
+- **Analiza według obszarów**: Czy pokrywa wszystkie 3 obszary OLIMP z obecnym stanem, ścieżkami rozwoju i konkretnymi działaniami?
+- **Plan implementacji**: Czy zawiera realistyczne 3 fazy z określonymi timelinami?
+- **Zasoby i budżet**: Czy podaje szacunkowe koszty, zasoby ludzkie, technologie?
+- **Wskaźniki sukcesu**: Czy definiuje KPI, sposoby mierzenia, punkty kontrolne?
+- **Korzyści i zyski**: Czy szczegółowo opisuje korzyści biznesowe, ROI, przewagę konkurencyjną?
+- Ocena: 0-20 punktów
+
+### B. JAKOŚĆ STRATEGICZNA REKOMENDACJI (35 punktów)
+
+**3. Konkretność i wykonalność (15 punktów)**
+- Czy rekomendacje są konkretne i szczegółowe?
+- Czy działania są wykonalne i realistyczne?
+- Czy podano jasne kroki implementacji?
+- Ocena: 0-15 punktów
+
+**4. Logiczność i spójność (10 punktów)**
+- Czy rekomendacje logicznie wynikają z analizy luk?
+- Czy plan jest spójny wewnętrznie?
+- Czy timeline jest realistyczny?
+- Ocena: 0-10 punktów
+
+**5. Dostosowanie do kontekstu (10 punktów)**
+- Czy rekomendacje uwzględniają specyfikę organizacji?
+- Czy wykorzystano dane z kontekstu uzupełniającego?
+- Czy poziom dojrzałości jest właściwie oszacowany?
+- Ocena: 0-10 punktów
+
+### C. NAJLEPSZE PRAKTYKI STRATEGICZNE (25 punktów)
+
+**6. Priorytetyzacja i sekwencjonowanie (10 punktów)**
+- Czy działania są odpowiednio priorytetyzowane?
+- Czy sekwencja implementacji ma sens biznesowy?
+- Czy uwzględniono zależności między działaniami?
+- Ocena: 0-10 punktów
+
+**7. Zarządzanie ryzykiem i mitalizacja (8 punktów)**
+- Czy zidentyfikowano potencjalne ryzyka?
+- Czy zaproponowano działania mitygujące?
+- Czy plan zawiera alternatywne scenariusze?
+- Ocena: 0-8 punktów
+
+**8. Mierzalność i monitoring (7 punktów)**
+- Czy wskaźniki są SMART (konkretne, mierzalne, osiągalne, istotne, terminowe)?
+- Czy zdefiniowano bazeline i cele?
+- Czy system monitoringu jest praktyczny?
+- Ocena: 0-7 punktów
+
+## FORMAT ODPOWIEDZI
+
+Przygotuj szczegółową ocenę w następującym formacie:
+
+### PODSUMOWANIE OCENY
+- **Łączny wynik**: [X/100 punktów]
+- **Poziom jakości**: [Doskonały (90-100) / Bardzo dobry (80-89) / Dobry (70-79) / Wymagający poprawy (60-69) / Niewystarczający (<60)]
+
+### SZCZEGÓŁOWA ANALIZA PUNKTOWA
+
+#### A. Zgodność z wymaganiami strukturalnymi (X/40)
+1. **Kompletność struktury (X/20)**
+   - Analiza: [szczegółowy opis]
+   - Braki: [jeśli występują]
+
+2. **Jakość zawartości sekcji (X/20)**
+   - Analiza każdej sekcji
+   - Mocne strony i słabości
+
+#### B. Jakość strategiczna rekomendacji (X/35)
+3. **Konkretność i wykonalność (X/15)**
+   - Ocena poziomu szczegółowości
+   - Przykłady dobrych/słabych rekomendacji
+
+4. **Logiczność i spójność (X/10)**
+   - Analiza spójności wewnętrznej
+   - Ocena timeline'ów
+
+5. **Dostosowanie do kontekstu (X/10)**
+   - Jak wykorzystano dane źródłowe
+   - Stopień personalizacji
+
+#### C. Najlepsze praktyki strategiczne (X/25)
+6. **Priorytetyzacja i sekwencjonowanie (X/10)**
+   - Ocena logiki priorytetów
+   - Analiza sekwencji działań
+
+7. **Zarządzanie ryzykiem (X/8)**
+   - Identyfikacja braków w zarządzaniu ryzykiem
+   - Sugestie uzupełnień
+
+8. **Mierzalność i monitoring (X/7)**
+   - Ocena jakości KPI
+   - Praktyczność systemu monitoringu
+
+### KLUCZOWE ZALECENIA
+1. **Najważniejsze mocne strony**:
+   - [lista 3-5 najlepszych elementów]
+
+2. **Krytyczne obszary do poprawy**:
+   - [lista 3-5 najważniejszych braków]
+
+3. **Konkretne sugestie ulepszeń**:
+   - [szczegółowe rekomendacje poprawek]
+
+### DODATKOWE UWAGI
+- Czy raport spełnia standardy profesjonalnego dokumentu strategicznego?
+- Czy język i ton są odpowiednie dla odbiorcy biznesowego?
+- Czy formatowanie i struktura markdown są poprawne?
+
+### REKOMENDACJE POPRAWEK RAPORTU
+*(Wypełnij tylko jeśli WYNIK = AKCEPTUJĘ, ale są obszary do optymalizacji)*
+
+#### CO MOŻNA JESZCZE ULEPSZYĆ W RAPORCIE:
+
+**1. Wzmocnienie mocnych stron:**
+- [wskaż które fragmenty są szczególnie udane i mogłyby być rozszerzone]
+
+**2. Dodatkowe szczegóły:**
+- [które sekcje mogłyby być bardziej rozbudowane]
+- [jakie dodatkowe informacje wzbogaciłyby raport]
+
+**3. Usprawnienia stylistyczne:**
+- [sugestie dotyczące czytelności i prezentacji]
+- [propozycje lepszego formatowania]
+
+**4. Dodatkowe wartości:**
+- [jakie elementy mogłyby zwiększyć praktyczną wartość raportu]
+- [dodatkowe przykłady lub case studies]
+
+---
+"""
