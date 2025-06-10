@@ -1,0 +1,25 @@
+# Core dependencies
+python-dotenv==1.1.0  # For loading environment variables from .env file
+pydantic==2.11.2      # For data validation and settings management
+
+# LangChain and LangGraph
+langchain-core==0.3.51   # Core functionality for LangChain
+langchain-openai==0.3.12 # OpenAI integration for LangChain
+langgraph==0.3.25        # For creating and managing graph-based workflows
+
+# PDF generation
+fpdf==1.7.2              # For generating PDF files
+
+# Installation instructions:
+# 
+# This project uses uv for dependency and virtual environment management.
+# 
+# 1. Install uv if you don't have it:
+#    curl -LsSf https://astral.sh/uv/install.sh | sh
+#
+# 2. Create a virtual environment and install dependencies:
+#    uv venv
+#    uv pip install -r requirements.txt
+#
+# 3. For reproducible installations with exact versions:
+#    uv pip install -r pyproject.toml

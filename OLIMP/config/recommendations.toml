@@ -1,0 +1,23 @@
+[model]
+# Available providers: gemini, openai, anthropic
+provider = "gemini"
+# Temperature will be set per provider below
+max_retries = 2
+
+[providers.gemini]
+model_env_key = "GEMINI_MODEL"
+api_key_env_key = "GOOGLE_API_KEY"
+# Optimal for structured business recommendations: low creativity, high consistency
+temperature = 0.1
+
+[providers.openai]
+model_env_key = "OPENAI_MODEL"
+api_key_env_key = "OPENAI_API_KEY"
+# Slightly higher for balanced structure and engaging language
+temperature = 0.2
+
+[providers.anthropic]
+model_env_key = "ANTHROPIC_MODEL"
+api_key_env_key = "ANTHROPIC_API_KEY"
+# Conservative for professional business recommendations
+temperature = 0.1

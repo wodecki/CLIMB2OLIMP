@@ -1,0 +1,82 @@
+[
+  {
+    "Name": "Sarah Brown",
+    "Area": "Data & Knowledge Management",
+    "Role": "Data Governance Analyst",
+    "Description": {
+      "Focus": "Ensures data quality, availability, and security so the organization can confidently adopt AI solutions. Designs processes for storing, curating, and retrieving data, with an emphasis on AI-friendly architecture.",
+      "Competencies": "Data governance frameworks, knowledge-management systems, compliance requirements, metadata standards, and familiarity with AI data pipeline needs.",
+      "Tasks": "Audit data sources and repositories, propose improvements to metadata and retrieval protocols, recommend architectures for AI-based analytics, and establish data-retention policies that comply with regulations.",
+      "Motives": "Prevent poor data governance from undermining AI initiatives, promote reliable data-driven insights, balance regulatory compliance with sharing data among cross-functional AI teams."
+    },
+    "Questions": [
+      "KM Processes",
+      "KM Techniques",
+      "Computerization and Software"
+    ]
+  },
+  {
+    "Name": "David Miller",
+    "Area": "Organizational Roles, Collaboration & Training",
+    "Role": "Change Management and Training Specialist",
+    "Description": {
+      "Focus": "Realigns team structures and responsibilities for AI-driven projects. Ensures upskilling and reskilling programs keep pace with AI adoption.",
+      "Competencies": "Organizational development, agile transformations, training program design, stakeholder engagement, leadership coaching.",
+      "Tasks": "Map out AI-related responsibilities across cross-functional teams, develop training (AI literacy, data literacy) for product managers, designers, engineers, and facilitate global alignment on AI adoption.",
+      "Motives": "Overcome resistance to new AI-driven processes, ensure that non-technical roles understand AI’s potential, cultivate a culture of continuous learning and collaboration."
+    },
+    "Questions": [
+      "Roles and Collaboration",
+      "Training",
+      "Activities and Flow"
+    ]
+  },
+  {
+    "Name": "Patricia Alvarez",
+    "Area": "Process Optimization & AI-Enhanced Workflows",
+    "Role": "Operations/Process Improvement Consultant",
+    "Description": {
+      "Focus": "Examines existing development workflows to identify inefficiencies or gaps that limit AI integration. Designs new or enhanced processes to leverage machine learning and advanced analytics.",
+      "Competencies": "Lean Six Sigma, agile product development, process mapping, frontloading techniques, continuous improvement methods, and AI-related process modeling.",
+      "Tasks": "Assess how AI can be embedded in concept feasibility, integrate AI-based feedback loops into iterative cycles, and standardize predictive analytics for early-stage decision-making.",
+      "Motives": "Avoid superficial AI pilots, ensure AI insights are used at the right time, reduce operational waste through data-driven decisions, and build end-to-end synergy across the development lifecycle."
+    },
+    "Questions": [
+      "Activities and Flow",
+      "Decision-Making",
+      "Methods"
+    ]
+  },
+  {
+    "Name": "Kevin Johnson",
+    "Area": "Strategic Decision-Making & AI Governance",
+    "Role": "Decision Science & AI Strategy Advisor",
+    "Description": {
+      "Focus": "Guides how AI-generated insights shape both strategic and operational decisions. Establishes governance frameworks for cost, ethics, and regulatory compliance of AI solutions.",
+      "Competencies": "Data analytics, ROI assessment, risk management, strategic planning, AI ethics/regulations, stakeholder communication.",
+      "Tasks": "Audit existing decision frameworks for AI integration, set guidelines for measuring AI ROI, ensure brand and compliance considerations are embedded in AI-driven decisions.",
+      "Motives": "Establish clear AI performance metrics, balance cost/speed gains with brand image and sustainability, maintain transparent, ethical AI usage."
+    },
+    "Questions": [
+      "Decision-Making",
+      "Methods",
+      "KM Processes"
+    ]
+  },
+  {
+    "Name": "Emily Garcia",
+    "Area": "AI & Software Systems Integration",
+    "Role": "Technical Implementation Specialist",
+    "Description": {
+      "Focus": "Oversees technical design and rollout of AI platforms, ensuring seamless integration with product lifecycle management systems (PLM), ERP, SCM, and other enterprise solutions.",
+      "Competencies": "Software architecture, cloud infrastructure, MLOps, DevOps, enterprise integration, data engineering.",
+      "Tasks": "Evaluate existing tools (CAD, CAE, PLM, ERP) for AI-readiness, implement model-serving frameworks, establish best practices for continuous model delivery, versioning, and scaling.",
+      "Motives": "Enable advanced AI workflows, ensure secure and reliable data pipelines, guarantee interoperability across design, engineering, and manufacturing tools."
+    },
+    "Questions": [
+      "Computerization and Software",
+      "KM Techniques",
+      "Activities and Flow"
+    ]
+  }
+]

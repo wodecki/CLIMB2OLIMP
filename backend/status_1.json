@@ -1,0 +1,18 @@
+{
+  "currentNode": "recommend",
+  "requiresInput": false,
+  "questions": null,
+  "strategicGoals": {},
+  "currentCategory": "Roles and Collaboration",
+  "requestAllGoals": true,
+  "allCategories": [
+    "Roles and Collaboration",
+    "Training",
+    "Activities and Flow",
+    "Decision-Making",
+    "KM Processes",
+    "KM Techniques",
+    "Methods",
+    "Computerization and Software"
+  ]
+}

@@ -1,0 +1,17 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Backend for Prescriptive Analytics with Agents"
+requires-python = ">=3.9"
+dependencies = [
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+    "langchain-core>=0.1.0",
+    "langchain-openai>=0.0.1",
+    "langgraph>=0.0.15",
+    "fpdf>=1.7.2",
+]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"

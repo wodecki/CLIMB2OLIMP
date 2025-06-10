@@ -1,0 +1,16 @@
+# Roles and Collaboration
+A,B,B,C,D,A,B
+# Training
+A,B,A
+# Activities and Flow
+A,B,A,C,B,B,B,B
+# Decision-Making
+B,B,B,C,B,C,B,C,B,B,C,B,B,C,B,B,C,C,D,C,C,C
+# KM Processes
+A,B,A,B,A,B,B,D,B,C,B,C,B,C,B,B,C,B,B,C,B,C
+# KM Techniques
+B,B,B,B,B,B,B,C,B,C,C
+# Methods
+B,B,B,B,B,B,B,A,B,B,B
+# Computerization and Software
+B,B,B,D,C,B,A,B,B,B,D,C,B,C,B,B,C,B,B,B,B,B
