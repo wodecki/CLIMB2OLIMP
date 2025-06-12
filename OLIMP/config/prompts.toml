@@ -51,86 +51,86 @@ Extract the data as JSON, making sure to correctly identify which column (A, B, 
 FINAL CHECK: Before completing the extraction, systematically verify each selected_answer by re-examining the visual position of marks in the PDF to ensure 100% accuracy."""
 
 [recommend]
-recommendation_prompt = """Jesteś ekspertem ds. transformacji cyfrowej i implementacji AI w organizacjach. 
+recommendation_prompt = """You are an expert in digital transformation and AI implementation in organizations. 
 
-UWAGA: Wykorzystaj najnowsze, aktualne informacje o technologiach AI i najlepszych praktykach. 
+NOTE: Use the latest, current information about AI technologies and best practices. 
 
-Na podstawie analizy luk w obszarach OLIMP, przygotuj szczegółowy raport z rekomendacjami dla firmy, która chce płynnie przejść z obecnego stanu do poziomu E (maksymalnego) poprzez stany przejściowe.
+Based on the gap analysis in OLIMP areas, prepare a detailed recommendation report for a company that wants to smoothly transition from its current state to level E (maximum) through transitional states.
 
-Dane wejściowe to analiza luk w formacie JSON, która zawiera:
-- Dla każdej sekcji (TECHNOLOGIA I INFRASTRUKTURA, LUDZIE I KOMPETENCJE, ORGANIZACJA I PROCESY)
-- Dla każdego pytania: obecny poziom (present) i kroki do poziomu E (steps)
-- Każdy poziom zawiera literę (A-E) i szczegółowy opis
+The input data is a gap analysis in JSON format that contains:
+- For each section (TECHNOLOGY AND INFRASTRUCTURE, PEOPLE AND COMPETENCIES, ORGANIZATION AND PROCESSES)
+- For each question: current level (present) and steps to level E (steps)
+- Each level contains a letter (A-E) and detailed description
 
-STRUKTURA RAPORTU:
-1. **Streszczenie wykonawcze**
-   - Ogólna ocena obecnego stanu organizacji
-   - Kluczowe obszary wymagające uwagi
-   - Priorytety transformacji
+REPORT STRUCTURE:
+1. **Executive Summary**
+   - Overall assessment of the organization's current state
+   - Key areas requiring attention
+   - Transformation priorities
 
-2. **Analiza według obszarów**
-   - Dla każdego obszaru (TECHNOLOGIA I INFRASTRUKTURA, LUDZIE I KOMPETENCJE, ORGANIZACJA I PROCESY):
-     - Obecny stan i główne wyzwania
-     - Rekomendowane ścieżki rozwoju
-     - Konkretne działania do podjęcia
+2. **Analysis by Areas**
+   - For each area (TECHNOLOGY AND INFRASTRUCTURE, PEOPLE AND COMPETENCIES, ORGANIZATION AND PROCESSES):
+     - Current state and main challenges
+     - Recommended development paths
+     - Concrete actions to take
 
-3. **Plan implementacji**
-   - Faza 1 (0-6 miesięcy): Działania pilotażowe i podstawy
-   - Faza 2 (6-18 miesięcy): Rozwój i skalowanie
-   - Faza 3 (18-36 miesięcy): Optymalizacja i doskonałość
+3. **Implementation Plan**
+   - Phase 1 (0-6 months): Pilot actions and foundations
+   - Phase 2 (6-18 months): Development and scaling
+   - Phase 3 (18-36 months): Optimization and excellence
 
-4. **Zasoby i budżet**
-   - Szacowany budżet dla każdej fazy
-   - Potrzebne zasoby ludzkie
-   - Technologie i narzędzia do wdrożenia
+4. **Resources and Budget**
+   - Estimated budget for each phase
+   - Required human resources
+   - Technologies and tools to implement
 
-5. **Wskaźniki sukcesu i monitoring**
-   - KPI dla każdego obszaru
-   - Sposoby mierzenia postępu
-   - Punkty kontrolne
+5. **Success Indicators and Monitoring**
+   - KPIs for each area
+   - Ways to measure progress
+   - Control points
 
-6. **Potencjalne korzyści i zyski**
-   - Korzyści biznesowe z implementacji AI w każdym z obszarów procesu rozwoju nowego produktu
-   - Szacowane oszczędności kosztów i wzrost efektywności
-   - Przewaga konkurencyjna i nowe możliwości biznesowe
-   - Długoterminowe korzyści strategiczne
-   - Przykłady konkretnych ulepszeń procesu rozwoju nowego produktu
-   - Zwrot z inwestycji (ROI) i inne mierzalne korzyści
+6. **Potential Benefits and Gains**
+   - Business benefits from AI implementation in each area of the new product development process
+   - Estimated cost savings and efficiency improvements
+   - Competitive advantage and new business opportunities
+   - Long-term strategic benefits
+   - Examples of specific improvements in the new product development process
+   - Return on investment (ROI) and other measurable benefits
 
-WYMAGANIA:
-- Raport w języku polskim
-- Konkretne, wykonalne rekomendacje
-- Uwzględnienie specyfiki biznesowej
-- Realistyczne timeline'y
-- Fokus na płynne przejście między poziomami
+REQUIREMENTS:
+- Report in English language
+- Concrete, actionable recommendations
+- Consideration of business specifics
+- Realistic timelines
+- Focus on smooth transition between levels
 
-Dane do analizy:
+Data for analysis:
 {gaps_data}
 
-DODATKOWY KONTEKST:
-Poniżej znajdują się odpowiedzi z jednego z kwestionariuszy (CLIMB_2), które mogą (ale nie muszą) być wykorzystane jako informacje uzupełniające do wygenerowania rekomendacji. Te dane mogą pomóc w lepszym zrozumieniu specyfiki organizacji i kontekstu biznesowego:
+ADDITIONAL CONTEXT:
+Below are answers from one of the questionnaires (CLIMB_2), which may (but do not have to) be used as supplementary information for generating recommendations. This data can help in better understanding the organization's specifics and business context:
 
 {supplementary_context}
 
-Przygotuj profesjonalny raport w formacie Markdown."""
+Prepare a professional report in Markdown format."""
 
 [evaluate]
 evaluation_prompt = """
-Jesteś ekspertem ds. oceny strategicznych rekomendacji biznesowych i transformacji cyfrowej. Twoim zadaniem jest przeprowadzenie szczegółowej ewaluacji raportu z rekomendacjami pod kątem zgodności z wymaganiami oraz jakości strategicznej.
+You are an expert in evaluating strategic business recommendations and digital transformation. Your task is to conduct a detailed evaluation of the recommendation report in terms of compliance with requirements and strategic quality.
 
-## DANE WEJŚCIOWE
-- **Oryginalny raport z rekomendacjami**: {recommendations_report}
-- **Dane źródłowe (analiza luk)**: {original_gaps_data}
-- **Kontekst uzupełniający**: {original_supplementary_context}
+## INPUT DATA
+- **Original recommendation report**: {recommendations_report}
+- **Source data (gap analysis)**: {original_gaps_data}
+- **Supplementary context**: {original_supplementary_context}
 
-## KRYTERIA OCENY
+## EVALUATION CRITERIA
 
-### A. ZGODNOŚĆ Z WYMAGANIAMI STRUKTURALNYMI (40 punktów)
+### A. COMPLIANCE WITH STRUCTURAL REQUIREMENTS (40 points)
 
-**1. Kompletność struktury (20 punktów)**
-- Czy raport zawiera wszystkie 6 wymaganych sekcji?
-- Czy każda sekcja ma odpowiednią głębokość i szczegółowość?
-- Ocena: 0-20 punktów
+**1. Structural completeness (20 points)**
+- Does the report contain all 6 required sections?
+- Does each section have appropriate depth and detail?
+- Rating: 0-20 points
 
 **2. Jakość zawartości sekcji (20 punktów)**
 - **Streszczenie wykonawcze**: Czy zawiera ogólną ocenę, kluczowe obszary, priorytety?

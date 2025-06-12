@@ -6,10 +6,10 @@ export async function GET() {
     // OLIMP questionnaire data based on A_2.json structure
     const olimpQuestionnaireData: OlimpQuestionnaireData = {
       "questionnaire": "OLIMP",
-      "questionnaire_title": "Kwestionariusz dla modelu OLIMP",
+      "questionnaire_title": "OLIMP Model Questionnaire",
       "sections": [
         {
-          "section_name": "TECHNOLOGIA I INFRASTRUKTURA",
+          "section_name": "TECHNOLOGY AND INFRASTRUCTURE",
           "question_count": 10,
           "questions": [
             {
@@ -115,7 +115,7 @@ export async function GET() {
           ]
         },
         {
-          "section_name": "DANE",
+          "section_name": "DATA",
           "question_count": 9,
           "questions": [
             {
@@ -211,7 +211,7 @@ export async function GET() {
           ]
         },
         {
-          "section_name": "LUDZIE I KOMPETENCJE",
+          "section_name": "PEOPLE AND COMPETENCIES",
           "question_count": 6,
           "questions": [
             {
@@ -277,7 +277,7 @@ export async function GET() {
           ]
         },
         {
-          "section_name": "ORGANIZACJA I PROCESY",
+          "section_name": "ORGANIZATION AND PROCESSES",
           "question_count": 7,
           "questions": [
             {
@@ -353,7 +353,7 @@ export async function GET() {
           ]
         },
         {
-          "section_name": "STRATEGIA I ZARZĄDZANIE",
+          "section_name": "STRATEGY AND MANAGEMENT",
           "question_count": 6,
           "questions": [
             {
@@ -419,7 +419,7 @@ export async function GET() {
           ]
         },
         {
-          "section_name": "BUDŻET",
+          "section_name": "BUDGET",
           "question_count": 5,
           "questions": [
             {
@@ -475,7 +475,7 @@ export async function GET() {
           ]
         },
         {
-          "section_name": "PRODUKTY I USŁUGI",
+          "section_name": "PRODUCTS AND SERVICES",
           "question_count": 11,
           "questions": [
             {
@@ -591,7 +591,7 @@ export async function GET() {
           ]
         },
         {
-          "section_name": "ETYKA I REGULACJE",
+          "section_name": "ETHICS AND REGULATIONS",
           "question_count": 10,
           "questions": [
             {

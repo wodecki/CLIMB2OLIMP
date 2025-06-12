@@ -93,37 +93,37 @@ def consensus(state: DocumentState) -> DocumentState:
         # Prepare consensus prompt
         gaps_json = json.dumps(state.get('gaps', {}), ensure_ascii=False, indent=2)
         
-        consensus_prompt = f"""Stwórz kompleksowy raport transformacji AI, syntezując najlepsze elementy z trzech analiz (OpenAI, Anthropic, Gemini). 
+        consensus_prompt = f"""Create a comprehensive AI transformation report, synthesizing the best elements from three analyses (OpenAI, Anthropic, Gemini). 
 
-ZADANIE: Zbuduj szczegółowy, narracyjny raport strategiczny (minimum 10000 słów) który:
-1. Syntetyzuje najlepsze insights ze wszystkich analiz
-2. Eliminuje słabości pojedynczych raportów  
-3. Zawiera praktyczne, wykonalne rekomendacje
-4. Ma charakter profesjonalnego dokumentu strategicznego
+TASK: Build a detailed, narrative strategic report (minimum 10,000 words) that:
+1. Synthesizes the best insights from all analyses
+2. Eliminates weaknesses of individual reports  
+3. Contains practical, actionable recommendations
+4. Has the character of a professional strategic document
 
-WAŻNE: Generuj PEŁNY, DŁUGI raport - nie skracaj, nie przerywaj, kontynuuj do końca wszystkich sekcji.
+IMPORTANT: Generate a FULL, LONG report - do not shorten, do not interrupt, continue to the end of all sections.
 
-## DANE WEJŚCIOWE
+## INPUT DATA
 
-### ANALIZA LUK (WSPÓLNE ŹRÓDŁO PRAWDY):
+### GAP ANALYSIS (COMMON SOURCE OF TRUTH):
 {gaps_json}
 
-### NIEZALEŻNE ANALIZY AI (DO SYNTEZY):
+### INDEPENDENT AI ANALYSES (FOR SYNTHESIS):
 """
 
         # Add each branch's data to the prompt
         for branch_suffix in available_branches:
             data = branch_data[branch_suffix]
-            status_text = 'ZATWIERDZONY' if data['approved'] else 'FINAL (3 iteracje)'
+            status_text = 'APPROVED' if data['approved'] else 'FINAL (3 iterations)'
             
             consensus_prompt += f"""
 
 **BRANCH {branch_suffix}: {data['provider'].upper()}**
-- Wynik oceny: {data['score']}/100
-- Iteracje: {data['iterations']}/3
+- Assessment Score: {data['score']}/100
+- Iterations: {data['iterations']}/3
 - Status: {status_text}
 
-REKOMENDACJE:
+RECOMMENDATIONS:
 {data['recommendation']}
 
 ---
@@ -131,101 +131,104 @@ REKOMENDACJE:
 
         consensus_prompt += """
 
-## METODOLOGIA SYNTEZY I WYMAGANIA JAKOŚCIOWE
+## SYNTHESIS METHODOLOGY AND QUALITY REQUIREMENTS
 
-### 1. ANALIZA PORÓWNAWCZA ŹRÓDEŁ
-- **Identyfikuj najmocniejsze elementy każdej analizy**: Który raport ma najlepszą strukturę? Najbardziej szczegółowe budżety? Najrealistyczniejsze timeline'y?
-- **Znajdź wspólne wątki i potwierdzenia**: Elementy powtarzające się we wszystkich analizach mają wysoką wiarygodność
-- **Zidentyfikuj unikalne wartościowe insights**: Każdy model może wnieść unikalne perspektywy, które wzbogacą final raport
-- **Oceń jakość rekomendacji**: Priorytetyzuj konkretne, wykonalne działania nad ogólnymi koncepcjami
+### 1. COMPARATIVE SOURCE ANALYSIS
+- **Identify the strongest elements of each analysis**: Which report has the best structure? Most detailed budgets? Most realistic timelines?
+- **Find common threads and confirmations**: Elements repeated across all analyses have high credibility
+- **Identify unique valuable insights**: Each model can bring unique perspectives that will enrich the final report
+- **Assess recommendation quality**: Prioritize concrete, actionable actions over general concepts
 
-### 2. WYMAGANIA KONSTRUKCYJNE RAPORTU
+### 2. REPORT CONSTRUCTION REQUIREMENTS
 
-**DŁUGOŚĆ I GŁĘBOKOŚĆ:**
-- Docelowo 3500-4000 słów
-- Każda sekcja powinna być rozwijana narracyjnie, nie tylko punktowo
-- Dodaj kontekst biznesowy, uzasadnienia i przykłady praktyczne
-- Włącz szczegółowe scenariusze implementacyjne
+**LENGTH AND DEPTH:**
+- Target 3500-4000 words
+- Each section should be developed narratively, not just in bullet points
+- Add business context, justifications and practical examples
+- Include detailed implementation scenarios
 
-**STRUKTURA NARRACYJNA:**
-1. **Streszczenie wykonawcze**
-   - Pełny kontekst strategiczny organizacji
-   - Szczegółowa diagnoza obecnego stanu z uzasadnieniami
-   - Kluczowe wyzwania z praktycznymi przykładami
-   - Wizja docelowa z konkretnymi korzyściami biznesowymi
-   - Roadmapa transformacji z kluczowymi milestone'ami
+**NARRATIVE STRUCTURE:**
+1. **Executive Summary**
+   - Full strategic context of the organization
+   - Detailed diagnosis of current state with justifications
+   - Key challenges with practical examples
+   - Target vision with concrete business benefits
+   - Transformation roadmap with key milestones
 
-2. **Analiza według obszarów OLIMP**
-   - **Technologia i Infrastruktura**: 
-     * Szczegółowa ocena każdego komponentu technologicznego
-     * Konkretne rekomendacje techniczne z dostawcami i kosztami
-     * Scenariusze migracji krok po kroku
-     * Analiza ryzyk technicznych i sposoby mitygacji
-   - **Ludzie i Kompetencje**:
-     * Głęboka analiza obecnych kompetencji i luk
-     * Szczegółowe programy szkoleń z curriculum i harmonogramem
-     * Strategie rekrutacji i retencji talentów AI
-     * Plan budowy kultury organizacyjnej wspierającej AI
-   - **Organizacja i Procesy**:
-     * Dokładna mapa procesów do transformacji
-     * Metodyki zarządzania projektami AI z praktycznymi frameworkami
-     * Governance i compliance (GDPR, AI Act) z konkretnymi procedurami
-     * Change management i komunikacja wewnętrzna
+2. **Analysis by OLIMP Areas**
+   - **Technology and Infrastructure**: 
+     * Detailed assessment of each technological component
+     * Concrete technical recommendations with vendors and costs
+     * Step-by-step migration scenarios
+     * Technical risk analysis and mitigation methods
+   - **People and Competencies**:
+     * Deep analysis of current competencies and gaps
+     * Detailed training programs with curriculum and schedule
+     * AI talent recruitment and retention strategies
+     * Plan for building AI-supportive organizational culture
+   - **Organization and Processes**:
+     * Detailed map of processes for transformation
+     * AI project management methodologies with practical frameworks
+     * Governance and compliance (GDPR, AI Act) with concrete procedures
+     * Change management and internal communication
 
-3. **Plan implementacji**
-   - Szczegółowy harmonogram 3-fazowy z milestone'ami
-   - Konkretnymi datami, budżetami i odpowiedzialnościami
-   - Analiza zależności między projektami
-   - Strategie zarządzania ryzykiem i planowanie awaryjne
-   - Quick wins i długoterminowe inwestycje strategiczne
+3. **Implementation Plan**
+   - Detailed 3-phase schedule with milestones
+   - Concrete dates, budgets and responsibilities
+   - Analysis of dependencies between projects
+   - Risk management strategies and contingency planning
+   - Quick wins and long-term strategic investments
 
-4. **Zasoby, budżet i governance** 
-   - Szczegółowy breakdown kosztów z uzasadnieniami
-   - Strategie finansowania i ROI analysis
-   - Organizacja zespołu transformacyjnego
-   - KPI i system monitoringu postępów
-   - Procedury raportowania i review
+4. **Resources, Budget and Governance** 
+   - Detailed cost breakdown with justifications
+   - Financing strategies and ROI analysis
+   - Transformation team organization
+   - KPIs and progress monitoring system
+   - Reporting and review procedures
 
-5. **Korzyści biznesowe i transformacja kulturowa** 
-   - Konkretne przypadki użycia (use cases) z szacunkami ROI
-   - Przewaga konkurencyjna i positioning rynkowy
-   - Wpływ na satysfakcję pracowników i employer branding
-   - Długoterminowa wizja organizacji napędzanej AI
+5. **Business Benefits and Cultural Transformation** 
+   - Concrete use cases with ROI estimates
+   - Competitive advantage and market positioning
+   - Impact on employee satisfaction and employer branding
+   - Long-term vision of AI-driven organization
 
-### 3. WYTYCZNE STYLISTYCZNE
+### 3. STYLISTIC GUIDELINES
 
-**JĘZYK I TON:**
-- Profesjonalny, ale przystępny język biznesowy
-- Narracyjny styl z logicznym przepływem argumentacji
-- Konkretne przykłady i case studies tam, gdzie to możliwe
-- Balans między wizjonerskością a praktycznością
+**LANGUAGE AND TONE:**
+- Professional but accessible business language
+- Narrative style with logical flow of arguments
+- Concrete examples and case studies where possible
+- Balance between vision and practicality
 
-**ELEMENTY WIZUALNE (w markdown):**
-- Tabele porównawcze dla kluczowych metryk
-- Listy kontrolne (checklists) dla działań praktycznych
-- Wyróżnienia i callouts dla kluczowych insights
-- Logiczna hierarchia nagłówków i podsekcji
+**VISUAL ELEMENTS (in markdown):**
+- Comparison tables for key metrics
+- Checklists for practical actions
+- Highlights and callouts for key insights
+- Logical hierarchy of headings and subsections
 
-**KONKRETNOŚĆ I WYKONALNOŚĆ:**
-- Podaj konkretne nazwy technologii, dostawców, narzędzi
-- Określ realistyczne budżety z zakresami (od-do)
-- Ustaw mierzalne cele i terminy
-- Wskaż osoby/role odpowiedzialne za poszczególne obszary
+**CONCRETENESS AND ACTIONABILITY:**
+- Provide specific names of technologies, vendors, tools
+- Set realistic budgets with ranges (from-to)
+- Set measurable goals and deadlines
+- Indicate people/roles responsible for specific areas
 
-## ZADANIE FINALNE
+## FINAL TASK
 
-Stwórz **KOMPLEKSOWY RAPORT TRANSFORMACJI AI**, który:
-- Stanowi syntezę najlepszych elementów z wszystkich trzech analiz
-- Jest znacznie bardziej szczegółowy i narracyjny niż dotychczasowe raporty
-- Zawiera praktyczne, wykonalne rekomendacje z konkretnymi szczegółami
-- Służy jako kompletny przewodnik strategiczny dla organizacji
-- Ma strukturę profesjonalnego dokumentu konsultingowego
+Create a **COMPREHENSIVE AI TRANSFORMATION REPORT** that:
+- Constitutes a synthesis of the best elements from all three analyses
+- Is significantly more detailed and narrative than previous reports
+- Contains practical, actionable recommendations with concrete details
+- Serves as a complete strategic guide for the organization
+- Has the structure of a professional consulting document
 
-Raport powinien być na tyle szczegółowy i praktyczny, że organizacja może go użyć jako głównego dokumentu sterującego całą transformacją AI.
+The report should be detailed and practical enough that the organization can use it as the main document guiding the entire AI transformation.
 
- Wazne: raport powinien mieć minimum 10000 słów. Generuj PEŁNY, DŁUGI raport - nie skracaj, nie przerywaj, kontynuuj do końca wszystkich sekcji.
- Nie dodawaj placeholderów dotyczących nazwy firmy. Nie odwołuj się do nazwy firmy.
- Na górze raportu nie dodawaj szczegółów dotyczących modeli językowych, timestampów, czy innych metadanych. Skup się na treści merytorycznej raportu.
+IMPORTANT: 
+- Report must be written in ENGLISH language
+- Generate a comprehensive report with minimum 10,000 words
+- Do not shorten or interrupt - continue to the end of all sections
+- Do not add placeholders regarding company name or refer to specific company names
+- Focus on substantive content without metadata, timestamps, or model details in the report header
 """
 
         print("Generating consensus recommendation...")

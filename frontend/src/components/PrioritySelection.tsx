@@ -15,14 +15,14 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
 
   // Available priority areas (from areas_for_improvement.toml)
   const availableAreas = [
-    "TECHNOLOGIA I INFRASTRUKTURA",
-    "DANE",
-    "LUDZIE I KOMPETENCJE",
-    "ORGANIZACJA I PROCESY",
-    "STRATEGIA I ZARZĄDZANIE",
-    "BUDŻET",
-    "PRODUKTY I USŁUGI",
-    "ETYKA I REGULACJE"
+    "TECHNOLOGY AND INFRASTRUCTURE",
+    "DATA",
+    "PEOPLE AND COMPETENCIES",
+    "ORGANIZATION AND PROCESSES",
+    "STRATEGY AND MANAGEMENT",
+    "BUDGET",
+    "PRODUCTS AND SERVICES",
+    "ETHICS AND REGULATIONS"
   ];
 
   useEffect(() => {
@@ -130,14 +130,14 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
                 <div className="flex-1">
                   <h3 className="text-lg font-medium">{area.name}</h3>
                   <p className="text-sm mt-1 opacity-75">
-                    {area.name === "TECHNOLOGIA I INFRASTRUKTURA" && "Focus on IT infrastructure, cloud adoption, and technical capabilities"}
-                    {area.name === "DANE" && "Focus on data quality, management, automation, and analytics"}
-                    {area.name === "LUDZIE I KOMPETENCJE" && "Focus on team skills, training, and AI competency development"}
-                    {area.name === "ORGANIZACJA I PROCESY" && "Focus on organizational structure, workflows, and process integration"}
-                    {area.name === "STRATEGIA I ZARZĄDZANIE" && "Focus on long-term AI strategy, business impact assessment, and governance"}
-                    {area.name === "BUDŻET" && "Focus on financial planning, resource allocation, and investment priorities"}
-                    {area.name === "PRODUKTY I USŁUGI" && "Focus on AI-enhanced products, automation, and customer experience"}
-                    {area.name === "ETYKA I REGULACJE" && "Focus on AI ethics, compliance, data protection, and regulatory adherence"}
+                    {area.name === "TECHNOLOGY AND INFRASTRUCTURE" && "Focus on IT infrastructure, cloud adoption, and technical capabilities"}
+                    {area.name === "DATA" && "Focus on data quality, management, automation, and analytics"}
+                    {area.name === "PEOPLE AND COMPETENCIES" && "Focus on team skills, training, and AI competency development"}
+                    {area.name === "ORGANIZATION AND PROCESSES" && "Focus on organizational structure, workflows, and process integration"}
+                    {area.name === "STRATEGY AND MANAGEMENT" && "Focus on long-term AI strategy, business impact assessment, and governance"}
+                    {area.name === "BUDGET" && "Focus on financial planning, resource allocation, and investment priorities"}
+                    {area.name === "PRODUCTS AND SERVICES" && "Focus on AI-enhanced products, automation, and customer experience"}
+                    {area.name === "ETHICS AND REGULATIONS" && "Focus on AI ethics, compliance, data protection, and regulatory adherence"}
                   </p>
                 </div>
                 {area.selected && (
