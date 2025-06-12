@@ -101,8 +101,7 @@ def evaluation(state: DocumentState) -> DocumentState:
             original_supplementary_context=supplementary_context
         )
         
-        iteration_num = state['evaluation_iterations'] + 1
-        print(f"Conducting evaluation (iteration {iteration_num})...")
+        print(f"Conducting evaluation (iteration {state['evaluation_iterations'] + 1})...")
         
         # Create message for evaluation
         message = HumanMessage(content=formatted_prompt)

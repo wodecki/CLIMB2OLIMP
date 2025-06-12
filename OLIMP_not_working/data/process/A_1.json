@@ -1,0 +1,1220 @@
+{
+  "questionnaire": "CLIMB_2",
+  "questionnaire_title": "Kwestionariusz dla modelu CLIMB2",
+  "sections": [
+    {
+      "section_name": "ROLE I WSPÓŁPRACA",
+      "question_count": 7,
+      "questions": [
+        {
+          "question_text": "How is the cross-functional team involved in the product development process?",
+          "answer_options": {
+            "A": "The cross-functional team does not exist in the product development process.",
+            "B": "The cross-functional team exists but is not regularly involved in the process.",
+            "C": "The cross-functional team is involved in most stages of product development.",
+            "D": "The cross-functional team is involved in the entire product development process, but collaboration is not yet optimal.",
+            "E": "The cross-functional team is fully integrated and actively engaged at all stages of product development."
+          },
+          "selected_answer": "A"
+        },
+        {
+          "question_text": "How are all stakeholders engaged in the project team, even when they are globally dispersed?",
+          "answer_options": {
+            "A": "Stakeholders are not engaged in the project team.",
+            "B": "Some stakeholders are engaged, but only locally.",
+            "C": "Most stakeholders are engaged, but not always, especially when they are globally dispersed.",
+            "D": "Stakeholders are engaged even when globally dispersed, but collaboration still requires improvement.",
+            "E": "All stakeholders are fully engaged in the project team, regardless of geographic location."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How clearly defined are the roles and responsibilities of each individual?",
+          "answer_options": {
+            "A": "Roles and responsibilities are not clearly defined.",
+            "B": "Roles and responsibilities are defined, but often not clear or understood by everyone.",
+            "C": "Most roles and responsibilities are clearly defined, but ambiguities still occur.",
+            "D": "Roles and responsibilities are well-defined for most team members.",
+            "E": "Roles and responsibilities are fully clear, well understood, and respected by all team members."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How is high flexibility in task execution ensured in the project?",
+          "answer_options": {
+            "A": "There is no flexibility in task execution; everything is strictly defined.",
+            "B": "Flexibility exists but is limited and applies only to certain tasks.",
+            "C": "Flexibility in task execution is possible, but not for all team members.",
+            "D": "Flexibility in task execution is ensured, but not always maximally utilized.",
+            "E": "Flexibility in task execution is high and supports team efficiency at all stages of the project."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "What is the technical background and engagement level of the product managers in the projects?",
+          "answer_options": {
+            "A": "Product managers are unlikely to have a technical background.",
+            "B": "Some product managers have a technical background, but it is not the standard.",
+            "C": "There are product managers with a medium level of technical background, or only some product managers have it.",
+            "D": "Most product managers have an appropriate technical background and are engaged in the projects.",
+            "E": "All product managers have a technical background, confirmed by experience, and are fully engaged in development."
+          },
+          "selected_answer": "D"
+        },
+        {
+          "question_text": "How fully is the customer engaged in the product development process?",
+          "answer_options": {
+            "A": "The customer is not engaged in the product development process.",
+            "B": "The customer is engaged only in selected projects and rarely fully.",
+            "C": "The customer is sometimes engaged in product development but not at every stage.",
+            "D": "The customer is regularly engaged, but collaboration is not optimal at all stages.",
+            "E": "The customer is fully engaged at all stages of product development, regardless of the product."
+          },
+          "selected_answer": "A"
+        },
+        {
+          "question_text": "Are experienced designers engaged from the earliest stages of the project?",
+          "answer_options": {
+            "A": "Experienced designers are not engaged in the early stages of projects.",
+            "B": "Experienced designers are engaged, but only sporadically in the early stages.",
+            "C": "Experienced designers are engaged in the early stages of most projects.",
+            "D": "Experienced designers are engaged in the early stages of all projects, but their involvement is not always optimal.",
+            "E": "Experienced designers are always engaged from the earliest stages of projects, and their input is crucial to the project's success."
+          },
+          "selected_answer": "B"
+        }
+      ]
+    },
+    {
+      "section_name": "SZKOLENIE",
+      "question_count": 3,
+      "questions": [
+        {
+          "question_text": "How formal programs support the development of interdisciplinary skills?",
+          "answer_options": {
+            "A": "There are no formal training programs.",
+            "B": "Programs exist, but they are limited and sporadic.",
+            "C": "Programs are implemented at an intermediate level but do not cover all employees.",
+            "D": "Programs are widely available and regularly applied.",
+            "E": "Programs are systematic, well-planned, and include all employees."
+          },
+          "selected_answer": "A"
+        },
+        {
+          "question_text": "How are individual tutoring sessions offered to support skill development?",
+          "answer_options": {
+            "A": "Individual tutoring sessions are not available.",
+            "B": "Tutoring sessions are available in a limited scope and for selected employees.",
+            "C": "Tutoring sessions are available to most employees, but they are rarely individualized.",
+            "D": "Tutoring sessions are well-developed, but not always available to all employees.",
+            "E": "Tutoring sessions are standardized, individualized, and accessible to all employees."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How are KPIs used to evaluate training outcomes?",
+          "answer_options": {
+            "A": "KPIs are not used to evaluate training outcomes.",
+            "B": "KPIs are sometimes used, but they are not regularly monitored.",
+            "C": "KPIs are used, but not all training outcomes are thoroughly evaluated.",
+            "D": "KPIs are systematically applied and cover most training programs.",
+            "E": "KPIs are comprehensively used to assess all aspects of training and are regularly updated."
+          },
+          "selected_answer": "A"
+        }
+      ]
+    },
+    {
+      "section_name": "DZIAŁANIA I PRZEPŁYW",
+      "question_count": 8,
+      "questions": [
+        {
+          "question_text": "To what extent is a formal product development model followed and documented?",
+          "answer_options": {
+            "A": "There is no formal product development model.",
+            "B": "The model exists but is rarely followed and documented.",
+            "C": "The model is followed, but not always documented.",
+            "D": "The model is followed and documented by most teams.",
+            "E": "The model is a standard, followed and documented in every project."
+          },
+          "selected_answer": "A"
+        },
+        {
+          "question_text": "To what extent is collaboration a part of the product development process?",
+          "answer_options": {
+            "A": "Collaboration is minimal and sporadic.",
+            "B": "Collaboration exists but is limited to a few key stages.",
+            "C": "Collaboration covers most stages but is not systematic.",
+            "D": "Collaboration covers nearly all stages of product development.",
+            "E": "Collaboration is an integral part of the process, covering all stages."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How effectively is a comprehensive set of KPIs used to measure product development performance?",
+          "answer_options": {
+            "A": "There is no comprehensive set of KPIs.",
+            "B": "A set of KPIs exists but is used sporadically.",
+            "C": "A comprehensive set of KPIs is used, but not in all phases.",
+            "D": "A comprehensive set of KPIs is systematically used in most projects.",
+            "E": "A comprehensive set of KPIs is used in all projects and phases of product development."
+          },
+          "selected_answer": "A"
+        },
+        {
+          "question_text": "At what level is frontloading implemented in the product development process?",
+          "answer_options": {
+            "A": "Frontloading is not applied.",
+            "B": "Frontloading is applied only in some projects.",
+            "C": "Frontloading is applied in most projects, but not always effectively.",
+            "D": "Frontloading is effectively implemented in all projects.",
+            "E": "Frontloading is implemented at a very high level in all projects."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "To what extent are continuous improvement initiatives undertaken?",
+          "answer_options": {
+            "A": "Continuous improvement initiatives are not undertaken.",
+            "B": "Continuous improvement initiatives are undertaken, but rarely.",
+            "C": "Continuous improvement initiatives are undertaken, but their impact is limited.",
+            "D": "Continuous improvement initiatives are regularly undertaken and have a real impact on the process.",
+            "E": "Continuous improvement initiatives are standard and greatly impact process efficiency."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How effectively are various solutions designed and poorer solutions eliminated as new information arises?",
+          "answer_options": {
+            "A": "Various solutions are not designed; the process is rigid.",
+            "B": "Various solutions are designed, but the elimination of weaker options is unsystematic.",
+            "C": "Various solutions are designed, but eliminating poorer options is not systematic.",
+            "D": "Various solutions are designed, and poorer solutions are regularly eliminated.",
+            "E": "Various solutions are designed in each project, and weaker options are regularly and effectively eliminated."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent does the product development process focus on customer value?",
+          "answer_options": {
+            "A": "The product development process does not focus on customer value.",
+            "B": "The process partially focuses on customer value, but it is not a priority.",
+            "C": "The process focuses on customer value, but not always.",
+            "D": "The process consistently focuses on customer value.",
+            "E": "The process fully focuses on maximizing customer value."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How is the competitive analysis process (reverse engineering) implemented?",
+          "answer_options": {
+            "A": "The competitive analysis process is not implemented.",
+            "B": "The competitive analysis process is implemented but to a limited extent.",
+            "C": "The competitive analysis process is systematically implemented, but not fully.",
+            "D": "The competitive analysis process is effectively implemented in all projects.",
+            "E": "The competitive analysis process is a key part of product development and implemented in every project."
+          },
+          "selected_answer": "B"
+        }
+      ]
+    },
+    {
+      "section_name": "PODEJMOWANIE DECYZJI",
+      "question_count": 22,
+      "questions": [
+        {
+          "question_text": "How is the process of designing and industrializing parts and modules considered?",
+          "answer_options": {
+            "A": "The design and industrialization process is not considered.",
+            "B": "The design and industrialization process is occasionally considered.",
+            "C": "The design and industrialization process is regularly considered, but not always systematically.",
+            "D": "The design and industrialization process is considered in all projects and is well-organized.",
+            "E": "The design and industrialization process is fully considered and integrated at every stage of product development."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent is the component and semi-finished product manufacturing process considered?",
+          "answer_options": {
+            "A": "The manufacturing process for components and semi-finished products is not considered.",
+            "B": "The manufacturing process for components and semi-finished products is occasionally considered.",
+            "C": "The manufacturing process for components and semi-finished products is considered in most projects.",
+            "D": "The manufacturing process for components and semi-finished products is a key element in every project.",
+            "E": "The manufacturing process for components and semi-finished products is a priority and considered in every project."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "At what level is the assembly process of components taken into account in product development?",
+          "answer_options": {
+            "A": "The component assembly process is not considered.",
+            "B": "The component assembly process is occasionally considered.",
+            "C": "The component assembly process is taken into account, but not always optimized.",
+            "D": "The component assembly process is optimized and considered at all stages.",
+            "E": "The component assembly process is a key element of product development and is optimized in all projects."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How important is the testing and experimentation process in product development?",
+          "answer_options": {
+            "A": "The testing and experimentation process is not considered.",
+            "B": "The testing and experimentation process is occasionally considered.",
+            "C": "The testing and experimentation process is considered in most cases, but its significance is limited.",
+            "D": "The testing and experimentation process is systematically applied and has a major impact on product development.",
+            "E": "The testing and experimentation process is of utmost importance and influences every decision."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "At what level is the packaging and storage process considered?",
+          "answer_options": {
+            "A": "The packaging and storage process is not considered.",
+            "B": "The packaging and storage process is occasionally considered.",
+            "C": "The packaging and storage process is taken into account, but not in all projects.",
+            "D": "The packaging and storage process is considered and optimized in most projects.",
+            "E": "The packaging and storage process is crucial and fully considered in every project."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How is the delivery and distribution process considered?",
+          "answer_options": {
+            "A": "The delivery and distribution process is not considered.",
+            "B": "The delivery and distribution process is occasionally considered.",
+            "C": "The delivery and distribution process is considered, but its role is not always critical.",
+            "D": "The delivery and distribution process is effectively considered in every project.",
+            "E": "The delivery and distribution process is an integral part of every decision-making process."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "To what extent is customer usage considered in product development?",
+          "answer_options": {
+            "A": "Customer usage is not considered in the product development process.",
+            "B": "Customer usage is occasionally considered.",
+            "C": "Customer usage is taken into account, but not always monitored.",
+            "D": "Customer usage is regularly monitored and considered at all stages.",
+            "E": "Customer usage is continuously monitored and fully considered in design decisions."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How is the maintenance and after-sales service process considered?",
+          "answer_options": {
+            "A": "The maintenance and after-sales service process is not considered.",
+            "B": "The maintenance and after-sales service process is occasionally considered.",
+            "C": "The maintenance and after-sales service process is considered, but not comprehensively.",
+            "D": "The maintenance and after-sales service process is crucial and always considered.",
+            "E": "The maintenance and after-sales service process is a priority and considered at all stages of development."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "At what level is the dismantling, recycling, and disposal process considered?",
+          "answer_options": {
+            "A": "The dismantling, recycling, and disposal process is not considered.",
+            "B": "The dismantling, recycling, and disposal process is occasionally considered.",
+            "C": "The dismantling, recycling, and disposal process is taken into account, but its role is limited.",
+            "D": "The dismantling, recycling, and disposal process is fully considered in every project.",
+            "E": "The dismantling, recycling, and disposal process is integrated into every project and regularly monitored."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent is the process of inspection, reuse, updating, and refurbishment considered?",
+          "answer_options": {
+            "A": "The process of inspection, reuse, updating, and refurbishment is not considered.",
+            "B": "The process of inspection, reuse, updating, and refurbishment is occasionally considered.",
+            "C": "The process of inspection, reuse, updating, and refurbishment is considered, but not always prioritized.",
+            "D": "The process of inspection, reuse, updating, and refurbishment is considered in most projects.",
+            "E": "The process of inspection, reuse, updating, and refurbishment is fully considered and integrated into product development."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How important is the final product cost/price in the decision-making process?",
+          "answer_options": {
+            "A": "The final product cost is not considered.",
+            "B": "The final product cost is considered, but to a limited extent.",
+            "C": "The final product cost is considered, but not always comprehensively.",
+            "D": "The final product cost is a key element in decisions in all projects.",
+            "E": "The final product cost/price is a priority in every design decision."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "To what extent are development costs/ROI considered in the decision-making process?",
+          "answer_options": {
+            "A": "Development costs/ROI are not considered.",
+            "B": "Development costs/ROI are occasionally considered.",
+            "C": "Development costs/ROI are regularly monitored, but not always considered in decisions.",
+            "D": "Development costs/ROI are carefully monitored and considered in every project.",
+            "E": "Development costs/ROI are a key element in every decision and are carefully monitored."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How important are lifecycle and operational costs, such as maintenance, services, recycling, and disposal?",
+          "answer_options": {
+            "A": "Lifecycle and operational costs are not considered.",
+            "B": "Lifecycle and operational costs are occasionally considered.",
+            "C": "Lifecycle and operational costs are considered, but not comprehensively.",
+            "D": "Lifecycle and operational costs are systematically considered and greatly influence decisions.",
+            "E": "Lifecycle and operational costs are integral to the decision-making process and have a major influence on decisions."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How are time-to-market (TTM) and delivery deadlines considered in decision-making?",
+          "answer_options": {
+            "A": "TTM and delivery deadlines are not considered in decision-making.",
+            "B": "TTM and delivery deadlines are considered, but only in some projects.",
+            "C": "TTM and delivery deadlines are taken into account, but not always critically.",
+            "D": "TTM and delivery deadlines are key factors in every project decision.",
+            "E": "TTM and delivery deadlines are the most important criteria in every project decision."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "How does the number of different products impact design decisions?",
+          "answer_options": {
+            "A": "The number of different products is not considered.",
+            "B": "The number of different products is considered to a limited extent.",
+            "C": "The number of different products is considered, but not always impactful on final decisions.",
+            "D": "The number of different products is considered in most projects and has a direct impact on decisions.",
+            "E": "The number of different products is a key factor in every decision and influences design choices."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent is product customization considered?",
+          "answer_options": {
+            "A": "Product customization is not considered.",
+            "B": "Product customization is occasionally considered.",
+            "C": "Product customization is regularly considered, but not always comprehensively.",
+            "D": "Product customization is monitored and considered in every project.",
+            "E": "Product customization is fully considered in every project and is a priority in decision-making."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How is the level of innovation considered in decision-making?",
+          "answer_options": {
+            "A": "The level of innovation is not considered.",
+            "B": "The level of innovation is considered, but not systematically.",
+            "C": "The level of innovation is monitored, but not always comprehensively.",
+            "D": "The level of innovation is systematically monitored and considered in all projects.",
+            "E": "The level of innovation is monitored and has the greatest impact on every decision."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "How does brand image influence decision-making?",
+          "answer_options": {
+            "A": "Brand image is not considered.",
+            "B": "Brand image is considered to a limited extent.",
+            "C": "Brand image is considered, but not in all decisions.",
+            "D": "Brand image is a key factor in design decisions.",
+            "E": "Brand image is a priority in every design decision and is closely monitored."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "How important is functional performance (e.g., productivity, speed, accuracy, maintainability)?",
+          "answer_options": {
+            "A": "Functional performance is not considered.",
+            "B": "Functional performance is occasionally considered.",
+            "C": "Functional performance is considered, but not always comprehensively.",
+            "D": "Functional performance is regularly monitored and considered in every decision.",
+            "E": "Functional performance is a priority and considered in all design decisions."
+          },
+          "selected_answer": "D"
+        },
+        {
+          "question_text": "How is quality performance (e.g., durability, reliability) considered in design decisions?",
+          "answer_options": {
+            "A": "Quality performance is not considered.",
+            "B": "Quality performance is occasionally considered.",
+            "C": "Quality performance is considered, but not always a priority.",
+            "D": "Quality performance is essential and considered in all decisions.",
+            "E": "Quality performance is a priority and the most important element of every design decision."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "How do compliance and regulatory standards influence decisions?",
+          "answer_options": {
+            "A": "Compliance with regulations is not considered.",
+            "B": "Compliance with regulations is occasionally considered.",
+            "C": "Compliance with regulations is considered, but not always comprehensively.",
+            "D": "Compliance with regulations is regularly monitored and considered in every decision.",
+            "E": "Compliance with regulations and standards is integral to every decision and is closely monitored."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "What other factors, such as environmental sustainability, aesthetics, or social aspects, are considered?",
+          "answer_options": {
+            "A": "Other factors, such as sustainability, are not considered.",
+            "B": "Other factors, such as sustainability, are sometimes considered, but not systematically.",
+            "C": "Other factors, such as sustainability, are considered, but not always prioritized.",
+            "D": "Other factors, such as sustainability, are regularly considered and significantly influence decisions.",
+            "E": "Other factors, such as sustainability, are crucial and prioritized in the decision-making process."
+          },
+          "selected_answer": "C"
+        }
+      ]
+    },
+    {
+      "section_name": "PROCESY ZW",
+      "question_count": 22,
+      "questions": [
+        {
+          "question_text": "How is previous knowledge retrieved during the conceptual phase of a project?",
+          "answer_options": {
+            "A": "Knowledge from previous projects is not used during the conceptual phase.",
+            "B": "Knowledge from previous projects is occasionally used during the conceptual phase.",
+            "C": "Knowledge from previous projects is regularly used during the conceptual phase, but not fully systematically.",
+            "D": "Knowledge from previous projects is systematically used during the conceptual phase in all projects.",
+            "E": "Knowledge from previous projects is fully integrated into every conceptual phase and is prioritized."
+          },
+          "selected_answer": "A"
+        },
+        {
+          "question_text": "How is previous knowledge retrieved during the feasibility study?",
+          "answer_options": {
+            "A": "Knowledge from previous projects is rarely used during the feasibility study.",
+            "B": "Knowledge from previous projects is sporadically used during the feasibility study, but not systematically.",
+            "C": "Knowledge from previous projects is regularly used during the feasibility study, but not always in every case.",
+            "D": "Knowledge from previous projects is considered during the feasibility study in every project.",
+            "E": "Knowledge from previous projects is used in every project and has a crucial impact on the feasibility study."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How is previous knowledge retrieved during the detailed design phase of the product and its components?",
+          "answer_options": {
+            "A": "Knowledge from previous projects is not systematically retrieved during the detailed design phase.",
+            "B": "Knowledge from previous projects is used, but unsystematically, during the detailed design phase.",
+            "C": "Knowledge from previous projects is systematically retrieved, but not always comprehensively.",
+            "D": "Knowledge from previous projects is systematically retrieved and used during the detailed design phase.",
+            "E": "Knowledge from previous projects is fully retrieved and used during the detailed design phase."
+          },
+          "selected_answer": "A"
+        },
+        {
+          "question_text": "How is previous knowledge retrieved during testing, prototyping, and experimentation?",
+          "answer_options": {
+            "A": "Knowledge from previous projects is not retrieved during testing, prototyping, and experimentation.",
+            "B": "Knowledge from previous projects is sometimes retrieved during testing and prototyping.",
+            "C": "Knowledge from previous projects is regularly retrieved during testing, prototyping, and experimentation, but not always.",
+            "D": "Knowledge from previous projects is fully retrieved during testing and prototyping.",
+            "E": "Knowledge from previous projects is an integral part of testing, prototyping, and experimentation."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How is previous knowledge retrieved during the final project verification?",
+          "answer_options": {
+            "A": "Knowledge from previous projects is not retrieved during the final project verification.",
+            "B": "Knowledge from previous projects is sporadically retrieved in the final project verification.",
+            "C": "Knowledge from previous projects is retrieved during the final verification, but not comprehensively.",
+            "D": "Knowledge from previous projects is retrieved during the final project verification in most cases.",
+            "E": "Knowledge from previous projects is a priority in the final project verification process."
+          },
+          "selected_answer": "A"
+        },
+        {
+          "question_text": "How does a formal knowledge management plan support the product development process?",
+          "answer_options": {
+            "A": "A formal knowledge management plan does not exist or is not used.",
+            "B": "A formal knowledge management plan exists but is not widely used.",
+            "C": "A formal knowledge management plan exists and is implemented, but not in all cases.",
+            "D": "A formal knowledge management plan is fully implemented and supports product development in all projects.",
+            "E": "A formal knowledge management plan is fully implemented and systematically used in all projects."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent does the company utilize knowledge resources from previous projects?",
+          "answer_options": {
+            "A": "The company rarely utilizes knowledge resources from previous projects.",
+            "B": "The company sporadically utilizes knowledge resources from previous projects.",
+            "C": "The company utilizes knowledge resources, but not all projects are included in a systematic KM process.",
+            "D": "The company regularly utilizes knowledge resources from previous projects and applies them to new projects.",
+            "E": "The company fully utilizes knowledge resources from previous projects and regularly updates the KM process."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How are design principles defined by the company considered (frequently reviewed and updated) in the knowledge management process?",
+          "answer_options": {
+            "A": "The design principles defined by the company do not support the knowledge management process.",
+            "B": "The design principles defined by the company support the KM process, but not always.",
+            "C": "The design principles defined by the company support the KM process but are not always fully updated.",
+            "D": "The design principles defined by the company are regularly updated and support the KM process.",
+            "E": "The design principles defined by the company are continuously updated and fully support the KM process."
+          },
+          "selected_answer": "D"
+        },
+        {
+          "question_text": "How are design principles defined by external entities (e.g., clients, suppliers) considered (frequently reviewed and updated) in the KM process?",
+          "answer_options": {
+            "A": "External design principles are not considered in the KM process.",
+            "B": "External design principles are considered, but to a limited extent.",
+            "C": "External design principles are considered, but not in all projects.",
+            "D": "External design principles are regularly considered and have a significant impact on projects.",
+            "E": "External design principles are crucial and are systematically considered in all projects."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How are design principles defined by written design rules textbooks/standards considered (frequently reviewed and updated) in the KM process?",
+          "answer_options": {
+            "A": "Design principles defined in textbooks/standards are not considered in the KM process.",
+            "B": "Design principles defined in textbooks/standards are considered, but to a limited extent.",
+            "C": "Design principles defined in textbooks/standards are considered, but not in all projects.",
+            "D": "Design principles defined in textbooks/standards are regularly considered and have a significant impact on projects.",
+            "E": "Design principles defined in textbooks/standards are crucial and are systematically considered in all projects."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "How do knowledge management principles support the consideration of final product costs?",
+          "answer_options": {
+            "A": "Knowledge management does not consider final product costs.",
+            "B": "Knowledge management considers final product costs, but not always systematically.",
+            "C": "Knowledge management considers final product costs, but not comprehensively.",
+            "D": "Knowledge management systematically considers final product costs and impacts decisions.",
+            "E": "Knowledge management fully considers final product costs and is an integral part of decision-making."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How does knowledge management influence the assessment of development costs and ROI?",
+          "answer_options": {
+            "A": "Knowledge management does not influence the assessment of development costs and ROI.",
+            "B": "Knowledge management influences the assessment of development costs and ROI, but it is not always a key factor.",
+            "C": "Knowledge management influences the assessment of development costs, but not all projects are included in ROI analysis.",
+            "D": "Knowledge management has a major influence on the assessment of development costs and ROI in all projects.",
+            "E": "Knowledge management has a crucial influence on the assessment of development costs and ROI and is applied in all projects."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "How does knowledge management support the consideration of lifecycle and operational costs (e.g., maintenance, recycling)?",
+          "answer_options": {
+            "A": "Lifecycle and operational costs are not considered in the KM process.",
+            "B": "Lifecycle and operational costs are considered, but to a limited extent.",
+            "C": "Lifecycle and operational costs are considered in most projects, but not comprehensively.",
+            "D": "Lifecycle and operational costs are fully considered in most projects.",
+            "E": "Lifecycle and operational costs are fully considered and have the greatest impact on design decisions."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How does knowledge management influence time-to-market (TTM) and delivery deadlines?",
+          "answer_options": {
+            "A": "Time-to-market and delivery deadlines are not supported by knowledge management.",
+            "B": "Time-to-market is considered, but it does not have a critical impact on decisions.",
+            "C": "Time-to-market is considered in the KM process but does not always have a major impact.",
+            "D": "Time-to-market is regularly considered and influences KM decisions.",
+            "E": "Time-to-market is crucial and fully considered in the KM process."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "How does KM support the evaluation of the number of different products in the company's portfolio?",
+          "answer_options": {
+            "A": "KM does not support the evaluation of the number of different products in the portfolio.",
+            "B": "KM supports the evaluation of the number of different products, but not systematically.",
+            "C": "KM supports the evaluation of the number of products, but not systematically in all cases.",
+            "D": "KM supports the evaluation of the number of different products and impacts strategic decisions.",
+            "E": "KM fully supports the evaluation of the number of different products and is integral to the decision-making process."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent does KM consider the level of product customization to meet client needs?",
+          "answer_options": {
+            "A": "The level of product customization is not considered in the KM process.",
+            "B": "The level of product customization is considered, but not in all projects.",
+            "C": "The level of product customization is regularly considered, but not comprehensively.",
+            "D": "The level of product customization is a key factor and is considered in most projects.",
+            "E": "The level of product customization is fully considered and has a major impact on design decisions."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How does knowledge management support innovation within the company?",
+          "answer_options": {
+            "A": "The innovation process is not supported by KM.",
+            "B": "KM supports innovation, but to a limited extent.",
+            "C": "KM supports innovation in most projects, but not always systematically.",
+            "D": "KM supports innovation in all projects and has an impact on product development.",
+            "E": "KM is a priority in innovation and supports all projects comprehensively."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "How do KM principles support building brand image?",
+          "answer_options": {
+            "A": "Brand image is not supported by KM principles.",
+            "B": "Brand image is supported by KM, but it is not a priority.",
+            "C": "Brand image is considered in most projects, but does not always have a major impact.",
+            "D": "Brand image is a key element in KM and influences design decisions.",
+            "E": "Brand image is fully integrated with KM and has a major influence on decisions."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How does knowledge management support the functional performance of products (e.g., productivity, speed, accuracy)?",
+          "answer_options": {
+            "A": "Functional performance is not monitored as part of KM.",
+            "B": "Functional performance is considered, but not regularly monitored.",
+            "C": "Functional performance is considered, but not monitored in all projects.",
+            "D": "Functional performance is systematically monitored and considered in the KM process.",
+            "E": "Functional performance is integral to KM and has a significant impact on decisions."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How does knowledge management support monitoring product quality performance (e.g., durability, reliability)?",
+          "answer_options": {
+            "A": "Quality performance is not considered in the KM process.",
+            "B": "Quality performance is considered, but not comprehensively.",
+            "C": "Quality performance is considered, but it is not always a priority.",
+            "D": "Quality performance is prioritized and regularly monitored in the KM process.",
+            "E": "Quality performance is prioritized and fully monitored in all projects."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "How does knowledge management support compliance with regulations and legal standards?",
+          "answer_options": {
+            "A": "Knowledge management does not support compliance with regulations and standards.",
+            "B": "Knowledge management considers compliance with regulations, but not as a priority.",
+            "C": "Knowledge management supports compliance with regulations, but not comprehensively.",
+            "D": "Knowledge management supports compliance with regulations and standards in most projects.",
+            "E": "Knowledge management fully supports compliance with regulations and standards and has a major influence on decisions."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "What other aspects (e.g., environmental sustainability, aesthetics) are considered in the KM process?",
+          "answer_options": {
+            "A": "Other aspects, such as environmental sustainability, are not considered in KM.",
+            "B": "Other aspects, such as environmental sustainability, are occasionally considered, but not systematically.",
+            "C": "Other aspects, such as environmental sustainability, are considered, but not systematically in all projects.",
+            "D": "Other aspects, such as environmental sustainability, are regularly considered and influence decisions.",
+            "E": "Other aspects, such as environmental sustainability, are integral to the KM process and have a major impact on design decisions."
+          },
+          "selected_answer": "C"
+        }
+      ]
+    },
+    {
+      "section_name": "TECHNIKI ZW",
+      "question_count": 11,
+      "questions": [
+        {
+          "question_text": "To what extent is verbal communication with colleagues used for knowledge sharing?",
+          "answer_options": {
+            "A": "Verbal communication with colleagues is rarely used for knowledge sharing.",
+            "B": "Verbal communication with colleagues is occasionally used for knowledge sharing.",
+            "C": "Verbal communication with colleagues is regularly used for knowledge sharing, but not in all cases.",
+            "D": "Verbal communication with colleagues is effectively used for knowledge sharing in all projects.",
+            "E": "Verbal communication with colleagues is a priority and fully used for knowledge sharing at all project stages."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How frequently are documents with lessons learned created and utilized?",
+          "answer_options": {
+            "A": "Documents with lessons learned are not regularly created or used.",
+            "B": "Documents with lessons learned are sometimes created, but rarely used.",
+            "C": "Documents with lessons learned are regularly created and used in some projects.",
+            "D": "Documents with lessons learned are systematically created and used in most projects.",
+            "E": "Documents with lessons learned are fully integrated into the process and regularly used in all projects."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent are design specifications used in knowledge management processes?",
+          "answer_options": {
+            "A": "Design specifications are rarely used for knowledge sharing.",
+            "B": "Design specifications are occasionally used for knowledge sharing, but not systematically.",
+            "C": "Design specifications are systematically used for knowledge sharing, but not in all projects.",
+            "D": "Design specifications are fully used for knowledge sharing in all projects.",
+            "E": "Design specifications are fully and systematically used for knowledge sharing in every project."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How effectively do questionnaires and checklists support knowledge management?",
+          "answer_options": {
+            "A": "Questionnaires and checklists are not effectively used in knowledge management.",
+            "B": "Questionnaires and checklists are used, but their effectiveness is limited.",
+            "C": "Questionnaires and checklists are effectively used, but not prioritized in knowledge management.",
+            "D": "Questionnaires and checklists are effectively used and have a major impact on knowledge management.",
+            "E": "Questionnaires and checklists are a priority and effectively support knowledge management at every stage."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent are meeting rooms, posters, and visual management used for knowledge sharing?",
+          "answer_options": {
+            "A": "Meeting rooms, posters, and visual management are rarely used for knowledge sharing.",
+            "B": "Meeting rooms, posters, and visual management are occasionally used for knowledge sharing.",
+            "C": "Meeting rooms, posters, and visual management are regularly used for knowledge sharing, but not in all cases.",
+            "D": "Meeting rooms, posters, and visual management are fully used for knowledge sharing.",
+            "E": "Meeting rooms, posters, and visual management are a key part of the knowledge-sharing process and are fully used."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How often are shared network folders used for storing and sharing knowledge?",
+          "answer_options": {
+            "A": "Shared network folders are rarely used for storing and sharing knowledge.",
+            "B": "Shared network folders are occasionally used for storing and sharing knowledge, but not systematically.",
+            "C": "Shared network folders are systematically used for storing and sharing knowledge, but not comprehensively.",
+            "D": "Shared network folders are regularly used and support the knowledge management process.",
+            "E": "Shared network folders are a priority for storing and sharing knowledge, regularly updated and used."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent does the intranet support the knowledge management process?",
+          "answer_options": {
+            "A": "The intranet is not regularly used to support knowledge management.",
+            "B": "The intranet is occasionally used to support knowledge management, but not always effectively.",
+            "C": "The intranet is regularly used to support knowledge management, but not always efficiently.",
+            "D": "The intranet is effectively used to support knowledge management in all projects.",
+            "E": "The intranet is an integral tool supporting knowledge management and is used in all projects."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How are websites used to work on collaborative projects (e.g., Wiki) in knowledge management?",
+          "answer_options": {
+            "A": "Websites used to work on collaborative projects are not used for knowledge management.",
+            "B": "Websites used to work on collaborative projects are used to a limited extent in knowledge management.",
+            "C": "Websites used to work on collaborative projects are used in most cases, but are not yet optimal.",
+            "D": "Websites used to work on collaborative projects are effectively used for knowledge management.",
+            "E": "Websites used to work on collaborative projects are fully integrated into the knowledge management process and support projects at all stages."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "How are blogs, forums, and bulletin boards used in knowledge management?",
+          "answer_options": {
+            "A": "Blogs, forums, and bulletin boards are not used for knowledge management.",
+            "B": "Blogs, forums, and bulletin boards are used to a limited extent in knowledge management.",
+            "C": "Blogs, forums, and bulletin boards are used in most cases, but are not yet optimal.",
+            "D": "Blogs, forums, and bulletin boards are effectively used for knowledge management.",
+            "E": "Blogs, forums, and bulletin boards are fully integrated into the knowledge management process and support projects at all stages."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How do PDM/PLM systems support knowledge management?",
+          "answer_options": {
+            "A": "PDM/PLM systems are not effectively used for knowledge management.",
+            "B": "PDM/PLM systems are occasionally used for knowledge management, but not systematically.",
+            "C": "PDM/PLM systems are effectively used in most projects, but not always comprehensively.",
+            "D": "PDM/PLM systems are fully integrated into the knowledge management process in all projects.",
+            "E": "PDM/PLM systems are fully implemented and support knowledge management at every stage of product development."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "What benefits do KBE software and design automation bring to knowledge management?",
+          "answer_options": {
+            "A": "KBE software and design automation are not used for knowledge management.",
+            "B": "KBE software and design automation are used to a limited extent in knowledge management.",
+            "C": "KBE software and design automation are regularly used, but not comprehensively.",
+            "D": "KBE software and design automation are effectively used in knowledge management in most projects.",
+            "E": "KBE software and design automation are an integral part of knowledge management and are used in all projects."
+          },
+          "selected_answer": "C"
+        }
+      ]
+    },
+    {
+      "section_name": "METODY",
+      "question_count": 11,
+      "questions": [
+        {
+          "question_text": "To what extent are principles of modularization and standardization of parts used in the design process?",
+          "answer_options": {
+            "A": "Principles of modularization and standardization of parts are not used in the design process.",
+            "B": "Principles of modularization and standardization of parts are applied sporadically.",
+            "C": "Principles of modularization and standardization of parts are regularly applied, but not in all projects.",
+            "D": "Principles of modularization and standardization of parts are effectively applied in all projects.",
+            "E": "Principles of modularization and standardization of parts are a priority and applied in all projects at every stage."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent is Design for X (DFX) applied in terms of functional performance?",
+          "answer_options": {
+            "A": "Design for X (DFX) is not applied in terms of functional performance.",
+            "B": "Design for X (DFX) is applied, but to a limited extent in terms of functional performance.",
+            "C": "Design for X (DFX) is applied in most projects, but not fully comprehensively.",
+            "D": "Design for X (DFX) is a key element in projects in terms of functional performance.",
+            "E": "Design for X (DFX) is an integral part of every project and fully supports functional performance."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How does Design for X (DFX) support product quality performance?",
+          "answer_options": {
+            "A": "Design for X (DFX) does not support product quality performance.",
+            "B": "Design for X (DFX) supports product quality performance, but it is not common.",
+            "C": "Design for X (DFX) supports product quality performance in most cases, but not always.",
+            "D": "Design for X (DFX) fully supports product quality performance.",
+            "E": "Design for X (DFX) is a priority and fully supports product quality performance."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent does Design for X (DFX) take into account other customer-perceptible factors, such as aesthetics or eco-design?",
+          "answer_options": {
+            "A": "Design for X (DFX) rarely takes into account other customer-perceptible factors, such as aesthetics or eco-design.",
+            "B": "Design for X (DFX) sometimes considers other factors, like aesthetics or eco-design, but not systematically.",
+            "C": "Design for X (DFX) regularly considers other customer-perceptible factors, but not always systematically.",
+            "D": "Design for X (DFX) considers factors like aesthetics and eco-design in most projects.",
+            "E": "Design for X (DFX) considers all customer-perceptible factors, such as aesthetics and eco-design, and is crucial in every project."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How effectively is Design to Cost (DTC) and Target Cost Management (TCM) applied?",
+          "answer_options": {
+            "A": "Design to Cost (DTC) and Target Cost Management (TCM) are not applied.",
+            "B": "Design to Cost (DTC) and Target Cost Management (TCM) are applied, but infrequently.",
+            "C": "Design to Cost (DTC) and Target Cost Management (TCM) are applied in most projects, but not always comprehensively.",
+            "D": "Design to Cost (DTC) and Target Cost Management (TCM) are effectively applied in all projects.",
+            "E": "Design to Cost (DTC) and Target Cost Management (TCM) are integral to every project and have a major impact on costs."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent is Lifecycle Cost Analysis (LCC) and Total Cost of Ownership (TCO) considered in the design process?",
+          "answer_options": {
+            "A": "Lifecycle Cost Analysis (LCC) and Total Cost of Ownership (TCO) are not considered in the design process.",
+            "B": "Lifecycle Cost Analysis (LCC) and Total Cost of Ownership (TCO) are occasionally considered in the design process.",
+            "C": "Lifecycle Cost Analysis (LCC) and Total Cost of Ownership (TCO) are regularly considered, but not comprehensively.",
+            "D": "Lifecycle Cost Analysis (LCC) and Total Cost of Ownership (TCO) are fully considered in the design process.",
+            "E": "Lifecycle Cost Analysis (LCC) and Total Cost of Ownership (TCO) are fully considered at every stage of the design process."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How effectively is Lifecycle Analysis and Engineering (LCA&E) conducted?",
+          "answer_options": {
+            "A": "Lifecycle Analysis and Engineering (LCA&E) is not conducted.",
+            "B": "Lifecycle Analysis and Engineering (LCA&E) is conducted, but to a limited extent.",
+            "C": "Lifecycle Analysis and Engineering (LCA&E) is conducted in most projects, but not always.",
+            "D": "Lifecycle Analysis and Engineering (LCA&E) is effectively conducted in all projects.",
+            "E": "Lifecycle Analysis and Engineering (LCA&E) is a priority in every project and systematically conducted."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How does Value Analysis and Engineering (VA&E) support the design process?",
+          "answer_options": {
+            "A": "Value Analysis and Engineering (VA&E) is not used in the design process.",
+            "B": "Value Analysis and Engineering (VA&E) is used, but its impact is limited.",
+            "C": "Value Analysis and Engineering (VA&E) is used, but its impact is not yet maximized.",
+            "D": "Value Analysis and Engineering (VA&E) is used in all projects and has a significant impact on the design process.",
+            "E": "Value Analysis and Engineering (VA&E) is a key element of every project and significantly impacts the final outcome."
+          },
+          "selected_answer": "A"
+        },
+        {
+          "question_text": "How effectively are Quality Functions (QFD) applied in the design process?",
+          "answer_options": {
+            "A": "Quality Functions (QFD) are not applied in the design process.",
+            "B": "Quality Functions (QFD) are applied, but not in all projects.",
+            "C": "Quality Functions (QFD) are applied systematically, but not at all project stages.",
+            "D": "Quality Functions (QFD) are regularly applied in every project and support the entire development process.",
+            "E": "Quality Functions (QFD) are fully applied at every stage of product development and are an integral part of the process."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent does Failure Modes and Effects Analysis (FMEA/FMECA) support product development?",
+          "answer_options": {
+            "A": "Failure Modes and Effects Analysis (FMEA/FMECA) is not applied.",
+            "B": "Failure Modes and Effects Analysis (FMEA/FMECA) is applied, but its effectiveness is limited.",
+            "C": "Failure Modes and Effects Analysis (FMEA/FMECA) is effectively applied in most projects.",
+            "D": "Failure Modes and Effects Analysis (FMEA/FMECA) is applied systematically and has a major impact on product development.",
+            "E": "Failure Modes and Effects Analysis (FMEA/FMECA) is applied in all projects and has a crucial impact on design decisions."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent are systematic innovation methods, such as TRIZ, applied in the design process?",
+          "answer_options": {
+            "A": "Systematic innovation methods, such as TRIZ, are not applied.",
+            "B": "Systematic innovation methods, such as TRIZ, are applied to a limited extent.",
+            "C": "Systematic innovation methods, such as TRIZ, are regularly applied, but not always comprehensively.",
+            "D": "Systematic innovation methods, such as TRIZ, are applied in most projects and support innovation.",
+            "E": "Systematic innovation methods, such as TRIZ, are fully integrated into the design process and applied in all projects."
+          },
+          "selected_answer": "B"
+        }
+      ]
+    },
+    {
+      "section_name": "KOMPUTERYZACJA I OPROGRAMOWANIE",
+      "question_count": 22,
+      "questions": [
+        {
+          "question_text": "To what extent does office automation (e.g., spreadsheets, word processors) support the product development process?",
+          "answer_options": {
+            "A": "Office automation is not used to support the product development process.",
+            "B": "Office automation is occasionally used to support the product development process.",
+            "C": "Office automation is regularly used to support the product development process, but not in all projects.",
+            "D": "Office automation is effectively used to support the product development process in all projects.",
+            "E": "Office automation is a priority and fully supports the product development process in every project."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent are 2D CAD systems used in the design process?",
+          "answer_options": {
+            "A": "2D CAD systems are not commonly used in the design process.",
+            "B": "2D CAD systems are used to a limited extent in the design process.",
+            "C": "2D CAD systems are used in most projects, but not always comprehensively.",
+            "D": "2D CAD systems are fully used in all projects.",
+            "E": "2D CAD systems are fully integrated into each project and support the entire design process."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "What benefits do 3D CAD systems bring to product development?",
+          "answer_options": {
+            "A": "3D CAD systems are rarely used in the product development process.",
+            "B": "3D CAD systems are used, but not in all projects.",
+            "C": "3D CAD systems are used in most projects and support product development, but not always fully.",
+            "D": "3D CAD systems are effectively used and support product development in all projects.",
+            "E": "3D CAD systems are a priority and support product development at every stage."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent do digital models (DMU) support product development?",
+          "answer_options": {
+            "A": "Digital models (DMU) are not used in the product development process.",
+            "B": "Digital models (DMU) are used, but not systematically.",
+            "C": "Digital models (DMU) are regularly used, but not always comprehensively.",
+            "D": "Digital models (DMU) are used in all projects and have a major impact on product development.",
+            "E": "Digital models (DMU) are an integral part of each project and fully support product development."
+          },
+          "selected_answer": "D"
+        },
+        {
+          "question_text": "To what extent is computer-aided styling (CAS) used in product development projects?",
+          "answer_options": {
+            "A": "Computer-aided styling (CAS) is not used in projects.",
+            "B": "Computer-aided styling (CAS) is occasionally used in projects.",
+            "C": "Computer-aided styling (CAS) is used in most projects, but not always comprehensively.",
+            "D": "Computer-aided styling (CAS) is effectively used in all projects.",
+            "E": "Computer-aided styling (CAS) is a key element in each project."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "To what extent does computer-aided engineering (CAE) support the design process?",
+          "answer_options": {
+            "A": "Computer-aided engineering (CAE) does not support the design process.",
+            "B": "Computer-aided engineering (CAE) is used, but not in all projects.",
+            "C": "Computer-aided engineering (CAE) is used in most projects, but not always fully.",
+            "D": "Computer-aided engineering (CAE) is fully used in all projects.",
+            "E": "Computer-aided engineering (CAE) is fully integrated into each project and supports the entire development process."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent is the finite element analysis (FEA/FEM) method used in design processes?",
+          "answer_options": {
+            "A": "The finite element analysis (FEA/FEM) method is not used for design.",
+            "B": "The finite element analysis (FEA/FEM) method is applied, but not in all cases.",
+            "C": "The finite element analysis (FEA/FEM) method is regularly applied, but not comprehensively.",
+            "D": "The finite element analysis (FEA/FEM) method is effectively applied in all projects.",
+            "E": "The finite element analysis (FEA/FEM) method is a priority and used in every project."
+          },
+          "selected_answer": "A"
+        },
+        {
+          "question_text": "To what extent is computational fluid dynamics (CFD) used in projects?",
+          "answer_options": {
+            "A": "Computational fluid dynamics (CFD) is not used in projects.",
+            "B": "Computational fluid dynamics (CFD) is used, but not in all projects.",
+            "C": "Computational fluid dynamics (CFD) is used in most projects, but not comprehensively.",
+            "D": "Computational fluid dynamics (CFD) is fully used in all projects.",
+            "E": "Computational fluid dynamics (CFD) is fully used in all projects and supports the development processes."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent does KBE and design automation support the design processes?",
+          "answer_options": {
+            "A": "KBE and design automation are not used in the design process.",
+            "B": "KBE and design automation are used, but their application is limited.",
+            "C": "KBE and design automation are regularly used, but not in all projects.",
+            "D": "KBE and design automation are effectively used in most projects.",
+            "E": "KBE and design automation are a priority and are applied comprehensively in every project."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent is computer-aided manufacturing (CAM) used in the production process?",
+          "answer_options": {
+            "A": "Computer-aided manufacturing (CAM) is not used in the production process.",
+            "B": "Computer-aided manufacturing (CAM) is used occasionally in the production process.",
+            "C": "Computer-aided manufacturing (CAM) is used in most projects, but not always comprehensively.",
+            "D": "Computer-aided manufacturing (CAM) is systematically used in all projects.",
+            "E": "Computer-aided manufacturing (CAM) is fully used in all projects."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent does discrete event simulation (DES) support product development processes?",
+          "answer_options": {
+            "A": "Discrete event simulation (DES) does not support product development processes.",
+            "B": "Discrete event simulation (DES) is applied, but not comprehensively.",
+            "C": "Discrete event simulation (DES) is applied in most projects, but not always systematically.",
+            "D": "Discrete event simulation (DES) is applied in all projects and supports product development processes.",
+            "E": "Discrete event simulation (DES) is a priority and fully supports all product development processes."
+          },
+          "selected_answer": "D"
+        },
+        {
+          "question_text": "To what extent does computer-aided process planning (CAPP)/digital factories support product development process?",
+          "answer_options": {
+            "A": "Computer-aided process planning (CAPP)/digital factories does not support product development process.",
+            "B": "Computer-aided process planning (CAPP)/digital factories is sporadically used in product development process.",
+            "C": "Computer-aided process planning (CAPP)/digital factories is regularly used, but not in all projects.",
+            "D": "Computer-aided process planning (CAPP)/digital factories is fully used in the product development process.",
+            "E": "Computer-aided process planning (CAPP)/digital factories is an integral part of each product development process."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "To what extent are virtual reality (VR) and augmented reality (AR) used in product development?",
+          "answer_options": {
+            "A": "Virtual reality (VR) and augmented reality (AR) are not used in product development.",
+            "B": "Virtual reality (VR) and augmented reality (AR) are applied, but not in all projects.",
+            "C": "Virtual reality (VR) and augmented reality (AR) are applied in most projects, but not comprehensively.",
+            "D": "Virtual reality (VR) and augmented reality (AR) are effectively used in all projects.",
+            "E": "Virtual reality (VR) and augmented reality (AR) are fully integrated into each project and have a significant impact on product development."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How do PDM/PLM systems support product data management?",
+          "answer_options": {
+            "A": "PDM/PLM systems do not support product data management.",
+            "B": "PDM/PLM systems are applied, but not systematically in all projects.",
+            "C": "PDM/PLM systems are regularly applied in most projects, but not always comprehensively.",
+            "D": "PDM/PLM systems are fully applied in all projects and support product data management.",
+            "E": "PDM/PLM systems are fully applied in all projects and are a key tool in product data management."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "What benefits do document management systems (DMS) bring to projects?",
+          "answer_options": {
+            "A": "Document management systems (DMS) are not used in projects.",
+            "B": "Document management systems (DMS) are used, but not always comprehensively.",
+            "C": "Document management systems (DMS) are regularly applied, but not in all projects.",
+            "D": "Document management systems (DMS) are fully applied in all projects.",
+            "E": "Document management systems (DMS) are an integral part of every project and fully support document management."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent does workflow management system (WMS) support project management?",
+          "answer_options": {
+            "A": "Workflow management system (WMS) does not support project management.",
+            "B": "Workflow management system (WMS) is sporadically used in projects.",
+            "C": "Workflow management system (WMS) is regularly used, but not comprehensively.",
+            "D": "Workflow management system (WMS) is effectively used in all projects.",
+            "E": "Workflow management system (WMS) is fully used in each project."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent is enterprise resource planning (ERP) applied in product development processes?",
+          "answer_options": {
+            "A": "Enterprise resource planning (ERP) is not applied in product development processes.",
+            "B": "Enterprise resource planning (ERP) is applied, but not in all projects.",
+            "C": "Enterprise resource planning (ERP) is regularly applied, but not comprehensively.",
+            "D": "Enterprise resource planning (ERP) is applied in all projects and supports product development processes.",
+            "E": "Enterprise resource planning (ERP) is a key tool supporting product development processes and is fully applied."
+          },
+          "selected_answer": "C"
+        },
+        {
+          "question_text": "How does supply chain management (SCM) support product development?",
+          "answer_options": {
+            "A": "Supply chain management (SCM) does not support product development.",
+            "B": "Supply chain management (SCM) supports product development, but not systematically.",
+            "C": "Supply chain management (SCM) supports product development, but not comprehensively.",
+            "D": "Supply chain management (SCM) supports product development in all projects.",
+            "E": "Supply chain management (SCM) is fully integrated in every project and fully supports development processes."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent do customer relationship management (CRM) systems impact product development?",
+          "answer_options": {
+            "A": "Customer relationship management (CRM) systems do not impact product development.",
+            "B": "Customer relationship management (CRM) systems have limited impact on product development.",
+            "C": "Customer relationship management (CRM) systems are regularly applied, but not in all projects.",
+            "D": "Customer relationship management (CRM) systems are fully applied in all projects.",
+            "E": "Customer relationship management (CRM) systems are critical for product development and fully applied."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "How do supplier relationship management (SRM) systems support the product development process?",
+          "answer_options": {
+            "A": "Supplier relationship management (SRM) systems do not support the product development process.",
+            "B": "Supplier relationship management (SRM) systems are applied, but not in all cases.",
+            "C": "Supplier relationship management (SRM) systems are regularly applied, but not in all projects.",
+            "D": "Supplier relationship management (SRM) systems are effectively applied in all projects.",
+            "E": "Supplier relationship management (SRM) systems are a priority and are applied comprehensively in each project."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent is a computerized maintenance management system (CMMS) applied in product development processes?",
+          "answer_options": {
+            "A": "A computerized maintenance management system (CMMS) is not applied in product development processes.",
+            "B": "A computerized maintenance management system (CMMS) is applied to a limited extent.",
+            "C": "A computerized maintenance management system (CMMS) is regularly applied, but not comprehensively.",
+            "D": "A computerized maintenance management system (CMMS) is applied in all projects.",
+            "E": "A computerized maintenance management system (CMMS) is integral to each project and supports all product development processes."
+          },
+          "selected_answer": "B"
+        },
+        {
+          "question_text": "To what extent do software project management systems affect product development?",
+          "answer_options": {
+            "A": "Software project management systems do not affect product development.",
+            "B": "Software project management systems have limited impact on product development.",
+            "C": "Software project management systems are regularly used, but not in all projects.",
+            "D": "Software project management systems are fully utilized in all projects.",
+            "E": "Software project management systems are crucial to product development and are used to their full extent."
+          },
+          "selected_answer": "B"
+        }
+      ]
+    }
+  ]
+}

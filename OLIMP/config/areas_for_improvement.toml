@@ -3,12 +3,7 @@
 
 [gap_analysis]
 target_sections = [
-    "TECHNOLOGIA I INFRASTRUKTURA",
-    "DANE", 
     "LUDZIE I KOMPETENCJE", 
     "ORGANIZACJA I PROCESY",
-    "STRATEGIA I ZARZĄDZANIE",
-    "BUDŻET",
-    "PRODUKTY I USŁUGI",
-    "ETYKA I REGULACJE"
+    "BUDŻET"
 ]

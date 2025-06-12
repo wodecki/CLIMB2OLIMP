@@ -66,33 +66,12 @@ def generate_recommendation_for_branch(state: DocumentState, branch_suffix: str,
         branch_suffix: 'A', 'B', or 'C'
         provider: 'openai', 'anthropic', or 'gemini'
     """
-    branch_name = f"branch_{branch_suffix}"
     print(f"Generating recommendations for Branch {branch_suffix} using {provider}...")
     
     # Check if gaps exist
     if not state.get("gaps"):
         print(f"No gaps found in state - skipping Branch {branch_suffix} recommendations")
-        
-        # Initialize branch data to prevent recursion in conditional edges
-        if "branch_data" not in state:
-            state["branch_data"] = {}
-        
-        branch_key = f"branch_{branch_suffix}"
-        
-        # Set branch as completed/approved to terminate the evaluation loop
-        branch_data = {
-            "recommendations": "No recommendations needed - no gaps identified",
-            "evaluation_iterations": 3,  # Max iterations to force consensus
-            "recommendation_approved": True,  # Approved to exit loop
-            "evaluation_feedback": "No gaps found, skipping branch analysis"
-        }
-        
-        # Return state update using reducer pattern
-        return {
-            "branch_data": {
-                branch_key: branch_data
-            }
-        }
+        return state
     
     # Initialize branch data if not present
     if "branch_data" not in state:

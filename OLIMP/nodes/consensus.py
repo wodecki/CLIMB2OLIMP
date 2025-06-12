@@ -320,7 +320,6 @@ Raport powinien być na tyle szczegółowy i praktyczny, że organizacja może g
         print(f"📊 Synthesized from {len(available_branches)} branch recommendations")
         print(f"📁 Final report: {consensus_path}")
         
-        
         return state
         
     except Exception as e:

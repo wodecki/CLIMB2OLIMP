@@ -1,9 +1,0 @@
-# Configuration for areas to analyze for gaps in OLIMP questionnaire
-# These sections will be analyzed to identify improvement opportunities
-
-[gap_analysis]
-target_sections = [
-    "LUDZIE I KOMPETENCJE", 
-    "ORGANIZACJA I PROCESY",
-    "BUDŻET"
-]

@@ -99,7 +99,6 @@ def evaluate_branch_recommendation(state: DocumentState, branch_suffix: str, pro
         branch_suffix: 'A', 'B', or 'C'
         provider: 'openai', 'anthropic', or 'gemini'
     """
-    branch_name = f"branch_{branch_suffix}"
     print(f"Evaluating Branch {branch_suffix} recommendation using {provider}...")
     
     # Get branch data
@@ -158,8 +157,7 @@ def evaluate_branch_recommendation(state: DocumentState, branch_suffix: str, pro
         )
         
         current_iterations = branch_data.get("evaluation_iterations", 0)
-        iteration_num = current_iterations + 1
-        print(f"Conducting Branch {branch_suffix} evaluation (iteration {iteration_num})...")
+        print(f"Conducting Branch {branch_suffix} evaluation (iteration {current_iterations + 1})...")
         
         # Create message for evaluation
         message = HumanMessage(content=formatted_prompt)

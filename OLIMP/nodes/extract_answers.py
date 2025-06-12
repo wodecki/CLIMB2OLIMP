@@ -28,41 +28,9 @@ def extract_answers(state: DocumentState) -> DocumentState:
     pdf_files.sort()  # Ensure consistent order
     
     if not pdf_files:
-        print("No PDF files found, checking for existing A.json...")
-        # If no PDF files, try to load existing A.json
-        if os.path.exists("./data/process/A.json"):
-            try:
-                with open("./data/process/A.json", "r", encoding="utf-8") as f:
-                    integrated_results = json.load(f)
-                
-                print(f"DEBUG: Loaded A.json with keys: {list(integrated_results.keys())}")
-                
-                if integrated_results and "OLIMP" in integrated_results:
-                    print(f"✅ Using existing A.json with OLIMP data")
-                    print(f"DEBUG: OLIMP sections: {len(integrated_results['OLIMP'].get('sections', []))}")
-                    
-                    # Check for gaps in OLIMP data
-                    gap_count = 0
-                    if 'OLIMP' in integrated_results:
-                        for section in integrated_results['OLIMP'].get('sections', []):
-                            for question in section.get('questions', []):
-                                if question.get('selected_answer') in ['A', 'B', 'C', 'D']:
-                                    gap_count += 1
-                    print(f"DEBUG: Found {gap_count} potential gaps in OLIMP data")
-                    
-                    return {
-                        **state,
-                        "document_content": "Loaded existing A.json (no PDF files found)",
-                        "answers": integrated_results
-                    }
-                else:
-                    print(f"❌ A.json exists but missing OLIMP data")
-            except Exception as e:
-                print(f"Error loading A.json: {e}")
-        
         return {
             **state,
-            "document_content": "No PDF files found matching pattern A_*.pdf and no valid A.json",
+            "document_content": "No PDF files found matching pattern A_*.pdf",
             "answers": {}
         }
     
@@ -82,28 +50,13 @@ def extract_answers(state: DocumentState) -> DocumentState:
             with open("./data/process/A.json", "r", encoding="utf-8") as f:
                 integrated_results = json.load(f)
             
-            print(f"DEBUG: A.json loaded with keys: {list(integrated_results.keys())}")
-            
             if integrated_results and "OLIMP" in integrated_results:
-                print(f"✅ Successfully loaded A.json with OLIMP data")
-                print(f"DEBUG: OLIMP sections: {len(integrated_results['OLIMP'].get('sections', []))}")
-                
-                # Check for gaps in OLIMP data
-                gap_count = 0
-                if 'OLIMP' in integrated_results:
-                    for section in integrated_results['OLIMP'].get('sections', []):
-                        for question in section.get('questions', []):
-                            if question.get('selected_answer') in ['A', 'B', 'C', 'D']:
-                                gap_count += 1
-                print(f"DEBUG: Found {gap_count} potential gaps in OLIMP data")
-                
+                print(f"Successfully loaded A.json with keys: {list(integrated_results.keys())}")
                 return {
                     **state,
                     "document_content": f"Loaded existing answers from A.json (skipped PDF processing)",
                     "answers": integrated_results
                 }
-            else:
-                print(f"❌ A.json missing OLIMP data, will continue to recreation")
         except Exception as e:
             print(f"Error loading A.json: {e}")
     

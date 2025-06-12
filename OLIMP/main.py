@@ -9,8 +9,7 @@ def main():
     """
     Main function to run the document processing process
     """
-    print("Starting OLIMP document processing process...")
-    print("DEBUG: Python working directory:", os.getcwd())
+    print("Starting document processing process...")
     
     # Initialize empty state with new structure
     initial_state = {
@@ -25,24 +24,11 @@ def main():
         "recommendation_approved": False
     }
     
-    print("DEBUG: Initial state keys:", list(initial_state.keys()))
-    print("DEBUG: About to invoke graph...")
-    
     # Invoke the app with the initial state
     try:
-        print("DEBUG: Starting graph execution with recursion limit...")
-        
-        # Configure execution with higher recursion limit
-        from langchain_core.runnables import RunnableConfig
-        config = RunnableConfig(
-            recursion_limit=100,  # Increase from default 25 to 100
-            max_concurrency=None
-        )
-        
-        response = app.invoke(initial_state, config=config)
+        response = app.invoke(initial_state)
         
         # Print the results
-        
         print("=" * 50)
         print("DOCUMENT PROCESSING COMPLETE")
         print("=" * 50)
