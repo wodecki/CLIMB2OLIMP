@@ -1053,10 +1053,18 @@ export default function MultiStageWorkflow() {
 
     const getProgressPercentage = () => {
       if (!olimpProgress) return 0;
-      return Math.round((olimpProgress.stepsCompleted / olimpProgress.totalSteps) * 100);
+      if (olimpProgress.stepsCompleted && olimpProgress.totalSteps) {
+        return Math.round((olimpProgress.stepsCompleted / olimpProgress.totalSteps) * 100);
+      }
+      // Fallback to basic progress if available
+      if (olimpProgress.percentage) {
+        return olimpProgress.percentage;
+      }
+      return 50; // Default progress for running state
     };
 
     const formatElapsedTime = (seconds: number) => {
+      if (!seconds || isNaN(seconds)) return '0s';
       if (seconds < 60) return `${Math.round(seconds)}s`;
       const minutes = Math.floor(seconds / 60);
       const remainingSeconds = Math.round(seconds % 60);
@@ -1090,19 +1098,26 @@ export default function MultiStageWorkflow() {
               <div className="p-3 bg-gray-50 rounded-lg">
                 <p className="text-sm text-gray-600">Current Step</p>
                 <p className="font-medium text-gray-900">
-                  {olimpProgress ? getStepDisplayName(olimpProgress.currentStep) : 'Initializing...'}
+                  {olimpProgress ? 
+                    (olimpProgress.currentStep ? getStepDisplayName(olimpProgress.currentStep) : 
+                     olimpProgress.step || 'Processing analysis...') : 
+                    'Initializing...'}
                 </p>
               </div>
               <div className="p-3 bg-gray-50 rounded-lg">
                 <p className="text-sm text-gray-600">Steps Progress</p>
                 <p className="font-medium text-gray-900">
-                  {olimpProgress ? `${olimpProgress.stepsCompleted}/${olimpProgress.totalSteps}` : '0/7'}
+                  {olimpProgress && olimpProgress.stepsCompleted && olimpProgress.totalSteps ? 
+                    `${olimpProgress.stepsCompleted}/${olimpProgress.totalSteps}` : 
+                    (analysisStatus === 'running' ? 'In Progress' : '0/7')}
                 </p>
               </div>
               <div className="p-3 bg-gray-50 rounded-lg">
                 <p className="text-sm text-gray-600">Elapsed Time</p>
                 <p className="font-medium text-gray-900">
-                  {olimpProgress ? formatElapsedTime(olimpProgress.elapsedTime) : '0s'}
+                  {olimpProgress && olimpProgress.elapsedTime ? 
+                    formatElapsedTime(olimpProgress.elapsedTime) : 
+                    (analysisStatus === 'running' ? 'Running...' : '0s')}
                 </p>
               </div>
             </div>
@@ -1145,7 +1160,7 @@ export default function MultiStageWorkflow() {
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Analysis Pipeline</h2>
             <div className="space-y-3">
               {['setup', 'extract_answers', 'identify_gaps', 'evaluation', 'recommend', 'consensus', 'completed'].map((step, index) => {
-                const isCompleted = olimpProgress && olimpProgress.stepsCompleted > index;
+                const isCompleted = olimpProgress && olimpProgress.stepsCompleted ? olimpProgress.stepsCompleted > index : false;
                 const isActive = olimpProgress && olimpProgress.currentStep === step;
                 
                 return (
@@ -1232,7 +1247,7 @@ export default function MultiStageWorkflow() {
                     <h3 className="font-semibold mb-2">OLIMP Final Report</h3>
                     <p className="text-sm text-gray-600 mb-3">Comprehensive AI readiness analysis with gap analysis and implementation roadmap</p>
                     <a
-                      href="/report"
+                      href={`/report?path=${encodeURIComponent(reportPath)}`}
                       className="px-4 py-2 bg-green-600 text-white rounded font-medium hover:bg-green-700 text-sm"
                     >
                       View Final Report

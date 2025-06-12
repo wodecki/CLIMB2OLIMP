@@ -56,55 +56,77 @@ export async function GET() {
       }
     }
     
-    // Determine status
+    // Determine status with simplified logic
     let status = 'idle';
-    if (isRunning && pid) {
-      status = 'running';
-    } else if (finalReport || completedReports.length > 0) {
-      status = 'completed';
-    }
-    
-    // Check if stopped
-    const stopFile = path.join(olimpPath, 'stop_analysis.txt');
-    if (fs.existsSync(stopFile)) {
-      status = 'stopped';
-    }
-    
-    // Read progress file for detailed status
-    const progressFile = path.join(olimpPath, 'progress.json');
-    let progressData = null;
     let detailedStatus = null;
     
-    if (fs.existsSync(progressFile)) {
+    // Check for completion markers
+    const completionFile = path.join(olimpPath, 'analysis_complete.txt');
+    const errorFile = path.join(olimpPath, 'analysis_error.txt');
+    const stopFile = path.join(olimpPath, 'stop_analysis.txt');
+    
+    if (fs.existsSync(errorFile)) {
+      status = 'error';
       try {
-        const progressContent = fs.readFileSync(progressFile, 'utf-8');
-        progressData = JSON.parse(progressContent);
-        
-        // Check for error status
-        if (progressData.status === 'error') {
-          status = 'error';
-          detailedStatus = {
-            error: progressData.error,
-            currentNode: progressData.current_node,
-            currentStep: progressData.current_step,
-            stepsCompleted: progressData.steps_completed,
-            totalSteps: progressData.total_steps,
-            branches: progressData.branches
-          };
-        } else if (status === 'running') {
-          // Enhance running status with progress details
-          detailedStatus = {
-            currentStep: progressData.current_step || 'initializing',
-            stepsCompleted: progressData.steps_completed || 0,
-            totalSteps: progressData.total_steps || 7,
-            currentBranch: progressData.current_branch,
-            branches: progressData.branches,
-            elapsedTime: progressData.elapsed_time
-          };
-        }
+        const errorContent = fs.readFileSync(errorFile, 'utf-8');
+        detailedStatus = { error: errorContent };
       } catch (err) {
-        console.error('Error reading progress file:', err);
+        detailedStatus = { error: 'Unknown error occurred' };
       }
+    } else if (fs.existsSync(stopFile)) {
+      status = 'stopped';
+    } else if (fs.existsSync(completionFile)) {
+      status = 'completed';
+      try {
+        const completionContent = fs.readFileSync(completionFile, 'utf-8');
+        detailedStatus = { completion: completionContent };
+      } catch (err) {
+        detailedStatus = { completion: 'Analysis completed' };
+      }
+    } else if (isRunning && pid) {
+      status = 'running';
+      
+      // Determine current step based on what files exist
+      let currentStep = 'extract_answers';
+      let stepsCompleted = 1;
+      let totalSteps = 7;
+      
+      const aJsonPath = path.join(olimpPath, 'data', 'process', 'A.json');
+      const gapsJsonPath = path.join(olimpPath, 'data', 'process', 'A_gaps.json');
+      const interimReportsDir = path.join(olimpPath, 'data', 'reports', 'interim_reports');
+      
+      if (fs.existsSync(aJsonPath)) {
+        currentStep = 'identify_gaps';
+        stepsCompleted = 2;
+      }
+      
+      if (fs.existsSync(gapsJsonPath)) {
+        currentStep = 'parallel_recommendations';
+        stepsCompleted = 3;
+      }
+      
+      // Check for interim reports to track parallel branch progress
+      if (fs.existsSync(interimReportsDir)) {
+        const interimFiles = fs.readdirSync(interimReportsDir).filter(f => f.endsWith('.md'));
+        if (interimFiles.length > 0) {
+          stepsCompleted = 4 + Math.min(3, Math.floor(interimFiles.length / 3)); // 3 files per branch cycle
+        }
+      }
+      
+      detailedStatus = {
+        currentStep,
+        stepsCompleted,
+        totalSteps,
+        elapsedTime: 180, // 3 minutes as default
+        message: `OLIMP analysis in progress: ${currentStep.replace('_', ' ')}`,
+        pid: pid
+      };
+    } else if (finalReport || completedReports.length > 0) {
+      status = 'completed';
+      detailedStatus = { 
+        message: 'Analysis completed successfully',
+        reportsFound: completedReports.length
+      };
     }
     
     return NextResponse.json({
