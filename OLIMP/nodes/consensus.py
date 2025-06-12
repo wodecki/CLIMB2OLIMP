@@ -224,6 +224,8 @@ Stwórz **KOMPLEKSOWY RAPORT TRANSFORMACJI AI**, który:
 Raport powinien być na tyle szczegółowy i praktyczny, że organizacja może go użyć jako głównego dokumentu sterującego całą transformacją AI.
 
  Wazne: raport powinien mieć minimum 10000 słów. Generuj PEŁNY, DŁUGI raport - nie skracaj, nie przerywaj, kontynuuj do końca wszystkich sekcji.
+ Nie dodawaj placeholderów dotyczących nazwy firmy. Nie odwołuj się do nazwy firmy.
+ Na górze raportu nie dodawaj szczegółów dotyczących modeli językowych, timestampów, czy innych metadanych. Skup się na treści merytorycznej raportu.
 """
 
         print("Generating consensus recommendation...")

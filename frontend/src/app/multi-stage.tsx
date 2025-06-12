@@ -69,6 +69,7 @@ export default function MultiStageWorkflow() {
     currentBranch: string | null;
     branches: any;
     elapsedTime: number;
+    stepStatus?: 'active' | 'generating' | 'completed';
     error?: string;
   } | null>(null);
 
@@ -1041,11 +1042,14 @@ export default function MultiStageWorkflow() {
         'processing': 'Gap Analysis',
         'extract_answers': 'Extracting Responses',
         'identify_gaps': 'Identifying Gaps',
+        'parallel_recommendations': 'Parallel Recommendations',
         'evaluation': 'Parallel Recommendations',
         'evaluation_branches': 'Multi-Branch Analysis',
         'recommend': 'Generating Recommendations',
         'recommend_branches': 'Branch Recommendations',
         'consensus': 'Consensus Building',
+        'generating_final_report': 'Final Report Generation',
+        'final_report': 'Final Report Generation',
         'completed': 'Analysis Complete'
       };
       return stepMap[step] || step;
@@ -1102,6 +1106,14 @@ export default function MultiStageWorkflow() {
                     (olimpProgress.currentStep ? getStepDisplayName(olimpProgress.currentStep) : 
                      olimpProgress.step || 'Processing analysis...') : 
                     'Initializing...'}
+                  {olimpProgress?.stepStatus === 'generating' && (
+                    <span className="ml-2 text-orange-600">
+                      <svg className="inline-block animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    </span>
+                  )}
                 </p>
               </div>
               <div className="p-3 bg-gray-50 rounded-lg">
@@ -1109,7 +1121,7 @@ export default function MultiStageWorkflow() {
                 <p className="font-medium text-gray-900">
                   {olimpProgress && olimpProgress.stepsCompleted && olimpProgress.totalSteps ? 
                     `${olimpProgress.stepsCompleted}/${olimpProgress.totalSteps}` : 
-                    (analysisStatus === 'running' ? 'In Progress' : '0/7')}
+                    (analysisStatus === 'running' ? 'In Progress' : '0/8')}
                 </p>
               </div>
               <div className="p-3 bg-gray-50 rounded-lg">
@@ -1158,33 +1170,91 @@ export default function MultiStageWorkflow() {
           {/* Analysis Steps */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Analysis Pipeline</h2>
-            <div className="space-y-3">
-              {['setup', 'extract_answers', 'identify_gaps', 'evaluation', 'recommend', 'consensus', 'completed'].map((step, index) => {
+            <div className="space-y-4">
+              {['setup', 'extract_answers', 'identify_gaps', 'parallel_recommendations', 'recommend', 'consensus', 'generating_final_report', 'completed'].map((step, index) => {
                 const isCompleted = olimpProgress && olimpProgress.stepsCompleted ? olimpProgress.stepsCompleted > index : false;
                 const isActive = olimpProgress && olimpProgress.currentStep === step;
+                const stepStatus = olimpProgress?.stepStatus;
+                const isGenerating = isActive && stepStatus === 'generating';
                 
                 return (
-                  <div key={step} className="flex items-center">
-                    <div className="flex-shrink-0 mr-4">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
+                  <div key={step} className={`flex items-start transition-all duration-300 ${
+                    isActive ? 'transform scale-105' : ''
+                  }`}>
+                    <div className="flex-shrink-0 mr-4 mt-1">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 ${
                         isCompleted 
                           ? 'bg-green-500 text-white' 
                           : isActive
-                            ? 'bg-blue-600 text-white animate-pulse'
+                            ? isGenerating
+                              ? 'bg-orange-500 text-white animate-pulse shadow-lg ring-2 ring-orange-300'
+                              : 'bg-blue-600 text-white animate-pulse shadow-lg ring-2 ring-blue-300'
                             : 'bg-gray-200 text-gray-600'
                       }`}>
                         {isCompleted ? '✓' : index + 1}
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <p className={`font-medium ${isActive ? 'text-blue-900' : 'text-gray-900'}`}>
-                        {getStepDisplayName(step)}
-                      </p>
+                      <div className={`p-2 rounded-lg transition-all duration-300 ${
+                        isActive
+                          ? isGenerating 
+                            ? 'bg-orange-50 border border-orange-200'
+                            : 'bg-blue-50 border border-blue-200'
+                          : ''
+                      }`}>
+                        <p className={`font-medium ${
+                          isActive 
+                            ? isGenerating 
+                              ? 'text-orange-900' 
+                              : 'text-blue-900' 
+                            : 'text-gray-900'
+                        }`}>
+                          {getStepDisplayName(step)}
+                          {isGenerating && (
+                            <span className="ml-2 inline-flex items-center text-orange-600">
+                              <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              <span className="ml-1 text-xs font-medium">Heavy Processing...</span>
+                            </span>
+                          )}
+                        </p>
+                        {isGenerating && step === 'generating_final_report' && (
+                          <p className="text-xs text-orange-700 mt-1">
+                            Compiling comprehensive report with all analysis data...
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 );
               })}
             </div>
+            
+            {/* Special notice for final report generation */}
+            {olimpProgress?.currentStep === 'generating_final_report' && olimpProgress?.stepStatus === 'generating' && (
+              <div className="mt-6 p-4 bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200 rounded-lg">
+                <div className="flex items-center mb-2">
+                  <svg className="animate-spin h-5 w-5 text-orange-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <h3 className="font-semibold text-orange-900">Final Report Generation in Progress</h3>
+                </div>
+                <p className="text-sm text-orange-800">
+                  The system is compiling all analysis data into a comprehensive final report. This process involves consolidating insights from multiple AI expert perspectives and may take several minutes to complete.
+                </p>
+                <div className="mt-3 flex items-center text-xs text-orange-700">
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                  </div>
+                  <span className="ml-2 font-medium">Processing intensive analysis...</span>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Error Display */}

@@ -89,11 +89,13 @@ export async function GET() {
       // Determine current step based on what files exist
       let currentStep = 'extract_answers';
       let stepsCompleted = 1;
-      let totalSteps = 7;
+      let totalSteps = 8; // Added final report generation step
+      let stepStatus = 'active';
       
       const aJsonPath = path.join(olimpPath, 'data', 'process', 'A.json');
       const gapsJsonPath = path.join(olimpPath, 'data', 'process', 'A_gaps.json');
       const interimReportsDir = path.join(olimpPath, 'data', 'reports', 'interim_reports');
+      const consensusReportPath = path.join(olimpPath, 'data', 'reports', 'A_recommendations_CONSENSUS_FINAL.md');
       
       if (fs.existsSync(aJsonPath)) {
         currentStep = 'identify_gaps';
@@ -109,14 +111,29 @@ export async function GET() {
       if (fs.existsSync(interimReportsDir)) {
         const interimFiles = fs.readdirSync(interimReportsDir).filter(f => f.endsWith('.md'));
         if (interimFiles.length > 0) {
-          stepsCompleted = 4 + Math.min(3, Math.floor(interimFiles.length / 3)); // 3 files per branch cycle
+          stepsCompleted = 4 + Math.min(3, Math.floor(interimFiles.length / 9)); // 9 files total (3 branches × 3 files each)
+          
+          // Check if all parallel recommendations are complete
+          if (interimFiles.length >= 9) {
+            currentStep = 'generating_final_report';
+            stepsCompleted = 7;
+            stepStatus = 'generating'; // Special status for final report generation
+          }
         }
+      }
+      
+      // Check if final report exists
+      if (fs.existsSync(consensusReportPath)) {
+        currentStep = 'completed';
+        stepsCompleted = 8;
+        stepStatus = 'completed';
       }
       
       detailedStatus = {
         currentStep,
         stepsCompleted,
         totalSteps,
+        stepStatus,
         elapsedTime: 180, // 3 minutes as default
         message: `OLIMP analysis in progress: ${currentStep.replace('_', ' ')}`,
         pid: pid

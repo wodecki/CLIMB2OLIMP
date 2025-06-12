@@ -1,154 +1,206 @@
-# Branch A Recommendations (OPENAI)\n\n# Raport transformacji cyfrowej i wdrożenia AI  
-*(poziom OLIMP – przejście z obecnego statusu do poziomu E)*  
+# Branch A Recommendations (OPENAI)\n\n# Raport transformacji cyfrowej i implementacji AI  
+### (na podstawie modelu OLIMP – przejście z poziomów A-D do E)  
 
 ---
 
 ## 1. Streszczenie wykonawcze
-**Ogólna ocena**  
-Analiza wskazuje, że firma jest na pograniczu poziomów B–D w większości kategorii. Najsilniejsze strony to:  
-• istniejące narzędzia AI wspierające zespoły (poziom E),  
-• częściowo interdyscyplinarne zespoły oraz wysoka świadomość AI w wielu działach (poziom D).  
 
-**Kluczowe luki**  
-1. Brak zautomatyzowanego, opartego o AI procesu decyzyjnego (poziom A).  
-2. Ograniczone cykle ciągłego doskonalenia i lifecycle management dla AI (A/C).  
-3. Niewystarczające finansowanie długofalowe oraz niski poziom inwestycji w piloty AI (A/B).  
-4. Wiedza i szkolenia – obecnie „punktowe”, brak pełnego programu (C/D).  
-5. Niedojrzała inżynieria danych, MLOps i infrastruktura chmurowa (C lub niżej wg danych CLIMB_2).  
+| Obszar | Średni poziom obecny | Najważniejsze luki | Priorytet |
+|--------|---------------------|--------------------|-----------|
+| Ludzie i kompetencje | B- | • Brak świadomości GenAI (A)  • Brak zespołów interdyscyplinarnych (A) • Niski poziom korzystania z konsultantów zewn. (A) | 1 |
+| Organizacja i procesy | C | • Brak cykli ciągłego doskonalenia (A) • AI w decyzjach = B • Niespójny proces SDLC dla AI (B) • Narzędzia AI tylko częściowo (C) | 2 |
+| Budżet / Technologia & infrastruktura* | C- | • Brak długoterminowego budżetu na AI (A) • Ograniczone finansowanie pilotów (C) • Pełne pokrycie szkoleń dopiero D | 3 |
 
-**Priorytety transformacji (0-36 mies.)**  
-1. Zapewnienie stabilnego finansowania i governance AI (Rada ds. AI, budżet 3-letni).  
-2. “AI-first product development” – pełna integracja AI w procesach NPD (new product development).  
-3. Program podniesienia kompetencji (AI Academy, prompt engineering, MLOps).  
-4. Platforma wiedzy + culture change = Continuous Learning & Improvement (DevOps ↔ MLOps ↔ AIOps).  
+\* Szczegółowe wskaźniki infrastrukturalne z kwestionariusza CLIMB_2 wskazują  niski poziom zaawansowanych narzędzi inżynierskich, niemniej w OLIMP technologia (integracja AI w procesach rozwoju produktu) osiąga E – zakładamy więc, że infrastruktura do GenAI jest już podstawowo dostępna, a luki leżą głównie w ludziach, procesach i finansowaniu.
+
+Kluczowe priorytety transformacji:
+
+1. Szybkie podniesienie świadomości i kompetencji AI w całej firmie (program **GenAI Literacy 360°**).
+2. Zbudowanie trwałych struktur (AI CoE + interdyscyplinarne „product squads”) oraz uruchomienie **MLOps / LLMOps** z ciągłym doskonaleniem.
+3. Zapewnienie mechanizmów finansowania i governance (budżet 3-letni, Responsible AI, SDLC-AI).
 
 ---
 
 ## 2. Analiza według obszarów
 
-### 2.1 Technologia i infrastruktura
-| Element | Obecny stan | Wyzwania |
-|---|---|---|
-| Chmura / GPU | Lokalne serwery + punktowe chmury; brak MLOps | Słaba skalowalność, koszty utrzymania |
-| Narzędzia CAD/CAE/PLM | DMU i DES (D), reszta B/C | Brak spójnego łańcucha danych i API |
-| Automatyzacja rozwoju produktu | Poziom B/C | Ograniczona integracja z AI |
-| Bezpieczeństwo, etyka AI | Ad-hoc | Brak polityki Responsible AI |
+### 2.1  Technologie i infrastruktura (w tym OLIMP + wyniki CLIMB_2)
 
-**Rekomendowana ścieżka (D → E)**  
-1. Standaryzacja środowiska chmurowego (Azure AI lub AWS Bedrock) + konteneryzacja (K8s).  
-2. Wdrożenie MLOps (MLflow/Kubeflow) i Data Lakehouse (Databricks, Snowflake) – sprinty 90-dniowe.  
-3. Integracja RAG i wektorowych baz danych (Pinecone, Milvus) do produktów.  
-4. Governance AI: monitoring driftu, wersjonowanie promptów (LangSmith, PromptLayer).  
-5. Enterprise-wide API Gateway do usług GenAI; SSO i audyt.  
+Obecny stan  
+• Pełna integracja GenAI w istniejących procesach rozwoju produktu (E) i automatyzacja (E).  
+• Jednak narzędzia wspierające pracę zespołów AI na poziomie C (częściowe).  
+• Z CLIMB_2: ograniczone wykorzystanie CAE, FEA, PLM, VR/AR, KBE – ryzyko w rozwoju fizycznych produktów i digital twin.
 
-### 2.2 Ludzie i kompetencje
-| Pytanie | Present | Krok docelowy |
-|---|---|---|
-| Świadomość AI | D | E |
-| Szkolenia (program., prompting) | D | E |
-| Interdyscyplinarność | D | E |
-| Konsultanci zewn. | C | E |
-| PM-AI | C | E |
-| Knowledge management | D | E |
+Główne wyzwania  
+• Brak standaryzacji narzędzi (różne silniki LLM, brak wspólnego repozytorium promptów i komponentów).  
+• Ograniczona platforma MLOps/LLMOps (brak pełnego SDLC-AI).  
+• Silosy danych – trudności w treningu i RAG (Retrieval-Augmented Generation).
 
-**Działania**  
-1. AI Academy – ścieżki: Foundation, Specialist, Expert; obejmuje prompt engineering, LLM-Ops, etykę.  
-2. Certyfikacja PMI-AI (PMI + GenAI modules) dla kierowników projektów – min. 70 % PM do M6, 100 % do M18.  
-3. Program „Shadowing External Expert” – <> 2 konsultantów / projekt strategiczny (M0-M18).  
-4. Redesign intranet + wideo-wiki z „lessons learned” (Loom + Confluence + wyszukiwarka RAG).  
-5. KPI: AI Literacy Score, % ukończonych ścieżek, NPS szkoleniowy.  
+Rekomendowana ścieżka  
+1. Wdrożenie jednolitej platformy chmurowej (Azure OpenAI / AWS Bedrock / Google Vertex AI) + wektorowe bazy (Pinecone, Azure CosmosDB for Vector, Elasticsearch v8).  
+2. Zbudowanie warstwy Orkiestracji i MLOps (Kubeflow + MLflow lub Databricks) z funkcjami: CI/CD modeli, monitorowanie driftu, automatyczna rekonstrukcja promptów, governance.  
+3. Integracja z istniejącymi systemami inżynierskimi (PLM, CAD, CAE) – poprzez API i pluginy GenAI (np. Autodesk Fusion + generatywne CAD, Siemens NX with AI Assist).  
+4. Standaryzacja środowisk deweloperskich (Docker, conda, Poetry) i repozytorium kodu/promptów (GitHub + Copilot Enterprise, policy as code).
 
-### 2.3 Organizacja i procesy
-| Pytanie OLIMP | Present | Target |
-|---|---|---|
-| Integracja AI w NPD | C | E |
-| Automatyzacja NPD | B | E |
-| AI w podejmowaniu decyzji | A | E |
-| Continuous Improvement | A | E |
-| AI SDLC | C | E |
-| Przewodnik NPD-AI | D | E |
+Konkretne działania  
+• Audyt narzędzi (2 tyg.) → wybór „AI Toolchain 2024”.  
+• Proof of Concept: RAG dla dokumentacji projektowej (vector DB + LLM).  
+• Budowa portalu „AI Marketplace” (prompt library, gotowe mikro-usługi).  
 
-**Rekomendowane działania**  
-1. Zwinny Framework “AI-NPD Playbook” – adaptacja Scaled Agile + CRISP-DM 2.0 do LLM.  
-2. Decision Intelligence Layer – dashboardy (Power BI + Azure OpenAI) dla KPI, generatywne rekomendacje.  
-3. OKR-based Continuous Improvement; retrospektywa AI co 4 tyg., feed do MLOps backlogu.  
-4. AI CoE (Centre of Excellence) – właściciel playbooka, mentoring, audyty Responsible AI.  
-5. Formalny SDLC-AI: data sourcing → model → evaluation (Bias, Safety) → deployment → drift mgmt.  
+### 2.2  Ludzie i kompetencje
 
-### 2.4 Budżet
-| Kategoria | Present | Target | Działania |
-|---|---|---|---|
-| Planowanie 3-letnie | B | E | Budżet kapitałowy zatwierdzany przez Zarząd; rolling forecast co Q |
-| Kompetencje AI | B | E | 1 % payroll → szkolenia (Industry benchmark) |
-| Piloty & innowacje | A | E | Fundusz “AI Exploration” – 500 k € rocznie |
-| Konsultanci | A | E | Ramowa umowa 3-letnia (rate-card) |
-| Priorytetyzacja projektów | B | E | Matryca wartości (ROI vs. strategic fit) + scoring GenAI |
+Obecny stan  
+• Świadomość GenAI: A.  
+• Szkolenia z programowania/promptingu: D (większość zespołów).  
+• Interdyscyplinarne zespoły AI: A.  
+• Zewnętrzni konsultanci AI: A.  
+• Zarządzanie projektami GenAI: C.  
+• KM-AI: E (silna baza wiedzy – warto użyć jako accelerator).
+
+Wyzwania  
+• Dysproporcja między silną bazą wiedzy a niskim „mindset adoption”.  
+• Brak ról: AI Product Owner, AI Ethics Officer, Prompt Engineer.  
+• Ograniczone programy rozwojowe (wyniki CLIMB_2 – brak formalnych szkoleń, tutoringu, KPI szkoleniowych).
+
+Rekomendowana ścieżka  
+1. Program **GenAI Literacy 360°** – 4-poziomowa certyfikacja (Explorer → Practitioner → Builder → Leader).  
+2. Utworzenie **AI Center of Excellence (CoE)** – 6-8 FTE (Lead DS, MLOps Eng., GenAI Architect, AI Ethics Officer, Change Manager, KM Lead).  
+3. Pilotażowe „Product AI Squads” (PM + DS + Eng + UX + SME + QA).  
+4. Partnerstwo z uczelniami i vendorami (NVIDIA Deep Learning Institute, Microsoft Learn).  
+5. Program „Prompt--a-thon” + Hackathony kwartalne.  
+6. Wdrożenie **Skills-based Workforce Planning** – macierz kompetencji, backlog szkoleń, KPI (egz. % pracowników z poziomem ≥ C).
+
+Konkretne działania  
+• Miesiąc 1: kick-off, wybór platformy e-learning (Degreed / Udemy Business).  
+• Q2: 2-dniowy „Executive AI Bootcamp” dla Zarządu.  
+• Q3-Q4: 3 pilotażowe AI Squads w projektach o wysokiej wartości dodanej.
+
+### 2.3  Organizacja i procesy
+
+Obecny stan  
+• Integracja AI w rozwoju produktu i automatyzacja = E.  
+• AI w decyzjach = B (sporadyczna).  
+• Narzędzia dla zespołów AI = C.  
+• Cykle ciągłego doskonalenia = A.  
+• SDLC-AI = B.  
+• Przewodnik rozwoju produktu z GenAI = E.  
+
+Wyzwania  
+• Brak zwinnego frameworku „AI@Scale” (feedback loops, post-mortem, A/B).  
+• Brak Responsible AI polityk (bias, privacy, explainability).  
+• Słabe KPI procesowe (CLIMB_2 – brak KPI, brak formalnego modelu rozwoju).  
+
+Rekomendowana ścieżka  
+1. Zdefiniowanie **AI Governance Framework** (oparty na ISO 42001, NIST AI RMF, EU AI Act).  
+2. Implementacja **Continuous Improvement Loop**: Measure → Learn → Adapt; wykorzystanie obserwowalności (Prometheus, Grafana, Evidently AI).  
+3. Rozszerzenie SDLC-AI do **CRISP-LLM** (Data Prep → RAG → Fine-tuning → Deployment → Monitor → Retune).  
+4. Rozbudowa narzędzi zespołowych (Copilot, ChatOps, vector-assisted search, Miro + GenAI, Jira Align).  
+5. Formalizacja mierników OKR/KPI (Time-to-Insight, inference cost, % automatycznych decyzji, Net Promoter Score dla AI-powered produktów).  
+
+Konkretne działania  
+• 4-tyg. sprint: stworzenie Responsible AI PoR + Polityka.  
+• 3-mies. projekt: włączenie AI w proces decyzyjny sprzedaż/forecast (Tableau Pulse + Einstein GPT).  
+• 6-mies. projekt: MLOps pipeline z automatycznym retrainingiem (sagemaker pipelines / Azure ML).
+
+### 2.4  Budżet
+
+Obecny stan  
+• Długoterminowy budżet AI = A.  
+• Finansowanie kompetencji = D.  
+• Finansowanie pilotów = C.  
+• Konsultanci zewn. + priorytetyzacja = E.  
+
+Wyzwania  
+• Brak 3-letniego planu CAPEX/OPEX dla GPU, licencji LLM, szkoleń.  
+• Finansowanie pilotów niewystarczające do skalowania (ryzyko „pilot purgatory”).  
+
+Rekomendowana ścieżka  
+1. Utworzenie **AI Investment Portfolio** (horyzont 3 lata, model „70-20-10” – core, adjacent, transformational).  
+2. Budżet szkoleń: zwiększenie o 20 % r/r; 100 % pracowników z dostępem do platformy online i labów GPU.  
+3. Fundusz Innowacji AI (1-2 % przychodów z poprzedniego roku) – finansuje minimum 5 pilotów rocznie.  
+4. Mechanizm „stage-gate” inwestycji (milestone-based release CAPEX).  
 
 ---
 
 ## 3. Plan implementacji
 
-| Etap | Cele kluczowe | Główne działania | Deliverables |
-|---|---|---|---|
-| **Faza 1 – Fundamenty (0-6 mies.)** | • Governance AI<br>• Quick wins<br>• AI Academy start | – Ustanowienie Rady AI i CoE<br>– Piloty: automatyczne generowanie koncepcji produktu (ChatGPT + CAD plugin), „AI-decision-assistant” w 1 dziale<br>– Migracja danych do Lakehouse POC<br>– Budżet 3-letni zatwierdzony | – AI Policy & Responsible AI Charter<br>– 2 piloty z raportem ROI<br>– Roadmapa technologiczna |
-| **Faza 2 – Skalowanie (6-18 mies.)** | • Integracja AI w >60 % projektów NPD<br>• MLOps & DataOps<br>• Program szkoleniowy 70 %+ | – Roll-out AI-NPD Playbook<br>– Integracja Decision Intelligence Layer w 3 obszarach (R&D, operacje, marketing)<br>– Zatrudnienie 4 Data Scientist, 2 MLOps, 1 Prompt Engineer / tribe<br>– Fundusz AI Exploration finansuje min. 6 projekty/rok | – MLOps pipeline PROD<br>– KPI dashboard Live<br>– 4 wdrożenia AI w procesach decyzyjnych |
-| **Faza 3 – Optymalizacja (18-36 mies.)** | • Pełna automatyzacja krytycznych procesów<br>• Continuous Improvement (CI)-AI<br>• Poziom E we wszystkich kategoriach | – Hyper-automation: RPA + LLM + API (UiPath AI Center)<br>– AIOps (monitoring driftu, auto-retrain)<br>– Rozszerzenie platformy wiedzy o system rekomendacji (vector search + GPT-4o)<br>– Audyt dojrzałości OLIMP → Poziom E | – 80-90 % decyzji wspartych AI<br>– Czas TTM ↓ ≥20 %<br>– Certyfikat ISO/IEC 42001:2023 (AI Management System) |
+| Faza | Horyzont | Cele kluczowe | Działania | Wyniki (poziom OLIMP) |
+|------|----------|---------------|-----------|-----------------------|
+| 1. Fundament | 0-6 mies. | Rozbudzenie świadomości, governance, PoC | • Executive AI Bootcamp  • Audyt narzędzi & data • AI CoE (core team) • PoC: RAG + AI decision support (sprzedaż) • Polityka Responsible AI | Ludzie: B/C  • Proc.: B/C • Budżet: B |
+| 2. Skalowanie | 6-18 mies. | Kompetencje i procesy w większości działów | • GenAI Literacy 360° (≥ 60 % prac.) • 3-5 AI Squads • SDLC-AI v1 (CI/CD) • Continuous Improvement Loop w 50 % projektów • Fundusz Innowacji AI (5 pilotów) | Ludzie: D  • Proc.: D  • Budżet: D |
+| 3. Doskonałość | 18-36 mies. | Pełna integracja, optymalizacja kosztów, innowacja | • GenAI certyfikat dla 100 % prac. • AI w 100 % decyzji krytycznych • SDLC-AI v2 (autom. retrain) • KPI & OKR realtime dashboards • Rozbudowany „AI Marketplace” • Audyt ROI + reinwestycja | Wszystkie obszary = E |
 
 ---
 
-## 4. Zasoby i budżet (szacunek)
+## 4. Zasoby i budżet (wysoko poziomowe szacunki)
 
-| Faza | CAPEX + OPEX | Kluczowe zasoby ludzkie | Technologie |
-|---|---|---|---|
-| 1 | 0,7 - 1,2 M € | AI Lead (1), Data Engineer (2), Trainer (2), Change Manager (1) | Azure/AWS credits, Databricks POC, OpenAI API, Confluence RAG |
-| 2 | 1,5 - 3,0 M € | + Data Scientist (4), MLOps (2), Prompt Eng. (3), Product Owner AI (3) | MLflow/Kubeflow, LangChain, Pinecone, Power BI Copilot, UiPath |
-| 3 | 0,8 - 2,0 M € | + AIOps Eng. (2), QA AI Ethics (1), Automation Architect (1) | Auto-GPT, VectorDB on-prem, ISO 42001 compliance toolkit |
+| Faza | Budżet (CAPEX+OPEX) | Kluczowe pozycje | Zasoby ludzkie |
+|------|--------------------|------------------|----------------|
+| 1 | 250 k € – 500 k € | • Licencje LLM (pilot) • Szkolenia exec + podstawowe • Konsultanci (architecture, RAI) | 6-8 FTE CoE + 10% etatu sponsorów biznesowych |
+| 2 | 1 – 1,8 M € | • Rozszerzone GPU/Cloud • Platforma MLOps • Szkolenia masowe • 5 pilotów (150-200 k € każdy) | CoE 10-12 FTE + 3-5 Squadów (7-9 osób każdy) |
+| 3 | 0,7 – 1,2 M € /rok | • Utrzymanie + retraining • Rozbudowa Marketplace • Continuous Education | CoE 12-15 FTE + całe organizacje produktowe |
 
-*Budżet = 4-6 M € / 36 mies. (średni benchmark dla firm produkcyjnych 500-1000 FTE).*
+Technologie & narzędzia  
+• Platforma chmurowa (Azure/AWS/GCP) z GPU A100/H100 (spot + reserved).  
+• MLOps: MLflow/Kubeflow, Terraform, ArgoCD.  
+• LLMOps: LangChain, PromptLayer, Weights&Biases.  
+• VDB: Pinecone/pgvector/Chroma.  
+• Obserwowalność: OpenTelemetry, Evidently AI.  
+• Security: Vault, Azure Key Vault, DSPM (BigID), Purview.  
 
 ---
 
 ## 5. Wskaźniki sukcesu i monitoring
 
-| Obszar | KPI | Cel (M36) | Źródło danych |
-|---|---|---|---|
-| Ludzie | AI Literacy Index | ≥ 85 % | Test online co 6 mies. |
-| Procesy | % etapów NPD zautomatyzowanych AI | ≥ 80 % | MLOps logs |
-| Decyzje | % decyzji wspartych AI | ≥ 90 % | Decision Layer analytics |
-| Czas | Time-to-Market (śr.) | ↓ 20-25 % | ERP/PLM |
-| Finanse | ROI 3-letnie | ≥ 35 % | Controlling |
-| Jakość | Defect Rate po wdrożeniu | ↓ 15 % | QMS |
-| CI | Liczba iteracji modeli/m-c | ≥ 2 | AIOps |
+Ludzie & kompetencje  
+• % pracowników na poziomie świadomości ≥ C (target: 90 % w 24 mies.)  
+• Liczba aktywnych prompt-cards / mies.  
+• Indeks Satysfakcji Szkleń (NPS ≥ 60)
 
-Punkty kontrolne: M6 (Go/No-Go), M12, M18, M24, M30, M36 – audyt zewnętrzny.
+Procesy & organizacja  
+• % decyzji wspartych AI (target: 80 % w 24 mies.)  
+• Średni czas retrain LLM (SLA: < 2 tyg.)  
+• Liczba zakończonych pętli CI (>= 1 / kwartał / produkt)
+
+Technologia  
+• Uptime pipeline ML (≥ 99,5 %)  
+• Średni koszt inference / 1k tokenów (trend spadkowy 10 % rocznie)
+
+Budżet / ROI  
+• ROI z projektów AI (cel > 25 % w 3 lata)  
+• % CAPEX wydany vs plan (± 10 %)  
+
+Punkty kontrolne  
+• Steering Committee co miesiąc (dashboard Power BI)  
+• Audyt Responsible AI co pół roku  
+• Rewizja portfolio i budżetu co kwartał
 
 ---
 
 ## 6. Potencjalne korzyści i zyski
 
-1. **Biznesowe**  
-   • Skrócenie TTM o 20-25 % ⇒ szybsze przychody (≈ +6-8 M €/rok).  
-   • Redukcja kosztów rozwoju o 15-20 % dzięki automatyzacji (≈ -2 M €/rok).  
+Korzyści biznesowe (rozwój nowego produktu)  
+• Skrócenie time-to-market o 30-40 % dzięki GenAI przy generowaniu koncepcji, automatycznym CAD i symulacjom.  
+• Redukcja kosztu prototypowania o 25 % (symulacje CAE + VR/AR + cyfrowe bliźniaki).  
+• Wzrost efektywności pracy inżynierów o 20 % (prompt-assisted design, Copilot Enterprise).  
+• Lepsze decyzje cenowe – wzrost marży o 2-4 pp (AI price-optimization).  
+• Nowe przychody z produktów „AI embedded” (np. predictive maintenance) – +10 % przychodu w ciągu 3 lat.
 
-2. **Efektywność operacyjna**  
-   – Automatyczne generowanie wariantów konstrukcyjnych (Generative Design)  
-   – Optymalizacja BOM i kosztów dzięki DTC/TCM wspartym AI  
+Przewaga konkurencyjna  
+• Pierwszeństwo we wprowadzaniu innowacji (LLM-driven product innovation funnel).  
+• Zmniejszenie ryzyka regulacyjnego dzięki Responsible AI.  
+• Employer branding – przyciągnięcie talentów AI/ML.
 
-3. **Przewaga konkurencyjna**  
-   – Personalizacja produktów (LLM + configuratory) ⇒ wzrost satysfakcji klienta (NPS +15 pkt).  
-   – Szybsza iteracja prototypów (VR/AR + AI)  
+ROI i mierzalne korzyści  
+• Prognoza skumulowanych oszczędności kosztów: 4-5 M € w 3 lata.  
+• Skumulowany dodatkowy przychód: 6-8 M €.  
+• ROI portfela AI: ~160 % (konserwatywnie, NPV przy 8 % WACC).
 
-4. **Innowacja**  
-   – “AI-copilot” dla inżyniera: autosymulacje CAE/CFD → 30 % mniej iteracji testów fizycznych.  
-
-5. **Długoterminowe**  
-   – Zwinna, ucząca się organizacja (CI-AI)  
-   – Zabezpieczenie pozycji w łańcuchu wartości (ekosystem partnerów AI)  
-
-6. **ROI**  
-   • Łączne nakłady 4-6 M € → prognozowane zwroty 9-11 M € (NPV, dyskonto 8 %) w 5 lat.  
+Przykłady konkretnych ulepszeń  
+1. Generatywny CAD: 3-krotnie szybsze iteracje kształtu w early design.  
+2. Chat-RAG dla dokumentacji: spadek czasu wyszukiwania wiedzy o 60 %.  
+3. AI-driven BOM optymalizacja: redukcja kosztu materiałów o 8 %.  
+4. Predictive simulation (CFD + GenAI surrogate models): skrócenie cyklu FEA/CFD o 70 %.
 
 ---
 
-> **Podsumowanie**  
-> Realizacja zaproponowanej ścieżki umożliwi firmie osiągnięcie poziomu E w modelu OLIMP w ciągu 36 mies., budując jednocześnie trwałą kulturę data- & AI-driven, która przyniesie wymierne korzyści finansowe i strategiczne.
+> **Podsumowanie:** Organizacja ma już solidne fundamenty technologiczne (poziom E w kluczowych procesach AI), ale aby osiągnąć *pełną doskonałość* wymaganą przez poziom E w każdym wymiarze OLIMP, musi skoncentrować się na ludziach, procesach ciągłego doskonalenia oraz stabilnym finansowaniu. Zastosowanie przedstawionego, trójfazowego planu pozwoli w ciągu 36 miesięcy zbudować kulturę AI-first, zabezpieczyć długoterminowy rozwój i osiągnąć wymierne korzyści biznesowe.
