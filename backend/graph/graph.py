@@ -342,10 +342,14 @@ app_builder.add_edge(START, "calculate_maturity")
 app_builder.add_edge("calculate_maturity", "human_feedback")
 # Go directly from human_feedback to strategic_planning
 app_builder.add_edge("human_feedback", "strategic_planning")
-app_builder.add_edge("strategic_planning", "make_analysts")
-app_builder.add_conditional_edges("make_analysts", initiate_consulting_threads, ["consulting"])
-app_builder.add_edge("consulting", "write_report")
-app_builder.add_edge("write_report", END)
+# End the flow after strategic_planning - skip analysts and report generation
+app_builder.add_edge("strategic_planning", END)
+
+# Comment out the analyst and consulting workflow
+# app_builder.add_edge("strategic_planning", "make_analysts")
+# app_builder.add_conditional_edges("make_analysts", initiate_consulting_threads, ["consulting"])
+# app_builder.add_edge("consulting", "write_report")
+# app_builder.add_edge("write_report", END)
 
 # Set up memory
 memory = MemorySaver()

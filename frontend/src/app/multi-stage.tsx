@@ -341,30 +341,9 @@ export default function MultiStageWorkflow() {
         progress: 0
       },
       {
-        id: 'create_analysts',
-        name: 'Create Expert Analysts',
-        description: 'Generating specialized analyst profiles for evaluation',
-        status: 'pending' as const,
-        progress: 0
-      },
-      {
-        id: 'diagnose',
-        name: 'Diagnose Issues',
-        description: 'Identifying key challenges and improvement areas',
-        status: 'pending' as const,
-        progress: 0
-      },
-      {
-        id: 'recommend',
-        name: 'Generate Recommendations',
-        description: 'Creating actionable recommendations and strategies',
-        status: 'pending' as const,
-        progress: 0
-      },
-      {
-        id: 'write_report',
-        name: 'Write Final Report',
-        description: 'Compiling comprehensive analysis report',
+        id: 'strategic_planning',
+        name: 'Strategic Planning Complete',
+        description: 'Finalizing strategic analysis and preparing for OLIMP assessment',
         status: 'pending' as const,
         progress: 0
       }
@@ -397,28 +376,22 @@ export default function MultiStageWorkflow() {
     const nodeProgressMap: { [key: string]: number } = {
       'starting': 2,
       'initializing': 5,
-      'calculate_maturity': 15,
-      'human_feedback': 25,
-      'strategic_planning': 30,
-      'identify_areas_for_improvement': 35,
-      'identify_questions_for_improvement': 40,
-      'create_analysts': 45,
-      'make_analysts': 45,
-      'consulting': 60,
-      'diagnose': 70,
-      'recommend': 85,
-      'write_report': 95,
+      'calculate_maturity': 20,
+      'human_feedback': 40,
+      'strategic_planning': 60,
+      'identify_areas_for_improvement': 80,
+      'identify_questions_for_improvement': 100,
       'completed': 100
     };
 
     setClimb2ProgressSteps(prev => {
       return prev.map(step => {
-        if (currentNode === 'completed') {
+        if (currentNode === 'completed' || currentNode === 'strategic_planning') {
           return { ...step, status: 'completed' as const, progress: 100 };
         } else if (currentNode === step.id || 
-                   // Handle node aliases
-                   (currentNode === 'make_analysts' && step.id === 'create_analysts') ||
-                   (currentNode === 'consulting' && step.id === 'diagnose')) {
+                   // Handle strategic planning sub-nodes
+                   (currentNode === 'identify_areas_for_improvement' && step.id === 'identify_areas_for_improvement') ||
+                   (currentNode === 'identify_questions_for_improvement' && step.id === 'identify_questions_for_improvement')) {
           return { 
             ...step, 
             status: 'active' as const, 
@@ -466,11 +439,12 @@ export default function MultiStageWorkflow() {
           setClimb2Status(statusData.currentNode);
           updateClimb2ProgressSteps(statusData.currentNode, statusData);
           
-          if (statusData.currentNode === 'completed') {
+          // Check for completion - either 'completed' or 'strategic_planning' (since that's our new end point)
+          if (statusData.currentNode === 'completed' || statusData.currentNode === 'strategic_planning') {
             clearInterval(pollStatus);
             setIsRunningAnalysis(false);
             setStageProgress(prev => ({ ...prev, 'climb2-analysis': true }));
-            setCurrentStage('climb2-results');
+            setCurrentStage('olimp-questionnaire'); // Skip climb2-results and go directly to OLIMP
             
             if (statusData.reportPath) {
               setClimb2ReportPath(statusData.reportPath);
@@ -1060,10 +1034,6 @@ export default function MultiStageWorkflow() {
       if (olimpProgress.stepsCompleted && olimpProgress.totalSteps) {
         return Math.round((olimpProgress.stepsCompleted / olimpProgress.totalSteps) * 100);
       }
-      // Fallback to basic progress if available
-      if (olimpProgress.percentage) {
-        return olimpProgress.percentage;
-      }
       return 50; // Default progress for running state
     };
 
@@ -1104,7 +1074,7 @@ export default function MultiStageWorkflow() {
                 <p className="font-medium text-gray-900">
                   {olimpProgress ? 
                     (olimpProgress.currentStep ? getStepDisplayName(olimpProgress.currentStep) : 
-                     olimpProgress.step || 'Processing analysis...') : 
+                     'Processing analysis...') : 
                     'Initializing...'}
                   {olimpProgress?.stepStatus === 'generating' && (
                     <span className="ml-2 text-orange-600">

@@ -49,6 +49,9 @@ def identify_gaps(state: DocumentState) -> DocumentState:
             "gaps": {}
         }
     
+    print(f"Available data keys: {list(state['answers'].keys())}")
+    print(f"OLIMP data keys: {list(state['answers']['OLIMP'].keys())}")
+    
     olimp_data = state["answers"]["OLIMP"]
     
     # Check if sections exist
@@ -59,14 +62,21 @@ def identify_gaps(state: DocumentState) -> DocumentState:
             "gaps": {}
         }
     
+    # Get available sections for debugging
+    available_sections = [section.get("section_name", "") for section in olimp_data["sections"]]
+    print(f"Available sections: {available_sections}")
+    print(f"Target sections: {target_sections}")
+    
     # Process each target section
     for section in olimp_data["sections"]:
         section_name = section.get("section_name", "")
         
         if section_name in target_sections:
+            print(f"Processing section: {section_name}")
             gaps[section_name] = {}
             
             # Process each question in the section
+            questions_processed = 0
             for question in section.get("questions", []):
                 question_text = question.get("question_text", "")
                 selected_answer = question.get("selected_answer", "")
@@ -92,6 +102,16 @@ def identify_gaps(state: DocumentState) -> DocumentState:
                         },
                         "steps": steps_verbose
                     }
+                    questions_processed += 1
+                else:
+                    if not selected_answer:
+                        print(f"Warning: No selected answer for question: {question_text[:50]}...")
+                    elif selected_answer not in level_progression:
+                        print(f"Warning: Invalid answer level '{selected_answer}' for question: {question_text[:50]}...")
+            
+            print(f"Section {section_name}: processed {questions_processed} questions")
+        else:
+            print(f"Skipping section: {section_name} (not in target sections)")
     
     # Print essential summary
     total_questions = sum(len(section_gaps) for section_gaps in gaps.values())

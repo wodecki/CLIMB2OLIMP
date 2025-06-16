@@ -71,6 +71,14 @@ def generate_recommendation_for_branch(state: DocumentState, branch_suffix: str,
     # Check if gaps exist
     if not state.get("gaps"):
         print(f"No gaps found in state - skipping Branch {branch_suffix} recommendations")
+        print(f"State keys: {list(state.keys())}")
+        if "gaps" in state:
+            print(f"Gaps data type: {type(state['gaps'])}, content: {state['gaps']}")
+        return state
+    
+    # Check if gaps is empty dict
+    if isinstance(state.get("gaps"), dict) and len(state["gaps"]) == 0:
+        print(f"Empty gaps dictionary found - skipping Branch {branch_suffix} recommendations")
         return state
     
     # Initialize branch data if not present
