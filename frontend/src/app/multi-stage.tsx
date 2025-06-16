@@ -7,7 +7,7 @@ import MaturityLevelMatrix from '@/components/MaturityLevelMatrix';
 import OlimpQuestionnaire from '@/components/OlimpQuestionnaire';
 import PrioritySelection from '@/components/PrioritySelection';
 import { QuestionnaireData, AnswerData, CategoryProgress, OlimpAnswerData, LetterAnswer } from '@/types/questionnaire';
-import { getAllTechnicalNames, getAllDisplayNames } from '@/utils/categoryTranslations';
+import { getAllTechnicalNames, getAllDisplayNames, getDisplayName, getTechnicalName } from '@/utils/categoryTranslations';
 
 type WorkflowStage = 'climb2-questionnaire' | 'climb2-goals' | 'climb2-analysis' | 'climb2-results' | 'olimp-questionnaire' | 'olimp-priorities' | 'olimp-analysis' | 'final-reports';
 
@@ -1381,15 +1381,20 @@ export default function MultiStageWorkflow() {
         {questionnaireData && (
           <>
             <CategoryNavigation
-              categories={categories}
-              activeCategory={activeCategory}
-              progress={progress}
-              onCategoryChange={handleCategoryChange}
+              categories={categories.map(cat => getDisplayName(cat))}
+              activeCategory={getDisplayName(activeCategory)}
+              progress={Object.fromEntries(
+                Object.entries(progress).map(([cat, prog]) => [getDisplayName(cat), prog])
+              )}
+              onCategoryChange={(displayCategory) => {
+                const technicalCategory = getTechnicalName(displayCategory);
+                handleCategoryChange(technicalCategory);
+              }}
             />
 
             {activeCategory && (
               <CategorySection
-                categoryName={activeCategory}
+                categoryName={getDisplayName(activeCategory)}
                 questions={questionnaireData[activeCategory]}
                 answers={answerData[activeCategory] || {}}
                 onAnswerSelected={(questionText, answer) => 
