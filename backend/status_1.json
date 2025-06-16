@@ -3,16 +3,16 @@
   "requiresInput": false,
   "questions": null,
   "strategicGoals": {},
-  "currentCategory": "Role i Współpraca",
+  "currentCategory": "Role i współpraca",
   "requestAllGoals": true,
   "allCategories": [
-    "Role i Współpraca",
-    "Szkolenie",
-    "Działania i Przepływ",
-    "Podejmowanie Decyzji",
-    "Procesy ZW",
-    "Techniki ZW",
+    "Role i współpraca",
+    "Szkolenia",
+    "Aktywności i procesy",
+    "Podejmowanie decyzji",
+    "Procesy zarządzania wiedzą",
+    "Technologie zarządzania wiedzą",
     "Metody",
-    "Komputeryzacja i Oprogramowanie"
+    "Oprogramowanie i infrastruktura IT"
   ]
 }
