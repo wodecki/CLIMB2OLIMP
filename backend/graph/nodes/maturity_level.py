@@ -14,8 +14,8 @@ def calculate_maturity_level(state: OverallState):
     # Get the questionnaire data from the state
     questionnaire = state.get("questionnaire", {})
     
-    # Load the mapping between answers and maturity levels
-    with open('data/all_questions.json', 'r') as f:
+    # Load the mapping between answers and maturity levels (Polish version)
+    with open('data/CLIMB2.json', 'r', encoding='utf-8') as f:
         questions_data = json.load(f)
     
     # Calculate maturity level for each category

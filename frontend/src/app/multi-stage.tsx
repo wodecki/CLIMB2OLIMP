@@ -665,14 +665,14 @@ export default function MultiStageWorkflow() {
   // Render appropriate stage
   if (currentStage === 'climb2-goals') {
     const categories = [
-      "Role i współpraca",
-      "Szkolenia", 
-      "Aktywności i procesy",
-      "Podejmowanie decyzji",
-      "Procesy zarządzania wiedzą",
-      "Technologie zarządzania wiedzą",
+      "Role i Współpraca",
+      "Szkolenie", 
+      "Działania i Przepływ",
+      "Podejmowanie Decyzji",
+      "Procesy ZW",
+      "Techniki ZW",
       "Metody",
-      "Oprogramowanie i infrastruktura IT"
+      "Komputeryzacja i Oprogramowanie"
     ];
 
     return (

@@ -2,11 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { AnswerData, QuestionnaireData, LetterAnswer } from '@/types/questionnaire';
 import fs from 'fs';
 import path from 'path';
+import { spawn } from 'child_process';
 
 // Helper functions
 function getQuestionnaireData(): QuestionnaireData {
   const backendDataPath = path.join(process.cwd(), '..', 'backend', 'data');
-  const filePath = path.join(backendDataPath, 'all_questions.json');
+  const filePath = path.join(backendDataPath, 'CLIMB2.json');
   const data = fs.readFileSync(filePath, 'utf8');
   return JSON.parse(data);
 }
@@ -55,6 +56,79 @@ function saveAnswerData(answerData: AnswerData, letterAnswers: LetterAnswer): vo
   console.log('Answer data saved successfully');
 }
 
+async function calculateMaturityLevels(answerData: AnswerData): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const backendPath = path.join(process.cwd(), '..', 'backend');
+    const pythonPath = path.join(backendPath, '.venv', 'bin', 'python');
+    
+    // Create a Python script to calculate maturity levels
+    const pythonScript = `
+import sys
+import os
+sys.path.append('${backendPath}')
+import json
+from graph.nodes.maturity_level import calculate_maturity_level
+from graph.state import OverallState
+
+# Load the questionnaire data
+questionnaire_data = ${JSON.stringify(answerData)}
+print("Questionnaire data loaded:", questionnaire_data)
+
+# Create state
+state = OverallState({'questionnaire': questionnaire_data})
+print("State created")
+
+# Calculate maturity levels
+result = calculate_maturity_level(state)
+print("Maturity levels calculated:", result)
+`;
+
+    // Write the script to a temporary file
+    const scriptPath = path.join(backendPath, 'temp_calculate_maturity.py');
+    fs.writeFileSync(scriptPath, pythonScript);
+    
+    // Execute the Python script
+    const pythonProcess = spawn(pythonPath, [scriptPath], { 
+      cwd: backendPath,
+      stdio: ['pipe', 'pipe', 'pipe']
+    });
+    
+    let stdout = '';
+    let stderr = '';
+    
+    pythonProcess.stdout.on('data', (data) => {
+      stdout += data.toString();
+    });
+    
+    pythonProcess.stderr.on('data', (data) => {
+      stderr += data.toString();
+    });
+    
+    pythonProcess.on('close', (code) => {
+      // Clean up the temporary script
+      try {
+        fs.unlinkSync(scriptPath);
+      } catch (err) {
+        console.error('Error cleaning up script:', err);
+      }
+      
+      if (code === 0) {
+        console.log('Maturity levels calculated successfully');
+        console.log('Python output:', stdout);
+        resolve();
+      } else {
+        console.error('Error calculating maturity levels:', stderr);
+        reject(new Error(`Python process exited with code ${code}: ${stderr}`));
+      }
+    });
+    
+    pythonProcess.on('error', (error) => {
+      console.error('Error spawning Python process:', error);
+      reject(error);
+    });
+  });
+}
+
 export async function GET() {
   try {
     const data = getQuestionnaireData();
@@ -78,6 +152,11 @@ export async function POST(request: NextRequest) {
     
     // Save the answer data
     saveAnswerData(answerData, letterAnswers);
+    
+    // Calculate maturity levels immediately after saving
+    console.log('Calculating maturity levels...');
+    await calculateMaturityLevels(answerData);
+    console.log('Maturity levels calculation completed');
     
     return NextResponse.json({ success: true });
   } catch (error) {
