@@ -1,5 +1,6 @@
 import json
 from graph.state import OverallState
+from utils.category_translations import get_display_name
 
 def calculate_maturity_level(state: OverallState):
     """
@@ -41,7 +42,8 @@ def calculate_maturity_level(state: OverallState):
     print("Category Maturity Levels:")
     print("------------------------")
     for category, level in maturity_levels.items():
-        print(f"{category}: {level}")
+        display_name = get_display_name(category)
+        print(f"{display_name}: {level}")
     
     # Save maturity levels to a file
     try:

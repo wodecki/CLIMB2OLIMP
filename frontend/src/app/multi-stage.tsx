@@ -7,7 +7,7 @@ import MaturityLevelMatrix from '@/components/MaturityLevelMatrix';
 import OlimpQuestionnaire from '@/components/OlimpQuestionnaire';
 import PrioritySelection from '@/components/PrioritySelection';
 import { QuestionnaireData, AnswerData, CategoryProgress, OlimpAnswerData, LetterAnswer } from '@/types/questionnaire';
-import { getAllTechnicalNames } from '@/utils/categoryTranslations';
+import { getAllTechnicalNames, getAllDisplayNames } from '@/utils/categoryTranslations';
 
 type WorkflowStage = 'climb2-questionnaire' | 'climb2-goals' | 'climb2-analysis' | 'climb2-results' | 'olimp-questionnaire' | 'olimp-priorities' | 'olimp-analysis' | 'final-reports';
 
@@ -665,16 +665,7 @@ export default function MultiStageWorkflow() {
 
   // Render appropriate stage
   if (currentStage === 'climb2-goals') {
-    const categories = [
-      "Role i Współpraca",
-      "Szkolenia", 
-      "Aktywności i procesy",
-      "Podejmowanie Decyzji",
-      "Procesy zarządzania wiedzą",
-      "Technologie zarządzania wiedzą",
-      "Metody",
-      "Oprogramowanie i infrastruktura IT"
-    ];
+    const categories = getAllDisplayNames();
 
     return (
       <main className="min-h-screen bg-gray-50">

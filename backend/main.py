@@ -19,6 +19,7 @@ from graph.graph import app
 from graph.state import OverallState
 from langgraph.types import Command
 from graph.status_manager import status_manager
+from utils.category_translations import get_display_name
 
 def save_report_as_markdown(report_text, filename):
     """Save the report as a Markdown file with enhanced formatting"""
@@ -146,13 +147,15 @@ def main():
         print("\nCategory Maturity Levels:")
         print("------------------------")
         for category in categories:
-            print(f"{category}: {maturity_levels.get(category, 'N/A')}")
+            display_name = get_display_name(category)
+            print(f"{display_name}: {maturity_levels.get(category, 'N/A')}")
         print("\nStrategic goals will be collected by the LangGraph workflow.")
         
         # Print the collected strategic goals
         print("\nStrategic Goals:")
         for category, level in strategic_goals.items():
-            print(f"{category}: {level}")
+            display_name = get_display_name(category)
+            print(f"{display_name}: {level}")
         
         # Update the initial state with the strategic goals and maturity levels
         initial_state["strategic_goals"] = strategic_goals

@@ -1,5 +1,6 @@
 import json
 from graph.state import OverallState
+from utils.category_translations import get_display_name
 
 def set_strategic_goal(state: OverallState):
     """
@@ -34,7 +35,8 @@ def set_strategic_goal(state: OverallState):
     if len(strategic_goals) >= len(categories):
         print("Strategic Goals:")
         for category, level in strategic_goals.items():
-            print(f"{category}: {level}")
+            display_name = get_display_name(category)
+            print(f"{display_name}: {level}")
         return {"strategic_goals": strategic_goals}
     
     # Process user feedback if available
@@ -48,7 +50,8 @@ def set_strategic_goal(state: OverallState):
             if user_feedback.strip().upper() in ["A", "B", "C", "D", "E"]:
                 # Add the validated input to our strategic goals
                 strategic_goals[current_category] = user_feedback.strip().upper()
-                print(f"Added strategic goal for {current_category}: {user_feedback.strip().upper()}")
+                display_name = get_display_name(current_category)
+                print(f"Added strategic goal for {display_name}: {user_feedback.strip().upper()}")
             else:
                 print(f"Invalid input: {user_feedback}. Expected a letter from A to E.")
                 # Don't add this input to strategic_goals, so we'll ask for the same category again
@@ -57,7 +60,8 @@ def set_strategic_goal(state: OverallState):
     # Print the current state of strategic goals
     print("\nStrategic Goals collected so far:")
     for category, level in strategic_goals.items():
-        print(f"{category}: {level}")
+        display_name = get_display_name(category)
+        print(f"{display_name}: {level}")
     
     # Return the updated strategic goals
     return {"strategic_goals": strategic_goals}
@@ -106,7 +110,8 @@ def identify_areas_for_improvement(state: OverallState):
     print("---------------------")
     if areas_for_improvement:
         for category, levels in areas_for_improvement.items():
-            print(f"{category}: Current level: {levels['from']} → Target level: {levels['to']}")
+            display_name = get_display_name(category)
+            print(f"{display_name}: Current level: {levels['from']} → Target level: {levels['to']}")
     else:
         print("No areas identified for improvement.")
     
@@ -223,7 +228,8 @@ def identify_questions_for_improvement(state: OverallState):
     print("-------------------------")
     if questions_for_improvement:
         for category, questions in questions_for_improvement.items():
-            print(f"\n{category}:")
+            display_name = get_display_name(category)
+            print(f"\n{display_name}:")
             for question, improvement in questions.items():
                 print(f"  - {question}")
                 print(f"    From: {improvement['from']['level']} → {improvement['from']['description']}")
