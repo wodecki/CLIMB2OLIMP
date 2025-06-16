@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { OlimpQuestionnaireData, OlimpAnswerData, OlimpSection, OlimpQuestion, CategoryProgress } from '@/types/questionnaire';
+import { getOlimpDisplayName, getOlimpTechnicalName } from '@/utils/olimpTranslations';
 
 interface OlimpQuestionnaireProps {
   onComplete: (answers: OlimpAnswerData) => void;
@@ -234,7 +235,7 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
             <div>
               <h1 className="text-3xl font-bold text-gray-900 mb-2">Kwestionariusz OLIMP</h1>
               <p className="text-gray-600">
-                {questionnaireData.questionnaire_title}
+                Szczegółowa ocena gotowości organizacji na sztuczną inteligencję
               </p>
             </div>
             <div className="flex flex-col gap-2">
@@ -281,7 +282,7 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
                       : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50'
                   }`}
                 >
-                  <h3 className="font-medium text-sm mb-2">{section.section_name}</h3>
+                  <h3 className="font-medium text-sm mb-2">{getOlimpDisplayName(section.section_name)}</h3>
                   <div className="flex items-center justify-between text-xs">
                     <span>{sectionProgress?.answered || 0}/{sectionProgress?.total || 0}</span>
                     <span className="text-gray-500">{Math.round(completionRate)}%</span>
@@ -301,7 +302,7 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
         {/* Active Section Questions */}
         {activeSecti && (
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-6">{activeSecti.section_name}</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-6">{getOlimpDisplayName(activeSecti.section_name)}</h2>
             
             <div className="space-y-8">
               {activeSecti.questions.map((question, questionIndex) => {

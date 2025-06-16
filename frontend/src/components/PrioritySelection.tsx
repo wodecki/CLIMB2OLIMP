@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { PriorityArea } from '@/types/questionnaire';
+import { getOlimpDisplayName, getOlimpTechnicalName, OLIMP_AREA_DESCRIPTIONS } from '@/utils/olimpTranslations';
 
 interface PrioritySelectionProps {
   onComplete: (selectedAreas: string[]) => void;
@@ -128,16 +129,9 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
                   className="mr-4 h-5 w-5 text-blue-600 rounded"
                 />
                 <div className="flex-1">
-                  <h3 className="text-lg font-medium">{area.name}</h3>
+                  <h3 className="text-lg font-medium">{getOlimpDisplayName(area.name)}</h3>
                   <p className="text-sm mt-1 opacity-75">
-                    {area.name === "TECHNOLOGY AND INFRASTRUCTURE" && "Skupienie na infrastrukturze IT, adoptacji chmury i zdolnościach technicznych"}
-                    {area.name === "DATA" && "Skupienie na jakości danych, zarządzaniu, automatyzacji i analityce"}
-                    {area.name === "PEOPLE AND COMPETENCIES" && "Skupienie na umiejętnościach zespołu, szkoleniach i rozwoju kompetencji AI"}
-                    {area.name === "ORGANIZATION AND PROCESSES" && "Skupienie na strukturze organizacyjnej, przepływach pracy i integracji procesów"}
-                    {area.name === "STRATEGY AND MANAGEMENT" && "Skupienie na długoterminowej strategii AI, ocenie wpływu na biznes i zarządzaniu"}
-                    {area.name === "BUDGET" && "Skupienie na planowaniu finansowym, alokacji zasobów i priorytetach inwestycyjnych"}
-                    {area.name === "PRODUCTS AND SERVICES" && "Skupienie na produktach wzbogaconych AI, automatyzacji i doświadczeniu klienta"}
-                    {area.name === "ETHICS AND REGULATIONS" && "Skupienie na etyce AI, zgodności, ochronie danych i przestrzeganiu przepisów"}
+                    {OLIMP_AREA_DESCRIPTIONS[getOlimpDisplayName(area.name) as keyof typeof OLIMP_AREA_DESCRIPTIONS]}
                   </p>
                 </div>
                 {area.selected && (
