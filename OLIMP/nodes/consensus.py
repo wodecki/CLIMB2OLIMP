@@ -224,7 +224,7 @@ Create a **COMPREHENSIVE AI TRANSFORMATION REPORT** that:
 The report should be detailed and practical enough that the organization can use it as the main document guiding the entire AI transformation.
 
 IMPORTANT: 
-- Report must be written in ENGLISH language
+- Report must be written in POLISH language (raport musi być napisany w języku POLSKIM)
 - Generate a comprehensive report with minimum 10,000 words
 - Do not shorten or interrupt - continue to the end of all sections
 - Do not add placeholders regarding company name or refer to specific company names

@@ -1,16 +1,16 @@
-# Roles and Collaboration
+# Role i Współpraca
 A,B,B,C,D,A,B
-# Training
+# Szkolenie
 A,B,A
-# Activities and Flow
+# Działania i Przepływ
 A,B,A,C,B,B,B,B
-# Decision-Making
+# Podejmowanie Decyzji
 B,B,B,C,B,C,B,C,B,B,C,B,B,C,B,B,C,C,D,C,C,C
-# KM Processes
+# Procesy ZW
 A,B,A,B,A,B,B,D,B,C,B,C,B,C,B,B,C,B,B,C,B,C
-# KM Techniques
+# Techniki ZW
 B,B,B,B,B,B,B,C,B,C,C
-# Methods
+# Metody
 B,B,B,B,B,B,B,A,B,B,B
-# Computerization and Software
+# Komputeryzacja i Oprogramowanie
 B,B,B,D,C,B,A,B,B,B,D,C,B,C,B,B,C,B,B,B,B,B
