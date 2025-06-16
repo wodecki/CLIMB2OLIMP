@@ -1,10 +1,10 @@
 # Translation mapping between technical names (used in backend) and display names
 CATEGORY_TRANSLATIONS = {
     # Technical name -> Display name
-    "Role i Współpraca": "Role i Współpraca",
+    "Role i Współpraca": "Role i współpraca",
     "Szkolenie": "Szkolenia",
     "Działania i Przepływ": "Aktywności i procesy", 
-    "Podejmowanie Decyzji": "Podejmowanie Decyzji",
+    "Podejmowanie Decyzji": "Podejmowanie decyzji",
     "Procesy ZW": "Procesy zarządzania wiedzą",
     "Techniki ZW": "Technologie zarządzania wiedzą",
     "Metody": "Metody",

@@ -249,10 +249,10 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
                 }`}
               >
                 {isLoadingSampleData 
-                  ? 'Analizowanie...' 
+                  ? 'Wypełnianie...' 
                   : sampleDataLoaded 
-                    ? 'Analiza Przykładowych Danych Zakończona' 
-                    : 'Analizuj Przykładowe Dane'}
+                    ? 'Wypełniono przykładowymi danymi' 
+                    : 'Wypełnij przykładowymi danymi'}
               </button>
               <button
                 onClick={onBack}

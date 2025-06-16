@@ -1,10 +1,10 @@
 // Mapowanie między nazwami technicznymi (używanymi w backendzie) a nazwami wyświetlanymi
 export const CATEGORY_TRANSLATIONS = {
   // Technical name -> Display name
-  "Role i Współpraca": "Role i Współpraca",
+  "Role i Współpraca": "Role i współpraca",
   "Szkolenie": "Szkolenia",
   "Działania i Przepływ": "Aktywności i procesy", 
-  "Podejmowanie Decyzji": "Podejmowanie Decyzji",
+  "Podejmowanie Decyzji": "Podejmowanie decyzji",
   "Procesy ZW": "Procesy zarządzania wiedzą",
   "Techniki ZW": "Technologie zarządzania wiedzą",
   "Metody": "Metody",

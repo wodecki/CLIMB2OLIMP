@@ -41,12 +41,12 @@ export function getAllOlimpDisplayNames(): string[] {
 
 // Area descriptions in Polish
 export const OLIMP_AREA_DESCRIPTIONS = {
-  "Technologie i infrastruktura": "Skupienie na infrastrukturze IT, adoptacji chmury i zdolnościach technicznych",
-  "Dane": "Skupienie na jakości danych, zarządzaniu, automatyzacji i analityce",
-  "Ludzie i kompetencje": "Skupienie na umiejętnościach zespołu, szkoleniach i rozwoju kompetencji AI",
-  "Organizacja i procesy": "Skupienie na strukturze organizacyjnej, przepływach pracy i integracji procesów",
-  "Strategia i zarządzanie": "Skupienie na długoterminowej strategii AI, ocenie wpływu na biznes i zarządzaniu",
-  "Budżet": "Skupienie na planowaniu finansowym, alokacji zasobów i priorytetach inwestycyjnych",
-  "Produkty i usługi": "Skupienie na produktach wzbogaconych AI, automatyzacji i doświadczeniu klienta",
-  "Etyka i regulacje": "Skupienie na etyce AI, zgodności, ochronie danych i przestrzeganiu przepisów"
+  "Technologie i infrastruktura": "Koncentracja na infrastrukturze IT, adoptacji chmury i zdolnościach technicznych",
+  "Dane": "Koncentracja na jakości danych, zarządzaniu, automatyzacji i analityce",
+  "Ludzie i kompetencje": "Koncentracja na umiejętnościach zespołu, szkoleniach i rozwoju kompetencji AI",
+  "Organizacja i procesy": "Koncentracja na strukturze organizacyjnej, przepływach pracy i integracji procesów",
+  "Strategia i zarządzanie": "Koncentracja na długoterminowej strategii AI, ocenie wpływu na biznes i zarządzaniu",
+  "Budżet": "Koncentracja na planowaniu finansowym, alokacji zasobów i priorytetach inwestycyjnych",
+  "Produkty i usługi": "Koncentracja na produktach wzbogaconych AI, automatyzacji i doświadczeniu klienta",
+  "Etyka i regulacje": "Koncentracja na etyce AI, zgodności, ochronie danych i przestrzeganiu przepisów"
 } as const;

@@ -5,10 +5,10 @@ This ensures consistency between backend processing and frontend display.
 
 # Mapping between technical names (used in backend/data) and display names (shown to users)
 CATEGORY_TRANSLATIONS = {
-    "Role i Współpraca": "Role i Współpraca",
+    "Role i Współpraca": "Role i współpraca",
     "Szkolenie": "Szkolenia",
     "Działania i Przepływ": "Aktywności i procesy",
-    "Podejmowanie Decyzji": "Podejmowanie Decyzji",
+    "Podejmowanie Decyzji": "Podejmowanie decyzji",
     "Procesy ZW": "Procesy zarządzania wiedzą",
     "Techniki ZW": "Technologie zarządzania wiedzą",
     "Metody": "Metody",

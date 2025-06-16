@@ -89,7 +89,7 @@ const MaturityLevelMatrix: React.FC<MaturityLevelMatrixProps> = ({
           disabled={!isAllSelected()}
           onClick={() => onSubmit(selectedGoals)}
         >
-          Prześlij Wszystkie Cele
+          Prześlij
         </button>
       </div>
     </div>

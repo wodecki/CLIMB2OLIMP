@@ -87,7 +87,7 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
         <header className="mb-8">
           <div className="flex justify-between items-start">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Wybor Obszarów Priorytetowych</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">Wybór obszarów priorytetowych</h1>
               <p className="text-gray-600">
                 Wybierz obszary, na których chcesz się skupić w analizie ulepszen. Te obszary będą używane 
                 do identyfikacji luk między twoim obecnym stanem a optymalną gotowością na AI.
@@ -105,7 +105,7 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
           <div className="mb-6">
             <h2 className="text-xl font-semibold text-gray-900 mb-2">
-              Dostępne Obszary Ulepszen
+              Wybierz obszary, na których chcesz się skoncentrować
             </h2>
             <p className="text-gray-600">
               Wybrane: {selectedCount} z {priorityAreas.length} obszarów
@@ -146,7 +146,7 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
           </div>
 
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-            <h3 className="font-medium text-blue-900 mb-2">Co się dzieje dalej?</h3>
+            <h3 className="font-medium text-blue-900 mb-2">Kolejne kroki</h3>
             <ul className="text-sm text-blue-800 space-y-1">
               <li>• Analiza luk zostanie obliczona dla wybranych obszarów</li>
               <li>• Porównanie obecnego stanu z optymalnym poziomem (E)</li>

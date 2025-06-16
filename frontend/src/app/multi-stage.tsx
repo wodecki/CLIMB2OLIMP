@@ -673,7 +673,7 @@ export default function MultiStageWorkflow() {
           <header className="mb-8">
             <div className="flex justify-between items-start">
               <div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">Ustal Cele Strategiczne</h1>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">Ustal swoje cele strategiczne</h1>
                 <p className="text-gray-600">
                   Na podstawie twoich obecnych poziomów dojrzałości, ustaw strategiczne poziomy celów dla każdej kategorii.
                 </p>
@@ -1320,7 +1320,7 @@ export default function MultiStageWorkflow() {
         <header className="mb-8">
           <div className="flex justify-between items-start">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Ocena Gotowości na AI</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">Ocena gotowości na GenAI</h1>
               <p className="text-gray-600">
                 Uzupełnij tę wieloetapową ocenę, aby otrzymać kompleksowe rekomendacje gotowości na AI.
               </p>
@@ -1361,10 +1361,10 @@ export default function MultiStageWorkflow() {
                 }`}
               >
                 {isLoadingSampleAnswers 
-                  ? 'Analizowanie...' 
+                  ? 'Wypełnianie...' 
                   : sampleAnswersLoaded 
-                    ? 'Analiza Przykładowych Danych Zakończona' 
-                    : 'Analizuj Przykładowe Dane'}
+                    ? 'Wypełniono przykładowymi danymi' 
+                    : 'Wypełnij przykładowymi danymi'}
               </button>
             </div>
           </div>
