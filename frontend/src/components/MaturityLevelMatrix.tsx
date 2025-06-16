@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import MaturityLevelSelector from './MaturityLevelSelector';
+import { getDisplayName, getTechnicalName } from '@/utils/categoryTranslations';
 
 interface MaturityLevelMatrixProps {
   categories: string[];
@@ -40,14 +41,19 @@ const MaturityLevelMatrix: React.FC<MaturityLevelMatrixProps> = ({
   }, [existingGoals]);
   
   const handleGoalSelect = (category: string, level: string) => {
+    // Always store goals using technical names
+    const technicalName = getTechnicalName(category);
     setSelectedGoals(prev => ({
       ...prev,
-      [category]: level
+      [technicalName]: level
     }));
   };
   
   const isAllSelected = () => {
-    return categories.every(category => selectedGoals[category]);
+    return categories.every(category => {
+      const technicalName = getTechnicalName(category);
+      return selectedGoals[technicalName];
+    });
   };
   
   return (
@@ -64,9 +70,9 @@ const MaturityLevelMatrix: React.FC<MaturityLevelMatrixProps> = ({
           {categories.map(category => (
             <MaturityLevelSelector
               key={category}
-              category={category}
-              currentLevel={currentLevels[category] || 'A'}
-              selectedLevel={selectedGoals[category] || null}
+              category={getDisplayName(category)}
+              currentLevel={currentLevels[getTechnicalName(category)] || 'A'}
+              selectedLevel={selectedGoals[getTechnicalName(category)] || null}
               onLevelSelect={(level) => handleGoalSelect(category, level)}
             />
           ))}

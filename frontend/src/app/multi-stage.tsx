@@ -7,6 +7,7 @@ import MaturityLevelMatrix from '@/components/MaturityLevelMatrix';
 import OlimpQuestionnaire from '@/components/OlimpQuestionnaire';
 import PrioritySelection from '@/components/PrioritySelection';
 import { QuestionnaireData, AnswerData, CategoryProgress, OlimpAnswerData, LetterAnswer } from '@/types/questionnaire';
+import { getAllTechnicalNames } from '@/utils/categoryTranslations';
 
 type WorkflowStage = 'climb2-questionnaire' | 'climb2-goals' | 'climb2-analysis' | 'climb2-results' | 'olimp-questionnaire' | 'olimp-priorities' | 'olimp-analysis' | 'final-reports';
 
@@ -666,13 +667,13 @@ export default function MultiStageWorkflow() {
   if (currentStage === 'climb2-goals') {
     const categories = [
       "Role i Współpraca",
-      "Szkolenie", 
-      "Działania i Przepływ",
+      "Szkolenia", 
+      "Aktywności i procesy",
       "Podejmowanie Decyzji",
-      "Procesy ZW",
-      "Techniki ZW",
+      "Procesy zarządzania wiedzą",
+      "Technologie zarządzania wiedzą",
       "Metody",
-      "Komputeryzacja i Oprogramowanie"
+      "Oprogramowanie i infrastruktura IT"
     ];
 
     return (
@@ -697,7 +698,7 @@ export default function MultiStageWorkflow() {
 
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
             <MaturityLevelMatrix 
-              categories={categories}
+              categories={getAllTechnicalNames()}
               currentLevels={maturityLevels}
               existingGoals={strategicGoals}
               onSubmit={handleClimb2GoalsComplete}
