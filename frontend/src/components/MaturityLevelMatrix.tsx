@@ -54,9 +54,9 @@ const MaturityLevelMatrix: React.FC<MaturityLevelMatrixProps> = ({
     <div className="space-y-6">
       <div className="bg-white p-4 rounded-lg shadow-sm">
         <div className="mb-4">
-          <h3 className="text-lg font-medium text-gray-800">Maturity Levels</h3>
+          <h3 className="text-lg font-medium text-gray-800">Poziomy Dojrzałości</h3>
           <p className="text-sm text-gray-600">
-            Current maturity levels are shown in grey. Click on a level to set it as your strategic goal.
+            Obecne poziomy dojrzałości są pokazane na szaro. Kliknij na poziom, aby ustawić go jako swój cel strategiczny.
           </p>
         </div>
         
@@ -83,7 +83,7 @@ const MaturityLevelMatrix: React.FC<MaturityLevelMatrixProps> = ({
           disabled={!isAllSelected()}
           onClick={() => onSubmit(selectedGoals)}
         >
-          Submit All Goals
+          Prześlij Wszystkie Cele
         </button>
       </div>
     </div>

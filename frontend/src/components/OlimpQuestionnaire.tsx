@@ -63,7 +63,7 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
         
       } catch (err) {
         console.error('Error fetching OLIMP questionnaire data:', err);
-        setError('Failed to load OLIMP questionnaire. Please try again later.');
+        setError('Nie udało się załadować kwestionariusza OLIMP. Spróbuj ponownie później.');
       } finally {
         setIsLoading(false);
       }
@@ -179,7 +179,7 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
       }
     } catch (err) {
       console.error('Error analyzing sample data:', err);
-      setError('Failed to analyze sample data. Please try again.');
+      setError('Nie udało się przeanalizować przykładowych danych. Spróbuj ponownie.');
     } finally {
       setIsLoadingSampleData(false);
     }
@@ -194,7 +194,7 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
     const answeredQuestions = Object.values(progress).reduce((sum, cat) => sum + cat.answered, 0);
     
     if (answeredQuestions < totalQuestions) {
-      if (!confirm('Not all OLIMP questions have been answered. Do you want to continue anyway?')) {
+      if (!confirm('Nie wszystkie pytania OLIMP zostały udzielone. Czy chcesz kontynuować mimo to?')) {
         return;
       }
     }
@@ -214,7 +214,7 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
     return (
       <div className="flex justify-center items-center min-h-screen">
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-          <strong className="font-bold">Error!</strong>
+          <strong className="font-bold">Błąd!</strong>
           <span className="block sm:inline"> {error}</span>
         </div>
       </div>
@@ -232,7 +232,7 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
         <header className="mb-8">
           <div className="flex justify-between items-start">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">OLIMP Questionnaire</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">Kwestionariusz OLIMP</h1>
               <p className="text-gray-600">
                 {questionnaireData.questionnaire_title}
               </p>
@@ -248,16 +248,16 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
                 }`}
               >
                 {isLoadingSampleData 
-                  ? 'Analyzing...' 
+                  ? 'Analizowanie...' 
                   : sampleDataLoaded 
-                    ? 'Sample Analysis Complete' 
-                    : 'Analyze Sample Data'}
+                    ? 'Analiza Przykładowych Danych Zakończona' 
+                    : 'Analizuj Przykładowe Dane'}
               </button>
               <button
                 onClick={onBack}
                 className="px-4 py-2 bg-gray-600 text-white rounded-md font-medium hover:bg-gray-700"
               >
-                Back to CLIMB2
+                Powrót do CLIMB2
               </button>
             </div>
           </div>
@@ -357,7 +357,7 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
                 : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
             }`}
           >
-            Previous Section
+            Poprzednia Sekcja
           </button>
           
           {activeSectionIndex < questionnaireData.sections.length - 1 ? (
@@ -365,14 +365,14 @@ export default function OlimpQuestionnaire({ onComplete, onBack }: OlimpQuestion
               onClick={handleNextSection}
               className="px-6 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700"
             >
-              Next Section
+              Następna Sekcja
             </button>
           ) : (
             <button
               onClick={handleComplete}
               className="px-6 py-2 bg-green-600 text-white rounded-md font-medium hover:bg-green-700"
             >
-              Complete OLIMP Questionnaire
+              Zakończ Kwestionariusz OLIMP
             </button>
           )}
         </div>

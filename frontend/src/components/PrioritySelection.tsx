@@ -52,7 +52,7 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
       .map(area => area.name);
     
     if (selectedAreas.length === 0) {
-      alert('Please select at least one priority area for improvement.');
+      alert('Wybierz co najmniej jeden obszar priorytetowy do poprawy.');
       return;
     }
     
@@ -71,7 +71,7 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
     return (
       <div className="flex justify-center items-center min-h-screen">
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-          <strong className="font-bold">Error!</strong>
+          <strong className="font-bold">Błąd!</strong>
           <span className="block sm:inline"> {error}</span>
         </div>
       </div>
@@ -86,17 +86,17 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
         <header className="mb-8">
           <div className="flex justify-between items-start">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Priority Areas Selection</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">Wybor Obszarów Priorytetowych</h1>
               <p className="text-gray-600">
-                Select the areas you want to focus on for improvement analysis. These areas will be used 
-                to identify gaps between your current state and optimal AI readiness.
+                Wybierz obszary, na których chcesz się skupić w analizie ulepszen. Te obszary będą używane 
+                do identyfikacji luk między twoim obecnym stanem a optymalną gotowością na AI.
               </p>
             </div>
             <button
               onClick={onBack}
               className="px-4 py-2 bg-gray-600 text-white rounded-md font-medium hover:bg-gray-700"
             >
-              Back to OLIMP Questionnaire
+              Powrót do Kwestionariusza OLIMP
             </button>
           </div>
         </header>
@@ -104,10 +104,10 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
           <div className="mb-6">
             <h2 className="text-xl font-semibold text-gray-900 mb-2">
-              Available Improvement Areas
+              Dostępne Obszary Ulepszen
             </h2>
             <p className="text-gray-600">
-              Selected: {selectedCount} of {priorityAreas.length} areas
+              Wybrane: {selectedCount} z {priorityAreas.length} obszarów
             </p>
           </div>
 
@@ -130,14 +130,14 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
                 <div className="flex-1">
                   <h3 className="text-lg font-medium">{area.name}</h3>
                   <p className="text-sm mt-1 opacity-75">
-                    {area.name === "TECHNOLOGY AND INFRASTRUCTURE" && "Focus on IT infrastructure, cloud adoption, and technical capabilities"}
-                    {area.name === "DATA" && "Focus on data quality, management, automation, and analytics"}
-                    {area.name === "PEOPLE AND COMPETENCIES" && "Focus on team skills, training, and AI competency development"}
-                    {area.name === "ORGANIZATION AND PROCESSES" && "Focus on organizational structure, workflows, and process integration"}
-                    {area.name === "STRATEGY AND MANAGEMENT" && "Focus on long-term AI strategy, business impact assessment, and governance"}
-                    {area.name === "BUDGET" && "Focus on financial planning, resource allocation, and investment priorities"}
-                    {area.name === "PRODUCTS AND SERVICES" && "Focus on AI-enhanced products, automation, and customer experience"}
-                    {area.name === "ETHICS AND REGULATIONS" && "Focus on AI ethics, compliance, data protection, and regulatory adherence"}
+                    {area.name === "TECHNOLOGY AND INFRASTRUCTURE" && "Skupienie na infrastrukturze IT, adoptacji chmury i zdolnościach technicznych"}
+                    {area.name === "DATA" && "Skupienie na jakości danych, zarządzaniu, automatyzacji i analityce"}
+                    {area.name === "PEOPLE AND COMPETENCIES" && "Skupienie na umiejętnościach zespołu, szkoleniach i rozwoju kompetencji AI"}
+                    {area.name === "ORGANIZATION AND PROCESSES" && "Skupienie na strukturze organizacyjnej, przepływach pracy i integracji procesów"}
+                    {area.name === "STRATEGY AND MANAGEMENT" && "Skupienie na długoterminowej strategii AI, ocenie wpływu na biznes i zarządzaniu"}
+                    {area.name === "BUDGET" && "Skupienie na planowaniu finansowym, alokacji zasobów i priorytetach inwestycyjnych"}
+                    {area.name === "PRODUCTS AND SERVICES" && "Skupienie na produktach wzbogaconych AI, automatyzacji i doświadczeniu klienta"}
+                    {area.name === "ETHICS AND REGULATIONS" && "Skupienie na etyce AI, zgodności, ochronie danych i przestrzeganiu przepisów"}
                   </p>
                 </div>
                 {area.selected && (
@@ -152,12 +152,12 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
           </div>
 
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-            <h3 className="font-medium text-blue-900 mb-2">What happens next?</h3>
+            <h3 className="font-medium text-blue-900 mb-2">Co się dzieje dalej?</h3>
             <ul className="text-sm text-blue-800 space-y-1">
-              <li>• Gap analysis will be computed for selected areas</li>
-              <li>• Current state vs. optimal level (E) comparison</li>
-              <li>• Step-by-step improvement recommendations</li>
-              <li>• Comprehensive OLIMP analysis report generation</li>
+              <li>• Analiza luk zostanie obliczona dla wybranych obszarów</li>
+              <li>• Porównanie obecnego stanu z optymalnym poziomem (E)</li>
+              <li>• Rekomendacje ulepszen krok po kroku</li>
+              <li>• Generowanie kompleksowego raportu analizy OLIMP</li>
             </ul>
           </div>
 
@@ -166,7 +166,7 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
               onClick={onBack}
               className="px-6 py-2 bg-gray-200 text-gray-800 rounded-md font-medium hover:bg-gray-300"
             >
-              Back
+              Powrót
             </button>
             
             <button
@@ -178,7 +178,7 @@ export default function PrioritySelection({ onComplete, onBack }: PrioritySelect
                   : 'bg-gray-400 text-white cursor-not-allowed'
               }`}
             >
-              Start OLIMP Analysis
+              Rozpocznij Analizę OLIMP
             </button>
           </div>
         </div>

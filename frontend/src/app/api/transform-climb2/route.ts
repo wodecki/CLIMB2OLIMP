@@ -60,14 +60,14 @@ export async function POST(request: NextRequest) {
     
     // Map CLIMB2 categories to OLIMP format
     const categoryMapping: { [key: string]: string } = {
-      "Roles and Collaboration": "ROLE I WSPÓŁPRACA",
-      "Training": "SZKOLENIE", 
-      "Activities and Flow": "DZIAŁANIA I PRZEPŁYW",
-      "Decision-Making": "PODEJMOWANIE DECYZJI",
-      "KM Processes": "PROCESY ZW",
-      "KM Techniques": "TECHNIKI ZW",
-      "Methods": "METODY",
-      "Computerization and Software": "KOMPUTERYZACJA I OPROGRAMOWANIE"
+      "Role i Współpraca": "ROLE I WSPÓŁPRACA",
+      "Szkolenie": "SZKOLENIE", 
+      "Działania i Przepływ": "DZIAŁANIA I PRZEPŁYW",
+      "Podejmowanie Decyzji": "PODEJMOWANIE DECYZJI",
+      "Procesy ZW": "PROCESY ZW",
+      "Techniki ZW": "TECHNIKI ZW",
+      "Metody": "METODY",
+      "Komputeryzacja i Oprogramowanie": "KOMPUTERYZACJA I OPROGRAMOWANIE"
     };
     
     // Create A_1.json structure

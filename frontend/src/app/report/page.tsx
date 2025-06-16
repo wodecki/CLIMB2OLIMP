@@ -35,7 +35,7 @@ function ReportContent() {
         setReportContent(data.content);
       } catch (err) {
         console.error('Error fetching report:', err);
-        setError('Failed to load report. Please try again later.');
+        setError('Nie udało się załadować raportu. Spróbuj ponownie później.');
       } finally {
         setIsLoading(false);
       }
@@ -51,7 +51,7 @@ function ReportContent() {
       printWindow.document.write(`
         <html>
           <head>
-            <title>Analysis Report</title>
+            <title>Raport Analizy</title>
             <style>
               body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -130,7 +130,7 @@ function ReportContent() {
             </style>
           </head>
           <body>
-            <h1>Analysis Report</h1>
+            <h1>Raport Analizy</h1>
             ${content}
             <script>
               window.onload = function() {
@@ -168,12 +168,12 @@ function ReportContent() {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-          <strong className="font-bold">Error!</strong>
+          <strong className="font-bold">Błąd!</strong>
           <span className="block sm:inline"> {error}</span>
         </div>
         <div className="mt-4">
           <Link href="/" className="text-blue-600 hover:text-blue-800">
-            Return to Questionnaire
+            Powrót do Kwestionariusza
           </Link>
         </div>
       </div>
@@ -183,7 +183,7 @@ function ReportContent() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
       <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-8 gap-4">
-        <h1 className="text-3xl font-bold text-blue-700">Analysis Report</h1>
+        <h1 className="text-3xl font-bold text-blue-700">Raport Analizy</h1>
         <div className="flex flex-wrap gap-3">
           <button
             onClick={handlePrint}
@@ -192,7 +192,7 @@ function ReportContent() {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
             </svg>
-            Print Report
+            Drukuj Raport
           </button>
           <button
             onClick={handleDownload}
@@ -201,7 +201,7 @@ function ReportContent() {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            Download
+            Pobierz
           </button>
           <Link
             href="/"
@@ -210,7 +210,7 @@ function ReportContent() {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            Back to Questionnaire
+            Powrót do Kwestionariusza
           </Link>
         </div>
       </div>

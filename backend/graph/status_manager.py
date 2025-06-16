@@ -26,14 +26,14 @@ class StatusManager:
         
         # Categories for strategic goals
         self.categories = [
-            "Roles and Collaboration",
-            "Training",
-            "Activities and Flow",
-            "Decision-Making",
-            "KM Processes",
-            "KM Techniques",
-            "Methods",
-            "Computerization and Software"
+            "Role i Współpraca",
+            "Szkolenie",
+            "Działania i Przepływ",
+            "Podejmowanie Decyzji",
+            "Procesy ZW",
+            "Techniki ZW",
+            "Metody",
+            "Komputeryzacja i Oprogramowanie"
         ]
         
         # Initialize with default status

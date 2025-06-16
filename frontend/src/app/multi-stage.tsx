@@ -113,7 +113,7 @@ export default function MultiStageWorkflow() {
         
       } catch (err) {
         console.error('Error fetching questionnaire data:', err);
-        setError('Failed to load questionnaire. Please try again later.');
+        setError('Nie udało się załadować kwestionariusza. Spróbuj ponownie później.');
       } finally {
         setIsLoading(false);
       }
@@ -205,7 +205,7 @@ export default function MultiStageWorkflow() {
       
     } catch (err) {
       console.error('Error analyzing sample data:', err);
-      setError(err instanceof Error ? err.message : 'Failed to analyze sample data. Please try again.');
+      setError(err instanceof Error ? err.message : 'Nie udało się przeanalizować przykładowych danych. Spróbuj ponownie.');
     } finally {
       setIsLoadingSampleAnswers(false);
     }
@@ -224,7 +224,7 @@ export default function MultiStageWorkflow() {
       console.log(`Progress: ${answeredQuestions}/${totalQuestions} questions answered`);
       
       if (answeredQuestions < totalQuestions) {
-        if (!confirm('Not all questions have been answered. Do you want to continue anyway?')) {
+        if (!confirm('Nie wszystkie pytania zostały udzielone. Czy chcesz kontynuować mimo to?')) {
           setIsSubmitting(false);
           return;
         }
@@ -246,7 +246,7 @@ export default function MultiStageWorkflow() {
       if (!response.ok) {
         const errorData = await response.json();
         console.error('Questionnaire submission error:', errorData);
-        throw new Error(`Failed to submit questionnaire: ${errorData.error || response.statusText}`);
+        throw new Error(`Nie udało się przesłać kwestionariusza: ${errorData.error || response.statusText}`);
       }
 
       // Get maturity levels
@@ -268,7 +268,7 @@ export default function MultiStageWorkflow() {
       
     } catch (err) {
       console.error('Error completing CLIMB2 questionnaire:', err);
-      setError(err instanceof Error ? err.message : 'Failed to submit questionnaire. Please try again.');
+      setError(err instanceof Error ? err.message : 'Nie udało się przesłać kwestionariusza. Spróbuj ponownie.');
       setSubmitSuccess(false);
       setTimeout(() => {
         setSubmitSuccess(null);
@@ -305,7 +305,7 @@ export default function MultiStageWorkflow() {
       
     } catch (err) {
       console.error('Error completing CLIMB2 goals:', err);
-      setError('Failed to submit strategic goals. Please try again.');
+      setError('Nie udało się przesłać celów strategicznych. Spróbuj ponownie.');
     }
   };
 
@@ -314,36 +314,36 @@ export default function MultiStageWorkflow() {
     const steps = [
       {
         id: 'calculate_maturity',
-        name: 'Calculate Maturity Levels',
-        description: 'Analyzing questionnaire responses to determine current maturity levels',
+        name: 'Obliczanie Poziomów Dojrzałości',
+        description: 'Analiza odpowiedzi kwestionariusza w celu określenia obecnych poziomów dojrzałości',
         status: 'pending' as const,
         progress: 0
       },
       {
         id: 'human_feedback',
-        name: 'Strategic Goal Processing',
-        description: 'Processing strategic goals and planning improvements',
+        name: 'Przetwarzanie Celów Strategicznych',
+        description: 'Przetwarzanie celów strategicznych i planowanie ulepszen',
         status: 'pending' as const,
         progress: 0
       },
       {
         id: 'identify_areas_for_improvement',
-        name: 'Identify Improvement Areas',
-        description: 'Analyzing data to identify key areas needing attention',
+        name: 'Identyfikacja Obszarów do Poprawy',
+        description: 'Analiza danych w celu identyfikacji kluczowych obszarów wymagających uwagi',
         status: 'pending' as const,
         progress: 0
       },
       {
         id: 'identify_questions_for_improvement',
-        name: 'Analyze Key Questions',
-        description: 'Determining specific questions and challenges to address',
+        name: 'Analiza Kluczowych Pytań',
+        description: 'Określanie konkretnych pytań i wyzwań do rozwiązania',
         status: 'pending' as const,
         progress: 0
       },
       {
         id: 'strategic_planning',
-        name: 'Strategic Planning Complete',
-        description: 'Finalizing strategic analysis and preparing for OLIMP assessment',
+        name: 'Planowanie Strategiczne Zakończone',
+        description: 'Finalizacja analizy strategicznej i przygotowanie do oceny OLIMP',
         status: 'pending' as const,
         progress: 0
       }
@@ -452,7 +452,7 @@ export default function MultiStageWorkflow() {
           } else if (statusData.currentNode === 'error' || statusData.currentNode === 'stopped') {
             clearInterval(pollStatus);
             setIsRunningAnalysis(false);
-            setError('CLIMB2 analysis failed or was stopped');
+            setError('Analiza CLIMB2 nie powiodła się lub została zatrzymana');
           }
         } catch (err) {
           console.error('Error polling CLIMB2 status:', err);
@@ -461,7 +461,7 @@ export default function MultiStageWorkflow() {
       
     } catch (err) {
       console.error('Error starting CLIMB2 analysis:', err);
-      setError('Failed to start CLIMB2 analysis. Please try again.');
+      setError('Nie udało się uruchomić analizy CLIMB2. Spróbuj ponownie.');
       setIsRunningAnalysis(false);
     }
   };
@@ -510,7 +510,7 @@ export default function MultiStageWorkflow() {
       
     } catch (err) {
       console.error('Error completing OLIMP:', err);
-      setError('Failed to submit OLIMP answers. Please try again.');
+      setError('Nie udało się przesłać odpowiedzi OLIMP. Spróbuj ponownie.');
     }
   };
 
@@ -538,7 +538,7 @@ export default function MultiStageWorkflow() {
       
     } catch (err) {
       console.error('Error completing priority selection:', err);
-      setError('Failed to compute gaps. Please try again.');
+      setError('Nie udało się obliczyć luk. Spróbuj ponownie.');
     }
   };
 
@@ -585,9 +585,9 @@ export default function MultiStageWorkflow() {
             setIsRunningAnalysis(false);
             
             if (statusData.status === 'error' && statusData.progress?.error) {
-              setError(`OLIMP analysis failed: ${statusData.progress.error}`);
+              setError(`Analiza OLIMP nie powiodła się: ${statusData.progress.error}`);
             } else {
-              setError('OLIMP analysis failed or was stopped');
+              setError('Analiza OLIMP nie powiodła się lub została zatrzymana');
             }
           }
         } catch (err) {
@@ -597,7 +597,7 @@ export default function MultiStageWorkflow() {
       
     } catch (err) {
       console.error('Error starting OLIMP analysis:', err);
-      setError('Failed to start OLIMP analysis. Please try again.');
+      setError('Nie udało się uruchomić analizy OLIMP. Spróbuj ponownie.');
       setIsRunningAnalysis(false);
     }
   };
@@ -649,13 +649,13 @@ export default function MultiStageWorkflow() {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-          <strong className="font-bold">Error!</strong>
+          <strong className="font-bold">Błąd!</strong>
           <span className="block sm:inline"> {error}</span>
           <button 
             onClick={() => setError(null)}
             className="mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
           >
-            Try Again
+            Spróbuj ponownie
           </button>
         </div>
       </div>
@@ -681,16 +681,16 @@ export default function MultiStageWorkflow() {
           <header className="mb-8">
             <div className="flex justify-between items-start">
               <div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">Set Strategic Goals</h1>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">Ustal Cele Strategiczne</h1>
                 <p className="text-gray-600">
-                  Based on your current maturity levels, please set strategic goal levels for each category.
+                  Na podstawie twoich obecnych poziomów dojrzałości, ustaw strategiczne poziomy celów dla każdej kategorii.
                 </p>
               </div>
               <button
                 onClick={handleBackToClimb2}
                 className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700"
               >
-                Back to Questionnaire
+                Powrót do Kwestionariusza
               </button>
             </div>
           </header>
@@ -717,9 +717,9 @@ export default function MultiStageWorkflow() {
       <main className="min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">CLIMB2 Analysis Running</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Analiza CLIMB2 w Toku</h1>
             <p className="text-gray-600 mb-6">
-              The CLIMB2 system is generating your preliminary recommendations based on your maturity assessment and strategic goals.
+              System CLIMB2 generuje wstępne rekomendacje na podstawie oceny dojrzałości i celów strategicznych.
             </p>
           </div>
 
@@ -727,7 +727,7 @@ export default function MultiStageWorkflow() {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
             <div className="mb-4">
               <div className="flex justify-between items-center mb-2">
-                <h2 className="text-lg font-semibold text-gray-900">Overall Progress</h2>
+                <h2 className="text-lg font-semibold text-gray-900">Postęp Ogólny</h2>
                 <span className="text-blue-600 font-medium text-lg">{overallProgress}%</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-3">
@@ -742,15 +742,15 @@ export default function MultiStageWorkflow() {
               <p className="text-gray-700 font-medium">{currentStepName}</p>
               <p className="text-sm text-gray-500 mt-1">
                 {climb2DetailedStatus?.requiresInput && climb2DetailedStatus?.requestAllGoals 
-                  ? 'Waiting for strategic goals input below...'
-                  : activeStep?.description || 'Initializing analysis...'}
+                  ? 'Oczekiwanie na wprowadzenie celów strategicznych poniżej...'
+                  : activeStep?.description || 'Inicjalizacja analizy...'}
               </p>
             </div>
           </div>
 
           {/* Detailed Progress Steps */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Analysis Steps</h2>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Kroki Analizy</h2>
             <div className="space-y-4">
               {climb2ProgressSteps.map((step, index) => (
                 <div key={step.id} className="flex items-start">
@@ -791,16 +791,16 @@ export default function MultiStageWorkflow() {
           {/* Interactive Strategic Goal Input */}
           {climb2DetailedStatus?.requiresInput && climb2DetailedStatus?.requestAllGoals && climb2DetailedStatus?.allCategories && climb2DetailedStatus?.currentNode !== 'completed' && (
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-              <h2 className="text-lg font-semibold text-blue-900 mb-4">Strategic Goals Required</h2>
+              <h2 className="text-lg font-semibold text-blue-900 mb-4">Wymagane Cele Strategiczne</h2>
               <p className="text-blue-800 mb-4">
-                The analysis needs strategic goals for each category. Please select target maturity levels (A-E) where:
+                Analiza wymaga celów strategicznych dla każdej kategorii. Wybierz docelowe poziomy dojrzałości (A-E) gdzie:
               </p>
               <div className="text-sm text-blue-700 mb-4 grid grid-cols-2 gap-2">
-                <div>• <strong>A:</strong> Excellent</div>
-                <div>• <strong>B:</strong> Good</div>
-                <div>• <strong>C:</strong> Average</div>
-                <div>• <strong>D:</strong> Below Average</div>
-                <div>• <strong>E:</strong> Poor</div>
+                <div>• <strong>A:</strong> Doskonały</div>
+                <div>• <strong>B:</strong> Dobry</div>
+                <div>• <strong>C:</strong> Średni</div>
+                <div>• <strong>D:</strong> Poniżej średniej</div>
+                <div>• <strong>E:</strong> Słaby</div>
               </div>
               
               <MaturityLevelMatrix 
@@ -821,11 +821,11 @@ export default function MultiStageWorkflow() {
                       // Goals submitted successfully, polling will pick up the change
                       console.log('Strategic goals submitted successfully');
                     } else {
-                      setError('Failed to submit strategic goals');
+                      setError('Nie udało się przesłać celów strategicznych');
                     }
                   } catch (error) {
                     console.error('Error submitting strategic goals:', error);
-                    setError('Error submitting strategic goals');
+                    setError('Błąd podczas przesyłania celów strategicznych');
                   }
                 }}
               />
@@ -835,7 +835,7 @@ export default function MultiStageWorkflow() {
           {/* Strategic Goals Display */}
           {climb2DetailedStatus?.strategicGoals && Object.keys(climb2DetailedStatus.strategicGoals).length > 0 && (
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">Active Strategic Goals</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">Aktywne Cele Strategiczne</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {Object.entries(climb2DetailedStatus.strategicGoals).map(([category, goalLevel]) => (
                   <div key={category} className="flex items-center p-3 bg-gray-50 rounded-lg">
@@ -863,14 +863,14 @@ export default function MultiStageWorkflow() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-green-900 mb-2">CLIMB2 Analysis Complete!</h3>
+              <h3 className="text-lg font-semibold text-green-900 mb-2">Analiza CLIMB2 Zakończona!</h3>
               <p className="text-green-700 mb-4">
-                Your preliminary assessment is ready. You'll now proceed to the detailed OLIMP questionnaire for comprehensive analysis.
+                Twoja wstępna ocena jest gotowa. Teraz przejdziesz do szczegółowego kwestionariusza OLIMP w celu kompleksowej analizy.
               </p>
               <div className="animate-pulse">
                 <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-lg">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-bounce"></div>
-                  Preparing OLIMP Assessment...
+                  Przygotowywanie Oceny OLIMP...
                 </div>
               </div>
             </div>
@@ -882,7 +882,7 @@ export default function MultiStageWorkflow() {
               onClick={handleBackToClimb2Goals}
               className="px-6 py-2 text-gray-600 hover:text-gray-800 transition-colors"
             >
-              ← Back to Strategic Goals
+              ← Powrót do Celów Strategicznych
             </button>
           </div>
         </div>
@@ -895,24 +895,24 @@ export default function MultiStageWorkflow() {
       <main className="min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">CLIMB2 Analysis Complete!</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Analiza CLIMB2 Zakończona!</h1>
             <div className="flex items-center justify-center mb-6">
               <svg className="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <p className="text-gray-600 mb-6">
-              Your preliminary AI readiness assessment has been completed successfully. Review your results below and continue to the detailed OLIMP assessment.
+              Twoja wstępna ocena gotowości na AI została pomyślnie zakończona. Przejrzyj wyniki poniżej i kontynuuj do szczegółowej oceny OLIMP.
             </p>
           </div>
 
           {/* Report Section */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">CLIMB2 Report</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">Raport CLIMB2</h2>
             {climb2ReportPath ? (
               <div className="mb-4">
                 <p className="text-gray-600 mb-4">
-                  Your CLIMB2 report contains preliminary recommendations based on your maturity assessment and strategic goals.
+                  Twój raport CLIMB2 zawiera wstępne rekomendacje oparte na ocenie dojrzałości i celach strategicznych.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
@@ -924,7 +924,7 @@ export default function MultiStageWorkflow() {
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    View CLIMB2 Report
+                    Zobacz Raport CLIMB2
                   </a>
                   <a
                     href={`/report?path=${encodeURIComponent(climb2ReportPath)}&download=true`}
@@ -933,7 +933,7 @@ export default function MultiStageWorkflow() {
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    Download Report
+                    Pobierz Raport
                   </a>
                 </div>
               </div>
@@ -943,7 +943,7 @@ export default function MultiStageWorkflow() {
                   <svg className="w-5 h-5 text-yellow-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.232 19c-.77.833.192 2.5 1.732 2.5z" />
                   </svg>
-                  <span className="text-yellow-800">Report is being generated. Please wait a moment and refresh if needed.</span>
+                  <span className="text-yellow-800">Raport jest generowany. Poczekaj chwilę i odśwież jeśli to konieczne.</span>
                 </div>
               </div>
             )}
@@ -952,7 +952,7 @@ export default function MultiStageWorkflow() {
           {/* Strategic Goals Summary */}
           {strategicGoals && Object.keys(strategicGoals).length > 0 && (
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">Your Strategic Goals</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">Twoje Cele Strategiczne</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {Object.entries(strategicGoals).map(([category, goalLevel]) => (
                   <div key={category} className="flex items-center p-3 bg-gray-50 rounded-lg">
@@ -974,9 +974,9 @@ export default function MultiStageWorkflow() {
 
           {/* Next Steps */}
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-            <h2 className="text-lg font-semibold text-blue-900 mb-3">Next Steps</h2>
+            <h2 className="text-lg font-semibold text-blue-900 mb-3">Następne Kroki</h2>
             <p className="text-blue-800 mb-4">
-              Now that you have your preliminary CLIMB2 assessment, proceed to the detailed OLIMP questionnaire for a comprehensive analysis with specific gap identification and implementation recommendations.
+              Teraz, gdy masz wstępną ocenę CLIMB2, przejdź do szczegółowego kwestionariusza OLIMP w celu kompleksowej analizy z konkretnou identyfikacją luk i rekomendacjami wdrożenia.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button
@@ -986,13 +986,13 @@ export default function MultiStageWorkflow() {
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-                Continue to OLIMP Assessment
+                Kontynuuj do Oceny OLIMP
               </button>
               <button
                 onClick={() => setCurrentStage('climb2-analysis')}
                 className="px-4 py-3 text-gray-600 hover:text-gray-800 transition-colors"
               >
-                ← Back to Analysis
+                ← Powrót do Analizy
               </button>
             </div>
           </div>
@@ -1012,19 +1012,19 @@ export default function MultiStageWorkflow() {
   if (currentStage === 'olimp-analysis') {
     const getStepDisplayName = (step: string) => {
       const stepMap: { [key: string]: string } = {
-        'setup': 'Initializing Analysis',
-        'processing': 'Gap Analysis',
-        'extract_answers': 'Extracting Responses',
-        'identify_gaps': 'Identifying Gaps',
-        'parallel_recommendations': 'Parallel Recommendations',
-        'evaluation': 'Parallel Recommendations',
-        'evaluation_branches': 'Multi-Branch Analysis',
-        'recommend': 'Generating Recommendations',
-        'recommend_branches': 'Branch Recommendations',
-        'consensus': 'Consensus Building',
-        'generating_final_report': 'Final Report Generation',
-        'final_report': 'Final Report Generation',
-        'completed': 'Analysis Complete'
+        'setup': 'Inicjalizacja Analizy',
+        'processing': 'Analiza Luk',
+        'extract_answers': 'Wyodrębnianie Odpowiedzi',
+        'identify_gaps': 'Identyfikacja Luk',
+        'parallel_recommendations': 'Równoległe Rekomendacje',
+        'evaluation': 'Równoległe Rekomendacje',
+        'evaluation_branches': 'Analiza Wielogałęziowa',
+        'recommend': 'Generowanie Rekomendacji',
+        'recommend_branches': 'Rekomendacje Gałęzi',
+        'consensus': 'Budowanie Konsensusu',
+        'generating_final_report': 'Generowanie Raportu Końcowego',
+        'final_report': 'Generowanie Raportu Końcowego',
+        'completed': 'Analiza Zakończona'
       };
       return stepMap[step] || step;
     };
@@ -1049,16 +1049,16 @@ export default function MultiStageWorkflow() {
       <main className="min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">OLIMP Analysis Running</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Analiza OLIMP w Toku</h1>
             <p className="text-gray-600 mb-6">
-              The OLIMP system is performing comprehensive gap analysis and generating detailed recommendations.
+              System OLIMP przeprowadza kompleksową analizę luk i generuje szczegółowe rekomendacje.
             </p>
           </div>
 
           {/* Progress Overview */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-semibold text-gray-900">Overall Progress</h2>
+              <h2 className="text-lg font-semibold text-gray-900">Postęp Ogólny</h2>
               <span className="text-blue-600 font-medium text-lg">{getProgressPercentage()}%</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
@@ -1070,12 +1070,12 @@ export default function MultiStageWorkflow() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
               <div className="p-3 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600">Current Step</p>
+                <p className="text-sm text-gray-600">Aktualny Krok</p>
                 <p className="font-medium text-gray-900">
                   {olimpProgress ? 
                     (olimpProgress.currentStep ? getStepDisplayName(olimpProgress.currentStep) : 
-                     'Processing analysis...') : 
-                    'Initializing...'}
+                     'Przetwarzanie analizy...') : 
+                    'Inicjalizacja...'}
                   {olimpProgress?.stepStatus === 'generating' && (
                     <span className="ml-2 text-orange-600">
                       <svg className="inline-block animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -1087,19 +1087,19 @@ export default function MultiStageWorkflow() {
                 </p>
               </div>
               <div className="p-3 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600">Steps Progress</p>
+                <p className="text-sm text-gray-600">Postęp Kroków</p>
                 <p className="font-medium text-gray-900">
                   {olimpProgress && olimpProgress.stepsCompleted && olimpProgress.totalSteps ? 
                     `${olimpProgress.stepsCompleted}/${olimpProgress.totalSteps}` : 
-                    (analysisStatus === 'running' ? 'In Progress' : '0/8')}
+                    (analysisStatus === 'running' ? 'W Toku' : '0/8')}
                 </p>
               </div>
               <div className="p-3 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600">Elapsed Time</p>
+                <p className="text-sm text-gray-600">Upłynął Czas</p>
                 <p className="font-medium text-gray-900">
                   {olimpProgress && olimpProgress.elapsedTime ? 
                     formatElapsedTime(olimpProgress.elapsedTime) : 
-                    (analysisStatus === 'running' ? 'Running...' : '0s')}
+                    (analysisStatus === 'running' ? 'Działa...' : '0s')}
                 </p>
               </div>
             </div>
@@ -1108,7 +1108,7 @@ export default function MultiStageWorkflow() {
           {/* Branch Analysis Progress */}
           {olimpProgress?.branches && (
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">Multi-Branch Analysis</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">Analiza Wielogałęziowa</h2>
               <div className="space-y-3">
                 {Object.entries(olimpProgress.branches).map(([branchName, branchData]: [string, any]) => (
                   <div key={branchName} className="flex items-center p-3 bg-gray-50 rounded-lg">
@@ -1124,7 +1124,7 @@ export default function MultiStageWorkflow() {
                       <div className="flex justify-between items-center">
                         <span className="font-medium text-gray-900">{branchName.replace('branch_', 'Branch ')}</span>
                         <span className="text-sm text-gray-600">
-                          {branchData.status === 'skipped' ? 'Skipped' : `${branchData.iterations}/${branchData.max_iterations} iterations`}
+                          {branchData.status === 'skipped' ? 'Pominięto' : `${branchData.iterations}/${branchData.max_iterations} iteracji`}
                         </span>
                       </div>
                       {branchData.details && (
@@ -1139,7 +1139,7 @@ export default function MultiStageWorkflow() {
 
           {/* Analysis Steps */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Analysis Pipeline</h2>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Rurociąg Analizy</h2>
             <div className="space-y-4">
               {['setup', 'extract_answers', 'identify_gaps', 'parallel_recommendations', 'recommend', 'consensus', 'generating_final_report', 'completed'].map((step, index) => {
                 const isCompleted = olimpProgress && olimpProgress.stepsCompleted ? olimpProgress.stepsCompleted > index : false;
@@ -1186,13 +1186,13 @@ export default function MultiStageWorkflow() {
                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                               </svg>
-                              <span className="ml-1 text-xs font-medium">Heavy Processing...</span>
+                              <span className="ml-1 text-xs font-medium">Intensywne Przetwarzanie...</span>
                             </span>
                           )}
                         </p>
                         {isGenerating && step === 'generating_final_report' && (
                           <p className="text-xs text-orange-700 mt-1">
-                            Compiling comprehensive report with all analysis data...
+                            Kompilowanie kompleksowego raportu ze wszystkimi danymi analizy...
                           </p>
                         )}
                       </div>
@@ -1210,10 +1210,10 @@ export default function MultiStageWorkflow() {
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  <h3 className="font-semibold text-orange-900">Final Report Generation in Progress</h3>
+                  <h3 className="font-semibold text-orange-900">Generowanie Raportu Końcowego w Toku</h3>
                 </div>
                 <p className="text-sm text-orange-800">
-                  The system is compiling all analysis data into a comprehensive final report. This process involves consolidating insights from multiple AI expert perspectives and may take several minutes to complete.
+                  System kompiluje wszystkie dane analizy w kompleksowy raport końcowy. Ten proces obejmuje konsolidację spostrzezeń z wielu perspektyw ekspertów AI i może potrwać kilka minut.
                 </p>
                 <div className="mt-3 flex items-center text-xs text-orange-700">
                   <div className="flex items-center space-x-1">
@@ -1221,7 +1221,7 @@ export default function MultiStageWorkflow() {
                     <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
                     <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
                   </div>
-                  <span className="ml-2 font-medium">Processing intensive analysis...</span>
+                  <span className="ml-2 font-medium">Przetwarzanie intensywnej analizy...</span>
                 </div>
               </div>
             )}
@@ -1230,13 +1230,13 @@ export default function MultiStageWorkflow() {
           {/* Error Display */}
           {analysisStatus === 'error' && olimpProgress?.error && (
             <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
-              <h2 className="text-lg font-semibold text-red-900 mb-3">Analysis Error</h2>
+              <h2 className="text-lg font-semibold text-red-900 mb-3">Błąd Analizy</h2>
               <p className="text-red-800 text-sm mb-4">{olimpProgress.error}</p>
               <button
                 onClick={() => window.location.reload()}
                 className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
               >
-                Restart Analysis
+                Uruchom Ponownie Analizę
               </button>
             </div>
           )}
@@ -1247,7 +1247,7 @@ export default function MultiStageWorkflow() {
               onClick={() => setCurrentStage('olimp-priorities')}
               className="px-6 py-2 text-gray-600 hover:text-gray-800 transition-colors"
             >
-              ← Back to Priority Selection
+              ← Powrót do Wyboru Priorytetów
             </button>
           </div>
         </div>
@@ -1260,37 +1260,37 @@ export default function MultiStageWorkflow() {
       <main className="min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Analysis Complete!</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Analiza Zakończona!</h1>
             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-              <strong className="font-bold">Success!</strong>
-              <span className="block sm:inline"> Your comprehensive AI readiness analysis has been completed.</span>
+              <strong className="font-bold">Sukces!</strong>
+              <span className="block sm:inline"> Twoja kompleksowa analiza gotowości na AI została zakończona.</span>
             </div>
             
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-              <h2 className="text-xl font-semibold mb-4">Available Reports</h2>
+              <h2 className="text-xl font-semibold mb-4">Dostępne Raporty</h2>
               <div className="grid gap-4 md:grid-cols-2">
                 {climb2ReportPath && (
                   <div className="border border-gray-200 rounded-lg p-4">
-                    <h3 className="font-semibold mb-2">CLIMB2 Report</h3>
-                    <p className="text-sm text-gray-600 mb-3">Preliminary maturity assessment and strategic recommendations</p>
+                    <h3 className="font-semibold mb-2">Raport CLIMB2</h3>
+                    <p className="text-sm text-gray-600 mb-3">Wstępna ocena dojrzałości i rekomendacje strategiczne</p>
                     <a
                       href={`/report?path=${encodeURIComponent(climb2ReportPath)}`}
                       className="px-4 py-2 bg-blue-600 text-white rounded font-medium hover:bg-blue-700 text-sm"
                     >
-                      View CLIMB2 Report
+                      Zobacz Raport CLIMB2
                     </a>
                   </div>
                 )}
                 
                 {reportPath && (
                   <div className="border border-gray-200 rounded-lg p-4">
-                    <h3 className="font-semibold mb-2">OLIMP Final Report</h3>
-                    <p className="text-sm text-gray-600 mb-3">Comprehensive AI readiness analysis with gap analysis and implementation roadmap</p>
+                    <h3 className="font-semibold mb-2">Raport Końcowy OLIMP</h3>
+                    <p className="text-sm text-gray-600 mb-3">Kompleksowa analiza gotowości na AI z analizą luk i mapą drogową wdrożenia</p>
                     <a
                       href={`/report?path=${encodeURIComponent(reportPath)}`}
                       className="px-4 py-2 bg-green-600 text-white rounded font-medium hover:bg-green-700 text-sm"
                     >
-                      View Final Report
+                      Zobacz Raport Końcowy
                     </a>
                   </div>
                 )}
@@ -1313,7 +1313,7 @@ export default function MultiStageWorkflow() {
               }}
               className="px-6 py-3 bg-gray-600 text-white rounded-lg font-medium hover:bg-gray-700"
             >
-              Start New Analysis
+              Rozpocznij Nową Analizę
             </button>
           </div>
         </div>
@@ -1328,40 +1328,40 @@ export default function MultiStageWorkflow() {
         <header className="mb-8">
           <div className="flex justify-between items-start">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">AI Readiness Assessment</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">Ocena Gotowości na AI</h1>
               <p className="text-gray-600">
-                Complete this multi-stage assessment to receive comprehensive AI readiness recommendations.
+                Uzupełnij tę wieloetapową ocenę, aby otrzymać kompleksowe rekomendacje gotowości na AI.
               </p>
               
               {/* Progress indicator */}
               <div className="mt-4 flex items-center space-x-2 text-xs">
                 <div className={`flex items-center ${stageProgress['climb2-questionnaire'] ? 'text-green-600' : 'text-blue-600'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['climb2-questionnaire'] ? 'bg-green-600' : 'bg-blue-600'}`}></div>
-                  <span className="font-medium">1. CLIMB2 Questionnaire</span>
+                  <span className="font-medium">1. Kwestionariusz CLIMB2</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['climb2-goals'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['climb2-goals'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>2. Strategic Goals</span>
+                  <span>2. Cele Strategiczne</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['climb2-analysis'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['climb2-analysis'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>3. CLIMB2 Analysis</span>
+                  <span>3. Analiza CLIMB2</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['climb2-results'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['climb2-results'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>4. CLIMB2 Results</span>
+                  <span>4. Wyniki CLIMB2</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['olimp-questionnaire'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['olimp-questionnaire'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>5. OLIMP Assessment</span>
+                  <span>5. Ocena OLIMP</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['olimp-priorities'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['olimp-priorities'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>6. Priorities</span>
+                  <span>6. Priorytety</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['olimp-analysis'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['olimp-analysis'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>7. Final Analysis</span>
+                  <span>7. Analiza Końcowa</span>
                 </div>
               </div>
             </div>
@@ -1377,10 +1377,10 @@ export default function MultiStageWorkflow() {
                 }`}
               >
                 {isLoadingSampleAnswers 
-                  ? 'Analyzing...' 
+                  ? 'Analizowanie...' 
                   : sampleAnswersLoaded 
-                    ? 'Sample Analysis Complete' 
-                    : 'Analyze Sample Data'}
+                    ? 'Analiza Przykładowych Danych Zakończona' 
+                    : 'Analizuj Przykładowe Dane'}
               </button>
             </div>
           </div>
@@ -1416,7 +1416,7 @@ export default function MultiStageWorkflow() {
                     : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                 }`}
               >
-                Previous Section
+                Poprzednia Sekcja
               </button>
               
               {categories.indexOf(activeCategory) < categories.length - 1 ? (
@@ -1424,7 +1424,7 @@ export default function MultiStageWorkflow() {
                   onClick={handleNextCategory}
                   className="px-6 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700"
                 >
-                  Next Section
+                  Następna Sekcja
                 </button>
               ) : (
                 <button
@@ -1436,7 +1436,7 @@ export default function MultiStageWorkflow() {
                       : 'bg-blue-600 text-white hover:bg-blue-700'
                   }`}
                 >
-                  {isSubmitting ? 'Processing...' : 'Continue to Strategic Goals'}
+                  {isSubmitting ? 'Przetwarzanie...' : 'Kontynuuj do Celów Strategicznych'}
                 </button>
               )}
             </div>
@@ -1450,8 +1450,8 @@ export default function MultiStageWorkflow() {
                 }`}
               >
                 {submitSuccess
-                  ? 'CLIMB2 questionnaire completed! Moving to strategic goals...'
-                  : 'Failed to submit questionnaire. Please try again.'}
+                  ? 'Kwestionariusz CLIMB2 zakończony! Przechodzenie do celów strategicznych...'
+                  : 'Nie udało się przesłać kwestionariusza. Spróbuj ponownie.'}
               </div>
             )}
           </>

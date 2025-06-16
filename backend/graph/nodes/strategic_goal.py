@@ -20,14 +20,14 @@ def set_strategic_goal(state: OverallState):
     
     # Categories for strategic goals
     categories = [
-        "Roles and Collaboration",
-        "Training",
-        "Activities and Flow",
-        "Decision-Making",
-        "KM Processes",
-        "KM Techniques",
-        "Methods",
-        "Computerization and Software"
+        "Role i Współpraca",
+        "Szkolenie",
+        "Działania i Przepływ",
+        "Podejmowanie Decyzji",
+        "Procesy ZW",
+        "Techniki ZW",
+        "Metody",
+        "Komputeryzacja i Oprogramowanie"
     ]
     
     # If we've collected all categories, return the final result

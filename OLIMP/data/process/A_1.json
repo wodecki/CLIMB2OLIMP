@@ -3,7 +3,7 @@
   "questionnaire_title": "Kwestionariusz dla modelu CLIMB2",
   "sections": [
     {
-      "section_name": "ROLE I WSPÓŁPRACA",
+      "section_name": "Roles and Collaboration",
       "question_count": 7,
       "questions": [
         {
@@ -86,7 +86,7 @@
       ]
     },
     {
-      "section_name": "SZKOLENIE",
+      "section_name": "Training",
       "question_count": 3,
       "questions": [
         {
@@ -125,7 +125,7 @@
       ]
     },
     {
-      "section_name": "DZIAŁANIA I PRZEPŁYW",
+      "section_name": "Activities and Flow",
       "question_count": 8,
       "questions": [
         {
@@ -219,7 +219,7 @@
       ]
     },
     {
-      "section_name": "PODEJMOWANIE DECYZJI",
+      "section_name": "Decision-Making",
       "question_count": 22,
       "questions": [
         {
@@ -467,7 +467,7 @@
       ]
     },
     {
-      "section_name": "PROCESY ZW",
+      "section_name": "KM Processes",
       "question_count": 22,
       "questions": [
         {
@@ -715,7 +715,7 @@
       ]
     },
     {
-      "section_name": "TECHNIKI ZW",
+      "section_name": "KM Techniques",
       "question_count": 11,
       "questions": [
         {
@@ -842,7 +842,7 @@
       ]
     },
     {
-      "section_name": "METODY",
+      "section_name": "Methods",
       "question_count": 11,
       "questions": [
         {
@@ -969,7 +969,7 @@
       ]
     },
     {
-      "section_name": "KOMPUTERYZACJA I OPROGRAMOWANIE",
+      "section_name": "Computerization and Software",
       "question_count": 22,
       "questions": [
         {

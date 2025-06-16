@@ -64,7 +64,7 @@ const MaturityLevelSelector: React.FC<MaturityLevelSelectorProps> = ({
               <button
                 onClick={() => onLevelSelect(level)}
                 className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${colorClass} hover:opacity-90 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                aria-label={`Select maturity level ${level}`}
+                aria-label={`Wybierz poziom dojrzałości ${level}`}
               >
                 {level}
               </button>

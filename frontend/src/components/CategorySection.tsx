@@ -30,7 +30,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({
         <h2 className="text-2xl font-bold text-gray-800">{categoryName}</h2>
         <div className="flex items-center">
           <span className="text-sm font-medium text-gray-700 mr-2">
-            {answeredQuestions}/{totalQuestions} answered
+            {answeredQuestions}/{totalQuestions} udzielonych
           </span>
           <div className="w-32 bg-gray-200 rounded-full h-2.5">
             <div

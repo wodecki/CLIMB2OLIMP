@@ -74,14 +74,14 @@ def human_feedback(state: OverallState):
     
     # Categories for strategic goals
     categories = [
-        "Roles and Collaboration",
-        "Training",
-        "Activities and Flow",
-        "Decision-Making",
-        "KM Processes",
-        "KM Techniques",
-        "Methods",
-        "Computerization and Software"
+        "Role i Współpraca",
+        "Szkolenie",
+        "Działania i Przepływ",
+        "Podejmowanie Decyzji",
+        "Procesy ZW",
+        "Techniki ZW",
+        "Metody",
+        "Komputeryzacja i Oprogramowanie"
     ]
     
     # Get existing strategic goals or initialize empty dict
@@ -269,14 +269,14 @@ def process_feedback(state: OverallState):
     
     # Categories for strategic goals
     categories = [
-        "Roles and Collaboration",
-        "Training",
-        "Activities and Flow",
-        "Decision-Making",
-        "KM Processes",
-        "KM Techniques",
-        "Methods",
-        "Computerization and Software"
+        "Role i Współpraca",
+        "Szkolenie",
+        "Działania i Przepływ",
+        "Podejmowanie Decyzji",
+        "Procesy ZW",
+        "Techniki ZW",
+        "Metody",
+        "Komputeryzacja i Oprogramowanie"
     ]
     
     # Process user feedback if available
@@ -315,14 +315,14 @@ def need_more_feedback(state: OverallState):
     
     # Categories for strategic goals
     categories = [
-        "Roles and Collaboration",
-        "Training",
-        "Activities and Flow",
-        "Decision-Making",
-        "KM Processes",
-        "KM Techniques",
-        "Methods",
-        "Computerization and Software"
+        "Role i Współpraca",
+        "Szkolenie",
+        "Działania i Przepływ",
+        "Podejmowanie Decyzji",
+        "Procesy ZW",
+        "Techniki ZW",
+        "Metody",
+        "Komputeryzacja i Oprogramowanie"
     ]
     
     # Get existing strategic goals or initialize empty dict
