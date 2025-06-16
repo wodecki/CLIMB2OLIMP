@@ -1004,16 +1004,16 @@ export default function MultiStageWorkflow() {
   if (currentStage === 'olimp-analysis') {
     const getStepDisplayName = (step: string) => {
       const stepMap: { [key: string]: string } = {
-        'setup': 'Inicjalizacja Analizy',
+        'setup': 'Inicjalizacja',
         'processing': 'Analiza Luk',
-        'extract_answers': 'Wyodrębnianie Odpowiedzi',
-        'identify_gaps': 'Identyfikacja Luk',
-        'parallel_recommendations': 'Równoległe Rekomendacje',
-        'evaluation': 'Równoległe Rekomendacje',
+        'extract_answers': 'Ekstrakcja odpowiedzi',
+        'identify_gaps': 'Identyfikacja luk',
+        'parallel_recommendations': 'Rekomendacje agentów OpenAI, Anthropic i Google',
+        'evaluation': 'Rekomendacje agentów OpenAI, Anthropic i Google',
         'evaluation_branches': 'Analiza Wielogałęziowa',
-        'recommend': 'Generowanie Rekomendacji',
+        'recommend': 'Synteza rekomendacji',
         'recommend_branches': 'Rekomendacje Gałęzi',
-        'consensus': 'Budowanie Konsensusu',
+        'consensus': 'Ustalanie konsensusu',
         'generating_final_report': 'Generowanie Raportu Końcowego',
         'final_report': 'Generowanie Raportu Końcowego',
         'completed': 'Analiza Zakończona'
@@ -1050,7 +1050,7 @@ export default function MultiStageWorkflow() {
           {/* Progress Overview */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-semibold text-gray-900">Postęp Ogólny</h2>
+              <h2 className="text-lg font-semibold text-gray-900">Postęp</h2>
               <span className="text-blue-600 font-medium text-lg">{getProgressPercentage()}%</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
@@ -1079,7 +1079,7 @@ export default function MultiStageWorkflow() {
                 </p>
               </div>
               <div className="p-3 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600">Postęp Kroków</p>
+                <p className="text-sm text-gray-600">Krok</p>
                 <p className="font-medium text-gray-900">
                   {olimpProgress && olimpProgress.stepsCompleted && olimpProgress.totalSteps ? 
                     `${olimpProgress.stepsCompleted}/${olimpProgress.totalSteps}` : 
@@ -1087,7 +1087,7 @@ export default function MultiStageWorkflow() {
                 </p>
               </div>
               <div className="p-3 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600">Upłynął Czas</p>
+                <p className="text-sm text-gray-600">Szacowany czas</p>
                 <p className="font-medium text-gray-900">
                   {olimpProgress && olimpProgress.elapsedTime ? 
                     formatElapsedTime(olimpProgress.elapsedTime) : 
@@ -1131,7 +1131,7 @@ export default function MultiStageWorkflow() {
 
           {/* Analysis Steps */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Rurociąg Analizy</h2>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Etap analizy</h2>
             <div className="space-y-4">
               {['setup', 'extract_answers', 'identify_gaps', 'parallel_recommendations', 'recommend', 'consensus', 'generating_final_report', 'completed'].map((step, index) => {
                 const isCompleted = olimpProgress && olimpProgress.stepsCompleted ? olimpProgress.stepsCompleted > index : false;
@@ -1335,25 +1335,17 @@ export default function MultiStageWorkflow() {
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['climb2-goals'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
                   <span>2. Cele Strategiczne</span>
                 </div>
-                <div className={`flex items-center ${stageProgress['climb2-analysis'] ? 'text-green-600' : 'text-gray-400'}`}>
-                  <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['climb2-analysis'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>3. Analiza CLIMB2</span>
-                </div>
-                <div className={`flex items-center ${stageProgress['climb2-results'] ? 'text-green-600' : 'text-gray-400'}`}>
-                  <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['climb2-results'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>4. Wyniki CLIMB2</span>
-                </div>
                 <div className={`flex items-center ${stageProgress['olimp-questionnaire'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['olimp-questionnaire'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>5. Ocena OLIMP</span>
+                  <span>3. Ocena OLIMP</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['olimp-priorities'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['olimp-priorities'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>6. Priorytety</span>
+                  <span>4. Priorytety</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['olimp-analysis'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['olimp-analysis'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>7. Analiza Końcowa</span>
+                  <span>5. Analiza Końcowa</span>
                 </div>
               </div>
             </div>
