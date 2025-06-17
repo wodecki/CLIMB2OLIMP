@@ -1,139 +1,128 @@
-# CLIMB2OLIMP Service Setup Guide
+# CLIMB2OLIMP Service Setup with PM2
 
-This guide will help you set up the CLIMB2OLIMP frontend service to run persistently on port 3001, even after closing the terminal.
+This document explains how to manage the CLIMB2OLIMP service using PM2 process manager.
 
-## Quick Setup (Recommended)
+## Service Status
 
-Run the automated setup script:
+The CLIMB2OLIMP frontend is now running as a persistent service that will:
+- ✅ Continue running after you close your terminal
+- ✅ Automatically restart if it crashes
+- ✅ Start automatically when the system boots
+- ✅ Log all output to files for debugging
+
+## Service Information
+
+- **Frontend URL**: http://localhost:3001
+- **Service Name**: climb2olimp-frontend
+- **Process Manager**: PM2
+- **Auto-restart**: Enabled
+- **Boot startup**: Enabled
+
+## Management Commands
+
+### Using the Management Script (Recommended)
 
 ```bash
-./setup-service.sh
+# Show service status
+./manage-services.sh status
+
+# View service information
+./manage-services.sh info
+
+# View logs
+./manage-services.sh logs
+
+# Restart service
+./manage-services.sh restart
+
+# Stop service
+./manage-services.sh stop
+
+# Start service
+./manage-services.sh start
+
+# Open PM2 monitor
+./manage-services.sh monitor
 ```
 
-This script will:
-- Install PM2 (if not already installed)
-- Install frontend dependencies
-- Start the service with PM2
-- Configure it to start on system boot
-
-## Manual Setup
-
-If you prefer to set it up manually:
-
-### 1. Install PM2 globally
+### Direct PM2 Commands
 
 ```bash
-npm install -g pm2
-```
-
-### 2. Install frontend dependencies
-
-```bash
-cd frontend
-npm install
-cd ..
-```
-
-### 3. Start the service
-
-```bash
-pm2 start ecosystem.config.js
-```
-
-### 4. Save PM2 configuration
-
-```bash
-pm2 save
-```
-
-### 5. Setup auto-start on boot
-
-```bash
-pm2 startup
-```
-
-Follow the instructions provided by the `pm2 startup` command.
-
-## Service Management
-
-### Check service status
-```bash
+# View all processes
 pm2 status
-```
 
-### View logs
-```bash
+# View logs
 pm2 logs climb2olimp-frontend
-```
 
-### Restart service
-```bash
+# Restart service
 pm2 restart climb2olimp-frontend
-```
 
-### Stop service
-```bash
+# Stop service
 pm2 stop climb2olimp-frontend
-```
 
-### Remove service
-```bash
-pm2 delete climb2olimp-frontend
-```
+# Start service
+pm2 start climb2olimp-frontend
 
-### View real-time logs
-```bash
-pm2 logs climb2olimp-frontend --lines 50
-```
+# Monitor processes
+pm2 monit
 
-## Access Your Application
-
-Once the service is running, you can access your application at:
-**http://localhost:3001**
-
-## Features
-
-- ✅ Runs on port 3001
-- ✅ Automatically restarts if it crashes
-- ✅ Starts automatically on system boot
-- ✅ Persistent even after closing terminal
-- ✅ Logs are saved to `./logs/` directory
-- ✅ Memory limit protection (1GB)
-
-## Troubleshooting
-
-### Service won't start
-1. Check if port 3001 is already in use: `lsof -i :3001`
-2. Check PM2 logs: `pm2 logs climb2olimp-frontend`
-3. Restart the service: `pm2 restart climb2olimp-frontend`
-
-### Permission issues
-If you get permission errors when installing PM2:
-```bash
-sudo npm install -g pm2
-```
-
-### Check if service is running
-```bash
-pm2 list
-```
-
-### Reset everything
-If you need to start fresh:
-```bash
-pm2 delete climb2olimp-frontend
-pm2 start ecosystem.config.js
+# Save current process list
 pm2 save
 ```
+
+## Log Files
+
+Logs are stored in the `./logs/` directory:
+- `frontend-error.log` - Error logs
+- `frontend-out.log` - Standard output logs
+- `frontend.log` - Combined logs
 
 ## Configuration
 
-The service configuration is in `ecosystem.config.js`. You can modify:
-- Port number
-- Memory limits
-- Log file locations
-- Environment variables
+The PM2 configuration is defined in `ecosystem.config.js`:
+- Port: 3001
+- Environment: Development
+- Auto-restart: Enabled
+- Memory limit: 1GB
+- Log rotation: Enabled
 
-After making changes, restart the service:
+## Troubleshooting
+
+### Service not starting
 ```bash
-pm2 restart climb2olimp-frontend
+# Check PM2 status
+pm2 status
+
+# View logs for errors
+pm2 logs climb2olimp-frontend
+
+# Restart the service
+./manage-services.sh restart
+```
+
+### Port conflicts
+If port 3001 is already in use, you can:
+1. Edit `ecosystem.config.js` to change the port
+2. Restart the service: `./manage-services.sh restart`
+
+### Remove service completely
+```bash
+# Delete from PM2
+./manage-services.sh delete
+
+# Remove startup script (if needed)
+pm2 unstartup systemd
+```
+
+## System Boot Setup
+
+The service is configured to start automatically on system boot via systemd:
+- Service file: `/etc/systemd/system/pm2-wodecki.service`
+- Status: `systemctl status pm2-wodecki`
+
+## Access the Application
+
+Once the service is running, you can access the CLIMB2OLIMP application at:
+**http://localhost:3001**
+
+The application will be available even after closing your terminal session.
