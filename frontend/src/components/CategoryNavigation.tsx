@@ -26,9 +26,9 @@ const CategoryNavigation: React.FC<CategoryNavigationProps> = ({
   return (
     <div className="bg-white shadow-md rounded-lg p-4 mb-8">
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-lg font-semibold">Progress</h3>
+        <h3 className="text-lg font-semibold">Postęp</h3>
         <span className="text-sm font-medium">
-          {answeredQuestions}/{totalQuestions} questions answered ({overallProgress}%)
+          {answeredQuestions}/{totalQuestions} pytań udzielonych ({overallProgress}%)
         </span>
       </div>
       

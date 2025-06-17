@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { AnswerData, LetterAnswer, QuestionnaireData } from '@/types/questionnaire';
+import { CATEGORY_TRANSLATIONS } from '@/utils/categoryTranslations';
 import fs from 'fs';
 import path from 'path';
 
@@ -58,17 +59,11 @@ export async function POST(request: NextRequest) {
     
     const climb2Structure = questionnaireData;
     
-    // Map CLIMB2 categories to OLIMP format
-    const categoryMapping: { [key: string]: string } = {
-      "Roles and Collaboration": "ROLE I WSPÓŁPRACA",
-      "Training": "SZKOLENIE", 
-      "Activities and Flow": "DZIAŁANIA I PRZEPŁYW",
-      "Decision-Making": "PODEJMOWANIE DECYZJI",
-      "KM Processes": "PROCESY ZW",
-      "KM Techniques": "TECHNIKI ZW",
-      "Methods": "METODY",
-      "Computerization and Software": "KOMPUTERYZACJA I OPROGRAMOWANIE"
-    };
+    // Map CLIMB2 categories to OLIMP format using translations
+    const categoryMapping: { [key: string]: string } = {};
+    Object.keys(CATEGORY_TRANSLATIONS).forEach(technicalName => {
+      categoryMapping[technicalName] = technicalName.toUpperCase();
+    });
     
     // Create A_1.json structure
     const a1JsonStructure = {

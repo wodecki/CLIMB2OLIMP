@@ -37,7 +37,7 @@ export default function StatusPage() {
       setError(null);
     } catch (err) {
       console.error('Error fetching analysis status:', err);
-      setError('Failed to load analysis status. Please try again later.');
+      setError('Nie udało się załadować statusu analizy. Spróbuj ponownie później.');
     } finally {
       setIsLoading(false);
     }
@@ -78,27 +78,27 @@ export default function StatusPage() {
   // Get a human-readable description of the current node
   const getNodeDescription = (nodeName: string): string => {
     const nodeDescriptions: Record<string, string> = {
-      'starting': 'Starting analysis process',
-      'initializing': 'Initializing analysis',
-      'not_running': 'Analysis not running',
-      'calculate_maturity': 'Calculating maturity levels',
-      'human_feedback': 'Waiting for human feedback',
-      'strategic_planning': 'Planning strategic improvements',
-      'make_analysts': 'Creating analyst profiles',
-      'consulting': 'Consulting with analysts',
-      'write_report': 'Writing final report',
-      'identify_areas_for_improvement': 'Identifying areas for improvement',
-      'identify_questions_for_improvement': 'Identifying questions for improvement',
-      'create_analysts': 'Creating analyst profiles',
-      'diagnose': 'Diagnosing issues',
-      'recommend': 'Generating recommendations',
-      'process_feedback': 'Processing user feedback',
-      'completed': 'Analysis completed',
-      'stopped': 'Analysis stopped',
-      'error': 'Analysis encountered an error'
+      'starting': 'Rozpoczynanie procesu analizy',
+      'initializing': 'Inicjalizacja analizy',
+      'not_running': 'Analiza nie działa',
+      'calculate_maturity': 'Obliczanie poziomów dojrzałości',
+      'human_feedback': 'Oczekiwanie na opinie człowieka',
+      'strategic_planning': 'Planowanie strategicznych ulepszen',
+      'make_analysts': 'Tworzenie profili analityków',
+      'consulting': 'Konsultacje z analitykami',
+      'write_report': 'Pisanie raportu końcowego',
+      'identify_areas_for_improvement': 'Identyfikacja obszarów do poprawy',
+      'identify_questions_for_improvement': 'Identyfikacja pytań do poprawy',
+      'create_analysts': 'Tworzenie profili analityków',
+      'diagnose': 'Diagnozowanie problemów',
+      'recommend': 'Generowanie rekomendacji',
+      'process_feedback': 'Przetwarzanie opinii użytkownika',
+      'completed': 'Analiza zakończona',
+      'stopped': 'Analiza zatrzymana',
+      'error': 'Analiza napotkała błąd'
     };
     
-    return nodeDescriptions[nodeName] || `Processing: ${nodeName}`;
+    return nodeDescriptions[nodeName] || `Przetwarzanie: ${nodeName}`;
   };
   
   // Get progress percentage based on node
@@ -139,7 +139,7 @@ export default function StatusPage() {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-          <strong className="font-bold">Error!</strong>
+          <strong className="font-bold">Błąd!</strong>
           <span className="block sm:inline"> {error}</span>
         </div>
       </div>
@@ -152,7 +152,7 @@ export default function StatusPage() {
         <header className="mb-8">
           <div className="flex justify-between items-start">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Analysis Status</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">Status Analizy</h1>
               {/* Removed status description as requested */}
             </div>
             <div>
@@ -160,7 +160,7 @@ export default function StatusPage() {
                 href="/"
                 className="px-4 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors"
               >
-                Back to Questionnaire
+                Powrót do Kwestionariusza
               </Link>
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function StatusPage() {
         
         {status && (
           <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h2 className="text-xl font-semibold mb-4">Current Status</h2>
+            <h2 className="text-xl font-semibold mb-4">Aktualny Status</h2>
             
             <div className="mb-6">
               <div className="flex justify-between mb-2">
@@ -192,7 +192,7 @@ export default function StatusPage() {
             
             {status.strategicGoals && Object.keys(status.strategicGoals).length > 0 && (
               <div className="bg-gray-50 p-4 rounded-md mb-6">
-                <h3 className="font-medium text-gray-800 mb-2">Maturity Levels & Strategic Goals</h3>
+                <h3 className="font-medium text-gray-800 mb-2">Poziomy Dojrzałości i Cele Strategiczne</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {Object.entries(status.strategicGoals).map(([category, goalLevel]) => (
                     <div key={category} className="flex items-center">
@@ -211,11 +211,11 @@ export default function StatusPage() {
                 </div>
                 <div className="mt-2 text-xs text-gray-500">
                   <p className="flex items-center justify-center">
-                    <span className="inline-flex items-center mr-1">Gray: Current Level</span>
+                    <span className="inline-flex items-center mr-1">Szary: Aktualny Poziom</span>
                     <svg className="h-4 w-4 text-gray-500 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
-                    <span className="inline-flex items-center ml-1">Blue: Strategic Goal</span>
+                    <span className="inline-flex items-center ml-1">Niebieski: Cel Strategiczny</span>
                   </p>
                 </div>
               </div>
@@ -226,10 +226,10 @@ export default function StatusPage() {
                 <div className="w-full">
                   {status.currentNode === 'human_feedback' && status.requestAllGoals && status.allCategories ? (
                     <div>
-                      <h3 className="text-sm font-medium text-gray-800">Set Strategic Goals</h3>
+                      <h3 className="text-sm font-medium text-gray-800">Ustaw Cele Strategiczne</h3>
                       <div className="mt-2">
                         <p className="text-sm text-gray-700 mb-4">
-                          Please select strategic goal levels (A-E) for all categories:
+                          Wybierz poziomy celów strategicznych (A-E) dla wszystkich kategorii:
                         </p>
                         
                         <MaturityLevelMatrix 
@@ -253,11 +253,11 @@ export default function StatusPage() {
                                   fetchMaturityLevels();
                                 }, 1000);
                               } else {
-                                alert('Failed to submit strategic goals');
+                                alert('Nie udało się przesłać celów strategicznych');
                               }
                             } catch (error) {
                               console.error('Error submitting strategic goals:', error);
-                              alert('Error submitting strategic goals');
+                              alert('Błąd przesyłania celów strategicznych');
                             }
                           }}
                         />
@@ -265,10 +265,10 @@ export default function StatusPage() {
                     </div>
                   ) : status.currentNode === 'human_feedback' && status.currentCategory ? (
                     <div>
-                      <h3 className="text-sm font-medium text-gray-800">Set Strategic Goal</h3>
+                      <h3 className="text-sm font-medium text-gray-800">Ustaw Cel Strategiczny</h3>
                       <div className="mt-2">
                         <p className="text-sm text-gray-700 mb-4">
-                          Please select a strategic goal level (A-E) for: <strong>{status.currentCategory}</strong>
+                          Wybierz poziom celu strategicznego (A-E) dla: <strong>{status.currentCategory}</strong>
                         </p>
                         
                         <div className="bg-white p-4 rounded-lg shadow-sm">
@@ -301,13 +301,13 @@ export default function StatusPage() {
                                         fetchMaturityLevels();
                                       }, 1000);
                                     } else {
-                                      alert('Failed to submit strategic goal');
+                                      alert('Nie udało się przesłać celu strategicznego');
                                       // Reset the selection if the API call fails
                                       setSingleSelectedLevel(null);
                                     }
                                   } catch (error) {
                                     console.error('Error submitting strategic goal:', error);
-                                    alert('Error submitting strategic goal');
+                                    alert('Błąd przesyłania celu strategicznego');
                                     // Reset the selection if the API call fails
                                     setSingleSelectedLevel(null);
                                   }
@@ -318,13 +318,13 @@ export default function StatusPage() {
                         </div>
                         
                         <div className="mt-2 text-xs text-gray-500">
-                          <p>A = Excellent, B = Good, C = Average, D = Below Average, E = Poor</p>
+                          <p>A = Doskonały, B = Dobry, C = Średni, D = Poniżej średniej, E = Słaby</p>
                         </div>
                       </div>
                     </div>
                   ) : (
                     <p className="text-sm text-gray-700">
-                      The analysis is waiting for user input. Please check the terminal or command line where the analysis is running.
+                      Analiza oczekuje na wprowadzenie danych przez użytkownika. Sprawdź terminal lub linię komend gdzie działa analiza.
                     </p>
                   )}
                 </div>
@@ -344,14 +344,14 @@ export default function StatusPage() {
                     </div>
                     <div className="ml-3">
                       <p className="text-sm text-green-700">
-                        Analysis completed successfully! You can now view the report.
+                        Analiza zakończona pomyślnie! Możesz teraz zobaczyć raport.
                       </p>
                       <div className="mt-2">
                         <Link 
                           href="/report"
                           className="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-green-700 transition ease-in-out duration-150"
                         >
-                          View Report
+                          Zobacz Raport
                         </Link>
                       </div>
                     </div>
@@ -362,27 +362,27 @@ export default function StatusPage() {
               {status && !['not_running', 'completed', 'stopped', 'error'].includes(status.currentNode) && (
                 <button
                   onClick={async () => {
-                    if (confirm('Are you sure you want to stop the analysis?')) {
+                    if (confirm('Czy na pewno chcesz zatrzymać analizę?')) {
                       try {
                         const response = await fetch('/api/stop-analysis', {
                           method: 'POST',
                         });
                         
                         if (response.ok) {
-                          alert('Analysis stopped successfully');
+                          alert('Analiza zatrzymana pomyślnie');
                           fetchStatus();
                         } else {
-                          alert('Failed to stop analysis');
+                          alert('Nie udało się zatrzymać analizy');
                         }
                       } catch (err) {
                         console.error('Error stopping analysis:', err);
-                        alert('Error stopping analysis');
+                        alert('Błąd zatrzymywania analizy');
                       }
                     }
                   }}
                   className="w-full px-4 py-2 bg-red-600 text-white rounded-md font-medium hover:bg-red-700 transition-colors"
                 >
-                  Stop Analysis
+                  Zatrzymaj Analizę
                 </button>
               )}
               
@@ -396,7 +396,7 @@ export default function StatusPage() {
                     </div>
                     <div className="ml-3">
                       <p className="text-sm text-red-700">
-                        The analysis encountered an error. Please check the error report for details or try running the analysis again.
+                        Analiza napotkała błąd. Sprawdź raport błędów w celu uzyskania szczegółów lub spróbuj uruchomić analizę ponownie.
                       </p>
                       {status.reportPath && (
                         <div className="mt-2">
@@ -404,7 +404,7 @@ export default function StatusPage() {
                             href={`/report?path=${encodeURIComponent(status.reportPath)}`}
                             className="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700 transition ease-in-out duration-150"
                           >
-                            View Error Report
+                            Zobacz Raport Błędów
                           </Link>
                         </div>
                       )}
@@ -423,7 +423,7 @@ export default function StatusPage() {
                     </div>
                     <div className="ml-3">
                       <p className="text-sm text-yellow-700">
-                        The analysis was stopped. You can start a new analysis from the questionnaire page.
+                        Analiza została zatrzymana. Możesz rozpocząć nową analizę ze strony kwestionariusza.
                       </p>
                     </div>
                   </div>
@@ -434,7 +434,7 @@ export default function StatusPage() {
         )}
         
         <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold mb-4">Analysis Process</h2>
+          <h2 className="text-xl font-semibold mb-4">Proces Analizy</h2>
           
           <div className="space-y-4">
             <div className="flex items-start">
@@ -448,8 +448,8 @@ export default function StatusPage() {
                       : 'bg-gray-300')
               }`}></div>
               <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900">Calculate Maturity Levels</h3>
-                <p className="text-gray-600">Analyzing questionnaire responses to determine current maturity levels.</p>
+                <h3 className="text-lg font-medium text-gray-900">Oblicz Poziomy Dojrzałości</h3>
+                <p className="text-gray-600">Analiza odpowiedzi kwestionariusza w celu określenia obecnych poziomów dojrzałości.</p>
               </div>
             </div>
             
@@ -464,8 +464,8 @@ export default function StatusPage() {
                       : 'bg-gray-300')
               }`}></div>
               <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900">Set Strategic Goals</h3>
-                <p className="text-gray-600">Collecting strategic goals for each category to guide the analysis.</p>
+                <h3 className="text-lg font-medium text-gray-900">Ustaw Cele Strategiczne</h3>
+                <p className="text-gray-600">Zbieranie celów strategicznych dla każdej kategorii w celu kierowania analizą.</p>
               </div>
             </div>
             
@@ -480,8 +480,8 @@ export default function StatusPage() {
                       : 'bg-gray-300')
               }`}></div>
               <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900">Create Analyst Profiles</h3>
-                <p className="text-gray-600">Creating specialized analyst profiles to evaluate the problem.</p>
+                <h3 className="text-lg font-medium text-gray-900">Utwórz Profile Analityków</h3>
+                <p className="text-gray-600">Tworzenie wyspecjalizowanych profili analityków do oceny problemu.</p>
               </div>
             </div>
             
@@ -496,8 +496,8 @@ export default function StatusPage() {
                       : 'bg-gray-300')
               }`}></div>
               <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900">Diagnose Issues</h3>
-                <p className="text-gray-600">Identifying key issues and challenges based on maturity assessment.</p>
+                <h3 className="text-lg font-medium text-gray-900">Zdiagnozuj Problemy</h3>
+                <p className="text-gray-600">Identyfikacja kluczowych problemów i wyzwań na podstawie oceny dojrzałości.</p>
               </div>
             </div>
             
@@ -512,8 +512,8 @@ export default function StatusPage() {
                       : 'bg-gray-300')
               }`}></div>
               <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900">Generate Recommendations</h3>
-                <p className="text-gray-600">Creating actionable recommendations to improve maturity levels.</p>
+                <h3 className="text-lg font-medium text-gray-900">Generuj Rekomendacje</h3>
+                <p className="text-gray-600">Tworzenie praktycznych rekomendacji w celu poprawy poziomów dojrzałości.</p>
               </div>
             </div>
             
@@ -528,8 +528,8 @@ export default function StatusPage() {
                       : 'bg-gray-300')
               }`}></div>
               <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900">Write Final Report</h3>
-                <p className="text-gray-600">Compiling all findings and recommendations into a comprehensive report.</p>
+                <h3 className="text-lg font-medium text-gray-900">Napisz Raport Końcowy</h3>
+                <p className="text-gray-600">Kompilowanie wszystkich wniosków i rekomendacji w kompleksowy raport.</p>
               </div>
             </div>
           </div>

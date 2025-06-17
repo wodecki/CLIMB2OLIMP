@@ -2,6 +2,25 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+// Function to clean up report content by removing unwanted artifacts
+function cleanReportContent(content: string): string {
+  // Remove the FINAL CONSENSUS RECOMMENDATION REPORT header and metadata
+  const artifactPattern = /^FINAL CONSENSUS RECOMMENDATION REPORT[\s\S]*?\n\n---\n\n/;
+  content = content.replace(artifactPattern, '');
+  
+  // Remove any other similar metadata patterns
+  const metadataPattern = /^Generated from:[\s\S]*?\n\n---\n\n/;
+  content = content.replace(metadataPattern, '');
+  
+  // Remove standalone "---" separators at the beginning
+  content = content.replace(/^---\n\n/, '');
+  
+  // Clean up any excessive newlines at the beginning
+  content = content.replace(/^\n+/, '');
+  
+  return content;
+}
+
 export async function GET(request: Request) {
   try {
     // Get the report path from the query parameters
@@ -33,7 +52,10 @@ export async function GET(request: Request) {
       }
       
       // Read the report file
-      const reportContent = fs.readFileSync(fullReportPath, 'utf8');
+      let reportContent = fs.readFileSync(fullReportPath, 'utf8');
+      
+      // Clean up the report content by removing unwanted artifacts
+      reportContent = cleanReportContent(reportContent);
       
       return NextResponse.json({
         content: reportContent
@@ -75,7 +97,10 @@ export async function GET(request: Request) {
       const fullReportPath = path.join(reportsDir, mostRecentReport);
       
       // Read the report file
-      const reportContent = fs.readFileSync(fullReportPath, 'utf8');
+      let reportContent = fs.readFileSync(fullReportPath, 'utf8');
+      
+      // Clean up the report content by removing unwanted artifacts
+      reportContent = cleanReportContent(reportContent);
       
       return NextResponse.json({
         content: reportContent

@@ -1,6 +1,7 @@
 import os
 import json
 from typing import Dict, List, Optional, Any
+from utils.category_translations import get_display_name
 
 class StatusManager:
     """
@@ -26,14 +27,14 @@ class StatusManager:
         
         # Categories for strategic goals
         self.categories = [
-            "Roles and Collaboration",
-            "Training",
-            "Activities and Flow",
-            "Decision-Making",
-            "KM Processes",
-            "KM Techniques",
-            "Methods",
-            "Computerization and Software"
+            "Role i Współpraca",
+            "Szkolenie",
+            "Działania i Przepływ",
+            "Podejmowanie Decyzji",
+            "Procesy ZW",
+            "Techniki ZW",
+            "Metody",
+            "Komputeryzacja i Oprogramowanie"
         ]
         
         # Initialize with default status
@@ -99,7 +100,7 @@ class StatusManager:
         strategic_goals[category] = goal
         self.status["strategicGoals"] = strategic_goals
         
-        # Update the current category
+        # Update the current category (keep technical name - frontend will translate)
         if len(strategic_goals) < len(self.categories):
             self.status["currentCategory"] = self.categories[len(strategic_goals)]
         else:
@@ -116,6 +117,7 @@ class StatusManager:
         """
         self.status["requiresInput"] = True
         self.status["requestAllGoals"] = True
+        # Keep technical names - MaturityLevelMatrix will convert them to display names
         self.status["allCategories"] = categories
         self._write_status()
     

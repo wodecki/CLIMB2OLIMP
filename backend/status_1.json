@@ -3,16 +3,16 @@
   "requiresInput": false,
   "questions": null,
   "strategicGoals": {},
-  "currentCategory": "Roles and Collaboration",
+  "currentCategory": "Role i współpraca",
   "requestAllGoals": true,
   "allCategories": [
-    "Roles and Collaboration",
-    "Training",
-    "Activities and Flow",
-    "Decision-Making",
-    "KM Processes",
-    "KM Techniques",
-    "Methods",
-    "Computerization and Software"
+    "Role i współpraca",
+    "Szkolenia",
+    "Aktywności i procesy",
+    "Podejmowanie decyzji",
+    "Procesy zarządzania wiedzą",
+    "Technologie zarządzania wiedzą",
+    "Metody",
+    "Oprogramowanie i infrastruktura IT"
   ]
 }

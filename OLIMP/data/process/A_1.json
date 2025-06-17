@@ -7,79 +7,79 @@
       "question_count": 7,
       "questions": [
         {
-          "question_text": "How is the cross-functional team involved in the product development process?",
+          "question_text": "Jak zespół wielofunkcyjny jest zaangażowany w proces rozwoju produktu?",
           "answer_options": {
-            "A": "The cross-functional team does not exist in the product development process.",
-            "B": "The cross-functional team exists but is not regularly involved in the process.",
-            "C": "The cross-functional team is involved in most stages of product development.",
-            "D": "The cross-functional team is involved in the entire product development process, but collaboration is not yet optimal.",
-            "E": "The cross-functional team is fully integrated and actively engaged at all stages of product development."
+            "A": "Zespół wielofunkcyjny nie istnieje w procesie rozwoju produktu.",
+            "B": "Zespół wielofunkcyjny istnieje, ale nie jest regularnie zaangażowany w proces.",
+            "C": "Zespół wielofunkcyjny jest zaangażowany w większości etapów rozwoju produktu.",
+            "D": "Zespół wielofunkcyjny jest zaangażowany w cały proces rozwoju produktu, ale współpraca nie jest jeszcze optymalna.",
+            "E": "Zespół wielofunkcyjny jest w pełni zintegrowany i aktywnie zaangażowany na wszystkich etapach rozwoju produktu."
           },
           "selected_answer": "A"
         },
         {
-          "question_text": "How are all stakeholders engaged in the project team, even when they are globally dispersed?",
+          "question_text": "Jak wszystkie strony zainteresowane są zaangażowane w zespół projektowy, nawet gdy są rozproszone globalnie?",
           "answer_options": {
-            "A": "Stakeholders are not engaged in the project team.",
-            "B": "Some stakeholders are engaged, but only locally.",
-            "C": "Most stakeholders are engaged, but not always, especially when they are globally dispersed.",
-            "D": "Stakeholders are engaged even when globally dispersed, but collaboration still requires improvement.",
-            "E": "All stakeholders are fully engaged in the project team, regardless of geographic location."
+            "A": "Strony zainteresowane nie są zaangażowane w zespół projektowy.",
+            "B": "Niektóre strony zainteresowane są zaangażowane, ale tylko lokalnie.",
+            "C": "Większość stron zainteresowanych jest zaangażowana, ale nie zawsze, szczególnie gdy są rozproszone globalnie.",
+            "D": "Strony zainteresowane są zaangażowane nawet gdy są rozproszone globalnie, ale współpraca nadal wymaga poprawy.",
+            "E": "Wszystkie strony zainteresowane są w pełni zaangażowane w zespół projektowy, niezależnie od lokalizacji geograficznej."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How clearly defined are the roles and responsibilities of each individual?",
+          "question_text": "Jak jasno są zdefiniowane role i obowiązki każdej osoby?",
           "answer_options": {
-            "A": "Roles and responsibilities are not clearly defined.",
-            "B": "Roles and responsibilities are defined, but often not clear or understood by everyone.",
-            "C": "Most roles and responsibilities are clearly defined, but ambiguities still occur.",
-            "D": "Roles and responsibilities are well-defined for most team members.",
-            "E": "Roles and responsibilities are fully clear, well understood, and respected by all team members."
+            "A": "Role i obowiązki nie są jasno zdefiniowane.",
+            "B": "Role i obowiązki są zdefiniowane, ale często nie są jasne lub zrozumiałe dla wszystkich.",
+            "C": "Większość ról i obowiązków jest jasno zdefiniowana, ale nadal występują niejasności.",
+            "D": "Role i obowiązki są dobrze zdefiniowane dla większości członków zespołu.",
+            "E": "Role i obowiązki są w pełni jasne, dobrze zrozumiane i szanowane przez wszystkich członków zespołu."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How is high flexibility in task execution ensured in the project?",
+          "question_text": "Jak zapewniana jest wysoka elastyczność w wykonywaniu zadań w projekcie?",
           "answer_options": {
-            "A": "There is no flexibility in task execution; everything is strictly defined.",
-            "B": "Flexibility exists but is limited and applies only to certain tasks.",
-            "C": "Flexibility in task execution is possible, but not for all team members.",
-            "D": "Flexibility in task execution is ensured, but not always maximally utilized.",
-            "E": "Flexibility in task execution is high and supports team efficiency at all stages of the project."
+            "A": "Nie ma elastyczności w wykonywaniu zadań; wszystko jest ściśle zdefiniowane.",
+            "B": "Elastyczność istnieje, ale jest ograniczona i dotyczy tylko niektórych zadań.",
+            "C": "Elastyczność w wykonywaniu zadań jest możliwa, ale nie dla wszystkich członków zespołu.",
+            "D": "Elastyczność w wykonywaniu zadań jest zapewniona, ale nie zawsze maksymalnie wykorzystywana.",
+            "E": "Elastyczność w wykonywaniu zadań jest wysoka i wspiera efektywność zespołu na wszystkich etapach projektu."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "What is the technical background and engagement level of the product managers in the projects?",
+          "question_text": "Jakie jest zaplecze techniczne i poziom zaangażowania kierowników produktu w projektach?",
           "answer_options": {
-            "A": "Product managers are unlikely to have a technical background.",
-            "B": "Some product managers have a technical background, but it is not the standard.",
-            "C": "There are product managers with a medium level of technical background, or only some product managers have it.",
-            "D": "Most product managers have an appropriate technical background and are engaged in the projects.",
-            "E": "All product managers have a technical background, confirmed by experience, and are fully engaged in development."
+            "A": "Kierownicy produktu prawdopodobnie nie mają zaplecza technicznego.",
+            "B": "Niektórzy kierownicy produktu mają zaplecze techniczne, ale nie jest to standard.",
+            "C": "Są kierownicy produktu ze średnim poziomem zaplecza technicznego lub tylko niektórzy kierownicy produktu go mają.",
+            "D": "Większość kierowników produktu ma odpowiednie zaplecze techniczne i są zaangażowani w projekty.",
+            "E": "Wszyscy kierownicy produktu mają zaplecze techniczne potwierdzone doświadczeniem i są w pełni zaangażowani w rozwój."
           },
           "selected_answer": "D"
         },
         {
-          "question_text": "How fully is the customer engaged in the product development process?",
+          "question_text": "Jak w pełni klient jest zaangażowany w proces rozwoju produktu?",
           "answer_options": {
-            "A": "The customer is not engaged in the product development process.",
-            "B": "The customer is engaged only in selected projects and rarely fully.",
-            "C": "The customer is sometimes engaged in product development but not at every stage.",
-            "D": "The customer is regularly engaged, but collaboration is not optimal at all stages.",
-            "E": "The customer is fully engaged at all stages of product development, regardless of the product."
+            "A": "Klient nie jest zaangażowany w proces rozwoju produktu.",
+            "B": "Klient jest zaangażowany tylko w wybrane projekty i rzadko w pełni.",
+            "C": "Klient jest czasami zaangażowany w rozwój produktu, ale nie na każdym etapie.",
+            "D": "Klient jest regularnie zaangażowany, ale współpraca nie jest optymalna na wszystkich etapach.",
+            "E": "Klient jest w pełni zaangażowany na wszystkich etapach rozwoju produktu, niezależnie od produktu."
           },
           "selected_answer": "A"
         },
         {
-          "question_text": "Are experienced designers engaged from the earliest stages of the project?",
+          "question_text": "Czy doświadczeni projektanci są zaangażowani od najwcześniejszych etapów projektu?",
           "answer_options": {
-            "A": "Experienced designers are not engaged in the early stages of projects.",
-            "B": "Experienced designers are engaged, but only sporadically in the early stages.",
-            "C": "Experienced designers are engaged in the early stages of most projects.",
-            "D": "Experienced designers are engaged in the early stages of all projects, but their involvement is not always optimal.",
-            "E": "Experienced designers are always engaged from the earliest stages of projects, and their input is crucial to the project's success."
+            "A": "Doświadczeni projektanci nie są zaangażowani we wczesnych etapach projektów.",
+            "B": "Doświadczeni projektanci są zaangażowani, ale tylko sporadycznie we wczesnych etapach.",
+            "C": "Doświadczeni projektanci są zaangażowani we wczesnych etapach większości projektów.",
+            "D": "Doświadczeni projektanci są zaangażowani we wczesnych etapach wszystkich projektów, ale ich udział nie zawsze jest optymalny.",
+            "E": "Doświadczeni projektanci są zawsze zaangażowani od najwcześniejszych etapów projektów, a ich wkład jest kluczowy dla sukcesu projektu."
           },
           "selected_answer": "B"
         }
@@ -90,35 +90,35 @@
       "question_count": 3,
       "questions": [
         {
-          "question_text": "How formal programs support the development of interdisciplinary skills?",
+          "question_text": "Jak formalne programy wspierają rozwój umiejętności interdyscyplinarnych?",
           "answer_options": {
-            "A": "There are no formal training programs.",
-            "B": "Programs exist, but they are limited and sporadic.",
-            "C": "Programs are implemented at an intermediate level but do not cover all employees.",
-            "D": "Programs are widely available and regularly applied.",
-            "E": "Programs are systematic, well-planned, and include all employees."
+            "A": "Nie ma formalnych programów szkoleniowych.",
+            "B": "Programy istnieją, ale są ograniczone i sporadyczne.",
+            "C": "Programy są wdrażane na średnim poziomie, ale nie obejmują wszystkich pracowników.",
+            "D": "Programy są szeroko dostępne i regularnie stosowane.",
+            "E": "Programy są systematyczne, dobrze zaplanowane i obejmują wszystkich pracowników."
           },
           "selected_answer": "A"
         },
         {
-          "question_text": "How are individual tutoring sessions offered to support skill development?",
+          "question_text": "Jak oferowane są indywidualne sesje mentorskie wspierające rozwój umiejętności?",
           "answer_options": {
-            "A": "Individual tutoring sessions are not available.",
-            "B": "Tutoring sessions are available in a limited scope and for selected employees.",
-            "C": "Tutoring sessions are available to most employees, but they are rarely individualized.",
-            "D": "Tutoring sessions are well-developed, but not always available to all employees.",
-            "E": "Tutoring sessions are standardized, individualized, and accessible to all employees."
+            "A": "Indywidualne sesje mentorskie nie są dostępne.",
+            "B": "Sesje mentorskie są dostępne w ograniczonym zakresie i dla wybranych pracowników.",
+            "C": "Sesje mentorskie są dostępne dla większości pracowników, ale rzadko są zindywidualizowane.",
+            "D": "Sesje mentorskie są dobrze rozwinięte, ale nie zawsze dostępne dla wszystkich pracowników.",
+            "E": "Sesje mentorskie są ustandaryzowane, zindywidualizowane i dostępne dla wszystkich pracowników."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How are KPIs used to evaluate training outcomes?",
+          "question_text": "Jak KPI są wykorzystywane do oceny wyników szkoleń?",
           "answer_options": {
-            "A": "KPIs are not used to evaluate training outcomes.",
-            "B": "KPIs are sometimes used, but they are not regularly monitored.",
-            "C": "KPIs are used, but not all training outcomes are thoroughly evaluated.",
-            "D": "KPIs are systematically applied and cover most training programs.",
-            "E": "KPIs are comprehensively used to assess all aspects of training and are regularly updated."
+            "A": "KPI nie są używane do oceny wyników szkoleń.",
+            "B": "KPI są czasami używane, ale nie są regularnie monitorowane.",
+            "C": "KPI są używane, ale nie wszystkie wyniki szkoleń są dokładnie oceniane.",
+            "D": "KPI są systematycznie stosowane i obejmują większość programów szkoleniowych.",
+            "E": "KPI są kompleksowo używane do oceny wszystkich aspektów szkoleń i są regularnie aktualizowane."
           },
           "selected_answer": "A"
         }
@@ -129,90 +129,90 @@
       "question_count": 8,
       "questions": [
         {
-          "question_text": "To what extent is a formal product development model followed and documented?",
+          "question_text": "W jakim stopniu formalny model rozwoju produktu jest przestrzegany i dokumentowany?",
           "answer_options": {
-            "A": "There is no formal product development model.",
-            "B": "The model exists but is rarely followed and documented.",
-            "C": "The model is followed, but not always documented.",
-            "D": "The model is followed and documented by most teams.",
-            "E": "The model is a standard, followed and documented in every project."
+            "A": "Nie ma formalnego modelu rozwoju produktu.",
+            "B": "Model istnieje, ale rzadko jest przestrzegany i dokumentowany.",
+            "C": "Model jest przestrzegany, ale nie zawsze dokumentowany.",
+            "D": "Model jest przestrzegany i dokumentowany przez większość zespołów.",
+            "E": "Model jest standardem, przestrzeganym i dokumentowanym w każdym projekcie."
           },
           "selected_answer": "A"
         },
         {
-          "question_text": "To what extent is collaboration a part of the product development process?",
+          "question_text": "W jakim stopniu współpraca jest częścią procesu rozwoju produktu?",
           "answer_options": {
-            "A": "Collaboration is minimal and sporadic.",
-            "B": "Collaboration exists but is limited to a few key stages.",
-            "C": "Collaboration covers most stages but is not systematic.",
-            "D": "Collaboration covers nearly all stages of product development.",
-            "E": "Collaboration is an integral part of the process, covering all stages."
+            "A": "Współpraca jest minimalna i sporadyczna.",
+            "B": "Współpraca istnieje, ale ogranicza się do kilku kluczowych etapów.",
+            "C": "Współpraca obejmuje większość etapów, ale nie jest systematyczna.",
+            "D": "Współpraca obejmuje prawie wszystkie etapy rozwoju produktu.",
+            "E": "Współpraca jest integralną częścią procesu, obejmującą wszystkie etapy."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How effectively is a comprehensive set of KPIs used to measure product development performance?",
+          "question_text": "Jak skutecznie kompleksowy zestaw KPI jest używany do mierzenia wydajności rozwoju produktu?",
           "answer_options": {
-            "A": "There is no comprehensive set of KPIs.",
-            "B": "A set of KPIs exists but is used sporadically.",
-            "C": "A comprehensive set of KPIs is used, but not in all phases.",
-            "D": "A comprehensive set of KPIs is systematically used in most projects.",
-            "E": "A comprehensive set of KPIs is used in all projects and phases of product development."
+            "A": "Nie ma kompleksowego zestawu KPI.",
+            "B": "Zestaw KPI istnieje, ale jest używany sporadycznie.",
+            "C": "Kompleksowy zestaw KPI jest używany, ale nie we wszystkich fazach.",
+            "D": "Kompleksowy zestaw KPI jest systematycznie używany w większości projektów.",
+            "E": "Kompleksowy zestaw KPI jest używany we wszystkich projektach i fazach rozwoju produktu."
           },
           "selected_answer": "A"
         },
         {
-          "question_text": "At what level is frontloading implemented in the product development process?",
+          "question_text": "Na jakim poziomie frontloading jest wdrażany w procesie rozwoju produktu?",
           "answer_options": {
-            "A": "Frontloading is not applied.",
-            "B": "Frontloading is applied only in some projects.",
-            "C": "Frontloading is applied in most projects, but not always effectively.",
-            "D": "Frontloading is effectively implemented in all projects.",
-            "E": "Frontloading is implemented at a very high level in all projects."
+            "A": "Frontloading nie jest stosowany.",
+            "B": "Frontloading jest stosowany tylko w niektórych projektach.",
+            "C": "Frontloading jest stosowany w większości projektów, ale nie zawsze skutecznie.",
+            "D": "Frontloading jest skutecznie wdrażany we wszystkich projektach.",
+            "E": "Frontloading jest wdrażany na bardzo wysokim poziomie we wszystkich projektach."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "To what extent are continuous improvement initiatives undertaken?",
+          "question_text": "W jakim stopniu podejmowane są inicjatywy ciągłego doskonalenia?",
           "answer_options": {
-            "A": "Continuous improvement initiatives are not undertaken.",
-            "B": "Continuous improvement initiatives are undertaken, but rarely.",
-            "C": "Continuous improvement initiatives are undertaken, but their impact is limited.",
-            "D": "Continuous improvement initiatives are regularly undertaken and have a real impact on the process.",
-            "E": "Continuous improvement initiatives are standard and greatly impact process efficiency."
+            "A": "Inicjatywy ciągłego doskonalenia nie są podejmowane.",
+            "B": "Inicjatywy ciągłego doskonalenia są podejmowane, ale rzadko.",
+            "C": "Inicjatywy ciągłego doskonalenia są podejmowane, ale ich wpływ jest ograniczony.",
+            "D": "Inicjatywy ciągłego doskonalenia są regularnie podejmowane i mają realny wpływ na proces.",
+            "E": "Inicjatywy ciągłego doskonalenia są standardem i znacząco wpływają na efektywność procesu."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How effectively are various solutions designed and poorer solutions eliminated as new information arises?",
+          "question_text": "Jak skutecznie projektowane są różne rozwiązania i eliminowane gorsze rozwiązania w miarę pojawiania się nowych informacji?",
           "answer_options": {
-            "A": "Various solutions are not designed; the process is rigid.",
-            "B": "Various solutions are designed, but the elimination of weaker options is unsystematic.",
-            "C": "Various solutions are designed, but eliminating poorer options is not systematic.",
-            "D": "Various solutions are designed, and poorer solutions are regularly eliminated.",
-            "E": "Various solutions are designed in each project, and weaker options are regularly and effectively eliminated."
+            "A": "Różne rozwiązania nie są projektowane; proces jest sztywny.",
+            "B": "Różne rozwiązania są projektowane, ale eliminacja słabszych opcji jest niesystematyczna.",
+            "C": "Różne rozwiązania są projektowane, ale eliminowanie gorszych opcji nie jest systematyczne.",
+            "D": "Różne rozwiązania są projektowane, a gorsze rozwiązania są regularnie eliminowane.",
+            "E": "Różne rozwiązania są projektowane w każdym projekcie, a słabsze opcje są regularnie i skutecznie eliminowane."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent does the product development process focus on customer value?",
+          "question_text": "W jakim stopniu proces rozwoju produktu koncentruje się na wartości dla klienta?",
           "answer_options": {
-            "A": "The product development process does not focus on customer value.",
-            "B": "The process partially focuses on customer value, but it is not a priority.",
-            "C": "The process focuses on customer value, but not always.",
-            "D": "The process consistently focuses on customer value.",
-            "E": "The process fully focuses on maximizing customer value."
+            "A": "Proces rozwoju produktu nie koncentruje się na wartości dla klienta.",
+            "B": "Proces częściowo koncentruje się na wartości dla klienta, ale nie jest to priorytet.",
+            "C": "Proces koncentruje się na wartości dla klienta, ale nie zawsze.",
+            "D": "Proces konsekwentnie koncentruje się na wartości dla klienta.",
+            "E": "Proces w pełni koncentruje się na maksymalizacji wartości dla klienta."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How is the competitive analysis process (reverse engineering) implemented?",
+          "question_text": "Jak wdrażany jest proces analizy konkurencji (inżynieria wsteczna)?",
           "answer_options": {
-            "A": "The competitive analysis process is not implemented.",
-            "B": "The competitive analysis process is implemented but to a limited extent.",
-            "C": "The competitive analysis process is systematically implemented, but not fully.",
-            "D": "The competitive analysis process is effectively implemented in all projects.",
-            "E": "The competitive analysis process is a key part of product development and implemented in every project."
+            "A": "Proces analizy konkurencji nie jest wdrażany.",
+            "B": "Proces analizy konkurencji jest wdrażany, ale w ograniczonym zakresie.",
+            "C": "Proces analizy konkurencji jest systematycznie wdrażany, ale nie w pełni.",
+            "D": "Proces analizy konkurencji jest skutecznie wdrażany we wszystkich projektach.",
+            "E": "Proces analizy konkurencji jest kluczową częścią rozwoju produktu i wdrażany w każdym projekcie."
           },
           "selected_answer": "B"
         }
@@ -223,244 +223,244 @@
       "question_count": 22,
       "questions": [
         {
-          "question_text": "How is the process of designing and industrializing parts and modules considered?",
+          "question_text": "Jak uwzględniany jest proces projektowania i uprzemysłowienia części i modułów?",
           "answer_options": {
-            "A": "The design and industrialization process is not considered.",
-            "B": "The design and industrialization process is occasionally considered.",
-            "C": "The design and industrialization process is regularly considered, but not always systematically.",
-            "D": "The design and industrialization process is considered in all projects and is well-organized.",
-            "E": "The design and industrialization process is fully considered and integrated at every stage of product development."
+            "A": "Proces projektowania i uprzemysłowienia nie jest uwzględniany.",
+            "B": "Proces projektowania i uprzemysłowienia jest sporadycznie uwzględniany.",
+            "C": "Proces projektowania i uprzemysłowienia jest regularnie uwzględniany, ale nie zawsze systematycznie.",
+            "D": "Proces projektowania i uprzemysłowienia jest uwzględniany we wszystkich projektach i jest dobrze zorganizowany.",
+            "E": "Proces projektowania i uprzemysłowienia jest w pełni uwzględniany i zintegrowany na każdym etapie rozwoju produktu."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent is the component and semi-finished product manufacturing process considered?",
+          "question_text": "W jakim stopniu uwzględniany jest proces produkcji komponentów i produktów półgotowych?",
           "answer_options": {
-            "A": "The manufacturing process for components and semi-finished products is not considered.",
-            "B": "The manufacturing process for components and semi-finished products is occasionally considered.",
-            "C": "The manufacturing process for components and semi-finished products is considered in most projects.",
-            "D": "The manufacturing process for components and semi-finished products is a key element in every project.",
-            "E": "The manufacturing process for components and semi-finished products is a priority and considered in every project."
+            "A": "Proces produkcji komponentów i produktów półgotowych nie jest uwzględniany.",
+            "B": "Proces produkcji komponentów i produktów półgotowych jest sporadycznie uwzględniany.",
+            "C": "Proces produkcji komponentów i produktów półgotowych jest uwzględniany w większości projektów.",
+            "D": "Proces produkcji komponentów i produktów półgotowych jest kluczowym elementem w każdym projekcie.",
+            "E": "Proces produkcji komponentów i produktów półgotowych jest priorytetem i uwzględniany w każdym projekcie."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "At what level is the assembly process of components taken into account in product development?",
+          "question_text": "Na jakim poziomie proces montażu komponentów jest uwzględniany w rozwoju produktu?",
           "answer_options": {
-            "A": "The component assembly process is not considered.",
-            "B": "The component assembly process is occasionally considered.",
-            "C": "The component assembly process is taken into account, but not always optimized.",
-            "D": "The component assembly process is optimized and considered at all stages.",
-            "E": "The component assembly process is a key element of product development and is optimized in all projects."
+            "A": "Proces montażu komponentów nie jest uwzględniany.",
+            "B": "Proces montażu komponentów jest sporadycznie uwzględniany.",
+            "C": "Proces montażu komponentów jest uwzględniany, ale nie zawsze optymalizowany.",
+            "D": "Proces montażu komponentów jest optymalizowany i uwzględniany na wszystkich etapach.",
+            "E": "Proces montażu komponentów jest kluczowym elementem rozwoju produktu i jest optymalizowany we wszystkich projektach."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How important is the testing and experimentation process in product development?",
+          "question_text": "Jak ważny jest proces testowania i eksperymentowania w rozwoju produktu?",
           "answer_options": {
-            "A": "The testing and experimentation process is not considered.",
-            "B": "The testing and experimentation process is occasionally considered.",
-            "C": "The testing and experimentation process is considered in most cases, but its significance is limited.",
-            "D": "The testing and experimentation process is systematically applied and has a major impact on product development.",
-            "E": "The testing and experimentation process is of utmost importance and influences every decision."
+            "A": "Proces testowania i eksperymentowania nie jest uwzględniany.",
+            "B": "Proces testowania i eksperymentowania jest sporadycznie uwzględniany.",
+            "C": "Proces testowania i eksperymentowania jest uwzględniany w większości przypadków, ale jego znaczenie jest ograniczone.",
+            "D": "Proces testowania i eksperymentowania jest systematycznie stosowany i ma duży wpływ na rozwój produktu.",
+            "E": "Proces testowania i eksperymentowania ma najwyższe znaczenie i wpływa na każdą decyzję."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "At what level is the packaging and storage process considered?",
+          "question_text": "Na jakim poziomie uwzględniany jest proces pakowania i przechowywania?",
           "answer_options": {
-            "A": "The packaging and storage process is not considered.",
-            "B": "The packaging and storage process is occasionally considered.",
-            "C": "The packaging and storage process is taken into account, but not in all projects.",
-            "D": "The packaging and storage process is considered and optimized in most projects.",
-            "E": "The packaging and storage process is crucial and fully considered in every project."
+            "A": "Proces pakowania i przechowywania nie jest uwzględniany.",
+            "B": "Proces pakowania i przechowywania jest sporadycznie uwzględniany.",
+            "C": "Proces pakowania i przechowywania jest uwzględniany, ale nie we wszystkich projektach.",
+            "D": "Proces pakowania i przechowywania jest uwzględniany i optymalizowany w większości projektów.",
+            "E": "Proces pakowania i przechowywania jest kluczowy i w pełni uwzględniany w każdym projekcie."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How is the delivery and distribution process considered?",
+          "question_text": "Jak uwzględniany jest proces dostawy i dystrybucji?",
           "answer_options": {
-            "A": "The delivery and distribution process is not considered.",
-            "B": "The delivery and distribution process is occasionally considered.",
-            "C": "The delivery and distribution process is considered, but its role is not always critical.",
-            "D": "The delivery and distribution process is effectively considered in every project.",
-            "E": "The delivery and distribution process is an integral part of every decision-making process."
+            "A": "Proces dostawy i dystrybucji nie jest uwzględniany.",
+            "B": "Proces dostawy i dystrybucji jest sporadycznie uwzględniany.",
+            "C": "Proces dostawy i dystrybucji jest uwzględniany, ale jego rola nie zawsze jest krytyczna.",
+            "D": "Proces dostawy i dystrybucji jest skutecznie uwzględniany w każdym projekcie.",
+            "E": "Proces dostawy i dystrybucji jest integralną częścią każdego procesu podejmowania decyzji."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "To what extent is customer usage considered in product development?",
+          "question_text": "W jakim stopniu użytkowanie przez klienta jest uwzględniane w rozwoju produktu?",
           "answer_options": {
-            "A": "Customer usage is not considered in the product development process.",
-            "B": "Customer usage is occasionally considered.",
-            "C": "Customer usage is taken into account, but not always monitored.",
-            "D": "Customer usage is regularly monitored and considered at all stages.",
-            "E": "Customer usage is continuously monitored and fully considered in design decisions."
+            "A": "Użytkowanie przez klienta nie jest uwzględniane w procesie rozwoju produktu.",
+            "B": "Użytkowanie przez klienta jest sporadycznie uwzględniane.",
+            "C": "Użytkowanie przez klienta jest uwzględniane, ale nie zawsze monitorowane.",
+            "D": "Użytkowanie przez klienta jest regularnie monitorowane i uwzględniane na wszystkich etapach.",
+            "E": "Użytkowanie przez klienta jest ciągle monitorowane i w pełni uwzględniane w decyzjach projektowych."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How is the maintenance and after-sales service process considered?",
+          "question_text": "Jak uwzględniany jest proces konserwacji i obsługi posprzedażnej?",
           "answer_options": {
-            "A": "The maintenance and after-sales service process is not considered.",
-            "B": "The maintenance and after-sales service process is occasionally considered.",
-            "C": "The maintenance and after-sales service process is considered, but not comprehensively.",
-            "D": "The maintenance and after-sales service process is crucial and always considered.",
-            "E": "The maintenance and after-sales service process is a priority and considered at all stages of development."
+            "A": "Proces konserwacji i obsługi posprzedażnej nie jest uwzględniany.",
+            "B": "Proces konserwacji i obsługi posprzedażnej jest sporadycznie uwzględniany.",
+            "C": "Proces konserwacji i obsługi posprzedażnej jest uwzględniany, ale nie kompleksowo.",
+            "D": "Proces konserwacji i obsługi posprzedażnej jest kluczowy i zawsze uwzględniany.",
+            "E": "Proces konserwacji i obsługi posprzedażnej jest priorytetem i uwzględniany na wszystkich etapach rozwoju."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "At what level is the dismantling, recycling, and disposal process considered?",
+          "question_text": "Na jakim poziomie uwzględniany jest proces demontażu, recyklingu i utylizacji?",
           "answer_options": {
-            "A": "The dismantling, recycling, and disposal process is not considered.",
-            "B": "The dismantling, recycling, and disposal process is occasionally considered.",
-            "C": "The dismantling, recycling, and disposal process is taken into account, but its role is limited.",
-            "D": "The dismantling, recycling, and disposal process is fully considered in every project.",
-            "E": "The dismantling, recycling, and disposal process is integrated into every project and regularly monitored."
+            "A": "Proces demontażu, recyklingu i utylizacji nie jest uwzględniany.",
+            "B": "Proces demontażu, recyklingu i utylizacji jest sporadycznie uwzględniany.",
+            "C": "Proces demontażu, recyklingu i utylizacji jest uwzględniany, ale jego rola jest ograniczona.",
+            "D": "Proces demontażu, recyklingu i utylizacji jest w pełni uwzględniany w każdym projekcie.",
+            "E": "Proces demontażu, recyklingu i utylizacji jest zintegrowany z każdym projektem i regularnie monitorowany."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent is the process of inspection, reuse, updating, and refurbishment considered?",
+          "question_text": "W jakim stopniu uwzględniany jest proces inspekcji, ponownego użycia, aktualizacji i odnowy?",
           "answer_options": {
-            "A": "The process of inspection, reuse, updating, and refurbishment is not considered.",
-            "B": "The process of inspection, reuse, updating, and refurbishment is occasionally considered.",
-            "C": "The process of inspection, reuse, updating, and refurbishment is considered, but not always prioritized.",
-            "D": "The process of inspection, reuse, updating, and refurbishment is considered in most projects.",
-            "E": "The process of inspection, reuse, updating, and refurbishment is fully considered and integrated into product development."
+            "A": "Proces inspekcji, ponownego użycia, aktualizacji i odnowy nie jest uwzględniany.",
+            "B": "Proces inspekcji, ponownego użycia, aktualizacji i odnowy jest sporadycznie uwzględniany.",
+            "C": "Proces inspekcji, ponownego użycia, aktualizacji i odnowy jest uwzględniany, ale nie zawsze priorytetyzowany.",
+            "D": "Proces inspekcji, ponownego użycia, aktualizacji i odnowy jest uwzględniany w większości projektów.",
+            "E": "Proces inspekcji, ponownego użycia, aktualizacji i odnowy jest w pełni uwzględniany i zintegrowany z rozwojem produktu."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How important is the final product cost/price in the decision-making process?",
+          "question_text": "Jak ważny jest finalny koszt/cena produktu w procesie podejmowania decyzji?",
           "answer_options": {
-            "A": "The final product cost is not considered.",
-            "B": "The final product cost is considered, but to a limited extent.",
-            "C": "The final product cost is considered, but not always comprehensively.",
-            "D": "The final product cost is a key element in decisions in all projects.",
-            "E": "The final product cost/price is a priority in every design decision."
+            "A": "Finalny koszt produktu nie jest uwzględniany.",
+            "B": "Finalny koszt produktu jest uwzględniany, ale w ograniczonym zakresie.",
+            "C": "Finalny koszt produktu jest uwzględniany, ale nie zawsze kompleksowo.",
+            "D": "Finalny koszt produktu jest kluczowym elementem decyzji we wszystkich projektach.",
+            "E": "Finalny koszt/cena produktu jest priorytetem w każdej decyzji projektowej."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "To what extent are development costs/ROI considered in the decision-making process?",
+          "question_text": "W jakim stopniu koszty rozwoju/ROI są uwzględniane w procesie podejmowania decyzji?",
           "answer_options": {
-            "A": "Development costs/ROI are not considered.",
-            "B": "Development costs/ROI are occasionally considered.",
-            "C": "Development costs/ROI are regularly monitored, but not always considered in decisions.",
-            "D": "Development costs/ROI are carefully monitored and considered in every project.",
-            "E": "Development costs/ROI are a key element in every decision and are carefully monitored."
+            "A": "Koszty rozwoju/ROI nie są uwzględniane.",
+            "B": "Koszty rozwoju/ROI są sporadycznie uwzględniane.",
+            "C": "Koszty rozwoju/ROI są regularnie monitorowane, ale nie zawsze uwzględniane w decyzjach.",
+            "D": "Koszty rozwoju/ROI są starannie monitorowane i uwzględniane w każdym projekcie.",
+            "E": "Koszty rozwoju/ROI są kluczowym elementem każdej decyzji i są starannie monitorowane."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How important are lifecycle and operational costs, such as maintenance, services, recycling, and disposal?",
+          "question_text": "Jak ważne są koszty cyklu życia i koszty operacyjne, takie jak konserwacja, usługi, recykling i utylizacja?",
           "answer_options": {
-            "A": "Lifecycle and operational costs are not considered.",
-            "B": "Lifecycle and operational costs are occasionally considered.",
-            "C": "Lifecycle and operational costs are considered, but not comprehensively.",
-            "D": "Lifecycle and operational costs are systematically considered and greatly influence decisions.",
-            "E": "Lifecycle and operational costs are integral to the decision-making process and have a major influence on decisions."
+            "A": "Koszty cyklu życia i koszty operacyjne nie są uwzględniane.",
+            "B": "Koszty cyklu życia i koszty operacyjne są sporadycznie uwzględniane.",
+            "C": "Koszty cyklu życia i koszty operacyjne są uwzględniane, ale nie kompleksowo.",
+            "D": "Koszty cyklu życia i koszty operacyjne są systematycznie uwzględniane i znacznie wpływają na decyzje.",
+            "E": "Koszty cyklu życia i koszty operacyjne są integralną częścią procesu podejmowania decyzji i mają duży wpływ na decyzje."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How are time-to-market (TTM) and delivery deadlines considered in decision-making?",
+          "question_text": "Jak czas wprowadzenia na rynek (TTM) i terminy dostaw są uwzględniane w podejmowaniu decyzji?",
           "answer_options": {
-            "A": "TTM and delivery deadlines are not considered in decision-making.",
-            "B": "TTM and delivery deadlines are considered, but only in some projects.",
-            "C": "TTM and delivery deadlines are taken into account, but not always critically.",
-            "D": "TTM and delivery deadlines are key factors in every project decision.",
-            "E": "TTM and delivery deadlines are the most important criteria in every project decision."
+            "A": "TTM i terminy dostaw nie są uwzględniane w podejmowaniu decyzji.",
+            "B": "TTM i terminy dostaw są uwzględniane, ale tylko w niektórych projektach.",
+            "C": "TTM i terminy dostaw są uwzględniane, ale nie zawsze krytycznie.",
+            "D": "TTM i terminy dostaw są kluczowymi czynnikami w każdej decyzji projektowej.",
+            "E": "TTM i terminy dostaw są najważniejszymi kryteriami w każdej decyzji projektowej."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "How does the number of different products impact design decisions?",
+          "question_text": "Jak liczba różnych produktów wpływa na decyzje projektowe?",
           "answer_options": {
-            "A": "The number of different products is not considered.",
-            "B": "The number of different products is considered to a limited extent.",
-            "C": "The number of different products is considered, but not always impactful on final decisions.",
-            "D": "The number of different products is considered in most projects and has a direct impact on decisions.",
-            "E": "The number of different products is a key factor in every decision and influences design choices."
+            "A": "Liczba różnych produktów nie jest uwzględniana.",
+            "B": "Liczba różnych produktów jest uwzględniana w ograniczonym zakresie.",
+            "C": "Liczba różnych produktów jest uwzględniana, ale nie zawsze ma wpływ na finalne decyzje.",
+            "D": "Liczba różnych produktów jest uwzględniana w większości projektów i ma bezpośredni wpływ na decyzje.",
+            "E": "Liczba różnych produktów jest kluczowym czynnikiem w każdej decyzji i wpływa na wybory projektowe."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent is product customization considered?",
+          "question_text": "W jakim stopniu dostosowanie produktu jest uwzględniane?",
           "answer_options": {
-            "A": "Product customization is not considered.",
-            "B": "Product customization is occasionally considered.",
-            "C": "Product customization is regularly considered, but not always comprehensively.",
-            "D": "Product customization is monitored and considered in every project.",
-            "E": "Product customization is fully considered in every project and is a priority in decision-making."
+            "A": "Dostosowanie produktu nie jest uwzględniane.",
+            "B": "Dostosowanie produktu jest sporadycznie uwzględniane.",
+            "C": "Dostosowanie produktu jest regularnie uwzględniane, ale nie zawsze kompleksowo.",
+            "D": "Dostosowanie produktu jest monitorowane i uwzględniane w każdym projekcie.",
+            "E": "Dostosowanie produktu jest w pełni uwzględniane w każdym projekcie i jest priorytetem w podejmowaniu decyzji."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How is the level of innovation considered in decision-making?",
+          "question_text": "Jak poziom innowacyjności jest uwzględniany w podejmowaniu decyzji?",
           "answer_options": {
-            "A": "The level of innovation is not considered.",
-            "B": "The level of innovation is considered, but not systematically.",
-            "C": "The level of innovation is monitored, but not always comprehensively.",
-            "D": "The level of innovation is systematically monitored and considered in all projects.",
-            "E": "The level of innovation is monitored and has the greatest impact on every decision."
+            "A": "Poziom innowacyjności nie jest uwzględniany.",
+            "B": "Poziom innowacyjności jest uwzględniany, ale nie systematycznie.",
+            "C": "Poziom innowacyjności jest monitorowany, ale nie zawsze kompleksowo.",
+            "D": "Poziom innowacyjności jest systematycznie monitorowany i uwzględniany we wszystkich projektach.",
+            "E": "Poziom innowacyjności jest monitorowany i ma największy wpływ na każdą decyzję."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "How does brand image influence decision-making?",
+          "question_text": "Jak wizerunek marki wpływa na podejmowanie decyzji?",
           "answer_options": {
-            "A": "Brand image is not considered.",
-            "B": "Brand image is considered to a limited extent.",
-            "C": "Brand image is considered, but not in all decisions.",
-            "D": "Brand image is a key factor in design decisions.",
-            "E": "Brand image is a priority in every design decision and is closely monitored."
+            "A": "Wizerunek marki nie jest uwzględniany.",
+            "B": "Wizerunek marki jest uwzględniany w ograniczonym zakresie.",
+            "C": "Wizerunek marki jest uwzględniany, ale nie we wszystkich decyzjach.",
+            "D": "Wizerunek marki jest kluczowym czynnikiem w decyzjach projektowych.",
+            "E": "Wizerunek marki jest priorytetem w każdej decyzji projektowej i jest ściśle monitorowany."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "How important is functional performance (e.g., productivity, speed, accuracy, maintainability)?",
+          "question_text": "Jak ważna jest wydajność funkcjonalna (np. produktywność, szybkość, dokładność, łatwość konserwacji)?",
           "answer_options": {
-            "A": "Functional performance is not considered.",
-            "B": "Functional performance is occasionally considered.",
-            "C": "Functional performance is considered, but not always comprehensively.",
-            "D": "Functional performance is regularly monitored and considered in every decision.",
-            "E": "Functional performance is a priority and considered in all design decisions."
+            "A": "Wydajność funkcjonalna nie jest uwzględniana.",
+            "B": "Wydajność funkcjonalna jest sporadycznie uwzględniana.",
+            "C": "Wydajność funkcjonalna jest uwzględniana, ale nie zawsze kompleksowo.",
+            "D": "Wydajność funkcjonalna jest regularnie monitorowana i uwzględniana w każdej decyzji.",
+            "E": "Wydajność funkcjonalna jest priorytetem i uwzględniana we wszystkich decyzjach projektowych."
           },
           "selected_answer": "D"
         },
         {
-          "question_text": "How is quality performance (e.g., durability, reliability) considered in design decisions?",
+          "question_text": "Jak wydajność jakościowa (np. trwałość, niezawodność) jest uwzględniana w decyzjach projektowych?",
           "answer_options": {
-            "A": "Quality performance is not considered.",
-            "B": "Quality performance is occasionally considered.",
-            "C": "Quality performance is considered, but not always a priority.",
-            "D": "Quality performance is essential and considered in all decisions.",
-            "E": "Quality performance is a priority and the most important element of every design decision."
+            "A": "Wydajność jakościowa nie jest uwzględniana.",
+            "B": "Wydajność jakościowa jest sporadycznie uwzględniana.",
+            "C": "Wydajność jakościowa jest uwzględniana, ale nie zawsze jest priorytetem.",
+            "D": "Wydajność jakościowa jest istotna i uwzględniana we wszystkich decyzjach.",
+            "E": "Wydajność jakościowa jest priorytetem i najważniejszym elementem każdej decyzji projektowej."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "How do compliance and regulatory standards influence decisions?",
+          "question_text": "Jak zgodność z przepisami i standardami regulacyjnymi wpływa na decyzje?",
           "answer_options": {
-            "A": "Compliance with regulations is not considered.",
-            "B": "Compliance with regulations is occasionally considered.",
-            "C": "Compliance with regulations is considered, but not always comprehensively.",
-            "D": "Compliance with regulations is regularly monitored and considered in every decision.",
-            "E": "Compliance with regulations and standards is integral to every decision and is closely monitored."
+            "A": "Zgodność z przepisami nie jest uwzględniana.",
+            "B": "Zgodność z przepisami jest sporadycznie uwzględniana.",
+            "C": "Zgodność z przepisami jest uwzględniana, ale nie zawsze kompleksowo.",
+            "D": "Zgodność z przepisami jest regularnie monitorowana i uwzględniana w każdej decyzji.",
+            "E": "Zgodność z przepisami i standardami jest integralną częścią każdej decyzji i jest ściśle monitorowana."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "What other factors, such as environmental sustainability, aesthetics, or social aspects, are considered?",
+          "question_text": "Jakie inne czynniki, takie jak zrównoważony rozwój środowiskowy, estetyka czy aspekty społeczne, są uwzględniane?",
           "answer_options": {
-            "A": "Other factors, such as sustainability, are not considered.",
-            "B": "Other factors, such as sustainability, are sometimes considered, but not systematically.",
-            "C": "Other factors, such as sustainability, are considered, but not always prioritized.",
-            "D": "Other factors, such as sustainability, are regularly considered and significantly influence decisions.",
-            "E": "Other factors, such as sustainability, are crucial and prioritized in the decision-making process."
+            "A": "Inne czynniki, takie jak zrównoważoność, nie są uwzględniane.",
+            "B": "Inne czynniki, takie jak zrównoważoność, są czasami uwzględniane, ale nie systematycznie.",
+            "C": "Inne czynniki, takie jak zrównoważoność, są uwzględniane, ale nie zawsze priorytetyzowane.",
+            "D": "Inne czynniki, takie jak zrównoważoność, są regularnie uwzględniane i znacząco wpływają na decyzje.",
+            "E": "Inne czynniki, takie jak zrównoważoność, są kluczowe i priorytetyzowane w procesie podejmowania decyzji."
           },
           "selected_answer": "C"
         }
@@ -471,244 +471,244 @@
       "question_count": 22,
       "questions": [
         {
-          "question_text": "How is previous knowledge retrieved during the conceptual phase of a project?",
+          "question_text": "Jak odzyskiwana jest poprzednia wiedza podczas fazy koncepcyjnej projektu?",
           "answer_options": {
-            "A": "Knowledge from previous projects is not used during the conceptual phase.",
-            "B": "Knowledge from previous projects is occasionally used during the conceptual phase.",
-            "C": "Knowledge from previous projects is regularly used during the conceptual phase, but not fully systematically.",
-            "D": "Knowledge from previous projects is systematically used during the conceptual phase in all projects.",
-            "E": "Knowledge from previous projects is fully integrated into every conceptual phase and is prioritized."
+            "A": "Wiedza z poprzednich projektów nie jest wykorzystywana podczas fazy koncepcyjnej.",
+            "B": "Wiedza z poprzednich projektów jest sporadycznie wykorzystywana podczas fazy koncepcyjnej.",
+            "C": "Wiedza z poprzednich projektów jest regularnie wykorzystywana podczas fazy koncepcyjnej, ale nie w pełni systematycznie.",
+            "D": "Wiedza z poprzednich projektów jest systematycznie wykorzystywana podczas fazy koncepcyjnej we wszystkich projektach.",
+            "E": "Wiedza z poprzednich projektów jest w pełni zintegrowana z każdą fazą koncepcyjną i jest priorytetem."
           },
           "selected_answer": "A"
         },
         {
-          "question_text": "How is previous knowledge retrieved during the feasibility study?",
+          "question_text": "Jak odzyskiwana jest poprzednia wiedza podczas studium wykonalności?",
           "answer_options": {
-            "A": "Knowledge from previous projects is rarely used during the feasibility study.",
-            "B": "Knowledge from previous projects is sporadically used during the feasibility study, but not systematically.",
-            "C": "Knowledge from previous projects is regularly used during the feasibility study, but not always in every case.",
-            "D": "Knowledge from previous projects is considered during the feasibility study in every project.",
-            "E": "Knowledge from previous projects is used in every project and has a crucial impact on the feasibility study."
+            "A": "Wiedza z poprzednich projektów jest rzadko wykorzystywana podczas studium wykonalności.",
+            "B": "Wiedza z poprzednich projektów jest sporadycznie wykorzystywana podczas studium wykonalności, ale nie systematycznie.",
+            "C": "Wiedza z poprzednich projektów jest regularnie wykorzystywana podczas studium wykonalności, ale nie zawsze w każdym przypadku.",
+            "D": "Wiedza z poprzednich projektów jest uwzględniana podczas studium wykonalności w każdym projekcie.",
+            "E": "Wiedza z poprzednich projektów jest wykorzystywana w każdym projekcie i ma kluczowy wpływ na studium wykonalności."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How is previous knowledge retrieved during the detailed design phase of the product and its components?",
+          "question_text": "Jak odzyskiwana jest poprzednia wiedza podczas szczegółowej fazy projektowania produktu i jego komponentów?",
           "answer_options": {
-            "A": "Knowledge from previous projects is not systematically retrieved during the detailed design phase.",
-            "B": "Knowledge from previous projects is used, but unsystematically, during the detailed design phase.",
-            "C": "Knowledge from previous projects is systematically retrieved, but not always comprehensively.",
-            "D": "Knowledge from previous projects is systematically retrieved and used during the detailed design phase.",
-            "E": "Knowledge from previous projects is fully retrieved and used during the detailed design phase."
+            "A": "Wiedza z poprzednich projektów nie jest systematycznie odzyskiwana podczas szczegółowej fazy projektowania.",
+            "B": "Wiedza z poprzednich projektów jest wykorzystywana, ale niesystematycznie, podczas szczegółowej fazy projektowania.",
+            "C": "Wiedza z poprzednich projektów jest systematycznie odzyskiwana, ale nie zawsze kompleksowo.",
+            "D": "Wiedza z poprzednich projektów jest systematycznie odzyskiwana i wykorzystywana podczas szczegółowej fazy projektowania.",
+            "E": "Wiedza z poprzednich projektów jest w pełni odzyskiwana i wykorzystywana podczas szczegółowej fazy projektowania."
           },
           "selected_answer": "A"
         },
         {
-          "question_text": "How is previous knowledge retrieved during testing, prototyping, and experimentation?",
+          "question_text": "Jak odzyskiwana jest poprzednia wiedza podczas testowania, prototypowania i eksperymentowania?",
           "answer_options": {
-            "A": "Knowledge from previous projects is not retrieved during testing, prototyping, and experimentation.",
-            "B": "Knowledge from previous projects is sometimes retrieved during testing and prototyping.",
-            "C": "Knowledge from previous projects is regularly retrieved during testing, prototyping, and experimentation, but not always.",
-            "D": "Knowledge from previous projects is fully retrieved during testing and prototyping.",
-            "E": "Knowledge from previous projects is an integral part of testing, prototyping, and experimentation."
+            "A": "Wiedza z poprzednich projektów nie jest odzyskiwana podczas testowania, prototypowania i eksperymentowania.",
+            "B": "Wiedza z poprzednich projektów jest czasami odzyskiwana podczas testowania i prototypowania.",
+            "C": "Wiedza z poprzednich projektów jest regularnie odzyskiwana podczas testowania, prototypowania i eksperymentowania, ale nie zawsze.",
+            "D": "Wiedza z poprzednich projektów jest w pełni odzyskiwana podczas testowania i prototypowania.",
+            "E": "Wiedza z poprzednich projektów jest integralną częścią testowania, prototypowania i eksperymentowania."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How is previous knowledge retrieved during the final project verification?",
+          "question_text": "Jak odzyskiwana jest poprzednia wiedza podczas finalnej weryfikacji projektu?",
           "answer_options": {
-            "A": "Knowledge from previous projects is not retrieved during the final project verification.",
-            "B": "Knowledge from previous projects is sporadically retrieved in the final project verification.",
-            "C": "Knowledge from previous projects is retrieved during the final verification, but not comprehensively.",
-            "D": "Knowledge from previous projects is retrieved during the final project verification in most cases.",
-            "E": "Knowledge from previous projects is a priority in the final project verification process."
+            "A": "Wiedza z poprzednich projektów nie jest odzyskiwana podczas finalnej weryfikacji projektu.",
+            "B": "Wiedza z poprzednich projektów jest sporadycznie odzyskiwana podczas finalnej weryfikacji projektu.",
+            "C": "Wiedza z poprzednich projektów jest odzyskiwana podczas finalnej weryfikacji, ale nie kompleksowo.",
+            "D": "Wiedza z poprzednich projektów jest odzyskiwana podczas finalnej weryfikacji projektu w większości przypadków.",
+            "E": "Wiedza z poprzednich projektów jest priorytetem w procesie finalnej weryfikacji projektu."
           },
           "selected_answer": "A"
         },
         {
-          "question_text": "How does a formal knowledge management plan support the product development process?",
+          "question_text": "Jak formalny plan zarządzania wiedzą wspiera proces rozwoju produktu?",
           "answer_options": {
-            "A": "A formal knowledge management plan does not exist or is not used.",
-            "B": "A formal knowledge management plan exists but is not widely used.",
-            "C": "A formal knowledge management plan exists and is implemented, but not in all cases.",
-            "D": "A formal knowledge management plan is fully implemented and supports product development in all projects.",
-            "E": "A formal knowledge management plan is fully implemented and systematically used in all projects."
+            "A": "Formalny plan zarządzania wiedzą nie istnieje lub nie jest używany.",
+            "B": "Formalny plan zarządzania wiedzą istnieje, ale nie jest szeroko używany.",
+            "C": "Formalny plan zarządzania wiedzą istnieje i jest wdrażany, ale nie we wszystkich przypadkach.",
+            "D": "Formalny plan zarządzania wiedzą jest w pełni wdrażany i wspiera rozwój produktu we wszystkich projektach.",
+            "E": "Formalny plan zarządzania wiedzą jest w pełni wdrażany i systematycznie używany we wszystkich projektach."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent does the company utilize knowledge resources from previous projects?",
+          "question_text": "W jakim stopniu firma wykorzystuje zasoby wiedzy z poprzednich projektów?",
           "answer_options": {
-            "A": "The company rarely utilizes knowledge resources from previous projects.",
-            "B": "The company sporadically utilizes knowledge resources from previous projects.",
-            "C": "The company utilizes knowledge resources, but not all projects are included in a systematic KM process.",
-            "D": "The company regularly utilizes knowledge resources from previous projects and applies them to new projects.",
-            "E": "The company fully utilizes knowledge resources from previous projects and regularly updates the KM process."
+            "A": "Firma rzadko wykorzystuje zasoby wiedzy z poprzednich projektów.",
+            "B": "Firma sporadycznie wykorzystuje zasoby wiedzy z poprzednich projektów.",
+            "C": "Firma wykorzystuje zasoby wiedzy, ale nie wszystkie projekty są objęte systematycznym procesem ZW.",
+            "D": "Firma regularnie wykorzystuje zasoby wiedzy z poprzednich projektów i stosuje je w nowych projektach.",
+            "E": "Firma w pełni wykorzystuje zasoby wiedzy z poprzednich projektów i regularnie aktualizuje proces ZW."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How are design principles defined by the company considered (frequently reviewed and updated) in the knowledge management process?",
+          "question_text": "Jak zasady projektowe zdefiniowane przez firmę są uwzględniane (często przeglądane i aktualizowane) w procesie zarządzania wiedzą?",
           "answer_options": {
-            "A": "The design principles defined by the company do not support the knowledge management process.",
-            "B": "The design principles defined by the company support the KM process, but not always.",
-            "C": "The design principles defined by the company support the KM process but are not always fully updated.",
-            "D": "The design principles defined by the company are regularly updated and support the KM process.",
-            "E": "The design principles defined by the company are continuously updated and fully support the KM process."
+            "A": "Zasady projektowe zdefiniowane przez firmę nie wspierają procesu zarządzania wiedzą.",
+            "B": "Zasady projektowe zdefiniowane przez firmę wspierają proces ZW, ale nie zawsze.",
+            "C": "Zasady projektowe zdefiniowane przez firmę wspierają proces ZW, ale nie zawsze są w pełni aktualizowane.",
+            "D": "Zasady projektowe zdefiniowane przez firmę są regularnie aktualizowane i wspierają proces ZW.",
+            "E": "Zasady projektowe zdefiniowane przez firmę są ciągle aktualizowane i w pełni wspierają proces ZW."
           },
           "selected_answer": "D"
         },
         {
-          "question_text": "How are design principles defined by external entities (e.g., clients, suppliers) considered (frequently reviewed and updated) in the KM process?",
+          "question_text": "Jak zasady projektowe zdefiniowane przez podmioty zewnętrzne (np. klienci, dostawcy) są uwzględniane (często przeglądane i aktualizowane) w procesie ZW?",
           "answer_options": {
-            "A": "External design principles are not considered in the KM process.",
-            "B": "External design principles are considered, but to a limited extent.",
-            "C": "External design principles are considered, but not in all projects.",
-            "D": "External design principles are regularly considered and have a significant impact on projects.",
-            "E": "External design principles are crucial and are systematically considered in all projects."
+            "A": "Zewnętrzne zasady projektowe nie są uwzględniane w procesie ZW.",
+            "B": "Zewnętrzne zasady projektowe są uwzględniane, ale w ograniczonym zakresie.",
+            "C": "Zewnętrzne zasady projektowe są uwzględniane, ale nie we wszystkich projektach.",
+            "D": "Zewnętrzne zasady projektowe są regularnie uwzględniane i mają znaczący wpływ na projekty.",
+            "E": "Zewnętrzne zasady projektowe są kluczowe i są systematycznie uwzględniane we wszystkich projektach."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How are design principles defined by written design rules textbooks/standards considered (frequently reviewed and updated) in the KM process?",
+          "question_text": "Jak zasady projektowe zdefiniowane w pisemnych podręcznikach/standardach zasad projektowania są uwzględniane (często przeglądane i aktualizowane) w procesie ZW?",
           "answer_options": {
-            "A": "Design principles defined in textbooks/standards are not considered in the KM process.",
-            "B": "Design principles defined in textbooks/standards are considered, but to a limited extent.",
-            "C": "Design principles defined in textbooks/standards are considered, but not in all projects.",
-            "D": "Design principles defined in textbooks/standards are regularly considered and have a significant impact on projects.",
-            "E": "Design principles defined in textbooks/standards are crucial and are systematically considered in all projects."
+            "A": "Zasady projektowe zdefiniowane w podręcznikach/standardach nie są uwzględniane w procesie ZW.",
+            "B": "Zasady projektowe zdefiniowane w podręcznikach/standardach są uwzględniane, ale w ograniczonym zakresie.",
+            "C": "Zasady projektowe zdefiniowane w podręcznikach/standardach są uwzględniane, ale nie we wszystkich projektach.",
+            "D": "Zasady projektowe zdefiniowane w podręcznikach/standardach są regularnie uwzględniane i mają znaczący wpływ na projekty.",
+            "E": "Zasady projektowe zdefiniowane w podręcznikach/standardach są kluczowe i są systematycznie uwzględniane we wszystkich projektach."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "How do knowledge management principles support the consideration of final product costs?",
+          "question_text": "Jak zasady zarządzania wiedzą wspierają uwzględnianie finalnych kosztów produktu?",
           "answer_options": {
-            "A": "Knowledge management does not consider final product costs.",
-            "B": "Knowledge management considers final product costs, but not always systematically.",
-            "C": "Knowledge management considers final product costs, but not comprehensively.",
-            "D": "Knowledge management systematically considers final product costs and impacts decisions.",
-            "E": "Knowledge management fully considers final product costs and is an integral part of decision-making."
+            "A": "Zarządzanie wiedzą nie uwzględnia finalnych kosztów produktu.",
+            "B": "Zarządzanie wiedzą uwzględnia finalne koszty produktu, ale nie zawsze systematycznie.",
+            "C": "Zarządzanie wiedzą uwzględnia finalne koszty produktu, ale nie kompleksowo.",
+            "D": "Zarządzanie wiedzą systematycznie uwzględnia finalne koszty produktu i wpływa na decyzje.",
+            "E": "Zarządzanie wiedzą w pełni uwzględnia finalne koszty produktu i jest integralną częścią podejmowania decyzji."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How does knowledge management influence the assessment of development costs and ROI?",
+          "question_text": "Jak zarządzanie wiedzą wpływa na ocenę kosztów rozwoju i ROI?",
           "answer_options": {
-            "A": "Knowledge management does not influence the assessment of development costs and ROI.",
-            "B": "Knowledge management influences the assessment of development costs and ROI, but it is not always a key factor.",
-            "C": "Knowledge management influences the assessment of development costs, but not all projects are included in ROI analysis.",
-            "D": "Knowledge management has a major influence on the assessment of development costs and ROI in all projects.",
-            "E": "Knowledge management has a crucial influence on the assessment of development costs and ROI and is applied in all projects."
+            "A": "Zarządzanie wiedzą nie wpływa na ocenę kosztów rozwoju i ROI.",
+            "B": "Zarządzanie wiedzą wpływa na ocenę kosztów rozwoju i ROI, ale nie zawsze jest kluczowym czynnikiem.",
+            "C": "Zarządzanie wiedzą wpływa na ocenę kosztów rozwoju, ale nie wszystkie projekty są objęte analizą ROI.",
+            "D": "Zarządzanie wiedzą ma duży wpływ na ocenę kosztów rozwoju i ROI we wszystkich projektach.",
+            "E": "Zarządzanie wiedzą ma kluczowy wpływ na ocenę kosztów rozwoju i ROI i jest stosowane we wszystkich projektach."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "How does knowledge management support the consideration of lifecycle and operational costs (e.g., maintenance, recycling)?",
+          "question_text": "Jak zarządzanie wiedzą wspiera uwzględnianie kosztów cyklu życia i kosztów operacyjnych (np. konserwacja, recykling)?",
           "answer_options": {
-            "A": "Lifecycle and operational costs are not considered in the KM process.",
-            "B": "Lifecycle and operational costs are considered, but to a limited extent.",
-            "C": "Lifecycle and operational costs are considered in most projects, but not comprehensively.",
-            "D": "Lifecycle and operational costs are fully considered in most projects.",
-            "E": "Lifecycle and operational costs are fully considered and have the greatest impact on design decisions."
+            "A": "Koszty cyklu życia i koszty operacyjne nie są uwzględniane w procesie ZW.",
+            "B": "Koszty cyklu życia i koszty operacyjne są uwzględniane, ale w ograniczonym zakresie.",
+            "C": "Koszty cyklu życia i koszty operacyjne są uwzględniane w większości projektów, ale nie kompleksowo.",
+            "D": "Koszty cyklu życia i koszty operacyjne są w pełni uwzględniane w większości projektów.",
+            "E": "Koszty cyklu życia i koszty operacyjne są w pełni uwzględniane i mają największy wpływ na decyzje projektowe."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How does knowledge management influence time-to-market (TTM) and delivery deadlines?",
+          "question_text": "Jak zarządzanie wiedzą wpływa na czas wprowadzenia na rynek (TTM) i terminy dostaw?",
           "answer_options": {
-            "A": "Time-to-market and delivery deadlines are not supported by knowledge management.",
-            "B": "Time-to-market is considered, but it does not have a critical impact on decisions.",
-            "C": "Time-to-market is considered in the KM process but does not always have a major impact.",
-            "D": "Time-to-market is regularly considered and influences KM decisions.",
-            "E": "Time-to-market is crucial and fully considered in the KM process."
+            "A": "Czas wprowadzenia na rynek i terminy dostaw nie są wspierane przez zarządzanie wiedzą.",
+            "B": "Czas wprowadzenia na rynek jest uwzględniany, ale nie ma krytycznego wpływu na decyzje.",
+            "C": "Czas wprowadzenia na rynek jest uwzględniany w procesie ZW, ale nie zawsze ma duży wpływ.",
+            "D": "Czas wprowadzenia na rynek jest regularnie uwzględniany i wpływa na decyzje ZW.",
+            "E": "Czas wprowadzenia na rynek jest kluczowy i w pełni uwzględniany w procesie ZW."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "How does KM support the evaluation of the number of different products in the company's portfolio?",
+          "question_text": "Jak ZW wspiera ocenę liczby różnych produktów w portfolio firmy?",
           "answer_options": {
-            "A": "KM does not support the evaluation of the number of different products in the portfolio.",
-            "B": "KM supports the evaluation of the number of different products, but not systematically.",
-            "C": "KM supports the evaluation of the number of products, but not systematically in all cases.",
-            "D": "KM supports the evaluation of the number of different products and impacts strategic decisions.",
-            "E": "KM fully supports the evaluation of the number of different products and is integral to the decision-making process."
+            "A": "ZW nie wspiera oceny liczby różnych produktów w portfolio.",
+            "B": "ZW wspiera ocenę liczby różnych produktów, ale nie systematycznie.",
+            "C": "ZW wspiera ocenę liczby produktów, ale nie systematycznie we wszystkich przypadkach.",
+            "D": "ZW wspiera ocenę liczby różnych produktów i wpływa na decyzje strategiczne.",
+            "E": "ZW w pełni wspiera ocenę liczby różnych produktów i jest integralną częścią procesu podejmowania decyzji."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent does KM consider the level of product customization to meet client needs?",
+          "question_text": "W jakim stopniu ZW uwzględnia poziom dostosowania produktu do potrzeb klienta?",
           "answer_options": {
-            "A": "The level of product customization is not considered in the KM process.",
-            "B": "The level of product customization is considered, but not in all projects.",
-            "C": "The level of product customization is regularly considered, but not comprehensively.",
-            "D": "The level of product customization is a key factor and is considered in most projects.",
-            "E": "The level of product customization is fully considered and has a major impact on design decisions."
+            "A": "Poziom dostosowania produktu nie jest uwzględniany w procesie ZW.",
+            "B": "Poziom dostosowania produktu jest uwzględniany, ale nie we wszystkich projektach.",
+            "C": "Poziom dostosowania produktu jest regularnie uwzględniany, ale nie kompleksowo.",
+            "D": "Poziom dostosowania produktu jest kluczowym czynnikiem i jest uwzględniany w większości projektów.",
+            "E": "Poziom dostosowania produktu jest w pełni uwzględniany i ma duży wpływ na decyzje projektowe."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How does knowledge management support innovation within the company?",
+          "question_text": "Jak zarządzanie wiedzą wspiera innowacje w firmie?",
           "answer_options": {
-            "A": "The innovation process is not supported by KM.",
-            "B": "KM supports innovation, but to a limited extent.",
-            "C": "KM supports innovation in most projects, but not always systematically.",
-            "D": "KM supports innovation in all projects and has an impact on product development.",
-            "E": "KM is a priority in innovation and supports all projects comprehensively."
+            "A": "Proces innowacji nie jest wspierany przez ZW.",
+            "B": "ZW wspiera innowacje, ale w ograniczonym zakresie.",
+            "C": "ZW wspiera innowacje w większości projektów, ale nie zawsze systematycznie.",
+            "D": "ZW wspiera innowacje we wszystkich projektach i ma wpływ na rozwój produktu.",
+            "E": "ZW jest priorytetem w innowacjach i wspiera wszystkie projekty kompleksowo."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "How do KM principles support building brand image?",
+          "question_text": "Jak zasady ZW wspierają budowanie wizerunku marki?",
           "answer_options": {
-            "A": "Brand image is not supported by KM principles.",
-            "B": "Brand image is supported by KM, but it is not a priority.",
-            "C": "Brand image is considered in most projects, but does not always have a major impact.",
-            "D": "Brand image is a key element in KM and influences design decisions.",
-            "E": "Brand image is fully integrated with KM and has a major influence on decisions."
+            "A": "Wizerunek marki nie jest wspierany przez zasady ZW.",
+            "B": "Wizerunek marki jest wspierany przez ZW, ale nie jest priorytetem.",
+            "C": "Wizerunek marki jest uwzględniany w większości projektów, ale nie zawsze ma duży wpływ.",
+            "D": "Wizerunek marki jest kluczowym elementem w ZW i wpływa na decyzje projektowe.",
+            "E": "Wizerunek marki jest w pełni zintegrowany z ZW i ma duży wpływ na decyzje."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How does knowledge management support the functional performance of products (e.g., productivity, speed, accuracy)?",
+          "question_text": "Jak zarządzanie wiedzą wspiera wydajność funkcjonalną produktów (np. produktywność, szybkość, dokładność)?",
           "answer_options": {
-            "A": "Functional performance is not monitored as part of KM.",
-            "B": "Functional performance is considered, but not regularly monitored.",
-            "C": "Functional performance is considered, but not monitored in all projects.",
-            "D": "Functional performance is systematically monitored and considered in the KM process.",
-            "E": "Functional performance is integral to KM and has a significant impact on decisions."
+            "A": "Wydajność funkcjonalna nie jest monitorowana jako część ZW.",
+            "B": "Wydajność funkcjonalna jest uwzględniana, ale nie jest regularnie monitorowana.",
+            "C": "Wydajność funkcjonalna jest uwzględniana, ale nie jest monitorowana we wszystkich projektach.",
+            "D": "Wydajność funkcjonalna jest systematycznie monitorowana i uwzględniana w procesie ZW.",
+            "E": "Wydajność funkcjonalna jest integralną częścią ZW i ma znaczący wpływ na decyzje."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How does knowledge management support monitoring product quality performance (e.g., durability, reliability)?",
+          "question_text": "Jak zarządzanie wiedzą wspiera monitorowanie wydajności jakościowej produktu (np. trwałość, niezawodność)?",
           "answer_options": {
-            "A": "Quality performance is not considered in the KM process.",
-            "B": "Quality performance is considered, but not comprehensively.",
-            "C": "Quality performance is considered, but it is not always a priority.",
-            "D": "Quality performance is prioritized and regularly monitored in the KM process.",
-            "E": "Quality performance is prioritized and fully monitored in all projects."
+            "A": "Wydajność jakościowa nie jest uwzględniana w procesie ZW.",
+            "B": "Wydajność jakościowa jest uwzględniana, ale nie kompleksowo.",
+            "C": "Wydajność jakościowa jest uwzględniana, ale nie zawsze jest priorytetem.",
+            "D": "Wydajność jakościowa jest priorytetem i regularnie monitorowana w procesie ZW.",
+            "E": "Wydajność jakościowa jest priorytetem i w pełni monitorowana we wszystkich projektach."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "How does knowledge management support compliance with regulations and legal standards?",
+          "question_text": "Jak zarządzanie wiedzą wspiera zgodność z przepisami i standardami prawnymi?",
           "answer_options": {
-            "A": "Knowledge management does not support compliance with regulations and standards.",
-            "B": "Knowledge management considers compliance with regulations, but not as a priority.",
-            "C": "Knowledge management supports compliance with regulations, but not comprehensively.",
-            "D": "Knowledge management supports compliance with regulations and standards in most projects.",
-            "E": "Knowledge management fully supports compliance with regulations and standards and has a major influence on decisions."
+            "A": "Zarządzanie wiedzą nie wspiera zgodności z przepisami i standardami.",
+            "B": "Zarządzanie wiedzą uwzględnia zgodność z przepisami, ale nie jako priorytet.",
+            "C": "Zarządzanie wiedzą wspiera zgodność z przepisami, ale nie kompleksowo.",
+            "D": "Zarządzanie wiedzą wspiera zgodność z przepisami i standardami w większości projektów.",
+            "E": "Zarządzanie wiedzą w pełni wspiera zgodność z przepisami i standardami i ma duży wpływ na decyzje."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "What other aspects (e.g., environmental sustainability, aesthetics) are considered in the KM process?",
+          "question_text": "Jakie inne aspekty (np. zrównoważony rozwój środowiskowy, estetyka) są uwzględniane w procesie ZW?",
           "answer_options": {
-            "A": "Other aspects, such as environmental sustainability, are not considered in KM.",
-            "B": "Other aspects, such as environmental sustainability, are occasionally considered, but not systematically.",
-            "C": "Other aspects, such as environmental sustainability, are considered, but not systematically in all projects.",
-            "D": "Other aspects, such as environmental sustainability, are regularly considered and influence decisions.",
-            "E": "Other aspects, such as environmental sustainability, are integral to the KM process and have a major impact on design decisions."
+            "A": "Inne aspekty, takie jak zrównoważony rozwój środowiskowy, nie są uwzględniane w ZW.",
+            "B": "Inne aspekty, takie jak zrównoważony rozwój środowiskowy, są sporadycznie uwzględniane, ale nie systematycznie.",
+            "C": "Inne aspekty, takie jak zrównoważony rozwój środowiskowy, są uwzględniane, ale nie systematycznie we wszystkich projektach.",
+            "D": "Inne aspekty, takie jak zrównoważony rozwój środowiskowy, są regularnie uwzględniane i wpływają na decyzje.",
+            "E": "Inne aspekty, takie jak zrównoważony rozwój środowiskowy, są integralną częścią procesu ZW i mają duży wpływ na decyzje projektowe."
           },
           "selected_answer": "C"
         }
@@ -719,123 +719,123 @@
       "question_count": 11,
       "questions": [
         {
-          "question_text": "To what extent is verbal communication with colleagues used for knowledge sharing?",
+          "question_text": "W jakim stopniu komunikacja werbalna z kolegami jest używana do dzielenia się wiedzą?",
           "answer_options": {
-            "A": "Verbal communication with colleagues is rarely used for knowledge sharing.",
-            "B": "Verbal communication with colleagues is occasionally used for knowledge sharing.",
-            "C": "Verbal communication with colleagues is regularly used for knowledge sharing, but not in all cases.",
-            "D": "Verbal communication with colleagues is effectively used for knowledge sharing in all projects.",
-            "E": "Verbal communication with colleagues is a priority and fully used for knowledge sharing at all project stages."
+            "A": "Komunikacja werbalna z kolegami jest rzadko używana do dzielenia się wiedzą.",
+            "B": "Komunikacja werbalna z kolegami jest sporadycznie używana do dzielenia się wiedzą.",
+            "C": "Komunikacja werbalna z kolegami jest regularnie używana do dzielenia się wiedzą, ale nie we wszystkich przypadkach.",
+            "D": "Komunikacja werbalna z kolegami jest skutecznie używana do dzielenia się wiedzą we wszystkich projektach.",
+            "E": "Komunikacja werbalna z kolegami jest priorytetem i w pełni używana do dzielenia się wiedzą na wszystkich etapach projektu."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How frequently are documents with lessons learned created and utilized?",
+          "question_text": "Jak często tworzone i wykorzystywane są dokumenty z wyciągniętymi wnioskami?",
           "answer_options": {
-            "A": "Documents with lessons learned are not regularly created or used.",
-            "B": "Documents with lessons learned are sometimes created, but rarely used.",
-            "C": "Documents with lessons learned are regularly created and used in some projects.",
-            "D": "Documents with lessons learned are systematically created and used in most projects.",
-            "E": "Documents with lessons learned are fully integrated into the process and regularly used in all projects."
+            "A": "Dokumenty z wyciągniętymi wnioskami nie są regularnie tworzone ani używane.",
+            "B": "Dokumenty z wyciągniętymi wnioskami są czasami tworzone, ale rzadko używane.",
+            "C": "Dokumenty z wyciągniętymi wnioskami są regularnie tworzone i używane w niektórych projektach.",
+            "D": "Dokumenty z wyciągniętymi wnioskami są systematycznie tworzone i używane w większości projektów.",
+            "E": "Dokumenty z wyciągniętymi wnioskami są w pełni zintegrowane z procesem i regularnie używane we wszystkich projektach."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent are design specifications used in knowledge management processes?",
+          "question_text": "W jakim stopniu specyfikacje projektowe są używane w procesach zarządzania wiedzą?",
           "answer_options": {
-            "A": "Design specifications are rarely used for knowledge sharing.",
-            "B": "Design specifications are occasionally used for knowledge sharing, but not systematically.",
-            "C": "Design specifications are systematically used for knowledge sharing, but not in all projects.",
-            "D": "Design specifications are fully used for knowledge sharing in all projects.",
-            "E": "Design specifications are fully and systematically used for knowledge sharing in every project."
+            "A": "Specyfikacje projektowe są rzadko używane do dzielenia się wiedzą.",
+            "B": "Specyfikacje projektowe są sporadycznie używane do dzielenia się wiedzą, ale nie systematycznie.",
+            "C": "Specyfikacje projektowe są systematycznie używane do dzielenia się wiedzą, ale nie we wszystkich projektach.",
+            "D": "Specyfikacje projektowe są w pełni używane do dzielenia się wiedzą we wszystkich projektach.",
+            "E": "Specyfikacje projektowe są w pełni i systematycznie używane do dzielenia się wiedzą w każdym projekcie."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How effectively do questionnaires and checklists support knowledge management?",
+          "question_text": "Jak skutecznie kwestionariusze i listy kontrolne wspierają zarządzanie wiedzą?",
           "answer_options": {
-            "A": "Questionnaires and checklists are not effectively used in knowledge management.",
-            "B": "Questionnaires and checklists are used, but their effectiveness is limited.",
-            "C": "Questionnaires and checklists are effectively used, but not prioritized in knowledge management.",
-            "D": "Questionnaires and checklists are effectively used and have a major impact on knowledge management.",
-            "E": "Questionnaires and checklists are a priority and effectively support knowledge management at every stage."
+            "A": "Kwestionariusze i listy kontrolne nie są skutecznie używane w zarządzaniu wiedzą.",
+            "B": "Kwestionariusze i listy kontrolne są używane, ale ich skuteczność jest ograniczona.",
+            "C": "Kwestionariusze i listy kontrolne są skutecznie używane, ale nie są priorytetem w zarządzaniu wiedzą.",
+            "D": "Kwestionariusze i listy kontrolne są skutecznie używane i mają duży wpływ na zarządzanie wiedzą.",
+            "E": "Kwestionariusze i listy kontrolne są priorytetem i skutecznie wspierają zarządzanie wiedzą na każdym etapie."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent are meeting rooms, posters, and visual management used for knowledge sharing?",
+          "question_text": "W jakim stopniu sale konferencyjne, plakaty i zarządzanie wizualne są używane do dzielenia się wiedzą?",
           "answer_options": {
-            "A": "Meeting rooms, posters, and visual management are rarely used for knowledge sharing.",
-            "B": "Meeting rooms, posters, and visual management are occasionally used for knowledge sharing.",
-            "C": "Meeting rooms, posters, and visual management are regularly used for knowledge sharing, but not in all cases.",
-            "D": "Meeting rooms, posters, and visual management are fully used for knowledge sharing.",
-            "E": "Meeting rooms, posters, and visual management are a key part of the knowledge-sharing process and are fully used."
+            "A": "Sale konferencyjne, plakaty i zarządzanie wizualne są rzadko używane do dzielenia się wiedzą.",
+            "B": "Sale konferencyjne, plakaty i zarządzanie wizualne są sporadycznie używane do dzielenia się wiedzą.",
+            "C": "Sale konferencyjne, plakaty i zarządzanie wizualne są regularnie używane do dzielenia się wiedzą, ale nie we wszystkich przypadkach.",
+            "D": "Sale konferencyjne, plakaty i zarządzanie wizualne są w pełni używane do dzielenia się wiedzą.",
+            "E": "Sale konferencyjne, plakaty i zarządzanie wizualne są kluczową częścią procesu dzielenia się wiedzą i są w pełni używane."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How often are shared network folders used for storing and sharing knowledge?",
+          "question_text": "Jak często wspólne foldery sieciowe są używane do przechowywania i dzielenia się wiedzą?",
           "answer_options": {
-            "A": "Shared network folders are rarely used for storing and sharing knowledge.",
-            "B": "Shared network folders are occasionally used for storing and sharing knowledge, but not systematically.",
-            "C": "Shared network folders are systematically used for storing and sharing knowledge, but not comprehensively.",
-            "D": "Shared network folders are regularly used and support the knowledge management process.",
-            "E": "Shared network folders are a priority for storing and sharing knowledge, regularly updated and used."
+            "A": "Wspólne foldery sieciowe są rzadko używane do przechowywania i dzielenia się wiedzą.",
+            "B": "Wspólne foldery sieciowe są sporadycznie używane do przechowywania i dzielenia się wiedzą, ale nie systematycznie.",
+            "C": "Wspólne foldery sieciowe są systematycznie używane do przechowywania i dzielenia się wiedzą, ale nie kompleksowo.",
+            "D": "Wspólne foldery sieciowe są regularnie używane i wspierają proces zarządzania wiedzą.",
+            "E": "Wspólne foldery sieciowe są priorytetem do przechowywania i dzielenia się wiedzą, regularnie aktualizowane i używane."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent does the intranet support the knowledge management process?",
+          "question_text": "W jakim stopniu intranet wspiera proces zarządzania wiedzą?",
           "answer_options": {
-            "A": "The intranet is not regularly used to support knowledge management.",
-            "B": "The intranet is occasionally used to support knowledge management, but not always effectively.",
-            "C": "The intranet is regularly used to support knowledge management, but not always efficiently.",
-            "D": "The intranet is effectively used to support knowledge management in all projects.",
-            "E": "The intranet is an integral tool supporting knowledge management and is used in all projects."
+            "A": "Intranet nie jest regularnie używany do wspierania zarządzania wiedzą.",
+            "B": "Intranet jest sporadycznie używany do wspierania zarządzania wiedzą, ale nie zawsze skutecznie.",
+            "C": "Intranet jest regularnie używany do wspierania zarządzania wiedzą, ale nie zawsze efektywnie.",
+            "D": "Intranet jest skutecznie używany do wspierania zarządzania wiedzą we wszystkich projektach.",
+            "E": "Intranet jest integralnym narzędziem wspierającym zarządzanie wiedzą i jest używany we wszystkich projektach."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How are websites used to work on collaborative projects (e.g., Wiki) in knowledge management?",
+          "question_text": "Jak strony internetowe są używane do pracy nad projektami współprawczymi (np. Wiki) w zarządzaniu wiedzą?",
           "answer_options": {
-            "A": "Websites used to work on collaborative projects are not used for knowledge management.",
-            "B": "Websites used to work on collaborative projects are used to a limited extent in knowledge management.",
-            "C": "Websites used to work on collaborative projects are used in most cases, but are not yet optimal.",
-            "D": "Websites used to work on collaborative projects are effectively used for knowledge management.",
-            "E": "Websites used to work on collaborative projects are fully integrated into the knowledge management process and support projects at all stages."
+            "A": "Strony internetowe używane do pracy nad projektami współprawczymi nie są używane do zarządzania wiedzą.",
+            "B": "Strony internetowe używane do pracy nad projektami współprawczymi są używane w ograniczonym zakresie w zarządzaniu wiedzą.",
+            "C": "Strony internetowe używane do pracy nad projektami współprawczymi są używane w większości przypadków, ale nie są jeszcze optymalne.",
+            "D": "Strony internetowe używane do pracy nad projektami współprawczymi są skutecznie używane do zarządzania wiedzą.",
+            "E": "Strony internetowe używane do pracy nad projektami współprawczymi są w pełni zintegrowane z procesem zarządzania wiedzą i wspierają projekty na wszystkich etapach."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "How are blogs, forums, and bulletin boards used in knowledge management?",
+          "question_text": "Jak blogi, fora i tablice ogłoszeń są używane w zarządzaniu wiedzą?",
           "answer_options": {
-            "A": "Blogs, forums, and bulletin boards are not used for knowledge management.",
-            "B": "Blogs, forums, and bulletin boards are used to a limited extent in knowledge management.",
-            "C": "Blogs, forums, and bulletin boards are used in most cases, but are not yet optimal.",
-            "D": "Blogs, forums, and bulletin boards are effectively used for knowledge management.",
-            "E": "Blogs, forums, and bulletin boards are fully integrated into the knowledge management process and support projects at all stages."
+            "A": "Blogi, fora i tablice ogłoszeń nie są używane do zarządzania wiedzą.",
+            "B": "Blogi, fora i tablice ogłoszeń są używane w ograniczonym zakresie w zarządzaniu wiedzą.",
+            "C": "Blogi, fora i tablice ogłoszeń są używane w większości przypadków, ale nie są jeszcze optymalne.",
+            "D": "Blogi, fora i tablice ogłoszeń są skutecznie używane do zarządzania wiedzą.",
+            "E": "Blogi, fora i tablice ogłoszeń są w pełni zintegrowane z procesem zarządzania wiedzą i wspierają projekty na wszystkich etapach."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How do PDM/PLM systems support knowledge management?",
+          "question_text": "Jak systemy PDM/PLM wspierają zarządzanie wiedzą?",
           "answer_options": {
-            "A": "PDM/PLM systems are not effectively used for knowledge management.",
-            "B": "PDM/PLM systems are occasionally used for knowledge management, but not systematically.",
-            "C": "PDM/PLM systems are effectively used in most projects, but not always comprehensively.",
-            "D": "PDM/PLM systems are fully integrated into the knowledge management process in all projects.",
-            "E": "PDM/PLM systems are fully implemented and support knowledge management at every stage of product development."
+            "A": "Systemy PDM/PLM nie są skutecznie używane do zarządzania wiedzą.",
+            "B": "Systemy PDM/PLM są sporadycznie używane do zarządzania wiedzą, ale nie systematycznie.",
+            "C": "Systemy PDM/PLM są skutecznie używane w większości projektów, ale nie zawsze kompleksowo.",
+            "D": "Systemy PDM/PLM są w pełni zintegrowane z procesem zarządzania wiedzą we wszystkich projektach.",
+            "E": "Systemy PDM/PLM są w pełni wdrożone i wspierają zarządzanie wiedzą na każdym etapie rozwoju produktu."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "What benefits do KBE software and design automation bring to knowledge management?",
+          "question_text": "Jakie korzyści oprogramowanie KBE i automatyzacja projektowania przynoszą zarządzaniu wiedzą?",
           "answer_options": {
-            "A": "KBE software and design automation are not used for knowledge management.",
-            "B": "KBE software and design automation are used to a limited extent in knowledge management.",
-            "C": "KBE software and design automation are regularly used, but not comprehensively.",
-            "D": "KBE software and design automation are effectively used in knowledge management in most projects.",
-            "E": "KBE software and design automation are an integral part of knowledge management and are used in all projects."
+            "A": "Oprogramowanie KBE i automatyzacja projektowania nie są używane do zarządzania wiedzą.",
+            "B": "Oprogramowanie KBE i automatyzacja projektowania są używane w ograniczonym zakresie w zarządzaniu wiedzą.",
+            "C": "Oprogramowanie KBE i automatyzacja projektowania są regularnie używane, ale nie kompleksowo.",
+            "D": "Oprogramowanie KBE i automatyzacja projektowania są skutecznie używane w zarządzaniu wiedzą w większości projektów.",
+            "E": "Oprogramowanie KBE i automatyzacja projektowania są integralną częścią zarządzania wiedzą i są używane we wszystkich projektach."
           },
           "selected_answer": "C"
         }
@@ -846,123 +846,123 @@
       "question_count": 11,
       "questions": [
         {
-          "question_text": "To what extent are principles of modularization and standardization of parts used in the design process?",
+          "question_text": "W jakim stopniu zasady modularyzacji i standaryzacji części są używane w procesie projektowania?",
           "answer_options": {
-            "A": "Principles of modularization and standardization of parts are not used in the design process.",
-            "B": "Principles of modularization and standardization of parts are applied sporadically.",
-            "C": "Principles of modularization and standardization of parts are regularly applied, but not in all projects.",
-            "D": "Principles of modularization and standardization of parts are effectively applied in all projects.",
-            "E": "Principles of modularization and standardization of parts are a priority and applied in all projects at every stage."
+            "A": "Zasady modularyzacji i standaryzacji części nie są używane w procesie projektowania.",
+            "B": "Zasady modularyzacji i standaryzacji części są stosowane sporadycznie.",
+            "C": "Zasady modularyzacji i standaryzacji części są regularnie stosowane, ale nie we wszystkich projektach.",
+            "D": "Zasady modularyzacji i standaryzacji części są skutecznie stosowane we wszystkich projektach.",
+            "E": "Zasady modularyzacji i standaryzacji części są priorytetem i stosowane we wszystkich projektach na każdym etapie."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent is Design for X (DFX) applied in terms of functional performance?",
+          "question_text": "W jakim stopniu Design for X (DFX) jest stosowany w odniesieniu do wydajności funkcjonalnej?",
           "answer_options": {
-            "A": "Design for X (DFX) is not applied in terms of functional performance.",
-            "B": "Design for X (DFX) is applied, but to a limited extent in terms of functional performance.",
-            "C": "Design for X (DFX) is applied in most projects, but not fully comprehensively.",
-            "D": "Design for X (DFX) is a key element in projects in terms of functional performance.",
-            "E": "Design for X (DFX) is an integral part of every project and fully supports functional performance."
+            "A": "Design for X (DFX) nie jest stosowany w odniesieniu do wydajności funkcjonalnej.",
+            "B": "Design for X (DFX) jest stosowany, ale w ograniczonym zakresie w odniesieniu do wydajności funkcjonalnej.",
+            "C": "Design for X (DFX) jest stosowany w większości projektów, ale nie w pełni kompleksowo.",
+            "D": "Design for X (DFX) jest kluczowym elementem w projektach w odniesieniu do wydajności funkcjonalnej.",
+            "E": "Design for X (DFX) jest integralną częścią każdego projektu i w pełni wspiera wydajność funkcjonalną."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How does Design for X (DFX) support product quality performance?",
+          "question_text": "Jak Design for X (DFX) wspiera wydajność jakościową produktu?",
           "answer_options": {
-            "A": "Design for X (DFX) does not support product quality performance.",
-            "B": "Design for X (DFX) supports product quality performance, but it is not common.",
-            "C": "Design for X (DFX) supports product quality performance in most cases, but not always.",
-            "D": "Design for X (DFX) fully supports product quality performance.",
-            "E": "Design for X (DFX) is a priority and fully supports product quality performance."
+            "A": "Design for X (DFX) nie wspiera wydajności jakościowej produktu.",
+            "B": "Design for X (DFX) wspiera wydajność jakościową produktu, ale nie jest to powszechne.",
+            "C": "Design for X (DFX) wspiera wydajność jakościową produktu w większości przypadków, ale nie zawsze.",
+            "D": "Design for X (DFX) w pełni wspiera wydajność jakościową produktu.",
+            "E": "Design for X (DFX) jest priorytetem i w pełni wspiera wydajność jakościową produktu."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent does Design for X (DFX) take into account other customer-perceptible factors, such as aesthetics or eco-design?",
+          "question_text": "W jakim stopniu Design for X (DFX) uwzględnia inne czynniki postrzegalne przez klienta, takie jak estetyka czy ekodesign?",
           "answer_options": {
-            "A": "Design for X (DFX) rarely takes into account other customer-perceptible factors, such as aesthetics or eco-design.",
-            "B": "Design for X (DFX) sometimes considers other factors, like aesthetics or eco-design, but not systematically.",
-            "C": "Design for X (DFX) regularly considers other customer-perceptible factors, but not always systematically.",
-            "D": "Design for X (DFX) considers factors like aesthetics and eco-design in most projects.",
-            "E": "Design for X (DFX) considers all customer-perceptible factors, such as aesthetics and eco-design, and is crucial in every project."
+            "A": "Design for X (DFX) rzadko uwzględnia inne czynniki postrzegalne przez klienta, takie jak estetyka czy ekodesign.",
+            "B": "Design for X (DFX) czasami uwzględnia inne czynniki, takie jak estetyka czy ekodesign, ale nie systematycznie.",
+            "C": "Design for X (DFX) regularnie uwzględnia inne czynniki postrzegalne przez klienta, ale nie zawsze systematycznie.",
+            "D": "Design for X (DFX) uwzględnia czynniki takie jak estetyka i ekodesign w większości projektów.",
+            "E": "Design for X (DFX) uwzględnia wszystkie czynniki postrzegalne przez klienta, takie jak estetyka i ekodesign, i jest kluczowy w każdym projekcie."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How effectively is Design to Cost (DTC) and Target Cost Management (TCM) applied?",
+          "question_text": "Jak skutecznie stosowany jest Design to Cost (DTC) i Target Cost Management (TCM)?",
           "answer_options": {
-            "A": "Design to Cost (DTC) and Target Cost Management (TCM) are not applied.",
-            "B": "Design to Cost (DTC) and Target Cost Management (TCM) are applied, but infrequently.",
-            "C": "Design to Cost (DTC) and Target Cost Management (TCM) are applied in most projects, but not always comprehensively.",
-            "D": "Design to Cost (DTC) and Target Cost Management (TCM) are effectively applied in all projects.",
-            "E": "Design to Cost (DTC) and Target Cost Management (TCM) are integral to every project and have a major impact on costs."
+            "A": "Design to Cost (DTC) i Target Cost Management (TCM) nie są stosowane.",
+            "B": "Design to Cost (DTC) i Target Cost Management (TCM) są stosowane, ale rzadko.",
+            "C": "Design to Cost (DTC) i Target Cost Management (TCM) są stosowane w większości projektów, ale nie zawsze kompleksowo.",
+            "D": "Design to Cost (DTC) i Target Cost Management (TCM) są skutecznie stosowane we wszystkich projektach.",
+            "E": "Design to Cost (DTC) i Target Cost Management (TCM) są integralną częścią każdego projektu i mają duży wpływ na koszty."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent is Lifecycle Cost Analysis (LCC) and Total Cost of Ownership (TCO) considered in the design process?",
+          "question_text": "W jakim stopniu Analiza Kosztów Cyklu Życia (LCC) i Calkowity Koszt Posiadania (TCO) są uwzględniane w procesie projektowania?",
           "answer_options": {
-            "A": "Lifecycle Cost Analysis (LCC) and Total Cost of Ownership (TCO) are not considered in the design process.",
-            "B": "Lifecycle Cost Analysis (LCC) and Total Cost of Ownership (TCO) are occasionally considered in the design process.",
-            "C": "Lifecycle Cost Analysis (LCC) and Total Cost of Ownership (TCO) are regularly considered, but not comprehensively.",
-            "D": "Lifecycle Cost Analysis (LCC) and Total Cost of Ownership (TCO) are fully considered in the design process.",
-            "E": "Lifecycle Cost Analysis (LCC) and Total Cost of Ownership (TCO) are fully considered at every stage of the design process."
+            "A": "Analiza Kosztów Cyklu Życia (LCC) i Calkowity Koszt Posiadania (TCO) nie są uwzględniane w procesie projektowania.",
+            "B": "Analiza Kosztów Cyklu Życia (LCC) i Calkowity Koszt Posiadania (TCO) są sporadycznie uwzględniane w procesie projektowania.",
+            "C": "Analiza Kosztów Cyklu Życia (LCC) i Calkowity Koszt Posiadania (TCO) są regularnie uwzględniane, ale nie kompleksowo.",
+            "D": "Analiza Kosztów Cyklu Życia (LCC) i Calkowity Koszt Posiadania (TCO) są w pełni uwzględniane w procesie projektowania.",
+            "E": "Analiza Kosztów Cyklu Życia (LCC) i Calkowity Koszt Posiadania (TCO) są w pełni uwzględniane na każdym etapie procesu projektowania."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How effectively is Lifecycle Analysis and Engineering (LCA&E) conducted?",
+          "question_text": "Jak skutecznie prowadzona jest Analiza i Inżynieria Cyklu Życia (LCA&E)?",
           "answer_options": {
-            "A": "Lifecycle Analysis and Engineering (LCA&E) is not conducted.",
-            "B": "Lifecycle Analysis and Engineering (LCA&E) is conducted, but to a limited extent.",
-            "C": "Lifecycle Analysis and Engineering (LCA&E) is conducted in most projects, but not always.",
-            "D": "Lifecycle Analysis and Engineering (LCA&E) is effectively conducted in all projects.",
-            "E": "Lifecycle Analysis and Engineering (LCA&E) is a priority in every project and systematically conducted."
+            "A": "Analiza i Inżynieria Cyklu Życia (LCA&E) nie jest prowadzona.",
+            "B": "Analiza i Inżynieria Cyklu Życia (LCA&E) jest prowadzona, ale w ograniczonym zakresie.",
+            "C": "Analiza i Inżynieria Cyklu życia (LCA&E) jest prowadzona w większości projektów, ale nie zawsze.",
+            "D": "Analiza i Inżynieria Cyklu Życia (LCA&E) jest skutecznie prowadzona we wszystkich projektach.",
+            "E": "Analiza i Inżynieria Cyklu Życia (LCA&E) jest priorytetem w każdym projekcie i systematycznie prowadzona."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How does Value Analysis and Engineering (VA&E) support the design process?",
+          "question_text": "Jak Analiza i Inżynieria Wartości (VA&E) wspiera proces projektowania?",
           "answer_options": {
-            "A": "Value Analysis and Engineering (VA&E) is not used in the design process.",
-            "B": "Value Analysis and Engineering (VA&E) is used, but its impact is limited.",
-            "C": "Value Analysis and Engineering (VA&E) is used, but its impact is not yet maximized.",
-            "D": "Value Analysis and Engineering (VA&E) is used in all projects and has a significant impact on the design process.",
-            "E": "Value Analysis and Engineering (VA&E) is a key element of every project and significantly impacts the final outcome."
+            "A": "Analiza i Inżynieria Wartości (VA&E) nie jest używana w procesie projektowania.",
+            "B": "Analiza i Inżynieria Wartości (VA&E) jest używana, ale jej wpływ jest ograniczony.",
+            "C": "Analiza i Inżynieria Wartości (VA&E) jest używana, ale jej wpływ nie jest jeszcze zmaksymalizowany.",
+            "D": "Analiza i Inżynieria Wartości (VA&E) jest używana we wszystkich projektach i ma znaczący wpływ na proces projektowania.",
+            "E": "Analiza i Inżynieria Wartości (VA&E) jest kluczowym elementem każdego projektu i znacząco wpływa na finalny wynik."
           },
           "selected_answer": "A"
         },
         {
-          "question_text": "How effectively are Quality Functions (QFD) applied in the design process?",
+          "question_text": "Jak skutecznie Funkcje Jakości (QFD) są stosowane w procesie projektowania?",
           "answer_options": {
-            "A": "Quality Functions (QFD) are not applied in the design process.",
-            "B": "Quality Functions (QFD) are applied, but not in all projects.",
-            "C": "Quality Functions (QFD) are applied systematically, but not at all project stages.",
-            "D": "Quality Functions (QFD) are regularly applied in every project and support the entire development process.",
-            "E": "Quality Functions (QFD) are fully applied at every stage of product development and are an integral part of the process."
+            "A": "Funkcje Jakości (QFD) nie są stosowane w procesie projektowania.",
+            "B": "Funkcje Jakości (QFD) są stosowane, ale nie we wszystkich projektach.",
+            "C": "Funkcje Jakości (QFD) są stosowane systematycznie, ale nie na wszystkich etapach projektu.",
+            "D": "Funkcje Jakości (QFD) są regularnie stosowane w każdym projekcie i wspierają cały proces rozwoju.",
+            "E": "Funkcje Jakości (QFD) są w pełni stosowane na każdym etapie rozwoju produktu i są integralną częścią procesu."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent does Failure Modes and Effects Analysis (FMEA/FMECA) support product development?",
+          "question_text": "W jakim stopniu Analiza Rodzajów i Skutków Uszkodzeń (FMEA/FMECA) wspiera rozwój produktu?",
           "answer_options": {
-            "A": "Failure Modes and Effects Analysis (FMEA/FMECA) is not applied.",
-            "B": "Failure Modes and Effects Analysis (FMEA/FMECA) is applied, but its effectiveness is limited.",
-            "C": "Failure Modes and Effects Analysis (FMEA/FMECA) is effectively applied in most projects.",
-            "D": "Failure Modes and Effects Analysis (FMEA/FMECA) is applied systematically and has a major impact on product development.",
-            "E": "Failure Modes and Effects Analysis (FMEA/FMECA) is applied in all projects and has a crucial impact on design decisions."
+            "A": "Analiza Rodzajów i Skutków Uszkodzeń (FMEA/FMECA) nie jest stosowana.",
+            "B": "Analiza Rodzajów i Skutków Uszkodzeń (FMEA/FMECA) jest stosowana, ale jej skuteczność jest ograniczona.",
+            "C": "Analiza Rodzajów i Skutków Uszkodzeń (FMEA/FMECA) jest skutecznie stosowana w większości projektów.",
+            "D": "Analiza Rodzajów i Skutków Uszkodzeń (FMEA/FMECA) jest stosowana systematycznie i ma duży wpływ na rozwój produktu.",
+            "E": "Analiza Rodzajów i Skutków Uszkodzeń (FMEA/FMECA) jest stosowana we wszystkich projektach i ma kluczowy wpływ na decyzje projektowe."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent are systematic innovation methods, such as TRIZ, applied in the design process?",
+          "question_text": "W jakim stopniu systematyczne metody innowacji, takie jak TRIZ, są stosowane w procesie projektowania?",
           "answer_options": {
-            "A": "Systematic innovation methods, such as TRIZ, are not applied.",
-            "B": "Systematic innovation methods, such as TRIZ, are applied to a limited extent.",
-            "C": "Systematic innovation methods, such as TRIZ, are regularly applied, but not always comprehensively.",
-            "D": "Systematic innovation methods, such as TRIZ, are applied in most projects and support innovation.",
-            "E": "Systematic innovation methods, such as TRIZ, are fully integrated into the design process and applied in all projects."
+            "A": "Systematyczne metody innowacji, takie jak TRIZ, nie są stosowane.",
+            "B": "Systematyczne metody innowacji, takie jak TRIZ, są stosowane w ograniczonym zakresie.",
+            "C": "Systematyczne metody innowacji, takie jak TRIZ, są regularnie stosowane, ale nie zawsze kompleksowo.",
+            "D": "Systematyczne metody innowacji, takie jak TRIZ, są stosowane w większości projektów i wspierają innowacje.",
+            "E": "Systematyczne metody innowacji, takie jak TRIZ, są w pełni zintegrowane z procesem projektowania i stosowane we wszystkich projektach."
           },
           "selected_answer": "B"
         }
@@ -973,244 +973,244 @@
       "question_count": 22,
       "questions": [
         {
-          "question_text": "To what extent does office automation (e.g., spreadsheets, word processors) support the product development process?",
+          "question_text": "W jakim stopniu automatyzacja biurowa (np. arkusze kalkulacyjne, procesory tekstu) wspiera proces rozwoju produktu?",
           "answer_options": {
-            "A": "Office automation is not used to support the product development process.",
-            "B": "Office automation is occasionally used to support the product development process.",
-            "C": "Office automation is regularly used to support the product development process, but not in all projects.",
-            "D": "Office automation is effectively used to support the product development process in all projects.",
-            "E": "Office automation is a priority and fully supports the product development process in every project."
+            "A": "Automatyzacja biurowa nie jest używana do wspierania procesu rozwoju produktu.",
+            "B": "Automatyzacja biurowa jest sporadycznie używana do wspierania procesu rozwoju produktu.",
+            "C": "Automatyzacja biurowa jest regularnie używana do wspierania procesu rozwoju produktu, ale nie we wszystkich projektach.",
+            "D": "Automatyzacja biurowa jest skutecznie używana do wspierania procesu rozwoju produktu we wszystkich projektach.",
+            "E": "Automatyzacja biurowa jest priorytetem i w pełni wspiera proces rozwoju produktu w każdym projekcie."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent are 2D CAD systems used in the design process?",
+          "question_text": "W jakim stopniu systemy CAD 2D są używane w procesie projektowania?",
           "answer_options": {
-            "A": "2D CAD systems are not commonly used in the design process.",
-            "B": "2D CAD systems are used to a limited extent in the design process.",
-            "C": "2D CAD systems are used in most projects, but not always comprehensively.",
-            "D": "2D CAD systems are fully used in all projects.",
-            "E": "2D CAD systems are fully integrated into each project and support the entire design process."
+            "A": "Systemy CAD 2D nie są powszechnie używane w procesie projektowania.",
+            "B": "Systemy CAD 2D są używane w ograniczonym zakresie w procesie projektowania.",
+            "C": "Systemy CAD 2D są używane w większości projektów, ale nie zawsze kompleksowo.",
+            "D": "Systemy CAD 2D są w pełni używane we wszystkich projektach.",
+            "E": "Systemy CAD 2D są w pełni zintegrowane z każdym projektem i wspierają cały proces projektowania."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "What benefits do 3D CAD systems bring to product development?",
+          "question_text": "Jakie korzyści systemy CAD 3D przynoszą rozwojowi produktu?",
           "answer_options": {
-            "A": "3D CAD systems are rarely used in the product development process.",
-            "B": "3D CAD systems are used, but not in all projects.",
-            "C": "3D CAD systems are used in most projects and support product development, but not always fully.",
-            "D": "3D CAD systems are effectively used and support product development in all projects.",
-            "E": "3D CAD systems are a priority and support product development at every stage."
+            "A": "Systemy CAD 3D są rzadko używane w procesie rozwoju produktu.",
+            "B": "Systemy CAD 3D są używane, ale nie we wszystkich projektach.",
+            "C": "Systemy CAD 3D są używane w większości projektów i wspierają rozwój produktu, ale nie zawsze w pełni.",
+            "D": "Systemy CAD 3D są skutecznie używane i wspierają rozwój produktu we wszystkich projektach.",
+            "E": "Systemy CAD 3D są priorytetem i wspierają rozwój produktu na każdym etapie."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent do digital models (DMU) support product development?",
+          "question_text": "W jakim stopniu modele cyfrowe (DMU) wspierają rozwój produktu?",
           "answer_options": {
-            "A": "Digital models (DMU) are not used in the product development process.",
-            "B": "Digital models (DMU) are used, but not systematically.",
-            "C": "Digital models (DMU) are regularly used, but not always comprehensively.",
-            "D": "Digital models (DMU) are used in all projects and have a major impact on product development.",
-            "E": "Digital models (DMU) are an integral part of each project and fully support product development."
+            "A": "Modele cyfrowe (DMU) nie są używane w procesie rozwoju produktu.",
+            "B": "Modele cyfrowe (DMU) są używane, ale nie systematycznie.",
+            "C": "Modele cyfrowe (DMU) są regularnie używane, ale nie zawsze kompleksowo.",
+            "D": "Modele cyfrowe (DMU) są używane we wszystkich projektach i mają duży wpływ na rozwój produktu.",
+            "E": "Modele cyfrowe (DMU) są integralną częścią każdego projektu i w pełni wspierają rozwój produktu."
           },
           "selected_answer": "D"
         },
         {
-          "question_text": "To what extent is computer-aided styling (CAS) used in product development projects?",
+          "question_text": "W jakim stopniu komputerowe wspomaganie stylizacji (CAS) jest używane w projektach rozwoju produktu?",
           "answer_options": {
-            "A": "Computer-aided styling (CAS) is not used in projects.",
-            "B": "Computer-aided styling (CAS) is occasionally used in projects.",
-            "C": "Computer-aided styling (CAS) is used in most projects, but not always comprehensively.",
-            "D": "Computer-aided styling (CAS) is effectively used in all projects.",
-            "E": "Computer-aided styling (CAS) is a key element in each project."
+            "A": "Komputerowe wspomaganie stylizacji (CAS) nie jest używane w projektach.",
+            "B": "Komputerowe wspomaganie stylizacji (CAS) jest sporadycznie używane w projektach.",
+            "C": "Komputerowe wspomaganie stylizacji (CAS) jest używane w większości projektów, ale nie zawsze kompleksowo.",
+            "D": "Komputerowe wspomaganie stylizacji (CAS) jest skutecznie używane we wszystkich projektach.",
+            "E": "Komputerowe wspomaganie stylizacji (CAS) jest kluczowym elementem w każdym projekcie."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "To what extent does computer-aided engineering (CAE) support the design process?",
+          "question_text": "W jakim stopniu komputerowe wspomaganie inżynierii (CAE) wspiera proces projektowania?",
           "answer_options": {
-            "A": "Computer-aided engineering (CAE) does not support the design process.",
-            "B": "Computer-aided engineering (CAE) is used, but not in all projects.",
-            "C": "Computer-aided engineering (CAE) is used in most projects, but not always fully.",
-            "D": "Computer-aided engineering (CAE) is fully used in all projects.",
-            "E": "Computer-aided engineering (CAE) is fully integrated into each project and supports the entire development process."
+            "A": "Komputerowe wspomaganie inżynierii (CAE) nie wspiera procesu projektowania.",
+            "B": "Komputerowe wspomaganie inżynierii (CAE) jest używane, ale nie we wszystkich projektach.",
+            "C": "Komputerowe wspomaganie inżynierii (CAE) jest używane w większości projektów, ale nie zawsze w pełni.",
+            "D": "Komputerowe wspomaganie inżynierii (CAE) jest w pełni używane we wszystkich projektach.",
+            "E": "Komputerowe wspomaganie inżynierii (CAE) jest w pełni zintegrowane z każdym projektem i wspiera cały proces rozwoju."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent is the finite element analysis (FEA/FEM) method used in design processes?",
+          "question_text": "W jakim stopniu metoda analizy elementów skończonych (FEA/FEM) jest używana w procesach projektowania?",
           "answer_options": {
-            "A": "The finite element analysis (FEA/FEM) method is not used for design.",
-            "B": "The finite element analysis (FEA/FEM) method is applied, but not in all cases.",
-            "C": "The finite element analysis (FEA/FEM) method is regularly applied, but not comprehensively.",
-            "D": "The finite element analysis (FEA/FEM) method is effectively applied in all projects.",
-            "E": "The finite element analysis (FEA/FEM) method is a priority and used in every project."
+            "A": "Metoda analizy elementów skończonych (FEA/FEM) nie jest używana do projektowania.",
+            "B": "Metoda analizy elementów skończonych (FEA/FEM) jest stosowana, ale nie we wszystkich przypadkach.",
+            "C": "Metoda analizy elementów skończonych (FEA/FEM) jest regularnie stosowana, ale nie kompleksowo.",
+            "D": "Metoda analizy elementów skończonych (FEA/FEM) jest skutecznie stosowana we wszystkich projektach.",
+            "E": "Metoda analizy elementów skończonych (FEA/FEM) jest priorytetem i używana w każdym projekcie."
           },
           "selected_answer": "A"
         },
         {
-          "question_text": "To what extent is computational fluid dynamics (CFD) used in projects?",
+          "question_text": "W jakim stopniu obliczeniowa dynamika płynów (CFD) jest używana w projektach?",
           "answer_options": {
-            "A": "Computational fluid dynamics (CFD) is not used in projects.",
-            "B": "Computational fluid dynamics (CFD) is used, but not in all projects.",
-            "C": "Computational fluid dynamics (CFD) is used in most projects, but not comprehensively.",
-            "D": "Computational fluid dynamics (CFD) is fully used in all projects.",
-            "E": "Computational fluid dynamics (CFD) is fully used in all projects and supports the development processes."
+            "A": "Obliczeniowa dynamika płynów (CFD) nie jest używana w projektach.",
+            "B": "Obliczeniowa dynamika płynów (CFD) jest używana, ale nie we wszystkich projektach.",
+            "C": "Obliczeniowa dynamika płynów (CFD) jest używana w większości projektów, ale nie kompleksowo.",
+            "D": "Obliczeniowa dynamika płynów (CFD) jest w pełni używana we wszystkich projektach.",
+            "E": "Obliczeniowa dynamika płynów (CFD) jest w pełni używana we wszystkich projektach i wspiera procesy rozwoju."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent does KBE and design automation support the design processes?",
+          "question_text": "W jakim stopniu KBE i automatyzacja projektowania wspierają procesy projektowania?",
           "answer_options": {
-            "A": "KBE and design automation are not used in the design process.",
-            "B": "KBE and design automation are used, but their application is limited.",
-            "C": "KBE and design automation are regularly used, but not in all projects.",
-            "D": "KBE and design automation are effectively used in most projects.",
-            "E": "KBE and design automation are a priority and are applied comprehensively in every project."
+            "A": "KBE i automatyzacja projektowania nie są używane w procesie projektowania.",
+            "B": "KBE i automatyzacja projektowania są używane, ale ich zastosowanie jest ograniczone.",
+            "C": "KBE i automatyzacja projektowania są regularnie używane, ale nie we wszystkich projektach.",
+            "D": "KBE i automatyzacja projektowania są skutecznie używane w większości projektów.",
+            "E": "KBE i automatyzacja projektowania są priorytetem i są stosowane kompleksowo w każdym projekcie."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent is computer-aided manufacturing (CAM) used in the production process?",
+          "question_text": "W jakim stopniu komputerowe wspomaganie produkcji (CAM) jest używane w procesie produkcyjnym?",
           "answer_options": {
-            "A": "Computer-aided manufacturing (CAM) is not used in the production process.",
-            "B": "Computer-aided manufacturing (CAM) is used occasionally in the production process.",
-            "C": "Computer-aided manufacturing (CAM) is used in most projects, but not always comprehensively.",
-            "D": "Computer-aided manufacturing (CAM) is systematically used in all projects.",
-            "E": "Computer-aided manufacturing (CAM) is fully used in all projects."
+            "A": "Komputerowe wspomaganie produkcji (CAM) nie jest używane w procesie produkcyjnym.",
+            "B": "Komputerowe wspomaganie produkcji (CAM) jest sporadycznie używane w procesie produkcyjnym.",
+            "C": "Komputerowe wspomaganie produkcji (CAM) jest używane w większości projektów, ale nie zawsze kompleksowo.",
+            "D": "Komputerowe wspomaganie produkcji (CAM) jest systematycznie używane we wszystkich projektach.",
+            "E": "Komputerowe wspomaganie produkcji (CAM) jest w pełni używane we wszystkich projektach."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent does discrete event simulation (DES) support product development processes?",
+          "question_text": "W jakim stopniu symulacja zdarzeń dyskretnych (DES) wspiera procesy rozwoju produktu?",
           "answer_options": {
-            "A": "Discrete event simulation (DES) does not support product development processes.",
-            "B": "Discrete event simulation (DES) is applied, but not comprehensively.",
-            "C": "Discrete event simulation (DES) is applied in most projects, but not always systematically.",
-            "D": "Discrete event simulation (DES) is applied in all projects and supports product development processes.",
-            "E": "Discrete event simulation (DES) is a priority and fully supports all product development processes."
+            "A": "Symulacja zdarzeń dyskretnych (DES) nie wspiera procesów rozwoju produktu.",
+            "B": "Symulacja zdarzeń dyskretnych (DES) jest stosowana, ale nie kompleksowo.",
+            "C": "Symulacja zdarzeń dyskretnych (DES) jest stosowana w większości projektów, ale nie zawsze systematycznie.",
+            "D": "Symulacja zdarzeń dyskretnych (DES) jest stosowana we wszystkich projektach i wspiera procesy rozwoju produktu.",
+            "E": "Symulacja zdarzeń dyskretnych (DES) jest priorytetem i w pełni wspiera wszystkie procesy rozwoju produktu."
           },
           "selected_answer": "D"
         },
         {
-          "question_text": "To what extent does computer-aided process planning (CAPP)/digital factories support product development process?",
+          "question_text": "W jakim stopniu komputerowe wspomaganie planowania procesów (CAPP)/fabryki cyfrowe wspierają proces rozwoju produktu?",
           "answer_options": {
-            "A": "Computer-aided process planning (CAPP)/digital factories does not support product development process.",
-            "B": "Computer-aided process planning (CAPP)/digital factories is sporadically used in product development process.",
-            "C": "Computer-aided process planning (CAPP)/digital factories is regularly used, but not in all projects.",
-            "D": "Computer-aided process planning (CAPP)/digital factories is fully used in the product development process.",
-            "E": "Computer-aided process planning (CAPP)/digital factories is an integral part of each product development process."
+            "A": "Komputerowe wspomaganie planowania procesów (CAPP)/fabryki cyfrowe nie wspierają procesu rozwoju produktu.",
+            "B": "Komputerowe wspomaganie planowania procesów (CAPP)/fabryki cyfrowe są sporadycznie używane w procesie rozwoju produktu.",
+            "C": "Komputerowe wspomaganie planowania procesów (CAPP)/fabryki cyfrowe są regularnie używane, ale nie we wszystkich projektach.",
+            "D": "Komputerowe wspomaganie planowania procesów (CAPP)/fabryki cyfrowe są w pełni używane w procesie rozwoju produktu.",
+            "E": "Komputerowe wspomaganie planowania procesów (CAPP)/fabryki cyfrowe są integralną częścią każdego procesu rozwoju produktu."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "To what extent are virtual reality (VR) and augmented reality (AR) used in product development?",
+          "question_text": "W jakim stopniu rzeczywistość wirtualna (VR) i rzeczywistość rozszerzona (AR) są używane w rozwoju produktu?",
           "answer_options": {
-            "A": "Virtual reality (VR) and augmented reality (AR) are not used in product development.",
-            "B": "Virtual reality (VR) and augmented reality (AR) are applied, but not in all projects.",
-            "C": "Virtual reality (VR) and augmented reality (AR) are applied in most projects, but not comprehensively.",
-            "D": "Virtual reality (VR) and augmented reality (AR) are effectively used in all projects.",
-            "E": "Virtual reality (VR) and augmented reality (AR) are fully integrated into each project and have a significant impact on product development."
+            "A": "Rzeczywistość wirtualna (VR) i rzeczywistość rozszerzona (AR) nie są używane w rozwoju produktu.",
+            "B": "Rzeczywistość wirtualna (VR) i rzeczywistość rozszerzona (AR) są stosowane, ale nie we wszystkich projektach.",
+            "C": "Rzeczywistość wirtualna (VR) i rzeczywistość rozszerzona (AR) są stosowane w większości projektów, ale nie kompleksowo.",
+            "D": "Rzeczywistość wirtualna (VR) i rzeczywistość rozszerzona (AR) są skutecznie używane we wszystkich projektach.",
+            "E": "Rzeczywistość wirtualna (VR) i rzeczywistość rozszerzona (AR) są w pełni zintegrowane z każdym projektem i mają znaczący wpływ na rozwój produktu."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How do PDM/PLM systems support product data management?",
+          "question_text": "Jak systemy PDM/PLM wspierają zarządzanie danymi produktu?",
           "answer_options": {
-            "A": "PDM/PLM systems do not support product data management.",
-            "B": "PDM/PLM systems are applied, but not systematically in all projects.",
-            "C": "PDM/PLM systems are regularly applied in most projects, but not always comprehensively.",
-            "D": "PDM/PLM systems are fully applied in all projects and support product data management.",
-            "E": "PDM/PLM systems are fully applied in all projects and are a key tool in product data management."
+            "A": "Systemy PDM/PLM nie wspierają zarządzania danymi produktu.",
+            "B": "Systemy PDM/PLM są stosowane, ale nie systematycznie we wszystkich projektach.",
+            "C": "Systemy PDM/PLM są regularnie stosowane w większości projektów, ale nie zawsze kompleksowo.",
+            "D": "Systemy PDM/PLM są w pełni stosowane we wszystkich projektach i wspierają zarządzanie danymi produktu.",
+            "E": "Systemy PDM/PLM są w pełni stosowane we wszystkich projektach i są kluczowym narzędziem w zarządzaniu danymi produktu."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "What benefits do document management systems (DMS) bring to projects?",
+          "question_text": "Jakie korzyści systemy zarządzania dokumentami (DMS) przynoszą projektom?",
           "answer_options": {
-            "A": "Document management systems (DMS) are not used in projects.",
-            "B": "Document management systems (DMS) are used, but not always comprehensively.",
-            "C": "Document management systems (DMS) are regularly applied, but not in all projects.",
-            "D": "Document management systems (DMS) are fully applied in all projects.",
-            "E": "Document management systems (DMS) are an integral part of every project and fully support document management."
+            "A": "Systemy zarządzania dokumentami (DMS) nie są używane w projektach.",
+            "B": "Systemy zarządzania dokumentami (DMS) są używane, ale nie zawsze kompleksowo.",
+            "C": "Systemy zarządzania dokumentami (DMS) są regularnie stosowane, ale nie we wszystkich projektach.",
+            "D": "Systemy zarządzania dokumentami (DMS) są w pełni stosowane we wszystkich projektach.",
+            "E": "Systemy zarządzania dokumentami (DMS) są integralną częścią każdego projektu i w pełni wspierają zarządzanie dokumentami."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent does workflow management system (WMS) support project management?",
+          "question_text": "W jakim stopniu system zarządzania przepływem pracy (WMS) wspiera zarządzanie projektami?",
           "answer_options": {
-            "A": "Workflow management system (WMS) does not support project management.",
-            "B": "Workflow management system (WMS) is sporadically used in projects.",
-            "C": "Workflow management system (WMS) is regularly used, but not comprehensively.",
-            "D": "Workflow management system (WMS) is effectively used in all projects.",
-            "E": "Workflow management system (WMS) is fully used in each project."
+            "A": "System zarządzania przepływem pracy (WMS) nie wspiera zarządzania projektami.",
+            "B": "System zarządzania przepływem pracy (WMS) jest sporadycznie używany w projektach.",
+            "C": "System zarządzania przepływem pracy (WMS) jest regularnie używany, ale nie kompleksowo.",
+            "D": "System zarządzania przepływem pracy (WMS) jest skutecznie używany we wszystkich projektach.",
+            "E": "System zarządzania przepływem pracy (WMS) jest w pełni używany w każdym projekcie."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent is enterprise resource planning (ERP) applied in product development processes?",
+          "question_text": "W jakim stopniu planowanie zasobów przedsiębiorstwa (ERP) jest stosowane w procesach rozwoju produktu?",
           "answer_options": {
-            "A": "Enterprise resource planning (ERP) is not applied in product development processes.",
-            "B": "Enterprise resource planning (ERP) is applied, but not in all projects.",
-            "C": "Enterprise resource planning (ERP) is regularly applied, but not comprehensively.",
-            "D": "Enterprise resource planning (ERP) is applied in all projects and supports product development processes.",
-            "E": "Enterprise resource planning (ERP) is a key tool supporting product development processes and is fully applied."
+            "A": "Planowanie zasobów przedsiębiorstwa (ERP) nie jest stosowane w procesach rozwoju produktu.",
+            "B": "Planowanie zasobów przedsiębiorstwa (ERP) jest stosowane, ale nie we wszystkich projektach.",
+            "C": "Planowanie zasobów przedsiębiorstwa (ERP) jest regularnie stosowane, ale nie kompleksowo.",
+            "D": "Planowanie zasobów przedsiębiorstwa (ERP) jest stosowane we wszystkich projektach i wspiera procesy rozwoju produktu.",
+            "E": "Planowanie zasobów przedsiębiorstwa (ERP) jest kluczowym narzędziem wspierającym procesy rozwoju produktu i jest w pełni stosowane."
           },
           "selected_answer": "C"
         },
         {
-          "question_text": "How does supply chain management (SCM) support product development?",
+          "question_text": "Jak zarządzanie łańcuchem dostaw (SCM) wspiera rozwój produktu?",
           "answer_options": {
-            "A": "Supply chain management (SCM) does not support product development.",
-            "B": "Supply chain management (SCM) supports product development, but not systematically.",
-            "C": "Supply chain management (SCM) supports product development, but not comprehensively.",
-            "D": "Supply chain management (SCM) supports product development in all projects.",
-            "E": "Supply chain management (SCM) is fully integrated in every project and fully supports development processes."
+            "A": "Zarządzanie łańcuchem dostaw (SCM) nie wspiera rozwoju produktu.",
+            "B": "Zarządzanie łańcuchem dostaw (SCM) wspiera rozwój produktu, ale nie systematycznie.",
+            "C": "Zarządzanie łańcuchem dostaw (SCM) wspiera rozwój produktu, ale nie kompleksowo.",
+            "D": "Zarządzanie łańcuchem dostaw (SCM) wspiera rozwój produktu we wszystkich projektach.",
+            "E": "Zarządzanie łańcuchem dostaw (SCM) jest w pełni zintegrowane w każdym projekcie i w pełni wspiera procesy rozwoju."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent do customer relationship management (CRM) systems impact product development?",
+          "question_text": "W jakim stopniu systemy zarządzania relacjami z klientami (CRM) wpływają na rozwój produktu?",
           "answer_options": {
-            "A": "Customer relationship management (CRM) systems do not impact product development.",
-            "B": "Customer relationship management (CRM) systems have limited impact on product development.",
-            "C": "Customer relationship management (CRM) systems are regularly applied, but not in all projects.",
-            "D": "Customer relationship management (CRM) systems are fully applied in all projects.",
-            "E": "Customer relationship management (CRM) systems are critical for product development and fully applied."
+            "A": "Systemy zarządzania relacjami z klientami (CRM) nie wpływają na rozwój produktu.",
+            "B": "Systemy zarządzania relacjami z klientami (CRM) mają ograniczony wpływ na rozwój produktu.",
+            "C": "Systemy zarządzania relacjami z klientami (CRM) są regularnie stosowane, ale nie we wszystkich projektach.",
+            "D": "Systemy zarządzania relacjami z klientami (CRM) są w pełni stosowane we wszystkich projektach.",
+            "E": "Systemy zarządzania relacjami z klientami (CRM) są krytyczne dla rozwoju produktu i w pełni stosowane."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "How do supplier relationship management (SRM) systems support the product development process?",
+          "question_text": "Jak systemy zarządzania relacjami z dostawcami (SRM) wspierają proces rozwoju produktu?",
           "answer_options": {
-            "A": "Supplier relationship management (SRM) systems do not support the product development process.",
-            "B": "Supplier relationship management (SRM) systems are applied, but not in all cases.",
-            "C": "Supplier relationship management (SRM) systems are regularly applied, but not in all projects.",
-            "D": "Supplier relationship management (SRM) systems are effectively applied in all projects.",
-            "E": "Supplier relationship management (SRM) systems are a priority and are applied comprehensively in each project."
+            "A": "Systemy zarządzania relacjami z dostawcami (SRM) nie wspierają procesu rozwoju produktu.",
+            "B": "Systemy zarządzania relacjami z dostawcami (SRM) są stosowane, ale nie we wszystkich przypadkach.",
+            "C": "Systemy zarządzania relacjami z dostawcami (SRM) są regularnie stosowane, ale nie we wszystkich projektach.",
+            "D": "Systemy zarządzania relacjami z dostawcami (SRM) są skutecznie stosowane we wszystkich projektach.",
+            "E": "Systemy zarządzania relacjami z dostawcami (SRM) są priorytetem i są stosowane kompleksowo w każdym projekcie."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent is a computerized maintenance management system (CMMS) applied in product development processes?",
+          "question_text": "W jakim stopniu skomputeryzowany system zarządzania konserwacją (CMMS) jest stosowany w procesach rozwoju produktu?",
           "answer_options": {
-            "A": "A computerized maintenance management system (CMMS) is not applied in product development processes.",
-            "B": "A computerized maintenance management system (CMMS) is applied to a limited extent.",
-            "C": "A computerized maintenance management system (CMMS) is regularly applied, but not comprehensively.",
-            "D": "A computerized maintenance management system (CMMS) is applied in all projects.",
-            "E": "A computerized maintenance management system (CMMS) is integral to each project and supports all product development processes."
+            "A": "Skomputeryzowany system zarządzania konserwacją (CMMS) nie jest stosowany w procesach rozwoju produktu.",
+            "B": "Skomputeryzowany system zarządzania konserwacją (CMMS) jest stosowany w ograniczonym zakresie.",
+            "C": "Skomputeryzowany system zarządzania konserwacją (CMMS) jest regularnie stosowany, ale nie kompleksowo.",
+            "D": "Skomputeryzowany system zarządzania konserwacją (CMMS) jest stosowany we wszystkich projektach.",
+            "E": "Skomputeryzowany system zarządzania konserwacją (CMMS) jest integralną częścią każdego projektu i wspiera wszystkie procesy rozwoju produktu."
           },
           "selected_answer": "B"
         },
         {
-          "question_text": "To what extent do software project management systems affect product development?",
+          "question_text": "W jakim stopniu oprogramowanie do zarządzania projektami wpływa na rozwój produktu?",
           "answer_options": {
-            "A": "Software project management systems do not affect product development.",
-            "B": "Software project management systems have limited impact on product development.",
-            "C": "Software project management systems are regularly used, but not in all projects.",
-            "D": "Software project management systems are fully utilized in all projects.",
-            "E": "Software project management systems are crucial to product development and are used to their full extent."
+            "A": "Oprogramowanie do zarządzania projektami nie wpływa na rozwój produktu.",
+            "B": "Oprogramowanie do zarządzania projektami ma ograniczony wpływ na rozwój produktu.",
+            "C": "Oprogramowanie do zarządzania projektami jest regularnie używane, ale nie we wszystkich projektach.",
+            "D": "Oprogramowanie do zarządzania projektami jest w pełni wykorzystywane we wszystkich projektach.",
+            "E": "Oprogramowanie do zarządzania projektami jest kluczowe dla rozwoju produktu i jest używane w pełnym zakresie."
           },
           "selected_answer": "B"
         }

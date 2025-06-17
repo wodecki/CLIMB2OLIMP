@@ -20,6 +20,9 @@ llm = ChatOpenAI(model=model, temperature=0)
 # Import status manager
 from graph.status_manager import status_manager
 
+# Import category translations
+from utils.category_translations import get_display_name
+
 # Wrap the original node functions to update status
 def wrap_node_with_status(node_func, node_name):
     def wrapped_node_func(*args, **kwargs):
@@ -74,14 +77,14 @@ def human_feedback(state: OverallState):
     
     # Categories for strategic goals
     categories = [
-        "Roles and Collaboration",
-        "Training",
-        "Activities and Flow",
-        "Decision-Making",
-        "KM Processes",
-        "KM Techniques",
-        "Methods",
-        "Computerization and Software"
+        "Role i Współpraca",
+        "Szkolenie",
+        "Działania i Przepływ",
+        "Podejmowanie Decyzji",
+        "Procesy ZW",
+        "Techniki ZW",
+        "Metody",
+        "Komputeryzacja i Oprogramowanie"
     ]
     
     # Get existing strategic goals or initialize empty dict
@@ -94,7 +97,8 @@ def human_feedback(state: OverallState):
     if strategic_goals:
         print("\nStrategic Goals collected so far:")
         for category, level in strategic_goals.items():
-            print(f"{category}: {level}")
+            display_name = get_display_name(category)
+            print(f"{display_name}: {level}")
     
     # In non-interactive mode, provide default feedback for all categories at once
     if is_non_interactive:
@@ -109,7 +113,8 @@ def human_feedback(state: OverallState):
                 target_index = max(0, current_index - 1)
                 target_level = chr(ord('A') + target_index)
                 strategic_goals[category] = target_level
-                print(f"Non-interactive mode: Using default goal '{target_level}' for '{category}'")
+                display_name = get_display_name(category)
+                print(f"Non-interactive mode: Using default goal '{target_level}' for '{display_name}'")
         
         return {"strategic_goals": strategic_goals}
     
@@ -149,7 +154,8 @@ def human_feedback(state: OverallState):
                     for category, level in frontend_input.items():
                         if level in ["A", "B", "C", "D", "E"]:
                             strategic_goals[category] = level
-                            print(f"Received input from frontend: {level} for {category}")
+                            display_name = get_display_name(category)
+                            print(f"Received input from frontend: {level} for {display_name}")
                     
                     # Update the status manager with all goals
                     for category, level in strategic_goals.items():
@@ -169,7 +175,8 @@ def human_feedback(state: OverallState):
         for category in categories:
             if category not in strategic_goals:
                 strategic_goals[category] = "C"  # Default goal
-                print(f"Using default goal 'C' for {category}")
+                display_name = get_display_name(category)
+                print(f"Using default goal 'C' for {display_name}")
         
         # Update the status manager with all goals
         for category, level in strategic_goals.items():
@@ -181,7 +188,8 @@ def human_feedback(state: OverallState):
         # Display current maturity levels for reference
         print("\nCurrent maturity levels:")
         for category in categories:
-            print(f"{category}: {maturity_levels.get(category, 'N/A')}")
+            display_name = get_display_name(category)
+            print(f"{display_name}: {maturity_levels.get(category, 'N/A')}")
         
         print("\nPlease enter strategic goals (A-E) for all categories at once:")
         
@@ -202,14 +210,16 @@ def human_feedback(state: OverallState):
                     strategic_goals[category] = goal
                 else:
                     # Default to C for invalid inputs
-                    print(f"Invalid input '{goal}' for {category}. Using default 'C'.")
+                    display_name = get_display_name(category)
+                    print(f"Invalid input '{goal}' for {display_name}. Using default 'C'.")
                     strategic_goals[category] = "C"
         else:
             # If we didn't get the right number, ask for each individually
             print(f"Expected {len(categories)} values, got {len(goals_list)}. Asking for each category individually.")
             for category in categories:
                 while True:
-                    goal = interrupt(f"{category} goal (A-E): ")
+                    display_name = get_display_name(category)
+                    goal = interrupt(f"{display_name} goal (A-E): ")
                     if goal.strip().upper() in ["A", "B", "C", "D", "E"]:
                         strategic_goals[category] = goal.strip().upper()
                         break
@@ -251,8 +261,6 @@ strategic_builder.add_edge("identify_questions_for_improvement", END)
 # Add nodes and edges to app_builder
 app_builder = StateGraph(OverallState)
 app_builder.add_node("calculate_maturity", wrap_node_with_status(calculate_maturity_level, "calculate_maturity"))
-app_builder.add_node("human_feedback", wrap_node_with_status(human_feedback, "human_feedback"))
-app_builder.add_node("strategic_planning", strategic_builder.compile())
 app_builder.add_node("make_analysts", analysts_builder.compile())
 app_builder.add_node("consulting", diagnosis_builder.compile())
 app_builder.add_node("write_report", wrap_node_with_status(write_report, "write_report"))
@@ -269,14 +277,14 @@ def process_feedback(state: OverallState):
     
     # Categories for strategic goals
     categories = [
-        "Roles and Collaboration",
-        "Training",
-        "Activities and Flow",
-        "Decision-Making",
-        "KM Processes",
-        "KM Techniques",
-        "Methods",
-        "Computerization and Software"
+        "Role i Współpraca",
+        "Szkolenie",
+        "Działania i Przepływ",
+        "Podejmowanie Decyzji",
+        "Procesy ZW",
+        "Techniki ZW",
+        "Metody",
+        "Komputeryzacja i Oprogramowanie"
     ]
     
     # Process user feedback if available
@@ -290,14 +298,16 @@ def process_feedback(state: OverallState):
             if user_feedback.strip().upper() in ["A", "B", "C", "D", "E"]:
                 # Add the validated input to our strategic goals
                 strategic_goals[current_category] = user_feedback.strip().upper()
-                print(f"Added strategic goal for {current_category}: {user_feedback.strip().upper()}")
+                display_name = get_display_name(current_category)
+                print(f"Added strategic goal for {display_name}: {user_feedback.strip().upper()}")
             else:
                 print(f"Invalid input: {user_feedback}. Expected a letter from A to E.")
     
     # Print the current state of strategic goals
     print("\nStrategic Goals collected so far:")
     for category, level in strategic_goals.items():
-        print(f"{category}: {level}")
+        display_name = get_display_name(category)
+        print(f"{display_name}: {level}")
     
     # Return the updated strategic goals
     return {"strategic_goals": strategic_goals}
@@ -315,14 +325,14 @@ def need_more_feedback(state: OverallState):
     
     # Categories for strategic goals
     categories = [
-        "Roles and Collaboration",
-        "Training",
-        "Activities and Flow",
-        "Decision-Making",
-        "KM Processes",
-        "KM Techniques",
-        "Methods",
-        "Computerization and Software"
+        "Role i Współpraca",
+        "Szkolenie",
+        "Działania i Przepływ",
+        "Podejmowanie Decyzji",
+        "Procesy ZW",
+        "Techniki ZW",
+        "Metody",
+        "Komputeryzacja i Oprogramowanie"
     ]
     
     # Get existing strategic goals or initialize empty dict
@@ -339,17 +349,9 @@ def need_more_feedback(state: OverallState):
 # app_builder.add_node("process_feedback", wrap_node_with_status(process_feedback, "process_feedback"))
 
 app_builder.add_edge(START, "calculate_maturity")
-app_builder.add_edge("calculate_maturity", "human_feedback")
-# Go directly from human_feedback to strategic_planning
-app_builder.add_edge("human_feedback", "strategic_planning")
-# End the flow after strategic_planning - skip analysts and report generation
-app_builder.add_edge("strategic_planning", END)
-
-# Comment out the analyst and consulting workflow
-# app_builder.add_edge("strategic_planning", "make_analysts")
-# app_builder.add_conditional_edges("make_analysts", initiate_consulting_threads, ["consulting"])
-# app_builder.add_edge("consulting", "write_report")
-# app_builder.add_edge("write_report", END)
+# Skip all strategic planning and go directly to report writing
+app_builder.add_edge("calculate_maturity", "write_report")
+app_builder.add_edge("write_report", END)
 
 # Set up memory
 memory = MemorySaver()

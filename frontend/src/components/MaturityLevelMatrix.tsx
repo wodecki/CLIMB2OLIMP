@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import MaturityLevelSelector from './MaturityLevelSelector';
+import { getDisplayName, getTechnicalName } from '@/utils/categoryTranslations';
 
 interface MaturityLevelMatrixProps {
   categories: string[];
@@ -40,23 +41,28 @@ const MaturityLevelMatrix: React.FC<MaturityLevelMatrixProps> = ({
   }, [existingGoals]);
   
   const handleGoalSelect = (category: string, level: string) => {
+    // Always store goals using technical names
+    const technicalName = getTechnicalName(category);
     setSelectedGoals(prev => ({
       ...prev,
-      [category]: level
+      [technicalName]: level
     }));
   };
   
   const isAllSelected = () => {
-    return categories.every(category => selectedGoals[category]);
+    return categories.every(category => {
+      const technicalName = getTechnicalName(category);
+      return selectedGoals[technicalName];
+    });
   };
   
   return (
     <div className="space-y-6">
       <div className="bg-white p-4 rounded-lg shadow-sm">
         <div className="mb-4">
-          <h3 className="text-lg font-medium text-gray-800">Maturity Levels</h3>
+          <h3 className="text-lg font-medium text-gray-800">Poziomy Dojrzałości</h3>
           <p className="text-sm text-gray-600">
-            Current maturity levels are shown in grey. Click on a level to set it as your strategic goal.
+            Obecne poziomy dojrzałości są pokazane na szaro. Kliknij na poziom, aby ustawić go jako swój cel strategiczny.
           </p>
         </div>
         
@@ -64,9 +70,9 @@ const MaturityLevelMatrix: React.FC<MaturityLevelMatrixProps> = ({
           {categories.map(category => (
             <MaturityLevelSelector
               key={category}
-              category={category}
-              currentLevel={currentLevels[category] || 'A'}
-              selectedLevel={selectedGoals[category] || null}
+              category={getDisplayName(category)}
+              currentLevel={currentLevels[getTechnicalName(category)] || 'A'}
+              selectedLevel={selectedGoals[getTechnicalName(category)] || null}
               onLevelSelect={(level) => handleGoalSelect(category, level)}
             />
           ))}
@@ -83,7 +89,7 @@ const MaturityLevelMatrix: React.FC<MaturityLevelMatrixProps> = ({
           disabled={!isAllSelected()}
           onClick={() => onSubmit(selectedGoals)}
         >
-          Submit All Goals
+          Prześlij
         </button>
       </div>
     </div>
