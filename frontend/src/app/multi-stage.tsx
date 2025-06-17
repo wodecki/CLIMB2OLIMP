@@ -1041,7 +1041,7 @@ export default function MultiStageWorkflow() {
       <main className="min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Analiza OLIMP w Toku</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Analiza OLIMP</h1>
             <p className="text-gray-600 mb-6">
               System OLIMP przeprowadza kompleksową analizę luk i generuje szczegółowe rekomendacje.
             </p>
@@ -1178,13 +1178,12 @@ export default function MultiStageWorkflow() {
                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                               </svg>
-                              <span className="ml-1 text-xs font-medium">Intensywne Przetwarzanie...</span>
                             </span>
                           )}
                         </p>
                         {isGenerating && step === 'generating_final_report' && (
                           <p className="text-xs text-orange-700 mt-1">
-                            Kompilowanie kompleksowego raportu ze wszystkimi danymi analizy...
+                            Kompilowanie raportu końcowego. Może potrwać ok. 10 minut...
                           </p>
                         )}
                       </div>
@@ -1194,29 +1193,6 @@ export default function MultiStageWorkflow() {
               })}
             </div>
             
-            {/* Special notice for final report generation */}
-            {olimpProgress?.currentStep === 'generating_final_report' && olimpProgress?.stepStatus === 'generating' && (
-              <div className="mt-6 p-4 bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200 rounded-lg">
-                <div className="flex items-center mb-2">
-                  <svg className="animate-spin h-5 w-5 text-orange-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  <h3 className="font-semibold text-orange-900">Generowanie Raportu Końcowego w Toku</h3>
-                </div>
-                <p className="text-sm text-orange-800">
-                  System kompiluje wszystkie dane analizy w kompleksowy raport końcowy. Ten proces obejmuje konsolidację spostrzezeń z wielu perspektyw ekspertów AI i może potrwać kilka minut.
-                </p>
-                <div className="mt-3 flex items-center text-xs text-orange-700">
-                  <div className="flex items-center space-x-1">
-                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                  </div>
-                  <span className="ml-2 font-medium">Przetwarzanie intensywnej analizy...</span>
-                </div>
-              </div>
-            )}
           </div>
 
           {/* Error Display */}
@@ -1252,7 +1228,7 @@ export default function MultiStageWorkflow() {
       <main className="min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Analiza Zakończona!</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Analiza zakończona!</h1>
             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
               <strong className="font-bold">Sukces!</strong>
               <span className="block sm:inline"> Twoja kompleksowa analiza gotowości na AI została zakończona.</span>
@@ -1260,33 +1236,18 @@ export default function MultiStageWorkflow() {
             
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
               <h2 className="text-xl font-semibold mb-4">Dostępne Raporty</h2>
-              <div className="grid gap-4 md:grid-cols-2">
-                {climb2ReportPath && (
-                  <div className="border border-gray-200 rounded-lg p-4">
-                    <h3 className="font-semibold mb-2">Raport CLIMB2</h3>
-                    <p className="text-sm text-gray-600 mb-3">Wstępna ocena dojrzałości i rekomendacje strategiczne</p>
-                    <a
-                      href={`/report?path=${encodeURIComponent(climb2ReportPath)}`}
-                      className="px-4 py-2 bg-blue-600 text-white rounded font-medium hover:bg-blue-700 text-sm"
-                    >
-                      Zobacz Raport CLIMB2
-                    </a>
-                  </div>
-                )}
-                
-                {reportPath && (
-                  <div className="border border-gray-200 rounded-lg p-4">
-                    <h3 className="font-semibold mb-2">Raport Końcowy OLIMP</h3>
-                    <p className="text-sm text-gray-600 mb-3">Kompleksowa analiza gotowości na AI z analizą luk i mapą drogową wdrożenia</p>
-                    <a
-                      href={`/report?path=${encodeURIComponent(reportPath)}`}
-                      className="px-4 py-2 bg-green-600 text-white rounded font-medium hover:bg-green-700 text-sm"
-                    >
-                      Zobacz Raport Końcowy
-                    </a>
-                  </div>
-                )}
-              </div>
+              {reportPath && (
+                <div className="border border-gray-200 rounded-lg p-4 max-w-md mx-auto">
+                  <h3 className="font-semibold mb-2">Raport końcowy OLIMP</h3>
+                  <p className="text-sm text-gray-600 mb-3">Kompleksowa analiza gotowości na AI z analizą luk i mapą drogową wdrożenia</p>
+                  <a
+                    href={`/report?path=${encodeURIComponent(reportPath)}`}
+                    className="px-4 py-2 bg-green-600 text-white rounded font-medium hover:bg-green-700 text-sm"
+                  >
+                    Zobacz Raport Końcowy
+                  </a>
+                </div>
+              )}
             </div>
 
             <button
@@ -1305,7 +1266,7 @@ export default function MultiStageWorkflow() {
               }}
               className="px-6 py-3 bg-gray-600 text-white rounded-lg font-medium hover:bg-gray-700"
             >
-              Rozpocznij Nową Analizę
+              Rozpocznij nową analizę
             </button>
           </div>
         </div>
@@ -1320,7 +1281,7 @@ export default function MultiStageWorkflow() {
         <header className="mb-8">
           <div className="flex justify-between items-start">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Ocena gotowości na GenAI</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">System oceny dojrzałości AI</h1>
               <p className="text-gray-600">
                 Uzupełnij tę wieloetapową ocenę, aby otrzymać kompleksowe rekomendacje gotowości na AI.
               </p>
@@ -1329,7 +1290,7 @@ export default function MultiStageWorkflow() {
               <div className="mt-4 flex items-center space-x-2 text-xs">
                 <div className={`flex items-center ${stageProgress['climb2-questionnaire'] ? 'text-green-600' : 'text-blue-600'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['climb2-questionnaire'] ? 'bg-green-600' : 'bg-blue-600'}`}></div>
-                  <span className="font-medium">1. Kwestionariusz CLIMB2</span>
+                  <span className="font-medium">1. Strona domowa</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['climb2-goals'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['climb2-goals'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
@@ -1337,7 +1298,7 @@ export default function MultiStageWorkflow() {
                 </div>
                 <div className={`flex items-center ${stageProgress['olimp-questionnaire'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['olimp-questionnaire'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>3. Ocena OLIMP</span>
+                  <span>3. Ocena gotowości na GenAI</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['olimp-priorities'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['olimp-priorities'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>

@@ -32,7 +32,45 @@ function ReportContent() {
         }
         
         const data = await response.json();
-        setReportContent(data.content);
+        // Clean up the content by removing metadata and fixing formatting
+        let cleanContent = data.content;
+        
+        // Remove the metadata header that starts with "# FINAL CONSENSUS RECOMMENDATION REPORT\n\n**Generated from"
+        // and ends with the first "---" separator
+        const metadataPattern = /^# FINAL CONSENSUS RECOMMENDATION REPORT\\n\\n\*\*Generated from[\s\S]*?---\s*\n\n/;
+        cleanContent = cleanContent.replace(metadataPattern, '');
+        
+        // Also handle the case where the content might have literal \n instead of actual newlines
+        cleanContent = cleanContent.replace(/\\n/g, '\n');
+        
+        // Remove any remaining metadata at the beginning
+        const lines = cleanContent.split('\n');
+        let startIndex = 0;
+        
+        // Skip lines that look like metadata (contain "Generated from", "Branches:", "Consensus Model:", etc.)
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i].trim();
+          if (line.includes('Generated from') || 
+              line.includes('Branches:') || 
+              line.includes('Consensus Model:') || 
+              line.includes('Timestamp:') ||
+              line === '---' ||
+              line === '') {
+            startIndex = i + 1;
+          } else if (line.startsWith('#') || line.startsWith('**')) {
+            // Found actual content
+            break;
+          }
+        }
+        
+        cleanContent = lines.slice(startIndex).join('\n').trim();
+        
+        // Ensure we start with a proper title
+        if (!cleanContent.startsWith('#')) {
+          cleanContent = '# Strategiczny Raport Transformacji AI\n\n' + cleanContent;
+        }
+        
+        setReportContent(cleanContent);
       } catch (err) {
         console.error('Error fetching report:', err);
         setError('Nie udało się załadować raportu. Spróbuj ponownie później.');
@@ -218,7 +256,7 @@ function ReportContent() {
       <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
         <div
           ref={reportRef}
-          className="prose prose-lg max-w-none prose-headings:text-blue-700 prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl prose-h2:border-b prose-h2:pb-2 prose-h2:border-gray-200 prose-h3:text-xl prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-700 prose-strong:font-bold prose-strong:text-gray-900"
+          className="prose prose-lg max-w-none prose-headings:text-blue-700 prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl prose-h2:border-b prose-h2:pb-2 prose-h2:border-gray-200 prose-h3:text-xl prose-p:text-gray-900 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-800 prose-strong:font-bold prose-strong:text-gray-900"
         >
           <ReactMarkdown
             components={{
@@ -237,10 +275,10 @@ function ReportContent() {
                 <tr className="hover:bg-gray-50" {...props} />
               ),
               th: ({ node, ...props }) => (
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" {...props} />
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider" {...props} />
               ),
               td: ({ node, ...props }) => (
-                <td className="px-6 py-4 whitespace-normal text-sm text-gray-500" {...props} />
+                <td className="px-6 py-4 whitespace-normal text-sm text-gray-800" {...props} />
               ),
               h1: ({ node, ...props }) => (
                 <h1 className="text-3xl font-bold text-blue-700 mt-8 mb-4" {...props} />
@@ -258,7 +296,7 @@ function ReportContent() {
                 <ol className="list-decimal pl-6 my-4 space-y-2" {...props} />
               ),
               li: ({ node, ...props }) => (
-                <li className="text-gray-700 pl-2" {...props} />
+                <li className="text-gray-800 pl-2" {...props} />
               ),
               blockquote: ({ node, ...props }) => (
                 <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-700 my-4" {...props} />
