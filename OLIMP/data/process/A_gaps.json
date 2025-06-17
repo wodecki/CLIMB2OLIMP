@@ -9,10 +9,14 @@
     },
     "Czy technologia generatywnej Al jest zintegrowana z innymi systemami (np. ERP, CRM)?": {
       "present": {
-        "level": "B",
-        "description": "Podstawowa integracja w jednym procesie lub systemie"
+        "level": "A",
+        "description": "Brak integracji Al z innymi systemami"
       },
       "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowa integracja w jednym procesie lub systemie"
+        },
         {
           "level": "C",
           "description": "Częściowa integracja z kluczowymi systemami (np. ERP)"
@@ -49,26 +53,17 @@
     },
     "Czy organizacja korzysta z chmury do przechowywania i przetwarzania danych AI?": {
       "present": {
-        "level": "D",
-        "description": "Większość danych Al przechowywana i przetwarzana w chmurze"
+        "level": "E",
+        "description": "Pełna adopcja chmury dla wszystkich działań związanych z Al"
       },
-      "steps": [
-        {
-          "level": "E",
-          "description": "Pełna adopcja chmury dla wszystkich działań związanych z Al"
-        }
-      ]
+      "steps": []
     },
     "Czy organizacja korzysta z narzędzi do zarządzania cyklem życia modeli AI?": {
       "present": {
-        "level": "B",
-        "description": "Podstawowe narzędzia, ale niedostatecznie wykorzystywane"
+        "level": "C",
+        "description": "Niektóre narzędzia wykorzystywane, brak standaryzacji"
       },
       "steps": [
-        {
-          "level": "C",
-          "description": "Niektóre narzędzia wykorzystywane, brak standaryzacji"
-        },
         {
           "level": "D",
           "description": "Standaryzowane narzędzia dla większości procesów Al"
@@ -81,26 +76,21 @@
     },
     "Czy infrastruktura organizacji jest przygotowana do obsługi dużych zbiorów danych dla AI?": {
       "present": {
-        "level": "C",
-        "description": "Infrastruktura obsługuje umiarkowanie duże zbiory danych"
+        "level": "E",
+        "description": "Zoptymalizowana infrastruktura do obsługi ogromnych zbiorów danych"
       },
-      "steps": [
-        {
-          "level": "D",
-          "description": "Infrastruktura obsługuje większość dużych zbiorów danych"
-        },
-        {
-          "level": "E",
-          "description": "Zoptymalizowana infrastruktura do obsługi ogromnych zbiorów danych"
-        }
-      ]
+      "steps": []
     },
     "Czy organizacja jest zdolna do przetwarzania danych w czasie rzeczywistym dla AI?": {
       "present": {
-        "level": "B",
-        "description": "Podstawowe przetwarzanie wsadowe"
+        "level": "A",
+        "description": "Brak przetwarzania danych w czasie rzeczywistym"
       },
       "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowe przetwarzanie wsadowe"
+        },
         {
           "level": "C",
           "description": "Przetwarzanie danych w czasie rzeczywistym dla niektórych zadań"
@@ -117,10 +107,14 @@
     },
     "Czy Twoja organizacja posiada moc obliczeniową niezbędną do wdrażania i utrzymania modeli Al?": {
       "present": {
-        "level": "B",
-        "description": "Podstawowa moc obliczeniowa, wystarczająca dla małych modeli"
+        "level": "A",
+        "description": "Brak mocy obliczeniowej dla wdrożenia i utrzymania modeli Al"
       },
       "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowa moc obliczeniowa, wystarczająca dla małych modeli"
+        },
         {
           "level": "C",
           "description": "Umiarkowana moc obliczeniowa, wystarczająca dla niektórych modeli"
@@ -137,10 +131,14 @@
     },
     "Czy w codziennej pracy wykorzystywane są wewnętrzne lub zewnętrzne narzędzia Al (np. ChatGPT, MS Copilot)?": {
       "present": {
-        "level": "B",
-        "description": "Podstawowe wykorzystanie narzędzi Al do wybranych zadań"
+        "level": "A",
+        "description": "Brak narzędzi Al w codziennych zadaniach"
       },
       "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowe wykorzystanie narzędzi Al do wybranych zadań"
+        },
         {
           "level": "C",
           "description": "Niektóre narzędzia Al wykorzystywane, ale nie powszechnie"
@@ -157,32 +155,31 @@
     },
     "Jak skalowalne są rozwiązania generatywnej Al w Twojej organizacji?": {
       "present": {
-        "level": "B",
-        "description": "Ograniczona skalowalność"
+        "level": "E",
+        "description": "W pełni skalowalne rozwiązania Al wdrożone w całej organizacji"
       },
-      "steps": [
-        {
-          "level": "C",
-          "description": "Umiarkowana skalowalność dla niektórych rozwiązań"
-        },
-        {
-          "level": "D",
-          "description": "Większość rozwiązań Al jest skalowalna"
-        },
-        {
-          "level": "E",
-          "description": "W pełni skalowalne rozwiązania Al wdrożone w całej organizacji"
-        }
-      ]
+      "steps": []
     }
   },
   "PEOPLE AND COMPETENCIES": {
     "Czy Twoja organizacja rozwija świadomość i zrozumienie rozwiązań generatywnej AI?": {
       "present": {
-        "level": "D",
-        "description": "Świadomość i zrozumienie w większości działów"
+        "level": "A",
+        "description": "Brak świadomości rozwiązań generatywnej Al"
       },
       "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowa świadomość wśród wybranych zespołów"
+        },
+        {
+          "level": "C",
+          "description": "Częściowe zrozumienie i świadomość w wybranych obszarach"
+        },
+        {
+          "level": "D",
+          "description": "Świadomość i zrozumienie w większości działów"
+        },
         {
           "level": "E",
           "description": "Pełne zrozumienie i świadomość generatywnej Al w całej organizacji"
@@ -191,10 +188,22 @@
     },
     "Czy organizacja szkoli zespoły w zakresie programowania (także promptingu) i analizy danych?": {
       "present": {
-        "level": "D",
-        "description": "Regularne szkolenia obejmujące większość zespołów"
+        "level": "A",
+        "description": "Brak szkoleń z programowania i analizy danych"
       },
       "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowe szkolenia w wybranych zespołach"
+        },
+        {
+          "level": "C",
+          "description": "Częściowe szkolenia, ale ograniczone do kilku zespołów"
+        },
+        {
+          "level": "D",
+          "description": "Regularne szkolenia obejmujące większość zespołów"
+        },
         {
           "level": "E",
           "description": "W pełni rozwinięty program szkoleń dla wszystkich zespołów w zakresie Al i analizy danych"
@@ -203,10 +212,22 @@
     },
     "Czy Twoja organizacja tworzy interdyscyplinarne zespoły ds. AI?": {
       "present": {
-        "level": "D",
-        "description": "Większość projektów posiada interdyscyplinarne zespoły"
+        "level": "A",
+        "description": "Brak interdyscyplinarnych zespołów ds. Al"
       },
       "steps": [
+        {
+          "level": "B",
+          "description": "Tworzenie zespołów w niektórych projektach"
+        },
+        {
+          "level": "C",
+          "description": "Częściowe tworzenie zespołów, ale nie w każdej inicjatywie"
+        },
+        {
+          "level": "D",
+          "description": "Większość projektów posiada interdyscyplinarne zespoły"
+        },
         {
           "level": "E",
           "description": "W pełni zintegrowane interdyscyplinarne zespoły ds. Al we wszystkich projektach"
@@ -215,10 +236,14 @@
     },
     "Czy organizacja angażuje zewnętrznych konsultantów ds. generatywnej Al do zespołów?": {
       "present": {
-        "level": "D",
-        "description": "Regularne angażowanie konsultantów do kluczowych inicjatyw"
+        "level": "C",
+        "description": "Konsultanci zewnętrzni angażowani przy wybranych projektach"
       },
       "steps": [
+        {
+          "level": "D",
+          "description": "Regularne angażowanie konsultantów do kluczowych inicjatyw"
+        },
         {
           "level": "E",
           "description": "W pełni zintegrowane wsparcie konsultantów Al we wszystkich istotnych projektach"
@@ -227,10 +252,14 @@
     },
     "Czy Twoja organizacja szkoli w zakresie zarządzania projektami opartymi o generatywną Al?": {
       "present": {
-        "level": "D",
-        "description": "Regularne szkolenia w zakresie projektów opartych o generatywną Al"
+        "level": "C",
+        "description": "Częściowe szkolenia z zarządzania projektami dla wybranych zespołów"
       },
       "steps": [
+        {
+          "level": "D",
+          "description": "Regularne szkolenia w zakresie projektów opartych o generatywną Al"
+        },
         {
           "level": "E",
           "description": "Pełny program szkoleń z zarządzania projektami generatywnymi Al dla wszystkich odpowiednich zespołów"
@@ -239,38 +268,52 @@
     },
     "Czy istnieje zarządzanie wiedzą w dziedzinie generatywnej Al, aby ułatwić transfer wiedzy między wszystkimi pracownikami?": {
       "present": {
-        "level": "D",
-        "description": "Scentralizowana platforma jest dostępna dla wszystkich pracowników, ale nie wszyscy z niej korzystają."
+        "level": "E",
+        "description": "Scentralizowana platforma do gromadzenia wiedzy jest używana przez wszystkich pracowników i jest stale rozbudowywana."
       },
-      "steps": [
-        {
-          "level": "E",
-          "description": "Scentralizowana platforma do gromadzenia wiedzy jest używana przez wszystkich pracowników i jest stale rozbudowywana."
-        }
-      ]
+      "steps": []
     }
   },
   "ORGANIZATION AND PROCESSES": {
     "Czy Twoja organizacja integruje Al z istniejącymi procesami rozwoju nowego produktu?": {
       "present": {
-        "level": "E",
-        "description": "Pełna integracja Al w procesach rozwoju wszystkich produktów"
+        "level": "D",
+        "description": "Integracja Al w procesów rozwoju większości produktów"
       },
-      "steps": []
+      "steps": [
+        {
+          "level": "E",
+          "description": "Pełna integracja Al w procesach rozwoju wszystkich produktów"
+        }
+      ]
     },
     "Na ile Twoja organizacja automatyzuje procesy rozwoju produktu z wykorzystaniem generatywnej AI?": {
       "present": {
-        "level": "E",
-        "description": "W pełni zautomatyzowane procesy rozwoju produktu z wykorzystaniem Al"
+        "level": "D",
+        "description": "Automatyzacja większości procesów rozwoju produktu"
       },
-      "steps": []
+      "steps": [
+        {
+          "level": "E",
+          "description": "W pełni zautomatyzowane procesy rozwoju produktu z wykorzystaniem Al"
+        }
+      ]
     },
     "Czy organizacja wykorzystuje Al do wsparcia podejmowania decyzji?": {
       "present": {
-        "level": "E",
-        "description": "Al zintegrowana we wszystkich procesach decyzyjnych organizacji"
+        "level": "C",
+        "description": "Al wspiera podejmowanie decyzji w ograniczonym zakresie"
       },
-      "steps": []
+      "steps": [
+        {
+          "level": "D",
+          "description": "Al wspiera większość decyzji w kluczowych obszarach"
+        },
+        {
+          "level": "E",
+          "description": "Al zintegrowana we wszystkich procesach decyzyjnych organizacji"
+        }
+      ]
     },
     "Czy organizacja wdraża narzędzia wspierające pracę zespołów AI?": {
       "present": {
@@ -288,30 +331,48 @@
     },
     "Czy organizacja zdefiniowała proces zarządzania cyklem życia dla oprogramowania AI?": {
       "present": {
-        "level": "E",
-        "description": "Pełny proces zarządzania cyklem życia dla oprogramowania Al wdrożony we wszystkich projektach"
+        "level": "D",
+        "description": "Zdefiniowany proces zarządzania cyklem życia w większości projektów"
       },
-      "steps": []
+      "steps": [
+        {
+          "level": "E",
+          "description": "Pełny proces zarządzania cyklem życia dla oprogramowania Al wdrożony we wszystkich projektach"
+        }
+      ]
     },
     "Czy organizacja posiada przewodnik po procesie rozwoju produktu opartym o generatywną AI?": {
       "present": {
-        "level": "E",
-        "description": "W pełni wdrożony przewodnik Al po procesie rozwoju produktu w całej organizacji"
+        "level": "A",
+        "description": "Brak przewodnika Al po procesie rozwoju produktu"
       },
-      "steps": []
+      "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowy przewodnik opracowany, ale rzadko używany"
+        },
+        {
+          "level": "C",
+          "description": "Przewodnik częściowo wdrożony w kilku projektach"
+        },
+        {
+          "level": "D",
+          "description": "Przewodnik po procesie rozwoju produktu stosowany w większości projektów"
+        },
+        {
+          "level": "E",
+          "description": "W pełni wdrożony przewodnik Al po procesie rozwoju produktu w całej organizacji"
+        }
+      ]
     }
   },
   "BUDGET": {
     "Czy Twoja organizacja prowadzi długoterminowe planowanie budżetu na rozwój rozwiązań i infrastruktury wspierającej generatywną AI?": {
       "present": {
-        "level": "A",
-        "description": "Brak planowania budżetu na rozwój rozwiązań generatywnej Al"
+        "level": "B",
+        "description": "Krótkoterminowe planowanie budżetowe w wybranych projektach"
       },
       "steps": [
-        {
-          "level": "B",
-          "description": "Krótkoterminowe planowanie budżetowe w wybranych projektach"
-        },
         {
           "level": "C",
           "description": "Częściowe planowanie długoterminowe, ograniczone do niektórych projektów"
@@ -328,22 +389,10 @@
     },
     "Czy Twoja organizacja przeznacza środki na rozwój kompetencji pracowników w zakresie generatywnej AI?": {
       "present": {
-        "level": "A",
-        "description": "Brak środków na rozwój kompetencji pracowników w zakresie Al"
+        "level": "D",
+        "description": "Stałe finansowanie rozwoju kompetencji większości pracowników"
       },
       "steps": [
-        {
-          "level": "B",
-          "description": "Sporadyczne finansowanie szkoleń dla wybranych pracowników"
-        },
-        {
-          "level": "C",
-          "description": "Częściowe przeznaczanie środków na rozwój kompetencji"
-        },
-        {
-          "level": "D",
-          "description": "Stałe finansowanie rozwoju kompetencji większości pracowników"
-        },
         {
           "level": "E",
           "description": "Pełne finansowanie rozwoju kompetencji w zakresie Al dla wszystkich pracowników"
@@ -352,22 +401,10 @@
     },
     "Czy Twoja organizacja finansuje projekty pilotażowe i innowacyjne związane z generatywną AI?": {
       "present": {
-        "level": "A",
-        "description": "Brak finansowania projektów pilotażowych związanych z Al"
+        "level": "D",
+        "description": "Regularne finansowanie większości projektów pilotażowych"
       },
       "steps": [
-        {
-          "level": "B",
-          "description": "Ograniczone finansowanie pojedynczych projektów"
-        },
-        {
-          "level": "C",
-          "description": "Częściowe finansowanie projektów pilotażowych i innowacyjnych"
-        },
-        {
-          "level": "D",
-          "description": "Regularne finansowanie większości projektów pilotażowych"
-        },
         {
           "level": "E",
           "description": "Pełne wsparcie finansowe dla wszystkich projektów pilotażowych i innowacyjnych związanych z Al"
@@ -376,22 +413,10 @@
     },
     "Czy organizacja alokuje środki na zewnętrzne konsultacje dotyczące generatywnej AI?": {
       "present": {
-        "level": "A",
-        "description": "Brak alokacji środków na zewnętrzne konsultacje dotyczące Al"
+        "level": "D",
+        "description": "Regularna alokacja środków na konsultacje w większości projektów"
       },
       "steps": [
-        {
-          "level": "B",
-          "description": "Sporadyczne alokowanie środków na konsultacje w wybranych projektach"
-        },
-        {
-          "level": "C",
-          "description": "Częściowa alokacja środków na zewnętrzne konsultacje"
-        },
-        {
-          "level": "D",
-          "description": "Regularna alokacja środków na konsultacje w większości projektów"
-        },
         {
           "level": "E",
           "description": "Pełna alokacja środków na zewnętrzne konsultacje we wszystkich strategicznych projektach"
@@ -400,27 +425,10 @@
     },
     "Czy organizacja priorytetyzuje projekty generujące wysoką wartość dodaną dzięki generatywnej AI?": {
       "present": {
-        "level": "A",
-        "description": "Brak priorytetyzacji projektów związanych z Al"
+        "level": "E",
+        "description": "Pełna priorytetyzacja projektów Al o najwyższej wartości dodanej"
       },
-      "steps": [
-        {
-          "level": "B",
-          "description": "Priorytetyzacja jedynie wybranych projektów"
-        },
-        {
-          "level": "C",
-          "description": "Częściowa priorytetyzacja projektów generujących wartość dodaną"
-        },
-        {
-          "level": "D",
-          "description": "Regularna priorytetyzacja większości projektów związanych z Al"
-        },
-        {
-          "level": "E",
-          "description": "Pełna priorytetyzacja projektów Al o najwyższej wartości dodanej"
-        }
-      ]
+      "steps": []
     }
   }
 }

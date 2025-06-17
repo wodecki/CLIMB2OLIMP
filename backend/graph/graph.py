@@ -261,8 +261,6 @@ strategic_builder.add_edge("identify_questions_for_improvement", END)
 # Add nodes and edges to app_builder
 app_builder = StateGraph(OverallState)
 app_builder.add_node("calculate_maturity", wrap_node_with_status(calculate_maturity_level, "calculate_maturity"))
-app_builder.add_node("human_feedback", wrap_node_with_status(human_feedback, "human_feedback"))
-app_builder.add_node("strategic_planning", strategic_builder.compile())
 app_builder.add_node("make_analysts", analysts_builder.compile())
 app_builder.add_node("consulting", diagnosis_builder.compile())
 app_builder.add_node("write_report", wrap_node_with_status(write_report, "write_report"))
@@ -351,17 +349,9 @@ def need_more_feedback(state: OverallState):
 # app_builder.add_node("process_feedback", wrap_node_with_status(process_feedback, "process_feedback"))
 
 app_builder.add_edge(START, "calculate_maturity")
-app_builder.add_edge("calculate_maturity", "human_feedback")
-# Go directly from human_feedback to strategic_planning
-app_builder.add_edge("human_feedback", "strategic_planning")
-# End the flow after strategic_planning - skip analysts and report generation
-app_builder.add_edge("strategic_planning", END)
-
-# Comment out the analyst and consulting workflow
-# app_builder.add_edge("strategic_planning", "make_analysts")
-# app_builder.add_conditional_edges("make_analysts", initiate_consulting_threads, ["consulting"])
-# app_builder.add_edge("consulting", "write_report")
-# app_builder.add_edge("write_report", END)
+# Skip all strategic planning and go directly to report writing
+app_builder.add_edge("calculate_maturity", "write_report")
+app_builder.add_edge("write_report", END)
 
 # Set up memory
 memory = MemorySaver()

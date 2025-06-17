@@ -9,16 +9,13 @@ import PrioritySelection from '@/components/PrioritySelection';
 import { QuestionnaireData, AnswerData, CategoryProgress, OlimpAnswerData, LetterAnswer } from '@/types/questionnaire';
 import { getAllTechnicalNames, getAllDisplayNames, getDisplayName, getTechnicalName } from '@/utils/categoryTranslations';
 
-type WorkflowStage = 'climb2-questionnaire' | 'climb2-goals' | 'climb2-analysis' | 'climb2-results' | 'olimp-questionnaire' | 'olimp-priorities' | 'olimp-analysis' | 'final-reports';
+type WorkflowStage = 'climb2-questionnaire' | 'olimp-questionnaire' | 'olimp-priorities' | 'olimp-analysis' | 'final-reports';
 
 export default function MultiStageWorkflow() {
   // Workflow state
   const [currentStage, setCurrentStage] = useState<WorkflowStage>('climb2-questionnaire');
   const [stageProgress, setStageProgress] = useState({
     'climb2-questionnaire': false,
-    'climb2-goals': false,
-    'climb2-analysis': false,
-    'climb2-results': false,
     'olimp-questionnaire': false,
     'olimp-priorities': false,
     'olimp-analysis': false,
@@ -199,10 +196,10 @@ export default function MultiStageWorkflow() {
         setMaturityLevels(maturityData.maturityLevels || {});
       }
       
-      // Step 4: Move to strategic goals stage
-      console.log('Moving to strategic goals stage...');
+      // Step 4: Move directly to OLIMP questionnaire
+      console.log('Moving directly to OLIMP questionnaire...');
       setStageProgress(prev => ({ ...prev, 'climb2-questionnaire': true }));
-      setCurrentStage('climb2-goals');
+      setCurrentStage('olimp-questionnaire');
       
     } catch (err) {
       console.error('Error analyzing sample data:', err);
@@ -257,10 +254,14 @@ export default function MultiStageWorkflow() {
         setMaturityLevels(maturityData.maturityLevels || {});
       }
       
-      console.log('CLIMB2 questionnaire completed, moving to strategic goals');
+      console.log('CLIMB2 questionnaire completed, moving directly to OLIMP');
       
-      setStageProgress(prev => ({ ...prev, 'climb2-questionnaire': true }));
-      setCurrentStage('climb2-goals');
+      // Go directly to OLIMP questionnaire
+      setStageProgress(prev => ({ 
+        ...prev, 
+        'climb2-questionnaire': true
+      }));
+      setCurrentStage('olimp-questionnaire');
       setSubmitSuccess(true);
       
       setTimeout(() => {
@@ -280,198 +281,6 @@ export default function MultiStageWorkflow() {
     }
   };
 
-  // Handle CLIMB2 strategic goals completion
-  const handleClimb2GoalsComplete = async (goals: Record<string, string>) => {
-    try {
-      setStrategicGoals(goals);
-      
-      // Submit strategic goals
-      const response = await fetch('/api/set-strategic-goals-all', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ goals }),
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to submit strategic goals');
-      }
-      
-      setStageProgress(prev => ({ ...prev, 'climb2-goals': true }));
-      setCurrentStage('climb2-analysis');
-      
-      // Start CLIMB2 analysis with pre-submitted goals
-      await startClimb2Analysis(goals);
-      
-    } catch (err) {
-      console.error('Error completing CLIMB2 goals:', err);
-      setError('Nie udało się przesłać celów strategicznych. Spróbuj ponownie.');
-    }
-  };
-
-  // Initialize CLIMB2 progress steps
-  const initializeClimb2Progress = () => {
-    const steps = [
-      {
-        id: 'calculate_maturity',
-        name: 'Obliczanie Poziomów Dojrzałości',
-        description: 'Analiza odpowiedzi kwestionariusza w celu określenia obecnych poziomów dojrzałości',
-        status: 'pending' as const,
-        progress: 0
-      },
-      {
-        id: 'human_feedback',
-        name: 'Przetwarzanie Celów Strategicznych',
-        description: 'Przetwarzanie celów strategicznych i planowanie ulepszen',
-        status: 'pending' as const,
-        progress: 0
-      },
-      {
-        id: 'identify_areas_for_improvement',
-        name: 'Identyfikacja Obszarów do Poprawy',
-        description: 'Analiza danych w celu identyfikacji kluczowych obszarów wymagających uwagi',
-        status: 'pending' as const,
-        progress: 0
-      },
-      {
-        id: 'identify_questions_for_improvement',
-        name: 'Analiza Kluczowych Pytań',
-        description: 'Określanie konkretnych pytań i wyzwań do rozwiązania',
-        status: 'pending' as const,
-        progress: 0
-      },
-      {
-        id: 'strategic_planning',
-        name: 'Planowanie Strategiczne Zakończone',
-        description: 'Finalizacja analizy strategicznej i przygotowanie do oceny OLIMP',
-        status: 'pending' as const,
-        progress: 0
-      }
-    ];
-    setClimb2ProgressSteps(steps);
-  };
-
-  // Get overall progress percentage
-  const getClimb2OverallProgress = () => {
-    if (climb2ProgressSteps.length === 0) return 0;
-    
-    const totalSteps = climb2ProgressSteps.length;
-    const completedSteps = climb2ProgressSteps.filter(step => step.status === 'completed').length;
-    const activeStep = climb2ProgressSteps.find(step => step.status === 'active');
-    
-    let progress = (completedSteps / totalSteps) * 100;
-    
-    // Add partial progress from active step
-    if (activeStep) {
-      progress += (activeStep.progress / totalSteps);
-    }
-    
-    return Math.min(100, Math.round(progress));
-  };
-
-  // Update progress steps based on backend status
-  const updateClimb2ProgressSteps = (currentNode: string, statusData: any) => {
-    setClimb2DetailedStatus(statusData);
-    
-    const nodeProgressMap: { [key: string]: number } = {
-      'starting': 2,
-      'initializing': 5,
-      'calculate_maturity': 20,
-      'human_feedback': 40,
-      'strategic_planning': 60,
-      'identify_areas_for_improvement': 80,
-      'identify_questions_for_improvement': 100,
-      'completed': 100
-    };
-
-    setClimb2ProgressSteps(prev => {
-      return prev.map(step => {
-        if (currentNode === 'completed' || currentNode === 'strategic_planning') {
-          return { ...step, status: 'completed' as const, progress: 100 };
-        } else if (currentNode === step.id || 
-                   // Handle strategic planning sub-nodes
-                   (currentNode === 'identify_areas_for_improvement' && step.id === 'identify_areas_for_improvement') ||
-                   (currentNode === 'identify_questions_for_improvement' && step.id === 'identify_questions_for_improvement')) {
-          return { 
-            ...step, 
-            status: 'active' as const, 
-            progress: nodeProgressMap[currentNode] || 50 
-          };
-        } else if ((nodeProgressMap[currentNode] || 0) > (nodeProgressMap[step.id] || 0)) {
-          return { ...step, status: 'completed' as const, progress: 100 };
-        } else {
-          return { ...step, status: 'pending' as const, progress: 0 };
-        }
-      });
-    });
-  };
-
-  // Start CLIMB2 analysis
-  const startClimb2Analysis = async (preSubmittedGoals?: Record<string, string>) => {
-    try {
-      setIsRunningAnalysis(true);
-      setClimb2Status('starting');
-      
-      // Initialize progress tracking
-      initializeClimb2Progress();
-      
-      console.log('Sending strategic goals to run-analysis:', preSubmittedGoals);
-      const response = await fetch('/api/run-analysis', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ strategicGoals: preSubmittedGoals || {} }),
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to start CLIMB2 analysis');
-      }
-      
-      setClimb2Status('running');
-      
-      // Poll for status with enhanced progress tracking
-      const pollStatus = setInterval(async () => {
-        try {
-          const statusResponse = await fetch('/api/check-analysis-status');
-          const statusData = await statusResponse.json();
-          
-          setClimb2Status(statusData.currentNode);
-          updateClimb2ProgressSteps(statusData.currentNode, statusData);
-          
-          // Check for completion - either 'completed' or 'strategic_planning' (since that's our new end point)
-          if (statusData.currentNode === 'completed' || statusData.currentNode === 'strategic_planning') {
-            clearInterval(pollStatus);
-            setIsRunningAnalysis(false);
-            setStageProgress(prev => ({ ...prev, 'climb2-analysis': true }));
-            setCurrentStage('olimp-questionnaire'); // Skip climb2-results and go directly to OLIMP
-            
-            if (statusData.reportPath) {
-              setClimb2ReportPath(statusData.reportPath);
-            }
-          } else if (statusData.currentNode === 'error' || statusData.currentNode === 'stopped') {
-            clearInterval(pollStatus);
-            setIsRunningAnalysis(false);
-            setError('Analiza CLIMB2 nie powiodła się lub została zatrzymana');
-          }
-        } catch (err) {
-          console.error('Error polling CLIMB2 status:', err);
-        }
-      }, 3000); // Poll every 3 seconds
-      
-    } catch (err) {
-      console.error('Error starting CLIMB2 analysis:', err);
-      setError('Nie udało się uruchomić analizy CLIMB2. Spróbuj ponownie.');
-      setIsRunningAnalysis(false);
-    }
-  };
-
-  // Handle CLIMB2 results completion
-  const handleClimb2ResultsComplete = () => {
-    setStageProgress(prev => ({ ...prev, 'climb2-results': true }));
-    setCurrentStage('olimp-questionnaire');
-  };
 
   // Handle OLIMP questionnaire completion
   const handleOlimpComplete = async (answers: OlimpAnswerData) => {
@@ -626,14 +435,6 @@ export default function MultiStageWorkflow() {
     setCurrentStage('climb2-questionnaire');
   };
 
-  const handleBackToClimb2Goals = () => {
-    setCurrentStage('climb2-goals');
-  };
-
-  const handleBackToClimb2Results = () => {
-    setCurrentStage('climb2-results');
-  };
-
   const handleBackToOlimp = () => {
     setCurrentStage('olimp-questionnaire');
   };
@@ -663,338 +464,8 @@ export default function MultiStageWorkflow() {
     );
   }
 
-  // Render appropriate stage
-  if (currentStage === 'climb2-goals') {
-    const categories = getAllDisplayNames();
-
-    return (
-      <main className="min-h-screen bg-gray-50">
-        <div className="container mx-auto px-4 py-8">
-          <header className="mb-8">
-            <div className="flex justify-between items-start">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">Ustal swoje cele strategiczne</h1>
-                <p className="text-gray-600">
-                  Na podstawie twoich obecnych poziomów dojrzałości, ustaw strategiczne poziomy celów dla każdej kategorii.
-                </p>
-              </div>
-              <button
-                onClick={handleBackToClimb2}
-                className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700"
-              >
-                Powrót do Kwestionariusza
-              </button>
-            </div>
-          </header>
-
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <MaturityLevelMatrix 
-              categories={getAllTechnicalNames()}
-              currentLevels={maturityLevels}
-              existingGoals={strategicGoals}
-              onSubmit={handleClimb2GoalsComplete}
-            />
-          </div>
-        </div>
-      </main>
-    );
-  }
-
-  if (currentStage === 'climb2-analysis') {
-    const overallProgress = getClimb2OverallProgress();
-    const activeStep = climb2ProgressSteps.find(step => step.status === 'active');
-    const currentStepName = activeStep?.name || 'Processing...';
-
-    return (
-      <main className="min-h-screen bg-gray-50">
-        <div className="container mx-auto px-4 py-8 max-w-4xl">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Analiza CLIMB2 w Toku</h1>
-            <p className="text-gray-600 mb-6">
-              System CLIMB2 generuje wstępne rekomendacje na podstawie oceny dojrzałości i celów strategicznych.
-            </p>
-          </div>
-
-          {/* Overall Progress */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-            <div className="mb-4">
-              <div className="flex justify-between items-center mb-2">
-                <h2 className="text-lg font-semibold text-gray-900">Postęp Ogólny</h2>
-                <span className="text-blue-600 font-medium text-lg">{overallProgress}%</span>
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-3">
-                <div 
-                  className="bg-blue-600 h-3 rounded-full transition-all duration-500 ease-in-out" 
-                  style={{ width: `${overallProgress}%` }}
-                ></div>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <p className="text-gray-700 font-medium">{currentStepName}</p>
-              <p className="text-sm text-gray-500 mt-1">
-                {climb2DetailedStatus?.requiresInput && climb2DetailedStatus?.requestAllGoals 
-                  ? 'Oczekiwanie na wprowadzenie celów strategicznych poniżej...'
-                  : activeStep?.description || 'Inicjalizacja analizy...'}
-              </p>
-            </div>
-          </div>
-
-          {/* Detailed Progress Steps */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Kroki Analizy</h2>
-            <div className="space-y-4">
-              {climb2ProgressSteps.map((step, index) => (
-                <div key={step.id} className="flex items-start">
-                  <div className="flex-shrink-0 mr-4">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
-                      step.status === 'completed' 
-                        ? 'bg-green-500 text-white' 
-                        : step.status === 'active'
-                          ? 'bg-blue-600 text-white animate-pulse'
-                          : 'bg-gray-200 text-gray-600'
-                    }`}>
-                      {step.status === 'completed' ? '✓' : index + 1}
-                    </div>
-                  </div>
-                  <div className="flex-grow">
-                    <h3 className={`font-medium ${
-                      step.status === 'active' ? 'text-blue-900' : 'text-gray-900'
-                    }`}>
-                      {step.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 mt-1">{step.description}</p>
-                    {step.status === 'active' && step.progress > 0 && (
-                      <div className="mt-2">
-                        <div className="w-full bg-gray-200 rounded-full h-1.5">
-                          <div 
-                            className="bg-blue-600 h-1.5 rounded-full transition-all duration-300" 
-                            style={{ width: `${step.progress}%` }}
-                          ></div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Interactive Strategic Goal Input */}
-          {climb2DetailedStatus?.requiresInput && climb2DetailedStatus?.requestAllGoals && climb2DetailedStatus?.allCategories && climb2DetailedStatus?.currentNode !== 'completed' && (
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-              <h2 className="text-lg font-semibold text-blue-900 mb-4">Wymagane Cele Strategiczne</h2>
-              <p className="text-blue-800 mb-4">
-                Analiza wymaga celów strategicznych dla każdej kategorii. Wybierz docelowe poziomy dojrzałości (A-E) gdzie:
-              </p>
-              <div className="text-sm text-blue-700 mb-4 grid grid-cols-2 gap-2">
-                <div>• <strong>A:</strong> Doskonały</div>
-                <div>• <strong>B:</strong> Dobry</div>
-                <div>• <strong>C:</strong> Średni</div>
-                <div>• <strong>D:</strong> Poniżej średniej</div>
-                <div>• <strong>E:</strong> Słaby</div>
-              </div>
-              
-              <MaturityLevelMatrix 
-                categories={climb2DetailedStatus.allCategories} 
-                currentLevels={maturityLevels}
-                existingGoals={climb2DetailedStatus.strategicGoals || {}}
-                onSubmit={async (goals) => {
-                  try {
-                    const response = await fetch('/api/set-strategic-goals-all', {
-                      method: 'POST',
-                      headers: {
-                        'Content-Type': 'application/json',
-                      },
-                      body: JSON.stringify({ goals }),
-                    });
-                    
-                    if (response.ok) {
-                      // Goals submitted successfully, polling will pick up the change
-                      console.log('Strategic goals submitted successfully');
-                    } else {
-                      setError('Nie udało się przesłać celów strategicznych');
-                    }
-                  } catch (error) {
-                    console.error('Error submitting strategic goals:', error);
-                    setError('Błąd podczas przesyłania celów strategicznych');
-                  }
-                }}
-              />
-            </div>
-          )}
-
-          {/* Strategic Goals Display */}
-          {climb2DetailedStatus?.strategicGoals && Object.keys(climb2DetailedStatus.strategicGoals).length > 0 && (
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">Aktywne Cele Strategiczne</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {Object.entries(climb2DetailedStatus.strategicGoals).map(([category, goalLevel]) => (
-                  <div key={category} className="flex items-center p-3 bg-gray-50 rounded-lg">
-                    <span className="inline-flex items-center justify-center w-6 h-6 mr-2 bg-gray-400 text-white rounded-full text-xs font-bold">
-                      {maturityLevels[category] || 'A'}
-                    </span>
-                    <svg className="h-4 w-4 text-gray-500 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                    <span className="inline-flex items-center justify-center w-6 h-6 ml-1 mr-2 bg-blue-600 text-white rounded-full text-xs font-bold">
-                      {String(goalLevel)}
-                    </span>
-                    <span className="text-sm text-gray-700 truncate">{category}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Completion Message */}
-          {climb2ReportPath && (
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-              <div className="flex items-center justify-center mb-3">
-                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-green-900 mb-2">Analiza CLIMB2 Zakończona!</h3>
-              <p className="text-green-700 mb-4">
-                Twoja wstępna ocena jest gotowa. Teraz przejdziesz do szczegółowego kwestionariusza OLIMP w celu kompleksowej analizy.
-              </p>
-              <div className="animate-pulse">
-                <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-lg">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-bounce"></div>
-                  Przygotowywanie Oceny OLIMP...
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Back Button */}
-          <div className="text-center mt-8">
-            <button
-              onClick={handleBackToClimb2Goals}
-              className="px-6 py-2 text-gray-600 hover:text-gray-800 transition-colors"
-            >
-              ← Powrót do Celów Strategicznych
-            </button>
-          </div>
-        </div>
-      </main>
-    );
-  }
-
-  if (currentStage === 'climb2-results') {
-    return (
-      <main className="min-h-screen bg-gray-50">
-        <div className="container mx-auto px-4 py-8 max-w-4xl">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Analiza CLIMB2 Zakończona!</h1>
-            <div className="flex items-center justify-center mb-6">
-              <svg className="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <p className="text-gray-600 mb-6">
-              Twoja wstępna ocena gotowości na AI została pomyślnie zakończona. Przejrzyj wyniki poniżej i kontynuuj do szczegółowej oceny OLIMP.
-            </p>
-          </div>
-
-          {/* Report Section */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Raport CLIMB2</h2>
-            {climb2ReportPath ? (
-              <div className="mb-4">
-                <p className="text-gray-600 mb-4">
-                  Twój raport CLIMB2 zawiera wstępne rekomendacje oparte na ocenie dojrzałości i celach strategicznych.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={`/report?path=${encodeURIComponent(climb2ReportPath)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors"
-                  >
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Zobacz Raport CLIMB2
-                  </a>
-                  <a
-                    href={`/report?path=${encodeURIComponent(climb2ReportPath)}&download=true`}
-                    className="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-md font-medium hover:bg-gray-700 transition-colors"
-                  >
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Pobierz Raport
-                  </a>
-                </div>
-              </div>
-            ) : (
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 text-yellow-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.232 19c-.77.833.192 2.5 1.732 2.5z" />
-                  </svg>
-                  <span className="text-yellow-800">Raport jest generowany. Poczekaj chwilę i odśwież jeśli to konieczne.</span>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Strategic Goals Summary */}
-          {strategicGoals && Object.keys(strategicGoals).length > 0 && (
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">Twoje Cele Strategiczne</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {Object.entries(strategicGoals).map(([category, goalLevel]) => (
-                  <div key={category} className="flex items-center p-3 bg-gray-50 rounded-lg">
-                    <span className="inline-flex items-center justify-center w-6 h-6 mr-2 bg-gray-400 text-white rounded-full text-xs font-bold">
-                      {maturityLevels[category] || 'A'}
-                    </span>
-                    <svg className="h-4 w-4 text-gray-500 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                    <span className="inline-flex items-center justify-center w-6 h-6 ml-1 mr-2 bg-blue-600 text-white rounded-full text-xs font-bold">
-                      {String(goalLevel)}
-                    </span>
-                    <span className="text-sm text-gray-700 truncate">{category}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Next Steps */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-            <h2 className="text-lg font-semibold text-blue-900 mb-3">Następne Kroki</h2>
-            <p className="text-blue-800 mb-4">
-              Teraz, gdy masz wstępną ocenę CLIMB2, przejdź do szczegółowego kwestionariusza OLIMP w celu kompleksowej analizy z konkretnou identyfikacją luk i rekomendacjami wdrożenia.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <button
-                onClick={handleClimb2ResultsComplete}
-                className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors inline-flex items-center justify-center"
-              >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-                Kontynuuj do Oceny OLIMP
-              </button>
-              <button
-                onClick={() => setCurrentStage('climb2-analysis')}
-                className="px-4 py-3 text-gray-600 hover:text-gray-800 transition-colors"
-              >
-                ← Powrót do Analizy
-              </button>
-            </div>
-          </div>
-        </div>
-      </main>
-    );
-  }
-
   if (currentStage === 'olimp-questionnaire') {
-    return <OlimpQuestionnaire onComplete={handleOlimpComplete} onBack={handleBackToClimb2Results} />;
+    return <OlimpQuestionnaire onComplete={handleOlimpComplete} onBack={handleBackToClimb2} />;
   }
 
   if (currentStage === 'olimp-priorities') {
@@ -1255,9 +726,6 @@ export default function MultiStageWorkflow() {
                 setCurrentStage('climb2-questionnaire');
                 setStageProgress({
                   'climb2-questionnaire': false,
-                  'climb2-goals': false,
-                  'climb2-analysis': false,
-                  'climb2-results': false,
                   'olimp-questionnaire': false,
                   'olimp-priorities': false,
                   'olimp-analysis': false,
@@ -1290,23 +758,19 @@ export default function MultiStageWorkflow() {
               <div className="mt-4 flex items-center space-x-2 text-xs">
                 <div className={`flex items-center ${stageProgress['climb2-questionnaire'] ? 'text-green-600' : 'text-blue-600'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['climb2-questionnaire'] ? 'bg-green-600' : 'bg-blue-600'}`}></div>
-                  <span className="font-medium">1. Strona domowa</span>
-                </div>
-                <div className={`flex items-center ${stageProgress['climb2-goals'] ? 'text-green-600' : 'text-gray-400'}`}>
-                  <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['climb2-goals'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>2. Cele Strategiczne</span>
+                  <span className="font-medium">1. Kwestionariusz CLIMB2</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['olimp-questionnaire'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['olimp-questionnaire'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>3. Ocena gotowości na GenAI</span>
+                  <span>2. Ocena gotowości na GenAI</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['olimp-priorities'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['olimp-priorities'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>4. Priorytety</span>
+                  <span>3. Priorytety</span>
                 </div>
                 <div className={`flex items-center ${stageProgress['olimp-analysis'] ? 'text-green-600' : 'text-gray-400'}`}>
                   <div className={`w-2 h-2 rounded-full mr-1 ${stageProgress['olimp-analysis'] ? 'bg-green-600' : 'bg-gray-400'}`}></div>
-                  <span>5. Analiza Końcowa</span>
+                  <span>4. Analiza Końcowa</span>
                 </div>
               </div>
             </div>
@@ -1386,7 +850,7 @@ export default function MultiStageWorkflow() {
                       : 'bg-blue-600 text-white hover:bg-blue-700'
                   }`}
                 >
-                  {isSubmitting ? 'Przetwarzanie...' : 'Kontynuuj do Celów Strategicznych'}
+                  {isSubmitting ? 'Przetwarzanie...' : 'Kontynuuj do Oceny OLIMP'}
                 </button>
               )}
             </div>

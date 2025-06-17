@@ -1,16 +1,16 @@
 # Role i Współpraca
-C,C,B,D,E,A,D
+A,B,B,C,D,A,B
 # Szkolenie
-C,A,E
+A,B,A
 # Działania i Przepływ
-B,C,A,B,D,D,A,E
+A,B,A,C,B,B,B,B
 # Podejmowanie Decyzji
-B,E,D,C,D,E,A,E,D,A,A,C,D,C,B,D,E,B,A,B,A,A
+B,B,B,C,B,C,B,C,B,B,C,B,B,C,B,B,C,C,D,C,C,C
 # Procesy ZW
-A,A,B,D,D,E,A,A,A,A,A,A,D,E,E,E,E,D,E,C,E,E
+A,B,A,B,A,B,B,D,B,C,B,C,B,C,B,B,C,B,B,C,B,C
 # Techniki ZW
-E,E,E,E,E,E,E,E,E,E,E
+B,B,B,B,B,B,B,C,B,C,C
 # Metody
-C,A,B,B,C,E,D,C,E,A,A
+B,B,B,B,B,B,B,A,B,B,B
 # Komputeryzacja i Oprogramowanie
-C,C,B,A,C,E,C,C,E,D,D,C,B,A,C,E,C,A,B,B,A,B
+B,B,B,D,C,B,A,B,B,B,D,C,B,C,B,B,C,B,B,B,B,B

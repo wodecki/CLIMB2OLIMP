@@ -15,7 +15,7 @@
             "D": "Zespół wielofunkcyjny jest zaangażowany w cały proces rozwoju produktu, ale współpraca nie jest jeszcze optymalna.",
             "E": "Zespół wielofunkcyjny jest w pełni zintegrowany i aktywnie zaangażowany na wszystkich etapach rozwoju produktu."
           },
-          "selected_answer": "C"
+          "selected_answer": "A"
         },
         {
           "question_text": "Jak wszystkie strony zainteresowane są zaangażowane w zespół projektowy, nawet gdy są rozproszone globalnie?",
@@ -26,7 +26,7 @@
             "D": "Strony zainteresowane są zaangażowane nawet gdy są rozproszone globalnie, ale współpraca nadal wymaga poprawy.",
             "E": "Wszystkie strony zainteresowane są w pełni zaangażowane w zespół projektowy, niezależnie od lokalizacji geograficznej."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak jasno są zdefiniowane role i obowiązki każdej osoby?",
@@ -48,7 +48,7 @@
             "D": "Elastyczność w wykonywaniu zadań jest zapewniona, ale nie zawsze maksymalnie wykorzystywana.",
             "E": "Elastyczność w wykonywaniu zadań jest wysoka i wspiera efektywność zespołu na wszystkich etapach projektu."
           },
-          "selected_answer": "D"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jakie jest zaplecze techniczne i poziom zaangażowania kierowników produktu w projektach?",
@@ -59,7 +59,7 @@
             "D": "Większość kierowników produktu ma odpowiednie zaplecze techniczne i są zaangażowani w projekty.",
             "E": "Wszyscy kierownicy produktu mają zaplecze techniczne potwierdzone doświadczeniem i są w pełni zaangażowani w rozwój."
           },
-          "selected_answer": "E"
+          "selected_answer": "D"
         },
         {
           "question_text": "Jak w pełni klient jest zaangażowany w proces rozwoju produktu?",
@@ -81,7 +81,7 @@
             "D": "Doświadczeni projektanci są zaangażowani we wczesnych etapach wszystkich projektów, ale ich udział nie zawsze jest optymalny.",
             "E": "Doświadczeni projektanci są zawsze zaangażowani od najwcześniejszych etapów projektów, a ich wkład jest kluczowy dla sukcesu projektu."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         }
       ]
     },
@@ -98,7 +98,7 @@
             "D": "Programy są szeroko dostępne i regularnie stosowane.",
             "E": "Programy są systematyczne, dobrze zaplanowane i obejmują wszystkich pracowników."
           },
-          "selected_answer": "C"
+          "selected_answer": "A"
         },
         {
           "question_text": "Jak oferowane są indywidualne sesje mentorskie wspierające rozwój umiejętności?",
@@ -109,7 +109,7 @@
             "D": "Sesje mentorskie są dobrze rozwinięte, ale nie zawsze dostępne dla wszystkich pracowników.",
             "E": "Sesje mentorskie są ustandaryzowane, zindywidualizowane i dostępne dla wszystkich pracowników."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak KPI są wykorzystywane do oceny wyników szkoleń?",
@@ -120,7 +120,7 @@
             "D": "KPI są systematycznie stosowane i obejmują większość programów szkoleniowych.",
             "E": "KPI są kompleksowo używane do oceny wszystkich aspektów szkoleń i są regularnie aktualizowane."
           },
-          "selected_answer": "E"
+          "selected_answer": "A"
         }
       ]
     },
@@ -137,7 +137,7 @@
             "D": "Model jest przestrzegany i dokumentowany przez większość zespołów.",
             "E": "Model jest standardem, przestrzeganym i dokumentowanym w każdym projekcie."
           },
-          "selected_answer": "B"
+          "selected_answer": "A"
         },
         {
           "question_text": "W jakim stopniu współpraca jest częścią procesu rozwoju produktu?",
@@ -148,7 +148,7 @@
             "D": "Współpraca obejmuje prawie wszystkie etapy rozwoju produktu.",
             "E": "Współpraca jest integralną częścią procesu, obejmującą wszystkie etapy."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak skutecznie kompleksowy zestaw KPI jest używany do mierzenia wydajności rozwoju produktu?",
@@ -170,7 +170,7 @@
             "D": "Frontloading jest skutecznie wdrażany we wszystkich projektach.",
             "E": "Frontloading jest wdrażany na bardzo wysokim poziomie we wszystkich projektach."
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         },
         {
           "question_text": "W jakim stopniu podejmowane są inicjatywy ciągłego doskonalenia?",
@@ -181,7 +181,7 @@
             "D": "Inicjatywy ciągłego doskonalenia są regularnie podejmowane i mają realny wpływ na proces.",
             "E": "Inicjatywy ciągłego doskonalenia są standardem i znacząco wpływają na efektywność procesu."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak skutecznie projektowane są różne rozwiązania i eliminowane gorsze rozwiązania w miarę pojawiania się nowych informacji?",
@@ -192,7 +192,7 @@
             "D": "Różne rozwiązania są projektowane, a gorsze rozwiązania są regularnie eliminowane.",
             "E": "Różne rozwiązania są projektowane w każdym projekcie, a słabsze opcje są regularnie i skutecznie eliminowane."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu proces rozwoju produktu koncentruje się na wartości dla klienta?",
@@ -203,7 +203,7 @@
             "D": "Proces konsekwentnie koncentruje się na wartości dla klienta.",
             "E": "Proces w pełni koncentruje się na maksymalizacji wartości dla klienta."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak wdrażany jest proces analizy konkurencji (inżynieria wsteczna)?",
@@ -214,7 +214,7 @@
             "D": "Proces analizy konkurencji jest skutecznie wdrażany we wszystkich projektach.",
             "E": "Proces analizy konkurencji jest kluczową częścią rozwoju produktu i wdrażany w każdym projekcie."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         }
       ]
     },
@@ -242,7 +242,7 @@
             "D": "Proces produkcji komponentów i produktów półgotowych jest kluczowym elementem w każdym projekcie.",
             "E": "Proces produkcji komponentów i produktów półgotowych jest priorytetem i uwzględniany w każdym projekcie."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "Na jakim poziomie proces montażu komponentów jest uwzględniany w rozwoju produktu?",
@@ -253,7 +253,7 @@
             "D": "Proces montażu komponentów jest optymalizowany i uwzględniany na wszystkich etapach.",
             "E": "Proces montażu komponentów jest kluczowym elementem rozwoju produktu i jest optymalizowany we wszystkich projektach."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak ważny jest proces testowania i eksperymentowania w rozwoju produktu?",
@@ -275,7 +275,7 @@
             "D": "Proces pakowania i przechowywania jest uwzględniany i optymalizowany w większości projektów.",
             "E": "Proces pakowania i przechowywania jest kluczowy i w pełni uwzględniany w każdym projekcie."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak uwzględniany jest proces dostawy i dystrybucji?",
@@ -286,7 +286,7 @@
             "D": "Proces dostawy i dystrybucji jest skutecznie uwzględniany w każdym projekcie.",
             "E": "Proces dostawy i dystrybucji jest integralną częścią każdego procesu podejmowania decyzji."
           },
-          "selected_answer": "E"
+          "selected_answer": "C"
         },
         {
           "question_text": "W jakim stopniu użytkowanie przez klienta jest uwzględniane w rozwoju produktu?",
@@ -297,7 +297,7 @@
             "D": "Użytkowanie przez klienta jest regularnie monitorowane i uwzględniane na wszystkich etapach.",
             "E": "Użytkowanie przez klienta jest ciągle monitorowane i w pełni uwzględniane w decyzjach projektowych."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak uwzględniany jest proces konserwacji i obsługi posprzedażnej?",
@@ -308,7 +308,7 @@
             "D": "Proces konserwacji i obsługi posprzedażnej jest kluczowy i zawsze uwzględniany.",
             "E": "Proces konserwacji i obsługi posprzedażnej jest priorytetem i uwzględniany na wszystkich etapach rozwoju."
           },
-          "selected_answer": "E"
+          "selected_answer": "C"
         },
         {
           "question_text": "Na jakim poziomie uwzględniany jest proces demontażu, recyklingu i utylizacji?",
@@ -319,7 +319,7 @@
             "D": "Proces demontażu, recyklingu i utylizacji jest w pełni uwzględniany w każdym projekcie.",
             "E": "Proces demontażu, recyklingu i utylizacji jest zintegrowany z każdym projektem i regularnie monitorowany."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu uwzględniany jest proces inspekcji, ponownego użycia, aktualizacji i odnowy?",
@@ -330,7 +330,7 @@
             "D": "Proces inspekcji, ponownego użycia, aktualizacji i odnowy jest uwzględniany w większości projektów.",
             "E": "Proces inspekcji, ponownego użycia, aktualizacji i odnowy jest w pełni uwzględniany i zintegrowany z rozwojem produktu."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak ważny jest finalny koszt/cena produktu w procesie podejmowania decyzji?",
@@ -341,7 +341,7 @@
             "D": "Finalny koszt produktu jest kluczowym elementem decyzji we wszystkich projektach.",
             "E": "Finalny koszt/cena produktu jest priorytetem w każdej decyzji projektowej."
           },
-          "selected_answer": "A"
+          "selected_answer": "C"
         },
         {
           "question_text": "W jakim stopniu koszty rozwoju/ROI są uwzględniane w procesie podejmowania decyzji?",
@@ -352,7 +352,7 @@
             "D": "Koszty rozwoju/ROI są starannie monitorowane i uwzględniane w każdym projekcie.",
             "E": "Koszty rozwoju/ROI są kluczowym elementem każdej decyzji i są starannie monitorowane."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak ważne są koszty cyklu życia i koszty operacyjne, takie jak konserwacja, usługi, recykling i utylizacja?",
@@ -363,7 +363,7 @@
             "D": "Koszty cyklu życia i koszty operacyjne są systematycznie uwzględniane i znacznie wpływają na decyzje.",
             "E": "Koszty cyklu życia i koszty operacyjne są integralną częścią procesu podejmowania decyzji i mają duży wpływ na decyzje."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak czas wprowadzenia na rynek (TTM) i terminy dostaw są uwzględniane w podejmowaniu decyzji?",
@@ -396,7 +396,7 @@
             "D": "Dostosowanie produktu jest monitorowane i uwzględniane w każdym projekcie.",
             "E": "Dostosowanie produktu jest w pełni uwzględniane w każdym projekcie i jest priorytetem w podejmowaniu decyzji."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak poziom innowacyjności jest uwzględniany w podejmowaniu decyzji?",
@@ -407,7 +407,7 @@
             "D": "Poziom innowacyjności jest systematycznie monitorowany i uwzględniany we wszystkich projektach.",
             "E": "Poziom innowacyjności jest monitorowany i ma największy wpływ na każdą decyzję."
           },
-          "selected_answer": "E"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jak wizerunek marki wpływa na podejmowanie decyzji?",
@@ -418,7 +418,7 @@
             "D": "Wizerunek marki jest kluczowym czynnikiem w decyzjach projektowych.",
             "E": "Wizerunek marki jest priorytetem w każdej decyzji projektowej i jest ściśle monitorowany."
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jak ważna jest wydajność funkcjonalna (np. produktywność, szybkość, dokładność, łatwość konserwacji)?",
@@ -429,7 +429,7 @@
             "D": "Wydajność funkcjonalna jest regularnie monitorowana i uwzględniana w każdej decyzji.",
             "E": "Wydajność funkcjonalna jest priorytetem i uwzględniana we wszystkich decyzjach projektowych."
           },
-          "selected_answer": "A"
+          "selected_answer": "D"
         },
         {
           "question_text": "Jak wydajność jakościowa (np. trwałość, niezawodność) jest uwzględniana w decyzjach projektowych?",
@@ -440,7 +440,7 @@
             "D": "Wydajność jakościowa jest istotna i uwzględniana we wszystkich decyzjach.",
             "E": "Wydajność jakościowa jest priorytetem i najważniejszym elementem każdej decyzji projektowej."
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jak zgodność z przepisami i standardami regulacyjnymi wpływa na decyzje?",
@@ -451,7 +451,7 @@
             "D": "Zgodność z przepisami jest regularnie monitorowana i uwzględniana w każdej decyzji.",
             "E": "Zgodność z przepisami i standardami jest integralną częścią każdej decyzji i jest ściśle monitorowana."
           },
-          "selected_answer": "A"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jakie inne czynniki, takie jak zrównoważony rozwój środowiskowy, estetyka czy aspekty społeczne, są uwzględniane?",
@@ -462,7 +462,7 @@
             "D": "Inne czynniki, takie jak zrównoważoność, są regularnie uwzględniane i znacząco wpływają na decyzje.",
             "E": "Inne czynniki, takie jak zrównoważoność, są kluczowe i priorytetyzowane w procesie podejmowania decyzji."
           },
-          "selected_answer": "A"
+          "selected_answer": "C"
         }
       ]
     },
@@ -490,7 +490,7 @@
             "D": "Wiedza z poprzednich projektów jest uwzględniana podczas studium wykonalności w każdym projekcie.",
             "E": "Wiedza z poprzednich projektów jest wykorzystywana w każdym projekcie i ma kluczowy wpływ na studium wykonalności."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak odzyskiwana jest poprzednia wiedza podczas szczegółowej fazy projektowania produktu i jego komponentów?",
@@ -501,7 +501,7 @@
             "D": "Wiedza z poprzednich projektów jest systematycznie odzyskiwana i wykorzystywana podczas szczegółowej fazy projektowania.",
             "E": "Wiedza z poprzednich projektów jest w pełni odzyskiwana i wykorzystywana podczas szczegółowej fazy projektowania."
           },
-          "selected_answer": "B"
+          "selected_answer": "A"
         },
         {
           "question_text": "Jak odzyskiwana jest poprzednia wiedza podczas testowania, prototypowania i eksperymentowania?",
@@ -512,7 +512,7 @@
             "D": "Wiedza z poprzednich projektów jest w pełni odzyskiwana podczas testowania i prototypowania.",
             "E": "Wiedza z poprzednich projektów jest integralną częścią testowania, prototypowania i eksperymentowania."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak odzyskiwana jest poprzednia wiedza podczas finalnej weryfikacji projektu?",
@@ -523,7 +523,7 @@
             "D": "Wiedza z poprzednich projektów jest odzyskiwana podczas finalnej weryfikacji projektu w większości przypadków.",
             "E": "Wiedza z poprzednich projektów jest priorytetem w procesie finalnej weryfikacji projektu."
           },
-          "selected_answer": "D"
+          "selected_answer": "A"
         },
         {
           "question_text": "Jak formalny plan zarządzania wiedzą wspiera proces rozwoju produktu?",
@@ -534,7 +534,7 @@
             "D": "Formalny plan zarządzania wiedzą jest w pełni wdrażany i wspiera rozwój produktu we wszystkich projektach.",
             "E": "Formalny plan zarządzania wiedzą jest w pełni wdrażany i systematycznie używany we wszystkich projektach."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu firma wykorzystuje zasoby wiedzy z poprzednich projektów?",
@@ -545,7 +545,7 @@
             "D": "Firma regularnie wykorzystuje zasoby wiedzy z poprzednich projektów i stosuje je w nowych projektach.",
             "E": "Firma w pełni wykorzystuje zasoby wiedzy z poprzednich projektów i regularnie aktualizuje proces ZW."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak zasady projektowe zdefiniowane przez firmę są uwzględniane (często przeglądane i aktualizowane) w procesie zarządzania wiedzą?",
@@ -556,7 +556,7 @@
             "D": "Zasady projektowe zdefiniowane przez firmę są regularnie aktualizowane i wspierają proces ZW.",
             "E": "Zasady projektowe zdefiniowane przez firmę są ciągle aktualizowane i w pełni wspierają proces ZW."
           },
-          "selected_answer": "A"
+          "selected_answer": "D"
         },
         {
           "question_text": "Jak zasady projektowe zdefiniowane przez podmioty zewnętrzne (np. klienci, dostawcy) są uwzględniane (często przeglądane i aktualizowane) w procesie ZW?",
@@ -567,7 +567,7 @@
             "D": "Zewnętrzne zasady projektowe są regularnie uwzględniane i mają znaczący wpływ na projekty.",
             "E": "Zewnętrzne zasady projektowe są kluczowe i są systematycznie uwzględniane we wszystkich projektach."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak zasady projektowe zdefiniowane w pisemnych podręcznikach/standardach zasad projektowania są uwzględniane (często przeglądane i aktualizowane) w procesie ZW?",
@@ -578,7 +578,7 @@
             "D": "Zasady projektowe zdefiniowane w podręcznikach/standardach są regularnie uwzględniane i mają znaczący wpływ na projekty.",
             "E": "Zasady projektowe zdefiniowane w podręcznikach/standardach są kluczowe i są systematycznie uwzględniane we wszystkich projektach."
           },
-          "selected_answer": "A"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jak zasady zarządzania wiedzą wspierają uwzględnianie finalnych kosztów produktu?",
@@ -589,7 +589,7 @@
             "D": "Zarządzanie wiedzą systematycznie uwzględnia finalne koszty produktu i wpływa na decyzje.",
             "E": "Zarządzanie wiedzą w pełni uwzględnia finalne koszty produktu i jest integralną częścią podejmowania decyzji."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak zarządzanie wiedzą wpływa na ocenę kosztów rozwoju i ROI?",
@@ -600,7 +600,7 @@
             "D": "Zarządzanie wiedzą ma duży wpływ na ocenę kosztów rozwoju i ROI we wszystkich projektach.",
             "E": "Zarządzanie wiedzą ma kluczowy wpływ na ocenę kosztów rozwoju i ROI i jest stosowane we wszystkich projektach."
           },
-          "selected_answer": "A"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jak zarządzanie wiedzą wspiera uwzględnianie kosztów cyklu życia i kosztów operacyjnych (np. konserwacja, recykling)?",
@@ -611,7 +611,7 @@
             "D": "Koszty cyklu życia i koszty operacyjne są w pełni uwzględniane w większości projektów.",
             "E": "Koszty cyklu życia i koszty operacyjne są w pełni uwzględniane i mają największy wpływ na decyzje projektowe."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak zarządzanie wiedzą wpływa na czas wprowadzenia na rynek (TTM) i terminy dostaw?",
@@ -622,7 +622,7 @@
             "D": "Czas wprowadzenia na rynek jest regularnie uwzględniany i wpływa na decyzje ZW.",
             "E": "Czas wprowadzenia na rynek jest kluczowy i w pełni uwzględniany w procesie ZW."
           },
-          "selected_answer": "E"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jak ZW wspiera ocenę liczby różnych produktów w portfolio firmy?",
@@ -633,7 +633,7 @@
             "D": "ZW wspiera ocenę liczby różnych produktów i wpływa na decyzje strategiczne.",
             "E": "ZW w pełni wspiera ocenę liczby różnych produktów i jest integralną częścią procesu podejmowania decyzji."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu ZW uwzględnia poziom dostosowania produktu do potrzeb klienta?",
@@ -644,7 +644,7 @@
             "D": "Poziom dostosowania produktu jest kluczowym czynnikiem i jest uwzględniany w większości projektów.",
             "E": "Poziom dostosowania produktu jest w pełni uwzględniany i ma duży wpływ na decyzje projektowe."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak zarządzanie wiedzą wspiera innowacje w firmie?",
@@ -655,7 +655,7 @@
             "D": "ZW wspiera innowacje we wszystkich projektach i ma wpływ na rozwój produktu.",
             "E": "ZW jest priorytetem w innowacjach i wspiera wszystkie projekty kompleksowo."
           },
-          "selected_answer": "E"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jak zasady ZW wspierają budowanie wizerunku marki?",
@@ -666,7 +666,7 @@
             "D": "Wizerunek marki jest kluczowym elementem w ZW i wpływa na decyzje projektowe.",
             "E": "Wizerunek marki jest w pełni zintegrowany z ZW i ma duży wpływ na decyzje."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak zarządzanie wiedzą wspiera wydajność funkcjonalną produktów (np. produktywność, szybkość, dokładność)?",
@@ -677,7 +677,7 @@
             "D": "Wydajność funkcjonalna jest systematycznie monitorowana i uwzględniana w procesie ZW.",
             "E": "Wydajność funkcjonalna jest integralną częścią ZW i ma znaczący wpływ na decyzje."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak zarządzanie wiedzą wspiera monitorowanie wydajności jakościowej produktu (np. trwałość, niezawodność)?",
@@ -699,7 +699,7 @@
             "D": "Zarządzanie wiedzą wspiera zgodność z przepisami i standardami w większości projektów.",
             "E": "Zarządzanie wiedzą w pełni wspiera zgodność z przepisami i standardami i ma duży wpływ na decyzje."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jakie inne aspekty (np. zrównoważony rozwój środowiskowy, estetyka) są uwzględniane w procesie ZW?",
@@ -710,7 +710,7 @@
             "D": "Inne aspekty, takie jak zrównoważony rozwój środowiskowy, są regularnie uwzględniane i wpływają na decyzje.",
             "E": "Inne aspekty, takie jak zrównoważony rozwój środowiskowy, są integralną częścią procesu ZW i mają duży wpływ na decyzje projektowe."
           },
-          "selected_answer": "E"
+          "selected_answer": "C"
         }
       ]
     },
@@ -727,7 +727,7 @@
             "D": "Komunikacja werbalna z kolegami jest skutecznie używana do dzielenia się wiedzą we wszystkich projektach.",
             "E": "Komunikacja werbalna z kolegami jest priorytetem i w pełni używana do dzielenia się wiedzą na wszystkich etapach projektu."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak często tworzone i wykorzystywane są dokumenty z wyciągniętymi wnioskami?",
@@ -738,7 +738,7 @@
             "D": "Dokumenty z wyciągniętymi wnioskami są systematycznie tworzone i używane w większości projektów.",
             "E": "Dokumenty z wyciągniętymi wnioskami są w pełni zintegrowane z procesem i regularnie używane we wszystkich projektach."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu specyfikacje projektowe są używane w procesach zarządzania wiedzą?",
@@ -749,7 +749,7 @@
             "D": "Specyfikacje projektowe są w pełni używane do dzielenia się wiedzą we wszystkich projektach.",
             "E": "Specyfikacje projektowe są w pełni i systematycznie używane do dzielenia się wiedzą w każdym projekcie."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak skutecznie kwestionariusze i listy kontrolne wspierają zarządzanie wiedzą?",
@@ -760,7 +760,7 @@
             "D": "Kwestionariusze i listy kontrolne są skutecznie używane i mają duży wpływ na zarządzanie wiedzą.",
             "E": "Kwestionariusze i listy kontrolne są priorytetem i skutecznie wspierają zarządzanie wiedzą na każdym etapie."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu sale konferencyjne, plakaty i zarządzanie wizualne są używane do dzielenia się wiedzą?",
@@ -771,7 +771,7 @@
             "D": "Sale konferencyjne, plakaty i zarządzanie wizualne są w pełni używane do dzielenia się wiedzą.",
             "E": "Sale konferencyjne, plakaty i zarządzanie wizualne są kluczową częścią procesu dzielenia się wiedzą i są w pełni używane."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak często wspólne foldery sieciowe są używane do przechowywania i dzielenia się wiedzą?",
@@ -782,7 +782,7 @@
             "D": "Wspólne foldery sieciowe są regularnie używane i wspierają proces zarządzania wiedzą.",
             "E": "Wspólne foldery sieciowe są priorytetem do przechowywania i dzielenia się wiedzą, regularnie aktualizowane i używane."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu intranet wspiera proces zarządzania wiedzą?",
@@ -793,7 +793,7 @@
             "D": "Intranet jest skutecznie używany do wspierania zarządzania wiedzą we wszystkich projektach.",
             "E": "Intranet jest integralnym narzędziem wspierającym zarządzanie wiedzą i jest używany we wszystkich projektach."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak strony internetowe są używane do pracy nad projektami współprawczymi (np. Wiki) w zarządzaniu wiedzą?",
@@ -804,7 +804,7 @@
             "D": "Strony internetowe używane do pracy nad projektami współprawczymi są skutecznie używane do zarządzania wiedzą.",
             "E": "Strony internetowe używane do pracy nad projektami współprawczymi są w pełni zintegrowane z procesem zarządzania wiedzą i wspierają projekty na wszystkich etapach."
           },
-          "selected_answer": "E"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jak blogi, fora i tablice ogłoszeń są używane w zarządzaniu wiedzą?",
@@ -815,7 +815,7 @@
             "D": "Blogi, fora i tablice ogłoszeń są skutecznie używane do zarządzania wiedzą.",
             "E": "Blogi, fora i tablice ogłoszeń są w pełni zintegrowane z procesem zarządzania wiedzą i wspierają projekty na wszystkich etapach."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak systemy PDM/PLM wspierają zarządzanie wiedzą?",
@@ -826,7 +826,7 @@
             "D": "Systemy PDM/PLM są w pełni zintegrowane z procesem zarządzania wiedzą we wszystkich projektach.",
             "E": "Systemy PDM/PLM są w pełni wdrożone i wspierają zarządzanie wiedzą na każdym etapie rozwoju produktu."
           },
-          "selected_answer": "E"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jakie korzyści oprogramowanie KBE i automatyzacja projektowania przynoszą zarządzaniu wiedzą?",
@@ -837,7 +837,7 @@
             "D": "Oprogramowanie KBE i automatyzacja projektowania są skutecznie używane w zarządzaniu wiedzą w większości projektów.",
             "E": "Oprogramowanie KBE i automatyzacja projektowania są integralną częścią zarządzania wiedzą i są używane we wszystkich projektach."
           },
-          "selected_answer": "E"
+          "selected_answer": "C"
         }
       ]
     },
@@ -854,7 +854,7 @@
             "D": "Zasady modularyzacji i standaryzacji części są skutecznie stosowane we wszystkich projektach.",
             "E": "Zasady modularyzacji i standaryzacji części są priorytetem i stosowane we wszystkich projektach na każdym etapie."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu Design for X (DFX) jest stosowany w odniesieniu do wydajności funkcjonalnej?",
@@ -865,7 +865,7 @@
             "D": "Design for X (DFX) jest kluczowym elementem w projektach w odniesieniu do wydajności funkcjonalnej.",
             "E": "Design for X (DFX) jest integralną częścią każdego projektu i w pełni wspiera wydajność funkcjonalną."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak Design for X (DFX) wspiera wydajność jakościową produktu?",
@@ -898,7 +898,7 @@
             "D": "Design to Cost (DTC) i Target Cost Management (TCM) są skutecznie stosowane we wszystkich projektach.",
             "E": "Design to Cost (DTC) i Target Cost Management (TCM) są integralną częścią każdego projektu i mają duży wpływ na koszty."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu Analiza Kosztów Cyklu Życia (LCC) i Calkowity Koszt Posiadania (TCO) są uwzględniane w procesie projektowania?",
@@ -909,7 +909,7 @@
             "D": "Analiza Kosztów Cyklu Życia (LCC) i Calkowity Koszt Posiadania (TCO) są w pełni uwzględniane w procesie projektowania.",
             "E": "Analiza Kosztów Cyklu Życia (LCC) i Calkowity Koszt Posiadania (TCO) są w pełni uwzględniane na każdym etapie procesu projektowania."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak skutecznie prowadzona jest Analiza i Inżynieria Cyklu Życia (LCA&E)?",
@@ -920,7 +920,7 @@
             "D": "Analiza i Inżynieria Cyklu Życia (LCA&E) jest skutecznie prowadzona we wszystkich projektach.",
             "E": "Analiza i Inżynieria Cyklu Życia (LCA&E) jest priorytetem w każdym projekcie i systematycznie prowadzona."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jak Analiza i Inżynieria Wartości (VA&E) wspiera proces projektowania?",
@@ -931,7 +931,7 @@
             "D": "Analiza i Inżynieria Wartości (VA&E) jest używana we wszystkich projektach i ma znaczący wpływ na proces projektowania.",
             "E": "Analiza i Inżynieria Wartości (VA&E) jest kluczowym elementem każdego projektu i znacząco wpływa na finalny wynik."
           },
-          "selected_answer": "C"
+          "selected_answer": "A"
         },
         {
           "question_text": "Jak skutecznie Funkcje Jakości (QFD) są stosowane w procesie projektowania?",
@@ -942,7 +942,7 @@
             "D": "Funkcje Jakości (QFD) są regularnie stosowane w każdym projekcie i wspierają cały proces rozwoju.",
             "E": "Funkcje Jakości (QFD) są w pełni stosowane na każdym etapie rozwoju produktu i są integralną częścią procesu."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu Analiza Rodzajów i Skutków Uszkodzeń (FMEA/FMECA) wspiera rozwój produktu?",
@@ -953,7 +953,7 @@
             "D": "Analiza Rodzajów i Skutków Uszkodzeń (FMEA/FMECA) jest stosowana systematycznie i ma duży wpływ na rozwój produktu.",
             "E": "Analiza Rodzajów i Skutków Uszkodzeń (FMEA/FMECA) jest stosowana we wszystkich projektach i ma kluczowy wpływ na decyzje projektowe."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu systematyczne metody innowacji, takie jak TRIZ, są stosowane w procesie projektowania?",
@@ -964,7 +964,7 @@
             "D": "Systematyczne metody innowacji, takie jak TRIZ, są stosowane w większości projektów i wspierają innowacje.",
             "E": "Systematyczne metody innowacji, takie jak TRIZ, są w pełni zintegrowane z procesem projektowania i stosowane we wszystkich projektach."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         }
       ]
     },
@@ -981,7 +981,7 @@
             "D": "Automatyzacja biurowa jest skutecznie używana do wspierania procesu rozwoju produktu we wszystkich projektach.",
             "E": "Automatyzacja biurowa jest priorytetem i w pełni wspiera proces rozwoju produktu w każdym projekcie."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu systemy CAD 2D są używane w procesie projektowania?",
@@ -992,7 +992,7 @@
             "D": "Systemy CAD 2D są w pełni używane we wszystkich projektach.",
             "E": "Systemy CAD 2D są w pełni zintegrowane z każdym projektem i wspierają cały proces projektowania."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jakie korzyści systemy CAD 3D przynoszą rozwojowi produktu?",
@@ -1014,7 +1014,7 @@
             "D": "Modele cyfrowe (DMU) są używane we wszystkich projektach i mają duży wpływ na rozwój produktu.",
             "E": "Modele cyfrowe (DMU) są integralną częścią każdego projektu i w pełni wspierają rozwój produktu."
           },
-          "selected_answer": "A"
+          "selected_answer": "D"
         },
         {
           "question_text": "W jakim stopniu komputerowe wspomaganie stylizacji (CAS) jest używane w projektach rozwoju produktu?",
@@ -1036,7 +1036,7 @@
             "D": "Komputerowe wspomaganie inżynierii (CAE) jest w pełni używane we wszystkich projektach.",
             "E": "Komputerowe wspomaganie inżynierii (CAE) jest w pełni zintegrowane z każdym projektem i wspiera cały proces rozwoju."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu metoda analizy elementów skończonych (FEA/FEM) jest używana w procesach projektowania?",
@@ -1047,7 +1047,7 @@
             "D": "Metoda analizy elementów skończonych (FEA/FEM) jest skutecznie stosowana we wszystkich projektach.",
             "E": "Metoda analizy elementów skończonych (FEA/FEM) jest priorytetem i używana w każdym projekcie."
           },
-          "selected_answer": "C"
+          "selected_answer": "A"
         },
         {
           "question_text": "W jakim stopniu obliczeniowa dynamika płynów (CFD) jest używana w projektach?",
@@ -1058,7 +1058,7 @@
             "D": "Obliczeniowa dynamika płynów (CFD) jest w pełni używana we wszystkich projektach.",
             "E": "Obliczeniowa dynamika płynów (CFD) jest w pełni używana we wszystkich projektach i wspiera procesy rozwoju."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu KBE i automatyzacja projektowania wspierają procesy projektowania?",
@@ -1069,7 +1069,7 @@
             "D": "KBE i automatyzacja projektowania są skutecznie używane w większości projektów.",
             "E": "KBE i automatyzacja projektowania są priorytetem i są stosowane kompleksowo w każdym projekcie."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu komputerowe wspomaganie produkcji (CAM) jest używane w procesie produkcyjnym?",
@@ -1080,7 +1080,7 @@
             "D": "Komputerowe wspomaganie produkcji (CAM) jest systematycznie używane we wszystkich projektach.",
             "E": "Komputerowe wspomaganie produkcji (CAM) jest w pełni używane we wszystkich projektach."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu symulacja zdarzeń dyskretnych (DES) wspiera procesy rozwoju produktu?",
@@ -1124,7 +1124,7 @@
             "D": "Systemy PDM/PLM są w pełni stosowane we wszystkich projektach i wspierają zarządzanie danymi produktu.",
             "E": "Systemy PDM/PLM są w pełni stosowane we wszystkich projektach i są kluczowym narzędziem w zarządzaniu danymi produktu."
           },
-          "selected_answer": "A"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jakie korzyści systemy zarządzania dokumentami (DMS) przynoszą projektom?",
@@ -1135,7 +1135,7 @@
             "D": "Systemy zarządzania dokumentami (DMS) są w pełni stosowane we wszystkich projektach.",
             "E": "Systemy zarządzania dokumentami (DMS) są integralną częścią każdego projektu i w pełni wspierają zarządzanie dokumentami."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu system zarządzania przepływem pracy (WMS) wspiera zarządzanie projektami?",
@@ -1146,7 +1146,7 @@
             "D": "System zarządzania przepływem pracy (WMS) jest skutecznie używany we wszystkich projektach.",
             "E": "System zarządzania przepływem pracy (WMS) jest w pełni używany w każdym projekcie."
           },
-          "selected_answer": "E"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu planowanie zasobów przedsiębiorstwa (ERP) jest stosowane w procesach rozwoju produktu?",
@@ -1168,7 +1168,7 @@
             "D": "Zarządzanie łańcuchem dostaw (SCM) wspiera rozwój produktu we wszystkich projektach.",
             "E": "Zarządzanie łańcuchem dostaw (SCM) jest w pełni zintegrowane w każdym projekcie i w pełni wspiera procesy rozwoju."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu systemy zarządzania relacjami z klientami (CRM) wpływają na rozwój produktu?",
@@ -1201,7 +1201,7 @@
             "D": "Skomputeryzowany system zarządzania konserwacją (CMMS) jest stosowany we wszystkich projektach.",
             "E": "Skomputeryzowany system zarządzania konserwacją (CMMS) jest integralną częścią każdego projektu i wspiera wszystkie procesy rozwoju produktu."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim stopniu oprogramowanie do zarządzania projektami wpływa na rozwój produktu?",
