@@ -1,6 +1,7 @@
 import os
 import json
 import re
+import tomllib
 from pathlib import Path
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -73,50 +74,50 @@ def consensus(state: DocumentState) -> DocumentState:
             return state
     
     try:
-        # Initialize Gemini Pro 2.5 for consensus
-        from langchain_google_genai import ChatGoogleGenerativeAI
+        # Load consensus prompt from config
+        try:
+            with open("./config/prompts.toml", "rb") as f:
+                prompts_config = tomllib.load(f)
+            
+            if "consensus" not in prompts_config or "consensus_prompt" not in prompts_config["consensus"]:
+                print("Error: consensus_prompt not found in config/prompts.toml")
+                return state
+            
+            consensus_prompt_template = prompts_config["consensus"]["consensus_prompt"]
+                
+        except Exception as e:
+            print(f"Error loading consensus prompt config: {e}")
+            return state
         
         google_api_key = os.getenv("GOOGLE_API_KEY")
         print(f"Google API key available: {bool(google_api_key)}")
         if google_api_key:
             print(f"API key length: {len(google_api_key)}")
         
+        # Use Gemini model from environment configuration
+        gemini_model = os.getenv("GEMINI_MODEL", "gemini-2.5-pro")
         consensus_llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-pro-preview-05-06",
-            temperature=0.1,  # Low temperature for consistent synthesis
-            max_tokens=None,  # Let Gemini use its full capacity
-            google_api_key=google_api_key
+            model=gemini_model,      # Read from GEMINI_MODEL env var
+            temperature=0.1,         # Low temperature for consistent synthesis
+            max_tokens=20000,        # Higher limit for 7000-word reports
+            timeout=600,             # Extended timeout for longer reports
+            max_retries=3,           # Moderate retries to avoid excessive delays
+            google_api_key=google_api_key,
+            request_timeout=600      # Request-level timeout
         )
         
-        print("Initialized consensus model: Gemini Pro 2.5 (extended output)")
+        print(f"Initialized consensus model: {gemini_model} (extended output)")
         
-        # Prepare consensus prompt
+        # Prepare consensus prompt data
         gaps_json = json.dumps(state.get('gaps', {}), ensure_ascii=False, indent=2)
         
-        consensus_prompt = f"""Create a comprehensive AI transformation report, synthesizing the best elements from three analyses (OpenAI, Anthropic, Gemini). 
-
-TASK: Build a detailed, narrative strategic report (minimum 10,000 words) that:
-1. Synthesizes the best insights from all analyses
-2. Eliminates weaknesses of individual reports  
-3. Contains practical, actionable recommendations
-4. Has the character of a professional strategic document
-
-IMPORTANT: Generate a FULL, LONG report - do not shorten, do not interrupt, continue to the end of all sections.
-
-## INPUT DATA
-
-### GAP ANALYSIS (COMMON SOURCE OF TRUTH):
-{gaps_json}
-
-### INDEPENDENT AI ANALYSES (FOR SYNTHESIS):
-"""
-
-        # Add each branch's data to the prompt
+        # Build branch data for prompt
+        branch_data_text = ""
         for branch_suffix in available_branches:
             data = branch_data[branch_suffix]
             status_text = 'APPROVED' if data['approved'] else 'FINAL (3 iterations)'
             
-            consensus_prompt += f"""
+            branch_data_text += f"""
 
 **BRANCH {branch_suffix}: {data['provider'].upper()}**
 - Assessment Score: {data['score']}/100
@@ -128,116 +129,70 @@ RECOMMENDATIONS:
 
 ---
 """
-
-        consensus_prompt += """
-
-## SYNTHESIS METHODOLOGY AND QUALITY REQUIREMENTS
-
-### 1. COMPARATIVE SOURCE ANALYSIS
-- **Identify the strongest elements of each analysis**: Which report has the best structure? Most detailed budgets? Most realistic timelines?
-- **Find common threads and confirmations**: Elements repeated across all analyses have high credibility
-- **Identify unique valuable insights**: Each model can bring unique perspectives that will enrich the final report
-- **Assess recommendation quality**: Prioritize concrete, actionable actions over general concepts
-
-### 2. REPORT CONSTRUCTION REQUIREMENTS
-
-**LENGTH AND DEPTH:**
-- Target 3500-4000 words
-- Each section should be developed narratively, not just in bullet points
-- Add business context, justifications and practical examples
-- Include detailed implementation scenarios
-
-**NARRATIVE STRUCTURE:**
-1. **Executive Summary**
-   - Full strategic context of the organization
-   - Detailed diagnosis of current state with justifications
-   - Key challenges with practical examples
-   - Target vision with concrete business benefits
-   - Transformation roadmap with key milestones
-
-2. **Analysis by OLIMP Areas**
-   - **Technology and Infrastructure**: 
-     * Detailed assessment of each technological component
-     * Concrete technical recommendations with vendors and costs
-     * Step-by-step migration scenarios
-     * Technical risk analysis and mitigation methods
-   - **People and Competencies**:
-     * Deep analysis of current competencies and gaps
-     * Detailed training programs with curriculum and schedule
-     * AI talent recruitment and retention strategies
-     * Plan for building AI-supportive organizational culture
-   - **Organization and Processes**:
-     * Detailed map of processes for transformation
-     * AI project management methodologies with practical frameworks
-     * Governance and compliance (GDPR, AI Act) with concrete procedures
-     * Change management and internal communication
-
-3. **Implementation Plan**
-   - Detailed 3-phase schedule with milestones
-   - Concrete dates, budgets and responsibilities
-   - Analysis of dependencies between projects
-   - Risk management strategies and contingency planning
-   - Quick wins and long-term strategic investments
-
-4. **Resources, Budget and Governance** 
-   - Detailed cost breakdown with justifications
-   - Financing strategies and ROI analysis
-   - Transformation team organization
-   - KPIs and progress monitoring system
-   - Reporting and review procedures
-
-5. **Business Benefits and Cultural Transformation** 
-   - Concrete use cases with ROI estimates
-   - Competitive advantage and market positioning
-   - Impact on employee satisfaction and employer branding
-   - Long-term vision of AI-driven organization
-
-### 3. STYLISTIC GUIDELINES
-
-**LANGUAGE AND TONE:**
-- Professional but accessible business language
-- Narrative style with logical flow of arguments
-- Concrete examples and case studies where possible
-- Balance between vision and practicality
-
-**VISUAL ELEMENTS (in markdown):**
-- Comparison tables for key metrics
-- Checklists for practical actions
-- Highlights and callouts for key insights
-- Logical hierarchy of headings and subsections
-
-**CONCRETENESS AND ACTIONABILITY:**
-- Provide specific names of technologies, vendors, tools
-- Set realistic budgets with ranges (from-to)
-- Set measurable goals and deadlines
-- Indicate people/roles responsible for specific areas
-
-## FINAL TASK
-
-Create a **COMPREHENSIVE AI TRANSFORMATION REPORT** that:
-- Constitutes a synthesis of the best elements from all three analyses
-- Is significantly more detailed and narrative than previous reports
-- Contains practical, actionable recommendations with concrete details
-- Serves as a complete strategic guide for the organization
-- Has the structure of a professional consulting document
-
-The report should be detailed and practical enough that the organization can use it as the main document guiding the entire AI transformation.
-
-IMPORTANT: 
-- Report must be written in POLISH language (raport musi być napisany w języku POLSKIM)
-- Generate a comprehensive report with minimum 10,000 words
-- Do not shorten or interrupt - continue to the end of all sections
-- Do not add placeholders regarding company name or refer to specific company names
-- Focus on substantive content without metadata, timestamps, or model details in the report header
-"""
+        
+        # Format the consensus prompt with data
+        consensus_prompt = consensus_prompt_template.format(
+            gaps_data=gaps_json,
+            branch_data=branch_data_text
+        )
 
         print("Generating consensus recommendation...")
+        print(f"Prompt length: {len(consensus_prompt)} characters")
         
         # Create message for consensus
         message = HumanMessage(content=consensus_prompt)
         
-        # Generate consensus recommendation
-        response = consensus_llm.invoke([message])
+        # Generate consensus recommendation with retry logic
+        max_attempts = 3
+        response = None
+        for attempt in range(max_attempts):
+            try:
+                print(f"Consensus attempt {attempt + 1}/{max_attempts}...")
+                response = consensus_llm.invoke([message])
+                if response and response.content:
+                    print(f"✅ Consensus generation successful on attempt {attempt + 1}")
+                    break
+                else:
+                    print(f"⚠️ Empty response on attempt {attempt + 1}")
+            except Exception as e:
+                print(f"❌ Consensus attempt {attempt + 1} failed: {e}")
+                if attempt == max_attempts - 1:
+                    print("🔄 All consensus attempts failed, using fallback strategy")
+                    # Use the highest-scoring individual recommendation as fallback
+                    if available_branches:
+                        best_branch = max(available_branches, key=lambda x: branch_data[x]["score"])
+                        print(f"📋 Fallback: Using best branch {best_branch} ({branch_data[best_branch]['provider']}) with score {branch_data[best_branch]['score']}/100")
+                        
+                        state["consensus_recommendation"] = branch_data[best_branch]["recommendation"]
+                        state["recommendations"] = branch_data[best_branch]["recommendation"]
+                        
+                        # Save fallback report
+                        fallback_filename = "A_recommendations_CONSENSUS_FALLBACK.md"
+                        reports_dir = "./data/reports"
+                        os.makedirs(reports_dir, exist_ok=True)
+                        
+                        fallback_path = f"{reports_dir}/{fallback_filename}"
+                        try:
+                            with open(fallback_path, "w", encoding="utf-8") as f:
+                                f.write(f"# FALLBACK RECOMMENDATION REPORT\\n\\n")
+                                f.write(f"**Note**: Consensus generation failed. Using best individual branch.\\n")
+                                f.write(f"**Selected Branch**: {best_branch} ({branch_data[best_branch]['provider'].upper()})\\n")
+                                f.write(f"**Score**: {branch_data[best_branch]['score']}/100\\n")
+                                f.write(f"**Iterations**: {branch_data[best_branch]['iterations']}/3\\n\\n")
+                                f.write("---\\n\\n")
+                                f.write(branch_data[best_branch]["recommendation"])
+                            print(f"📁 Fallback report saved to {fallback_path}")
+                        except Exception as fe:
+                            print(f"Error saving fallback report: {fe}")
+                        
+                        return state
+                    else:
+                        print("❌ No branches available for fallback")
+                        return state
+                else:
+                    print(f"⏳ Waiting 30 seconds before retry...")
+                    import time
+                    time.sleep(30)
         
         print(f"Response received: {bool(response.content)}")
         if response.content:
@@ -276,7 +231,7 @@ IMPORTANT:
                 f.write(f"**Generated from**: {len(available_branches)} AI analysis branches\\n")
                 branch_info = ', '.join(f'{b} ({branch_data[b]["provider"].upper()}: {branch_data[b]["score"]}/100)' for b in available_branches)
                 f.write(f"**Branches**: {branch_info}\\n")
-                f.write(f"**Consensus Model**: gemini-2.5-pro-preview-05-06\\n")
+                f.write(f"**Consensus Model**: {gemini_model}\\n")
                 f.write(f"**Timestamp**: {Path().absolute()}\\n\\n")
                 f.write("---\\n\\n")
                 f.write(consensus_recommendation)
@@ -314,7 +269,7 @@ IMPORTANT:
                 
                 f.write(f"## Consensus Details\\n\\n")
                 f.write(f"- **Total branches processed**: {len(available_branches)}\\n")
-                f.write(f"- **Consensus model**: gemini-2.5-pro-preview-05-06\\n")
+                f.write(f"- **Consensus model**: {gemini_model}\\n")
                 f.write(f"- **Final report**: {consensus_filename}\\n")
                 
             print(f"Consensus summary saved to {summary_path}")

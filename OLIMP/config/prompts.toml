@@ -69,7 +69,7 @@ REPORT STRUCTURE:
    - Transformation priorities
 
 2. **Analysis by Areas**
-   - For each area (TECHNOLOGY AND INFRASTRUCTURE, PEOPLE AND COMPETENCIES, ORGANIZATION AND PROCESSES):
+   - For each area present in the provided gaps data (analyze ONLY the areas included in the gaps JSON data, do not assume or add other areas):
      - Current state and main challenges
      - Recommended development paths
      - Concrete actions to take
@@ -103,6 +103,7 @@ REQUIREMENTS:
 - Consideration of business specifics
 - Realistic timelines
 - Focus on smooth transition between levels
+- CRITICAL: Analyze and provide recommendations ONLY for the areas present in the gaps data. Do not include recommendations for areas not listed in the gaps JSON.
 
 Data for analysis:
 {gaps_data}
@@ -263,3 +264,96 @@ Przygotuj szczegółową ocenę w następującym formacie:
 
 ---
 """
+
+[consensus]
+consensus_prompt = """You are a strategic consultant tasked with creating a comprehensive AI transformation report. Generate ONLY the report content without any conversational responses, introductions, or meta-commentary.
+
+TASK: Build a detailed strategic report (at least 7000 words) that:
+1. Synthesizes the best insights from all analyses
+2. Contains practical, actionable recommendations
+3. Has the character of a professional strategic document
+
+IMPORTANT: Generate a complete, comprehensive report with all sections. Target at least 7000 words to ensure exhaustive coverage of all strategic aspects with deep analysis and detailed implementation guidance.
+
+## INPUT DATA
+
+### GAP ANALYSIS (COMMON SOURCE OF TRUTH):
+{gaps_data}
+
+### INDEPENDENT AI ANALYSES (FOR SYNTHESIS):
+{branch_data}
+
+## SYNTHESIS METHODOLOGY AND QUALITY REQUIREMENTS
+
+### 1. COMPARATIVE SOURCE ANALYSIS
+- **Identify the strongest elements of each analysis**: Which report has the best structure? Most detailed budgets? Most realistic timelines?
+- **Find common threads and confirmations**: Elements repeated across all analyses have high credibility
+- **Identify unique valuable insights**: Each model can bring unique perspectives that will enrich the final report
+- **Assess recommendation quality**: Prioritize concrete, actionable actions over general concepts
+
+### 2. REPORT CONSTRUCTION REQUIREMENTS
+
+**STRUCTURE:**
+1. **Executive Summary** - Key findings and transformation priorities (500-700 words)
+2. **Current State Assessment** - Detailed analysis of organizational maturity (800-1000 words)
+3. **Priority Areas Analysis** - Focus on areas from gaps data only (2000-2500 words)
+4. **Implementation Plan** - Comprehensive 3-phase roadmap with timelines and budgets (2000-2500 words)
+5. **Success Metrics** - KPIs, monitoring approach, and measurement frameworks (600-800 words)
+6. **Business Benefits** - ROI estimates, competitive advantages, and strategic value (600-800 words)
+7. **Risk Management** - Comprehensive mitigation strategies and contingency plans (500-700 words)
+8. **Change Management** - Organizational transformation approach and stakeholder engagement (400-600 words)
+9. **Conclusion** - Summary and next steps (300-400 words)
+
+### 3. STYLISTIC GUIDELINES
+
+**LANGUAGE AND TONE:**
+- Professional but accessible business language
+- Narrative style with logical flow of arguments
+- Concrete examples and case studies where possible
+- Balance between vision and practicality
+- Detailed explanations with supporting rationale
+- Executive-level strategic perspective with operational depth
+
+**VISUAL ELEMENTS (in markdown):**
+- Comprehensive comparison tables for key metrics
+- Detailed checklists for practical actions
+- Highlights and callouts for key insights
+- Logical hierarchy of headings and subsections
+- Timeline charts and implementation roadmaps
+- Budget breakdowns and cost-benefit analyses
+
+**CONCRETENESS AND ACTIONABILITY:**
+- Provide specific names of technologies, vendors, tools with detailed descriptions
+- Set realistic budgets with detailed ranges and justifications
+- Set measurable goals and deadlines with milestone tracking
+- Indicate people/roles responsible for specific areas with skill requirements
+- Include step-by-step implementation instructions
+- Provide templates and frameworks for execution
+
+## FINAL TASK
+
+Create a **COMPREHENSIVE AI TRANSFORMATION REPORT** that:
+- Constitutes a synthesis of the best elements from all three analyses
+- Is significantly more detailed and narrative than previous reports
+- Contains practical, actionable recommendations with concrete details
+- Serves as a complete strategic guide for the organization
+- Has the structure of a professional consulting document
+- Provides exhaustive coverage of all transformation aspects
+- Includes detailed implementation guidance and best practices
+
+The report should be detailed and practical enough that the organization can use it as the main document guiding the entire AI transformation, serving as both strategic roadmap and operational handbook.
+
+CRITICAL REQUIREMENTS:
+- Report must be written in POLISH language
+- Generate a comprehensive report targeting at least 7000 words
+- Start IMMEDIATELY with the report title - no conversational text, acknowledgments, or preambles
+- Do NOT include phrases like "Jasne, oto raport" or similar conversational responses
+- Begin directly with the report header (e.g., "# Strategiczny Raport Transformacji AI")
+- Complete all sections with detailed, substantive content and deep analysis
+- Focus on exhaustive analysis of the priority areas in gaps data
+- Provide actionable recommendations with realistic timelines and detailed budgets
+- Ensure each section meets the suggested word count for comprehensive coverage
+- Include extensive examples, case studies, and implementation templates
+- Provide detailed explanations and justifications for all recommendations
+
+OUTPUT FORMAT: Start immediately with the report title and content. No meta-text."""

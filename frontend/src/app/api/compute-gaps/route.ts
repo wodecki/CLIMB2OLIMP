@@ -9,8 +9,65 @@ export async function POST(request: NextRequest) {
     
     console.log('Computing gaps for selected areas:', selectedAreas);
     
-    // Read OLIMP answers (A_2.json)
+    // CLEANUP: Remove previous session artifacts before processing new selection
     const olimpDataPath = path.join(process.cwd(), '..', 'OLIMP', 'data', 'process');
+    const configPath = path.join(process.cwd(), '..', 'OLIMP', 'config');
+    
+    // Files to clean up from previous sessions
+    const reportsPath = path.join(process.cwd(), '..', 'OLIMP', 'data', 'reports');
+    const filesToClean = [
+      path.join(olimpDataPath, 'A_gaps.json'),
+      path.join(configPath, 'areas_for_improvement.toml'),
+      // Clean analysis state files
+      path.join(process.cwd(), '..', 'OLIMP', 'analysis_pid.txt'),
+      path.join(process.cwd(), '..', 'OLIMP', 'stop_analysis.txt'),
+      path.join(process.cwd(), '..', 'OLIMP', 'analysis_complete.txt'),
+      path.join(process.cwd(), '..', 'OLIMP', 'analysis_error.txt'),
+      // Clean previous reports to force regeneration
+      path.join(reportsPath, 'A_recommendations.md'),
+      path.join(reportsPath, 'A_recommendations_CONSENSUS_FINAL.md')
+    ];
+    
+    console.log('🧹 Cleaning up previous session artifacts...');
+    let cleanedFiles = 0;
+    
+    for (const filePath of filesToClean) {
+      if (fs.existsSync(filePath)) {
+        try {
+          fs.unlinkSync(filePath);
+          console.log(`   ✓ Removed: ${path.basename(filePath)}`);
+          cleanedFiles++;
+        } catch (err) {
+          console.log(`   ⚠ Failed to remove ${path.basename(filePath)}:`, err);
+        }
+      }
+    }
+    
+    // Also clean interim reports directory
+    const interimReportsPath = path.join(reportsPath, 'interim_reports');
+    if (fs.existsSync(interimReportsPath)) {
+      try {
+        const interimFiles = fs.readdirSync(interimReportsPath);
+        let interimCleaned = 0;
+        for (const file of interimFiles) {
+          if (file.endsWith('.md')) {
+            const filePath = path.join(interimReportsPath, file);
+            fs.unlinkSync(filePath);
+            interimCleaned++;
+          }
+        }
+        if (interimCleaned > 0) {
+          console.log(`   ✓ Removed ${interimCleaned} interim report files`);
+          cleanedFiles += interimCleaned;
+        }
+      } catch (err) {
+        console.log(`   ⚠ Failed to clean interim reports:`, err);
+      }
+    }
+    
+    console.log(`🧹 Cleanup completed: ${cleanedFiles} files removed\n`);
+    
+    // Read OLIMP answers (A_2.json)
     const olimpAnswersPath = path.join(olimpDataPath, 'A_2.json');
     
     if (!fs.existsSync(olimpAnswersPath)) {
@@ -74,6 +131,33 @@ export async function POST(request: NextRequest) {
     const gapsFilePath = path.join(olimpDataPath, 'A_gaps.json');
     fs.writeFileSync(gapsFilePath, JSON.stringify(gaps, null, 2));
     
+    // DYNAMIC CONFIG GENERATION: Create areas_for_improvement.toml based on user selection
+    const configFilePath = path.join(configPath, 'areas_for_improvement.toml');
+    
+    // Ensure config directory exists
+    if (!fs.existsSync(configPath)) {
+      fs.mkdirSync(configPath, { recursive: true });
+    }
+    
+    // Generate TOML content with user-selected areas
+    const tomlContent = `# Configuration for areas to analyze for gaps in OLIMP questionnaire
+# These sections will be analyzed to identify improvement opportunities
+# Dynamically generated based on user priority selection
+
+[gap_analysis]
+target_sections = [
+${selectedAreas.map((area: string) => `    "${area}"`).join(',\n')}
+]
+
+# Generated at: ${new Date().toISOString()}
+# Selected areas count: ${selectedAreas.length}
+`;
+    
+    // Write the dynamic configuration
+    fs.writeFileSync(configFilePath, tomlContent);
+    console.log(`✅ Dynamic config generated: ${configFilePath}`);
+    console.log(`📋 Target sections: ${selectedAreas.join(', ')}`);
+    
     // Print essential summary
     const totalQuestions = Object.values(gaps).reduce((sum, sectionGaps) => 
       sum + Object.keys(sectionGaps).length, 0
@@ -84,12 +168,14 @@ export async function POST(request: NextRequest) {
     
     return NextResponse.json({
       success: true,
-      message: 'Gaps computed successfully',
+      message: 'Gaps computed successfully and config generated',
       gaps: gaps,
       summary: {
         totalQuestions,
         sectionsAnalyzed: Object.keys(gaps).length,
-        filePath: gapsFilePath
+        selectedAreas: selectedAreas.length,
+        gapsFilePath: gapsFilePath,
+        configFilePath: configFilePath
       }
     });
     

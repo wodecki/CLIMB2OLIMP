@@ -1,10 +1,13 @@
 # Configuration for areas to analyze for gaps in OLIMP questionnaire
 # These sections will be analyzed to identify improvement opportunities
+# Dynamically generated based on user priority selection
 
 [gap_analysis]
 target_sections = [
     "TECHNOLOGY AND INFRASTRUCTURE",
-    "PEOPLE AND COMPETENCIES", 
-    "ORGANIZATION AND PROCESSES",
-    "BUDGET"
+    "DATA",
+    "ETHICS AND REGULATIONS"
 ]
+
+# Generated at: 2025-06-18T08:10:57.468Z
+# Selected areas count: 3

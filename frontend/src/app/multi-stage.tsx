@@ -403,7 +403,7 @@ export default function MultiStageWorkflow() {
         } catch (err) {
           console.error('Error polling OLIMP status:', err);
         }
-      }, 5000); // Poll every 5 seconds
+      }, 2000); // Poll every 2 seconds (reduced from 5)
       
     } catch (err) {
       console.error('Error starting OLIMP analysis:', err);

@@ -2,23 +2,53 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+// Simple in-memory cache to avoid re-reading files
+const reportCache = new Map<string, { content: string, mtime: number }>();
+
+// Clear cache endpoint (for development)
+export async function DELETE() {
+  reportCache.clear();
+  return NextResponse.json({ message: 'Report cache cleared' });
+}
+
 // Function to clean up report content by removing unwanted artifacts
 function cleanReportContent(content: string): string {
-  // Remove the FINAL CONSENSUS RECOMMENDATION REPORT header and metadata
-  const artifactPattern = /^FINAL CONSENSUS RECOMMENDATION REPORT[\s\S]*?\n\n---\n\n/;
-  content = content.replace(artifactPattern, '');
+  // Handle \\n literal strings that should be newlines
+  if (content.includes('\\n')) {
+    content = content.replace(/\\n/g, '\n');
+  }
   
-  // Remove any other similar metadata patterns
-  const metadataPattern = /^Generated from:[\s\S]*?\n\n---\n\n/;
+  // Remove metadata header in one pass using a more specific pattern
+  const metadataPattern = /^# FINAL CONSENSUS RECOMMENDATION REPORT[\s\S]*?---\s*\n/;
   content = content.replace(metadataPattern, '');
   
-  // Remove standalone "---" separators at the beginning
-  content = content.replace(/^---\n\n/, '');
+  // Remove conversational preambles that might start the report
+  const conversationalPatterns = [
+    /^Jasne,\s*oto\s+[^.]*\./,
+    /^Oczywiście,\s*[^.]*\./,
+    /^Przedstawiam\s+[^.]*\./,
+    /^Przygotowałem\s+[^.]*\./,
+    /^Poniżej\s+znajduje\s+się\s+[^.]*\./
+  ];
   
-  // Clean up any excessive newlines at the beginning
+  for (const pattern of conversationalPatterns) {
+    content = content.replace(pattern, '');
+  }
+  
+  // Clean up any remaining artifacts at the beginning
+  content = content.replace(/^[\s\n]*---[\s\n]*/, '');
   content = content.replace(/^\n+/, '');
+  content = content.replace(/^\*+\s*\n/, ''); // Remove asterisk separators
   
-  return content;
+  // Ensure we start with a proper title if content doesn't start with #
+  if (!content.trim().startsWith('#')) {
+    const firstLine = content.split('\n')[0];
+    if (firstLine && !firstLine.startsWith('#')) {
+      content = '# ' + firstLine + '\n\n' + content.substring(firstLine.length).replace(/^\n+/, '');
+    }
+  }
+  
+  return content.trim();
 }
 
 export async function GET(request: Request) {
@@ -27,9 +57,9 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const reportPath = searchParams.get('path');
     
-    // Path to the backend directory
-    const backendPath = path.join(process.cwd(), '..', 'backend');
-    const reportsDir = path.join(backendPath, 'reports');
+    // Path to the OLIMP reports directory
+    const olimpPath = path.join(process.cwd(), '..', 'OLIMP');
+    const reportsDir = path.join(olimpPath, 'data', 'reports');
     
     // If a specific report path is provided, use it
     if (reportPath) {
@@ -39,8 +69,8 @@ export async function GET(request: Request) {
         // If it's an absolute path, use it directly
         fullReportPath = reportPath;
       } else {
-        // If it's a relative path, join it with the backend path
-        fullReportPath = path.join(backendPath, reportPath);
+        // If it's a relative path, join it with the OLIMP path
+        fullReportPath = path.join(olimpPath, reportPath);
       }
       
       // Check if the file exists
@@ -51,11 +81,26 @@ export async function GET(request: Request) {
         );
       }
       
-      // Read the report file
-      let reportContent = fs.readFileSync(fullReportPath, 'utf8');
+      // Check cache first
+      const stats = fs.statSync(fullReportPath);
+      const cacheKey = fullReportPath;
+      const cached = reportCache.get(cacheKey);
       
-      // Clean up the report content by removing unwanted artifacts
-      reportContent = cleanReportContent(reportContent);
+      let reportContent: string;
+      if (cached && cached.mtime === stats.mtime.getTime()) {
+        // Use cached content
+        reportContent = cached.content;
+      } else {
+        // Read and clean the report file
+        const rawContent = fs.readFileSync(fullReportPath, 'utf8');
+        reportContent = cleanReportContent(rawContent);
+        
+        // Cache the cleaned content
+        reportCache.set(cacheKey, { 
+          content: reportContent, 
+          mtime: stats.mtime.getTime() 
+        });
+      }
       
       return NextResponse.json({
         content: reportContent
@@ -74,8 +119,18 @@ export async function GET(request: Request) {
       // Get all files in the reports directory
       const files = fs.readdirSync(reportsDir);
       
-      // Filter for report files (not error reports)
-      const reportFiles = files.filter(file => file.startsWith('report_') && file.endsWith('.md'));
+      // Filter for consensus report first, then other report files
+      let reportFiles = files.filter(file => file === 'A_recommendations_CONSENSUS_FINAL.md');
+      
+      // If no consensus report, look for other reports
+      if (reportFiles.length === 0) {
+        reportFiles = files.filter(file => 
+          (file.startsWith('A_recommendations') || file.startsWith('report_')) && 
+          file.endsWith('.md') && 
+          !file.includes('_branch_') && 
+          !file.includes('_evaluation_')
+        );
+      }
       
       // If no report files found, return an error
       if (reportFiles.length === 0) {
@@ -96,11 +151,26 @@ export async function GET(request: Request) {
       const mostRecentReport = reportFiles[0];
       const fullReportPath = path.join(reportsDir, mostRecentReport);
       
-      // Read the report file
-      let reportContent = fs.readFileSync(fullReportPath, 'utf8');
+      // Check cache first
+      const stats = fs.statSync(fullReportPath);
+      const cacheKey = fullReportPath;
+      const cached = reportCache.get(cacheKey);
       
-      // Clean up the report content by removing unwanted artifacts
-      reportContent = cleanReportContent(reportContent);
+      let reportContent: string;
+      if (cached && cached.mtime === stats.mtime.getTime()) {
+        // Use cached content
+        reportContent = cached.content;
+      } else {
+        // Read and clean the report file
+        const rawContent = fs.readFileSync(fullReportPath, 'utf8');
+        reportContent = cleanReportContent(rawContent);
+        
+        // Cache the cleaned content
+        reportCache.set(cacheKey, { 
+          content: reportContent, 
+          mtime: stats.mtime.getTime() 
+        });
+      }
       
       return NextResponse.json({
         content: reportContent
