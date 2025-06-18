@@ -4,10 +4,10 @@
 
 [gap_analysis]
 target_sections = [
+    "ORGANIZATION AND PROCESSES",
     "BUDGET",
-    "PRODUCTS AND SERVICES",
     "ETHICS AND REGULATIONS"
 ]
 
-# Generated at: 2025-06-18T08:39:25.930Z
+# Generated at: 2025-06-18T08:58:10.975Z
 # Selected areas count: 3

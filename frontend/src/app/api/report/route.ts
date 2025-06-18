@@ -13,32 +13,17 @@ export async function DELETE() {
 
 // Function to clean up report content by removing unwanted artifacts
 function cleanReportContent(content: string): string {
-  // Handle \\n literal strings that should be newlines
-  if (content.includes('\\n')) {
-    content = content.replace(/\\n/g, '\n');
-  }
-  
-  // Remove metadata header in one pass using a more specific pattern
-  const metadataPattern = /^# FINAL CONSENSUS RECOMMENDATION REPORT[\s\S]*?---\s*\n/;
-  content = content.replace(metadataPattern, '');
-  
-  // Remove conversational preambles that might start the report
-  const conversationalPatterns = [
-    /^Jasne,\s*oto\s+[^.]*\./,
-    /^Oczywiście,\s*[^.]*\./,
-    /^Przedstawiam\s+[^.]*\./,
-    /^Przygotowałem\s+[^.]*\./,
-    /^Poniżej\s+znajduje\s+się\s+[^.]*\./
-  ];
-  
-  for (const pattern of conversationalPatterns) {
-    content = content.replace(pattern, '');
-  }
-  
-  // Clean up any remaining artifacts at the beginning
-  content = content.replace(/^[\s\n]*---[\s\n]*/, '');
-  content = content.replace(/^\n+/, '');
-  content = content.replace(/^\*+\s*\n/, ''); // Remove asterisk separators
+  // Combine multiple operations into fewer regex passes for better performance
+  content = content
+    // Handle \\n literal strings and remove metadata header
+    .replace(/\\n/g, '\n')
+    .replace(/^# FINAL CONSENSUS RECOMMENDATION REPORT[\s\S]*?---\s*\n/, '')
+    // Remove conversational preambles in one combined pattern
+    .replace(/^(Jasne,\s*oto\s+[^.]*\.|Oczywiście,\s*[^.]*\.|Przedstawiam\s+[^.]*\.|Przygotowałem\s+[^.]*\.|Poniżej\s+znajduje\s+się\s+[^.]*\.)/g, '')
+    // Clean up artifacts and whitespace
+    .replace(/^[\s\n]*---[\s\n]*/, '')
+    .replace(/^\n+/, '')
+    .replace(/^\*+\s*\n/, '');
   
   // Ensure we start with a proper title if content doesn't start with #
   if (!content.trim().startsWith('#')) {

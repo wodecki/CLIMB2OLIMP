@@ -71,6 +71,27 @@ export default function MultiStageWorkflow() {
     error?: string;
   } | null>(null);
 
+  // Report preloading state
+  const [reportPreloaded, setReportPreloaded] = useState(false);
+  const [preloadedReport, setPreloadedReport] = useState<string | null>(null);
+
+  // Function to preload report in background
+  const preloadReport = async (reportPath: string) => {
+    if (reportPreloaded || preloadedReport) return;
+    
+    try {
+      const response = await fetch(`/api/report?path=${encodeURIComponent(reportPath)}`);
+      if (response.ok) {
+        const data = await response.json();
+        setPreloadedReport(data.content);
+        setReportPreloaded(true);
+        console.log('Report preloaded successfully');
+      }
+    } catch (error) {
+      console.error('Error preloading report:', error);
+    }
+  };
+
   // Fetch CLIMB2 questionnaire data
   useEffect(() => {
     const fetchData = async () => {
@@ -380,11 +401,18 @@ export default function MultiStageWorkflow() {
           if (statusData.progress) {
             setOlimpProgress(statusData.progress);
           }
+
+          // Start preloading report when it becomes available
+          if (statusData.reports.final && !reportPreloaded && !preloadedReport) {
+            console.log('Starting report preload...');
+            preloadReport(statusData.reports.final);
+          }
           
-          // Handle visualization step
+          // Handle visualization step - optimized for speed
           if (statusData.progress?.currentStep === 'visualizing_report' && statusData.reports.final) {
-            // Start visualization timeout
-            setTimeout(() => {
+            // If report is already preloaded, transition immediately
+            if (reportPreloaded || preloadedReport) {
+              console.log('Report preloaded, transitioning immediately...');
               setOlimpProgress(prev => prev ? {
                 ...prev,
                 currentStep: 'completed',
@@ -397,12 +425,27 @@ export default function MultiStageWorkflow() {
                 setIsRunningAnalysis(false);
                 setStageProgress(prev => ({ ...prev, 'olimp-analysis': true, 'final-reports': true }));
                 setCurrentStage('final-reports');
+                setReportPath(statusData.reports.final);
+              }, 500); // Minimal delay to show completed state
+            } else {
+              // Report not preloaded, start loading with reduced timeout
+              setTimeout(() => {
+                setOlimpProgress(prev => prev ? {
+                  ...prev,
+                  currentStep: 'completed',
+                  stepsCompleted: 9,
+                  stepStatus: 'completed'
+                } : null);
                 
-                if (statusData.reports.final) {
+                setTimeout(() => {
+                  clearInterval(pollStatus);
+                  setIsRunningAnalysis(false);
+                  setStageProgress(prev => ({ ...prev, 'olimp-analysis': true, 'final-reports': true }));
+                  setCurrentStage('final-reports');
                   setReportPath(statusData.reports.final);
-                }
-              }, 2000); // Short delay to show completed state
-            }, 3000); // 3 seconds for visualization processing
+                }, 500);
+              }, 1000); // Reduced from 3000ms to 1000ms
+            }
           } else if (statusData.status === 'completed') {
             clearInterval(pollStatus);
             setIsRunningAnalysis(false);
@@ -702,7 +745,9 @@ export default function MultiStageWorkflow() {
                         )}
                         {isGenerating && step === 'visualizing_report' && (
                           <p className="text-xs text-orange-700 mt-1">
-                            Przygotowywanie raportu do wizualizacji. Trwa przetwarzanie treści...
+                            {reportPreloaded || preloadedReport ? 
+                              'Finalizowanie wizualizacji...' : 
+                              'Wczytywanie i przetwarzanie raportu końcowego...'}
                           </p>
                         )}
                       </div>

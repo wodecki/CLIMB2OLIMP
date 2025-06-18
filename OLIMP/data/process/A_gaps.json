@@ -1,11 +1,136 @@
 {
+  "ORGANIZATION AND PROCESSES": {
+    "Czy Twoja organizacja integruje Al z istniejącymi procesami rozwoju nowego produktu?": {
+      "present": {
+        "level": "B",
+        "description": "Podstawowa integracja w procesach rozwoju wybranych produktów"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowa integracja w procesach rozwoju kilku produktów"
+        },
+        {
+          "level": "D",
+          "description": "Integracja Al w procesów rozwoju większości produktów"
+        },
+        {
+          "level": "E",
+          "description": "Pełna integracja Al w procesach rozwoju wszystkich produktów"
+        }
+      ]
+    },
+    "Na ile Twoja organizacja automatyzuje procesy rozwoju produktu z wykorzystaniem generatywnej AI?": {
+      "present": {
+        "level": "D",
+        "description": "Automatyzacja większości procesów rozwoju produktu"
+      },
+      "steps": [
+        {
+          "level": "E",
+          "description": "W pełni zautomatyzowane procesy rozwoju produktu z wykorzystaniem Al"
+        }
+      ]
+    },
+    "Czy organizacja wykorzystuje Al do wsparcia podejmowania decyzji?": {
+      "present": {
+        "level": "D",
+        "description": "Al wspiera większość decyzji w kluczowych obszarach"
+      },
+      "steps": [
+        {
+          "level": "E",
+          "description": "Al zintegrowana we wszystkich procesach decyzyjnych organizacji"
+        }
+      ]
+    },
+    "Czy organizacja wdraża narzędzia wspierające pracę zespołów AI?": {
+      "present": {
+        "level": "A",
+        "description": "Brak narzędzi wspierających pracę zespołów Al"
+      },
+      "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowe narzędzia, ale nie są powszechnie używane"
+        },
+        {
+          "level": "C",
+          "description": "Częściowe wdrożenie narzędzi wspierających pracę zespołów Al"
+        },
+        {
+          "level": "D",
+          "description": "Narzędzia Al wspierają pracę większości zespołów"
+        },
+        {
+          "level": "E",
+          "description": "W pełni wdrożone narzędzia Al wspierające codzienną pracę zespołów"
+        }
+      ]
+    },
+    "Czy organizacja wprowadza cykle ciągłego doskonalenia we wdrażaniu rozwiązań generatywnej Al?": {
+      "present": {
+        "level": "B",
+        "description": "Sporadyczne działania w kierunku doskonalenia procesów"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Cykle doskonalenia w wybranych procesach Al"
+        },
+        {
+          "level": "D",
+          "description": "Doskonalenie wdrożeń Al w większości projektów"
+        },
+        {
+          "level": "E",
+          "description": "W pełni wdrożone cykle ciągłego doskonalenia dla wszystkich wdrożeń Al"
+        }
+      ]
+    },
+    "Czy organizacja zdefiniowała proces zarządzania cyklem życia dla oprogramowania AI?": {
+      "present": {
+        "level": "E",
+        "description": "Pełny proces zarządzania cyklem życia dla oprogramowania Al wdrożony we wszystkich projektach"
+      },
+      "steps": []
+    },
+    "Czy organizacja posiada przewodnik po procesie rozwoju produktu opartym o generatywną AI?": {
+      "present": {
+        "level": "A",
+        "description": "Brak przewodnika Al po procesie rozwoju produktu"
+      },
+      "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowy przewodnik opracowany, ale rzadko używany"
+        },
+        {
+          "level": "C",
+          "description": "Przewodnik częściowo wdrożony w kilku projektach"
+        },
+        {
+          "level": "D",
+          "description": "Przewodnik po procesie rozwoju produktu stosowany w większości projektów"
+        },
+        {
+          "level": "E",
+          "description": "W pełni wdrożony przewodnik Al po procesie rozwoju produktu w całej organizacji"
+        }
+      ]
+    }
+  },
   "BUDGET": {
     "Czy Twoja organizacja prowadzi długoterminowe planowanie budżetu na rozwój rozwiązań i infrastruktury wspierającej generatywną AI?": {
       "present": {
-        "level": "D",
-        "description": "Długoterminowe planowanie budżetowe w większości projektów"
+        "level": "C",
+        "description": "Częściowe planowanie długoterminowe, ograniczone do niektórych projektów"
       },
       "steps": [
+        {
+          "level": "D",
+          "description": "Długoterminowe planowanie budżetowe w większości projektów"
+        },
         {
           "level": "E",
           "description": "Pełne długoterminowe planowanie budżetu na wszystkie projekty i infrastrukturę Al"
@@ -14,17 +139,39 @@
     },
     "Czy Twoja organizacja przeznacza środki na rozwój kompetencji pracowników w zakresie generatywnej AI?": {
       "present": {
-        "level": "E",
-        "description": "Pełne finansowanie rozwoju kompetencji w zakresie Al dla wszystkich pracowników"
+        "level": "C",
+        "description": "Częściowe przeznaczanie środków na rozwój kompetencji"
       },
-      "steps": []
+      "steps": [
+        {
+          "level": "D",
+          "description": "Stałe finansowanie rozwoju kompetencji większości pracowników"
+        },
+        {
+          "level": "E",
+          "description": "Pełne finansowanie rozwoju kompetencji w zakresie Al dla wszystkich pracowników"
+        }
+      ]
     },
     "Czy Twoja organizacja finansuje projekty pilotażowe i innowacyjne związane z generatywną AI?": {
       "present": {
-        "level": "E",
-        "description": "Pełne wsparcie finansowe dla wszystkich projektów pilotażowych i innowacyjnych związanych z Al"
+        "level": "B",
+        "description": "Ograniczone finansowanie pojedynczych projektów"
       },
-      "steps": []
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowe finansowanie projektów pilotażowych i innowacyjnych"
+        },
+        {
+          "level": "D",
+          "description": "Regularne finansowanie większości projektów pilotażowych"
+        },
+        {
+          "level": "E",
+          "description": "Pełne wsparcie finansowe dla wszystkich projektów pilotażowych i innowacyjnych związanych z Al"
+        }
+      ]
     },
     "Czy organizacja alokuje środki na zewnętrzne konsultacje dotyczące generatywnej AI?": {
       "present": {
@@ -58,172 +205,13 @@
       "steps": []
     }
   },
-  "PRODUCTS AND SERVICES": {
-    "Czy Twoja organizacja wykorzystuje generatywną Al do wspomagania lub automatyzacji procesów projektowania i wytwarzania produktów?": {
-      "present": {
-        "level": "B",
-        "description": "Minimalne wykorzystanie Al w wybranych procesach"
-      },
-      "steps": [
-        {
-          "level": "C",
-          "description": "Częściowe wykorzystanie Al do automatyzacji procesów"
-        },
-        {
-          "level": "D",
-          "description": "Al wspiera większość procesów projektowania i wytwarzania"
-        },
-        {
-          "level": "E",
-          "description": "Pełne wykorzystanie Al w automatyzacji procesów"
-        }
-      ]
-    },
-    "Czy Twoja organizacja korzysta z generatywnej Al do personalizacji produktów?": {
-      "present": {
-        "level": "C",
-        "description": "Al stosowana do personalizacji w wybranych produktach"
-      },
-      "steps": [
-        {
-          "level": "D",
-          "description": "Personalizacja większości produktów z wykorzystaniem Al"
-        },
-        {
-          "level": "E",
-          "description": "Pełna personalizacja produktów przy wsparciu Al"
-        }
-      ]
-    },
-    "Czy organizacja korzysta z generatywnej Al do generowania pomysłów związanych z produktami (np. analiza sentymentu, analiza opinii)?": {
-      "present": {
-        "level": "D",
-        "description": "Generowanie pomysłów w większości procesów rozwoju produktów"
-      },
-      "steps": [
-        {
-          "level": "E",
-          "description": "Pełne wykorzystanie Al do generowania pomysłów i analiz opinii dla produktów"
-        }
-      ]
-    },
-    "Czy Twoja organizacja wykorzystuje generatywną Al do wspomagania redukcji informacji (np. streszczenia tekstów)?": {
-      "present": {
-        "level": "A",
-        "description": "Brak wykorzystania Al do redukcji informacji"
-      },
-      "steps": [
-        {
-          "level": "B",
-          "description": "Sporadyczne wykorzystanie Al w wybranych przypadkach"
-        },
-        {
-          "level": "C",
-          "description": "Częściowe wykorzystanie Al do redukcji informacji"
-        },
-        {
-          "level": "D",
-          "description": "Al stosowana regularnie do redukcji informacji w większości projektów"
-        },
-        {
-          "level": "E",
-          "description": "Pełne wykorzystanie Al do redukcji informacji we wszystkich obszarach"
-        }
-      ]
-    },
-    "Czy organizacja wspomaga ocenę koncepcji produktów przy użyciu generatywnej AI?": {
-      "present": {
-        "level": "E",
-        "description": "Pełne wsparcie oceny koncepcji produktów z wykorzystaniem Al"
-      },
-      "steps": []
-    },
-    "Czy Twoja organizacja wykorzystuje generatywną Al do skrócenia czasu testowania produktów?": {
-      "present": {
-        "level": "B",
-        "description": "Al sporadycznie wykorzystywana w wybranych testach"
-      },
-      "steps": [
-        {
-          "level": "C",
-          "description": "Częściowe wykorzystanie Al do skracania czasu testów"
-        },
-        {
-          "level": "D",
-          "description": "Al stosowana regularnie do skracania czasu testowania produktów"
-        },
-        {
-          "level": "E",
-          "description": "Pełne wykorzystanie Al do maksymalnego skrócenia czasu testowania produktów"
-        }
-      ]
-    },
-    "Czy organizacja wspiera marketing produktowy z wykorzystaniem generatywnej Al (np. tworzenie reklam, słów kluczowych, filmów promocyjnych)?": {
-      "present": {
-        "level": "E",
-        "description": "Pełne wykorzystanie Al do wspomagania marketingu produktowego (tworzenie reklam, kampanii, analiz)"
-      },
-      "steps": []
-    },
-    "Czy Twoja organizacja wykorzystuje generatywną Al do doskonalenia systemów rekomendacji produktów?": {
-      "present": {
-        "level": "D",
-        "description": "Al regularnie wspiera systemy rekomendacji w większości procesów"
-      },
-      "steps": [
-        {
-          "level": "E",
-          "description": "Pełne wykorzystanie Al do optymalizacji systemów rekomendacji produktów"
-        }
-      ]
-    },
-    "Czy organizacja doskonali działanie baz danych produktów z wykorzystaniem generatywnej AI?": {
-      "present": {
-        "level": "D",
-        "description": "Al wspiera doskonalenie baz danych produktów w większości obszarów"
-      },
-      "steps": [
-        {
-          "level": "E",
-          "description": "Pełne wykorzystanie Al do doskonalenia baz danych produktów"
-        }
-      ]
-    },
-    "Czy Twoja organizacja wykorzystuje generatywną Al jako komponent profesjonalnych aplikacji?": {
-      "present": {
-        "level": "E",
-        "description": "Pełne wykorzystanie Al jako kluczowego komponentu profesjonalnych aplikacji"
-      },
-      "steps": []
-    },
-    "Czy organizacja poszukuje nowych przypadków użycia rozwiązań generatywnej AI?": {
-      "present": {
-        "level": "C",
-        "description": "Częściowe poszukiwanie nowych przypadków użycia Al"
-      },
-      "steps": [
-        {
-          "level": "D",
-          "description": "Regularne poszukiwanie nowych przypadków użycia Al"
-        },
-        {
-          "level": "E",
-          "description": "Pełne zaangażowanie w poszukiwanie nowych przypadków użycia generatywnej Al we wszystkich obszarach"
-        }
-      ]
-    }
-  },
   "ETHICS AND REGULATIONS": {
     "Czy Twoja organizacja przestrzega zasad etyki w projektowaniu generatywnej AI?": {
       "present": {
-        "level": "B",
-        "description": "Sporadyczne uwzględnienie etyki w wybranych projektach"
+        "level": "C",
+        "description": "Częściowe uwzględnienie zasad etyki w niektórych projektach"
       },
       "steps": [
-        {
-          "level": "C",
-          "description": "Częściowe uwzględnienie zasad etyki w niektórych projektach"
-        },
         {
           "level": "D",
           "description": "Większość projektów uwzględnia zasady etyki"
@@ -236,14 +224,10 @@
     },
     "Czy Twoja organizacja zapewnia bezpieczeństwo i prywatność danych związanych z rozwojem produktów?": {
       "present": {
-        "level": "C",
-        "description": "Częściowe wdrożenie polityki bezpieczeństwa i prywatności danych"
+        "level": "D",
+        "description": "Większość projektów przestrzega polityk bezpieczeństwa i prywatności danych"
       },
       "steps": [
-        {
-          "level": "D",
-          "description": "Większość projektów przestrzega polityk bezpieczeństwa i prywatności danych"
-        },
         {
           "level": "E",
           "description": "W pełni wdrożone systemy bezpieczeństwa i prywatności danych dla wszystkich projektów"
@@ -252,25 +236,30 @@
     },
     "Czy Twoja organizacja dba o zaufanie do danych i możliwość ich wyjaśnienia?": {
       "present": {
-        "level": "E",
-        "description": "Pełne zaufanie do danych i mechanizmy możliwości wyjaśnienia wdrożone we wszystkich procesach"
-      },
-      "steps": []
-    },
-    "Czy organizacja wdraża standardy ochrony i mechanizmy dotyczące kopii zapasowych danych?": {
-      "present": {
         "level": "B",
-        "description": "Podstawowe mechanizmy wprowadzane w wybranych obszarach"
+        "description": "Minimalne działania w zakresie zaufania i możliwości wyjaśnienia danych"
       },
       "steps": [
         {
           "level": "C",
-          "description": "Częściowe wdrożenie mechanizmów ochrony i kopii zapasowych"
+          "description": "Częściowe wdrożenie mechanizmów budujących zaufanie i możliwości wyjaśnienia"
         },
         {
           "level": "D",
-          "description": "Większość obszarów objęta standardami ochrony i kopiami zapasowymi danych"
+          "description": "Większość danych posiada mechanizmy możliwości wyjaśnienia"
         },
+        {
+          "level": "E",
+          "description": "Pełne zaufanie do danych i mechanizmy możliwości wyjaśnienia wdrożone we wszystkich procesach"
+        }
+      ]
+    },
+    "Czy organizacja wdraża standardy ochrony i mechanizmy dotyczące kopii zapasowych danych?": {
+      "present": {
+        "level": "D",
+        "description": "Większość obszarów objęta standardami ochrony i kopiami zapasowymi danych"
+      },
+      "steps": [
         {
           "level": "E",
           "description": "W pełni wdrożone standardy ochrony i mechanizmy kopii zapasowych we wszystkich obszarach"
@@ -291,30 +280,17 @@
     },
     "Czy organizacja regularnie ocenia zgodność algorytmów generatywnej Al z regulacjami prawnymi?": {
       "present": {
-        "level": "D",
-        "description": "Większość algorytmów jest regularnie weryfikowana pod kątem zgodności z regulacjami"
+        "level": "E",
+        "description": "W pełni wdrożone procedury regularnej oceny zgodności algorytmów Al z przepisami"
       },
-      "steps": [
-        {
-          "level": "E",
-          "description": "W pełni wdrożone procedury regularnej oceny zgodności algorytmów Al z przepisami"
-        }
-      ]
+      "steps": []
     },
     "Czy Twoja organizacja tworzy systemy audytu decyzji podejmowanych przez generatywną AI?": {
       "present": {
-        "level": "B",
-        "description": "Podstawowe systemy audytu wprowadzane w wybranych projektach"
+        "level": "D",
+        "description": "Systemy audytu funkcjonują dla większości decyzji Al"
       },
       "steps": [
-        {
-          "level": "C",
-          "description": "Częściowe wdrożenie systemów audytu decyzji Al"
-        },
-        {
-          "level": "D",
-          "description": "Systemy audytu funkcjonują dla większości decyzji Al"
-        },
         {
           "level": "E",
           "description": "W pełni wdrożone systemy audytu i odpowiedzialności za decyzje podejmowane przez Al"
@@ -323,10 +299,22 @@
     },
     "Czy Twoja organizacja poszerza świadomość dotyczącą ochrony danych wśród pracowników?": {
       "present": {
-        "level": "D",
-        "description": "Regularne szkolenia w zakresie ochrony danych w większości zespołów"
+        "level": "A",
+        "description": "Brak programów edukacyjnych dotyczących ochrony danych"
       },
       "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowe programy szkoleniowe, ale ograniczone do wybranych zespołów"
+        },
+        {
+          "level": "C",
+          "description": "Częściowe programy szkoleniowe dla wybranych zespołów"
+        },
+        {
+          "level": "D",
+          "description": "Regularne szkolenia w zakresie ochrony danych w większości zespołów"
+        },
         {
           "level": "E",
           "description": "Pełne programy edukacyjne dotyczące ochrony danych dla wszystkich pracowników"
@@ -335,10 +323,14 @@
     },
     "Czy organizacja wykorzystuje technologie dotyczące cyberbezpieczeństwa?": {
       "present": {
-        "level": "C",
-        "description": "Częściowe wdrożenie technologii cyberbezpieczeństwa"
+        "level": "B",
+        "description": "Podstawowe technologie wdrożone w wybranych obszarach"
       },
       "steps": [
+        {
+          "level": "C",
+          "description": "Częściowe wdrożenie technologii cyberbezpieczeństwa"
+        },
         {
           "level": "D",
           "description": "Większość obszarów objęta technologiami cyberbezpieczeństwa"
@@ -351,18 +343,10 @@
     },
     "Czy Twoja organizacja utrzymuje dokumentację dotyczącą użycia generatywnej Al (np. przypadki użycia, logi systemowe, kontrola wersji)?": {
       "present": {
-        "level": "B",
-        "description": "Sporadyczne dokumentowanie wybranych przypadków użycia"
+        "level": "D",
+        "description": "Dokumentacja prowadzona regularnie w większości przypadków"
       },
       "steps": [
-        {
-          "level": "C",
-          "description": "Częściowa dokumentacja dla wybranych obszarów"
-        },
-        {
-          "level": "D",
-          "description": "Dokumentacja prowadzona regularnie w większości przypadków"
-        },
         {
           "level": "E",
           "description": "Pełna i bieżąca dokumentacja dotycząca wszystkich przypadków użycia Al"
