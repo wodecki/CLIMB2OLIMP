@@ -13,46 +13,51 @@ from state import DocumentState
 load_dotenv()
 
 def create_llm_for_branch(provider: str):
-    """Create LLM instance for specific branch provider"""
+    """Create LLM instance for specific branch provider with improved timeout and retry settings"""
     if provider == "openai":
         model_name = os.getenv("OPENAI_MODEL", "o3-2025-04-16")
         # o3 models don't support custom temperature
         if "o3" in model_name:
             return ChatOpenAI(
                 model=model_name,
-                max_tokens=None,
-                timeout=None,
-                max_retries=2,
-                openai_api_key=os.getenv("OPENAI_API_KEY")
+                max_tokens=8000,  # Reasonable limit to prevent truncation
+                timeout=300,      # 5 minutes timeout
+                max_retries=5,    # More retries for reliability
+                openai_api_key=os.getenv("OPENAI_API_KEY"),
+                request_timeout=300  # Request-level timeout
             )
         else:
             return ChatOpenAI(
                 model=model_name,
                 temperature=0.2,  # OpenAI optimal temperature
-                max_tokens=None,
-                timeout=None,
-                max_retries=2,
-                openai_api_key=os.getenv("OPENAI_API_KEY")
+                max_tokens=8000,  # Reasonable limit to prevent truncation
+                timeout=300,      # 5 minutes timeout
+                max_retries=5,    # More retries for reliability
+                openai_api_key=os.getenv("OPENAI_API_KEY"),
+                request_timeout=300  # Request-level timeout
             )
     elif provider == "anthropic":
         model_name = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-20250514")
         anthropic_kwargs = {
             "model": model_name,
             "temperature": 0.1,  # Anthropic optimal temperature
-            "max_retries": 2,
+            "max_retries": 5,     # More retries for reliability
             "anthropic_api_key": os.getenv("ANTHROPIC_API_KEY"),
-            "max_tokens":64000  
+            "max_tokens": 8000,   # Reasonable limit to prevent truncation
+            "timeout": 300        # 5 minutes timeout
         }
         return ChatAnthropic(**anthropic_kwargs)
     elif provider == "gemini":
-        model_name = os.getenv("GEMINI_MODEL", "gemini-2.5-pro-preview-05-06")
+        # Use stable Gemini model instead of preview
+        model_name = os.getenv("GEMINI_MODEL", "gemini-2.5-pro")
         return ChatGoogleGenerativeAI(
             model=model_name,
-            temperature=0.1,  # Gemini optimal temperature
-            max_tokens=None,
-            timeout=None,
-            max_retries=2,
-            google_api_key=os.getenv("GOOGLE_API_KEY")
+            temperature=0.1,     # Gemini optimal temperature
+            max_tokens=8000,     # Reasonable limit to prevent truncation
+            timeout=300,         # 5 minutes timeout
+            max_retries=5,       # More retries for 504 errors
+            google_api_key=os.getenv("GOOGLE_API_KEY"),
+            request_timeout=300  # Request-level timeout
         )
     else:
         raise ValueError(f"Unsupported provider: {provider}")

@@ -71,6 +71,27 @@ export default function MultiStageWorkflow() {
     error?: string;
   } | null>(null);
 
+  // Report preloading state
+  const [reportPreloaded, setReportPreloaded] = useState(false);
+  const [preloadedReport, setPreloadedReport] = useState<string | null>(null);
+
+  // Function to preload report in background
+  const preloadReport = async (reportPath: string) => {
+    if (reportPreloaded || preloadedReport) return;
+    
+    try {
+      const response = await fetch(`/api/report?path=${encodeURIComponent(reportPath)}`);
+      if (response.ok) {
+        const data = await response.json();
+        setPreloadedReport(data.content);
+        setReportPreloaded(true);
+        console.log('Report preloaded successfully');
+      }
+    } catch (error) {
+      console.error('Error preloading report:', error);
+    }
+  };
+
   // Fetch CLIMB2 questionnaire data
   useEffect(() => {
     const fetchData = async () => {
@@ -380,8 +401,52 @@ export default function MultiStageWorkflow() {
           if (statusData.progress) {
             setOlimpProgress(statusData.progress);
           }
+
+          // Start preloading report when it becomes available
+          if (statusData.reports.final && !reportPreloaded && !preloadedReport) {
+            console.log('Starting report preload...');
+            preloadReport(statusData.reports.final);
+          }
           
-          if (statusData.status === 'completed') {
+          // Handle visualization step - optimized for speed
+          if (statusData.progress?.currentStep === 'visualizing_report' && statusData.reports.final) {
+            // If report is already preloaded, transition immediately
+            if (reportPreloaded || preloadedReport) {
+              console.log('Report preloaded, transitioning immediately...');
+              setOlimpProgress(prev => prev ? {
+                ...prev,
+                currentStep: 'completed',
+                stepsCompleted: 9,
+                stepStatus: 'completed'
+              } : null);
+              
+              setTimeout(() => {
+                clearInterval(pollStatus);
+                setIsRunningAnalysis(false);
+                setStageProgress(prev => ({ ...prev, 'olimp-analysis': true, 'final-reports': true }));
+                setCurrentStage('final-reports');
+                setReportPath(statusData.reports.final);
+              }, 500); // Minimal delay to show completed state
+            } else {
+              // Report not preloaded, start loading with reduced timeout
+              setTimeout(() => {
+                setOlimpProgress(prev => prev ? {
+                  ...prev,
+                  currentStep: 'completed',
+                  stepsCompleted: 9,
+                  stepStatus: 'completed'
+                } : null);
+                
+                setTimeout(() => {
+                  clearInterval(pollStatus);
+                  setIsRunningAnalysis(false);
+                  setStageProgress(prev => ({ ...prev, 'olimp-analysis': true, 'final-reports': true }));
+                  setCurrentStage('final-reports');
+                  setReportPath(statusData.reports.final);
+                }, 500);
+              }, 1000); // Reduced from 3000ms to 1000ms
+            }
+          } else if (statusData.status === 'completed') {
             clearInterval(pollStatus);
             setIsRunningAnalysis(false);
             setStageProgress(prev => ({ ...prev, 'olimp-analysis': true, 'final-reports': true }));
@@ -403,7 +468,7 @@ export default function MultiStageWorkflow() {
         } catch (err) {
           console.error('Error polling OLIMP status:', err);
         }
-      }, 5000); // Poll every 5 seconds
+      }, 2000); // Poll every 2 seconds (reduced from 5)
       
     } catch (err) {
       console.error('Error starting OLIMP analysis:', err);
@@ -480,13 +545,14 @@ export default function MultiStageWorkflow() {
         'extract_answers': 'Ekstrakcja odpowiedzi',
         'identify_gaps': 'Identyfikacja luk',
         'parallel_recommendations': 'Rekomendacje agentów OpenAI, Anthropic i Google',
-        'evaluation': 'Rekomendacje agentów OpenAI, Anthropic i Google',
+        'evaluation': 'Ewaluacja rekomendacji',
         'evaluation_branches': 'Analiza Wielogałęziowa',
         'recommend': 'Synteza rekomendacji',
         'recommend_branches': 'Rekomendacje Gałęzi',
-        'consensus': 'Ustalanie konsensusu',
+        'consensus': 'Generowanie konsensusu',
         'generating_final_report': 'Generowanie Raportu Końcowego',
         'final_report': 'Generowanie Raportu Końcowego',
+        'visualizing_report': 'Wizualizacja raportu',
         'completed': 'Analiza Zakończona'
       };
       return stepMap[step] || step;
@@ -604,11 +670,21 @@ export default function MultiStageWorkflow() {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Etap analizy</h2>
             <div className="space-y-4">
-              {['setup', 'extract_answers', 'identify_gaps', 'parallel_recommendations', 'recommend', 'consensus', 'generating_final_report', 'completed'].map((step, index) => {
+              {['setup', 'extract_answers', 'identify_gaps', 'parallel_recommendations', 'recommend', 'consensus', 'generating_final_report', 'visualizing_report', 'completed'].map((step, index) => {
                 const isCompleted = olimpProgress && olimpProgress.stepsCompleted ? olimpProgress.stepsCompleted > index : false;
-                const isActive = olimpProgress && olimpProgress.currentStep === step;
+                // Check if this is the current active step (matching various possible step names)
+                const isActive = olimpProgress && (
+                  olimpProgress.currentStep === step ||
+                  // Handle variations of step names that might come from backend
+                  (step === 'parallel_recommendations' && ['evaluation', 'evaluation_branches'].includes(olimpProgress.currentStep)) ||
+                  (step === 'recommend' && ['recommend_branches', 'consensus'].includes(olimpProgress.currentStep)) ||
+                  (step === 'consensus' && olimpProgress.currentStep === 'consensus') ||
+                  (step === 'generating_final_report' && ['final_report', 'generating_final_report'].includes(olimpProgress.currentStep)) ||
+                  (step === 'visualizing_report' && olimpProgress.currentStep === 'visualizing_report')
+                );
                 const stepStatus = olimpProgress?.stepStatus;
-                const isGenerating = isActive && stepStatus === 'generating';
+                // A step is generating if it's active and either generating, active, or running
+                const isGenerating = isActive && ['generating', 'active', 'running'].includes(stepStatus || '');
                 
                 return (
                   <div key={step} className={`flex items-start transition-all duration-300 ${
@@ -652,9 +728,26 @@ export default function MultiStageWorkflow() {
                             </span>
                           )}
                         </p>
+                        {isGenerating && step === 'recommend' && (
+                          <p className="text-xs text-orange-700 mt-1">
+                            Generowanie konsensusu z rekomendacji. Proces może potrwać kilka minut...
+                          </p>
+                        )}
+                        {isGenerating && step === 'consensus' && (
+                          <p className="text-xs text-orange-700 mt-1">
+                            Tworzenie finalnego konsensusu. Może potrwać kilka minut...
+                          </p>
+                        )}
                         {isGenerating && step === 'generating_final_report' && (
                           <p className="text-xs text-orange-700 mt-1">
                             Kompilowanie raportu końcowego. Może potrwać ok. 10 minut...
+                          </p>
+                        )}
+                        {isGenerating && step === 'visualizing_report' && (
+                          <p className="text-xs text-orange-700 mt-1">
+                            {reportPreloaded || preloadedReport ? 
+                              'Finalizowanie wizualizacji...' : 
+                              'Wczytywanie i przetwarzanie raportu końcowego...'}
                           </p>
                         )}
                       </div>

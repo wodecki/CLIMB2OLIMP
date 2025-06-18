@@ -2,8 +2,18 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+// Simple cache for status to avoid excessive file system operations
+let statusCache: { status: any; timestamp: number } | null = null;
+const CACHE_TTL = 1000; // 1 second cache
+
 export async function GET() {
   try {
+    // Check cache first
+    const now = Date.now();
+    if (statusCache && (now - statusCache.timestamp) < CACHE_TTL) {
+      return NextResponse.json(statusCache.status);
+    }
+    
     const olimpPath = path.join(process.cwd(), '..', 'OLIMP');
     
     // Check if analysis is running by looking for PID file
@@ -89,7 +99,7 @@ export async function GET() {
       // Determine current step based on what files exist
       let currentStep = 'extract_answers';
       let stepsCompleted = 1;
-      let totalSteps = 8; // Added final report generation step
+      let totalSteps = 9; // Added visualization step
       let stepStatus = 'active';
       
       const aJsonPath = path.join(olimpPath, 'data', 'process', 'A.json');
@@ -124,9 +134,9 @@ export async function GET() {
       
       // Check if final report exists
       if (fs.existsSync(consensusReportPath)) {
-        currentStep = 'completed';
+        currentStep = 'visualizing_report';
         stepsCompleted = 8;
-        stepStatus = 'completed';
+        stepStatus = 'generating'; // Frontend is processing the report
       }
       
       detailedStatus = {
@@ -146,7 +156,7 @@ export async function GET() {
       };
     }
     
-    return NextResponse.json({
+    const response = {
       status,
       isRunning,
       pid,
@@ -157,7 +167,15 @@ export async function GET() {
         totalCount: completedReports.length
       },
       timestamp: new Date().toISOString()
-    });
+    };
+    
+    // Cache the response
+    statusCache = {
+      status: response,
+      timestamp: now
+    };
+    
+    return NextResponse.json(response);
     
   } catch (error) {
     console.error('Error checking OLIMP status:', error);

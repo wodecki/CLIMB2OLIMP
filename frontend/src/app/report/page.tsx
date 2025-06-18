@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
 
 // Component that uses useSearchParams
@@ -259,6 +260,7 @@ function ReportContent() {
           className="prose prose-lg max-w-none prose-headings:text-blue-700 prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl prose-h2:border-b prose-h2:pb-2 prose-h2:border-gray-200 prose-h3:text-xl prose-p:text-gray-900 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-800 prose-strong:font-bold prose-strong:text-gray-900"
         >
           <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
             components={{
               table: ({ node, ...props }) => (
                 <div className="overflow-x-auto my-8">
