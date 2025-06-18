@@ -20,6 +20,10 @@ function cleanReportContent(content: string): string {
     .replace(/^# FINAL CONSENSUS RECOMMENDATION REPORT[\s\S]*?---\s*\n/, '')
     // Remove conversational preambles in one combined pattern
     .replace(/^(Jasne,\s*oto\s+[^.]*\.|Oczywiście,\s*[^.]*\.|Przedstawiam\s+[^.]*\.|Przygotowałem\s+[^.]*\.|Poniżej\s+znajduje\s+się\s+[^.]*\.)/g, '')
+    // Remove HTML span tags while preserving their content
+    .replace(/<span[^>]*style="color:[^"]*;"[^>]*>\*\*([^*]+)\*\*<\/span>/g, '**$1**')
+    .replace(/<span[^>]*>\*\*([^*]+)\*\*<\/span>/g, '**$1**')
+    .replace(/<span[^>]*>([^<]+)<\/span>/g, '$1')
     // Clean up artifacts and whitespace
     .replace(/^[\s\n]*---[\s\n]*/, '')
     .replace(/^\n+/, '')
