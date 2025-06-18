@@ -381,7 +381,29 @@ export default function MultiStageWorkflow() {
             setOlimpProgress(statusData.progress);
           }
           
-          if (statusData.status === 'completed') {
+          // Handle visualization step
+          if (statusData.progress?.currentStep === 'visualizing_report' && statusData.reports.final) {
+            // Start visualization timeout
+            setTimeout(() => {
+              setOlimpProgress(prev => prev ? {
+                ...prev,
+                currentStep: 'completed',
+                stepsCompleted: 9,
+                stepStatus: 'completed'
+              } : null);
+              
+              setTimeout(() => {
+                clearInterval(pollStatus);
+                setIsRunningAnalysis(false);
+                setStageProgress(prev => ({ ...prev, 'olimp-analysis': true, 'final-reports': true }));
+                setCurrentStage('final-reports');
+                
+                if (statusData.reports.final) {
+                  setReportPath(statusData.reports.final);
+                }
+              }, 2000); // Short delay to show completed state
+            }, 3000); // 3 seconds for visualization processing
+          } else if (statusData.status === 'completed') {
             clearInterval(pollStatus);
             setIsRunningAnalysis(false);
             setStageProgress(prev => ({ ...prev, 'olimp-analysis': true, 'final-reports': true }));
@@ -480,13 +502,14 @@ export default function MultiStageWorkflow() {
         'extract_answers': 'Ekstrakcja odpowiedzi',
         'identify_gaps': 'Identyfikacja luk',
         'parallel_recommendations': 'Rekomendacje agentów OpenAI, Anthropic i Google',
-        'evaluation': 'Rekomendacje agentów OpenAI, Anthropic i Google',
+        'evaluation': 'Ewaluacja rekomendacji',
         'evaluation_branches': 'Analiza Wielogałęziowa',
         'recommend': 'Synteza rekomendacji',
         'recommend_branches': 'Rekomendacje Gałęzi',
-        'consensus': 'Ustalanie konsensusu',
+        'consensus': 'Generowanie konsensusu',
         'generating_final_report': 'Generowanie Raportu Końcowego',
         'final_report': 'Generowanie Raportu Końcowego',
+        'visualizing_report': 'Wizualizacja raportu',
         'completed': 'Analiza Zakończona'
       };
       return stepMap[step] || step;
@@ -604,11 +627,21 @@ export default function MultiStageWorkflow() {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Etap analizy</h2>
             <div className="space-y-4">
-              {['setup', 'extract_answers', 'identify_gaps', 'parallel_recommendations', 'recommend', 'consensus', 'generating_final_report', 'completed'].map((step, index) => {
+              {['setup', 'extract_answers', 'identify_gaps', 'parallel_recommendations', 'recommend', 'consensus', 'generating_final_report', 'visualizing_report', 'completed'].map((step, index) => {
                 const isCompleted = olimpProgress && olimpProgress.stepsCompleted ? olimpProgress.stepsCompleted > index : false;
-                const isActive = olimpProgress && olimpProgress.currentStep === step;
+                // Check if this is the current active step (matching various possible step names)
+                const isActive = olimpProgress && (
+                  olimpProgress.currentStep === step ||
+                  // Handle variations of step names that might come from backend
+                  (step === 'parallel_recommendations' && ['evaluation', 'evaluation_branches'].includes(olimpProgress.currentStep)) ||
+                  (step === 'recommend' && ['recommend_branches', 'consensus'].includes(olimpProgress.currentStep)) ||
+                  (step === 'consensus' && olimpProgress.currentStep === 'consensus') ||
+                  (step === 'generating_final_report' && ['final_report', 'generating_final_report'].includes(olimpProgress.currentStep)) ||
+                  (step === 'visualizing_report' && olimpProgress.currentStep === 'visualizing_report')
+                );
                 const stepStatus = olimpProgress?.stepStatus;
-                const isGenerating = isActive && stepStatus === 'generating';
+                // A step is generating if it's active and either generating, active, or running
+                const isGenerating = isActive && ['generating', 'active', 'running'].includes(stepStatus || '');
                 
                 return (
                   <div key={step} className={`flex items-start transition-all duration-300 ${
@@ -652,9 +685,24 @@ export default function MultiStageWorkflow() {
                             </span>
                           )}
                         </p>
+                        {isGenerating && step === 'recommend' && (
+                          <p className="text-xs text-orange-700 mt-1">
+                            Generowanie konsensusu z rekomendacji. Proces może potrwać kilka minut...
+                          </p>
+                        )}
+                        {isGenerating && step === 'consensus' && (
+                          <p className="text-xs text-orange-700 mt-1">
+                            Tworzenie finalnego konsensusu. Może potrwać kilka minut...
+                          </p>
+                        )}
                         {isGenerating && step === 'generating_final_report' && (
                           <p className="text-xs text-orange-700 mt-1">
                             Kompilowanie raportu końcowego. Może potrwać ok. 10 minut...
+                          </p>
+                        )}
+                        {isGenerating && step === 'visualizing_report' && (
+                          <p className="text-xs text-orange-700 mt-1">
+                            Przygotowywanie raportu do wizualizacji. Trwa przetwarzanie treści...
                           </p>
                         )}
                       </div>

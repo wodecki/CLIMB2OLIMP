@@ -99,7 +99,7 @@ export async function GET() {
       // Determine current step based on what files exist
       let currentStep = 'extract_answers';
       let stepsCompleted = 1;
-      let totalSteps = 8; // Added final report generation step
+      let totalSteps = 9; // Added visualization step
       let stepStatus = 'active';
       
       const aJsonPath = path.join(olimpPath, 'data', 'process', 'A.json');
@@ -134,9 +134,9 @@ export async function GET() {
       
       // Check if final report exists
       if (fs.existsSync(consensusReportPath)) {
-        currentStep = 'completed';
+        currentStep = 'visualizing_report';
         stepsCompleted = 8;
-        stepStatus = 'completed';
+        stepStatus = 'generating'; // Frontend is processing the report
       }
       
       detailedStatus = {

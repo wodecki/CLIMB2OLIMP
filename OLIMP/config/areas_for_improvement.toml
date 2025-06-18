@@ -4,10 +4,10 @@
 
 [gap_analysis]
 target_sections = [
-    "TECHNOLOGY AND INFRASTRUCTURE",
-    "DATA",
+    "BUDGET",
+    "PRODUCTS AND SERVICES",
     "ETHICS AND REGULATIONS"
 ]
 
-# Generated at: 2025-06-18T08:10:57.468Z
+# Generated at: 2025-06-18T08:39:25.930Z
 # Selected areas count: 3
